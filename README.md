@@ -1,6 +1,6 @@
 # freecodecamp-python
 
-My Python learning journey through freeCodeCamp.
+A collection of projects completed while studying Python through freeCodeCamp.
 
 ## Projects
 
@@ -8,4 +8,4 @@ My Python learning journey through freeCodeCamp.
 - Employee Profile Generator
 - Bill Splitter
 
-More projects will be added as I progress through the Python Certification.
+More projects coming soon!
