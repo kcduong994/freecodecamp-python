@@ -1,8 +1,10 @@
 # freecodecamp-python
 
-> My Python learning journey through the freeCodeCamp Python Certification.
+> A Python learning portfolio focused on scientific computing, numerical modeling, and engineering applications through the freeCodeCamp Python Certification.
 
-This repository documents my progress in learning Python through hands-on workshops, practical labs, and certification projects.
+This repository documents my progress in learning Python through workshops, labs, and certification projects.
+
+While the certification focuses on Python fundamentals, my broader objective is to apply programming and computational methods to coastal and environmental engineering challenges, including hydrodynamic modeling, salinity intrusion analysis, and data-driven decision making.
 
 ---
 
@@ -29,6 +31,7 @@ freecodecamp-python
 | 2 | Employee Profile Generator      | ✅      |
 | 3 | Bill Splitter                   | ✅      |
 | 4 | Movie Ticket Booking Calculator | ✅      |
+| 5 | Build a Caesar Cipher           | ✅      |
 
 ### Labs
 
@@ -49,19 +52,19 @@ freecodecamp-python
 
 | Category               | Completed |
 | ---------------------- | --------- |
-| Workshops              | 4         |
+| Workshops              | 5         |
 | Labs                   | 2         |
 | Certification Projects | 0         |
 
 ```text
-Workshops             ████░░░░░░ 4
+Workshops             █████░░░░░ 5
 Labs                  ██░░░░░░░░ 2
 Certification         ░░░░░░░░░░ 0
 ```
 
 ---
 
-## Skills Developed
+## Technical Skills Developed
 
 ### Python Fundamentals
 
@@ -69,20 +72,30 @@ Certification         ░░░░░░░░░░ 0
 * User Input and Output
 * Arithmetic Operations
 * String Formatting
+* String Manipulation
 
 ### Programming Logic
 
 * Conditional Statements
 * Boolean Logic
 * Comparison Operators
-* Decision-Making
+* Decision-Making Logic
+* Input Validation
 
 ### Functions
 
 * Function Definitions
 * Parameters and Arguments
 * Return Values
-* Input Validation
+* Function Reusability
+
+### Text Processing
+
+* String Slicing
+* Character Mapping
+* Translation Tables
+* Encryption and Decryption
+* Caesar Cipher Implementation
 
 ### Problem Solving
 
@@ -93,13 +106,30 @@ Certification         ░░░░░░░░░░ 0
 
 ---
 
+## Engineering-Oriented Learning Path
+
+This repository represents the first stage of a broader transition toward computational and data-driven engineering workflows.
+
+Future areas of development include:
+
+* Scientific Computing
+* Numerical Methods
+* Data Analysis and Visualization
+* Hydrodynamic Modeling
+* Salinity Intrusion Analysis
+* Coastal and Environmental Processes
+* Engineering Applications of Python
+
+---
+
 ## Learning Goals
 
 * Complete the freeCodeCamp Python Certification
-* Strengthen Python programming fundamentals
-* Improve problem-solving skills through practical exercises
-* Build a public portfolio of Python projects
-* Prepare for more advanced topics in software development and data analysis
+* Build a strong foundation in Python programming
+* Improve problem-solving and analytical thinking skills
+* Develop computational tools for engineering applications
+* Create a public portfolio documenting continuous learning and technical growth
+* Prepare for advanced work in scientific computing, numerical modeling, and research
 
 ---
 
@@ -108,3 +138,8 @@ Certification         ░░░░░░░░░░ 0
 * freeCodeCamp Python Certification
 * Python Documentation
 * GitHub
+* Open Source Learning Materials
+* Scientific Computing Communities
+
+```
+```
