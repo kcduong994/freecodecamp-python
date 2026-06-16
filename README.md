@@ -39,6 +39,7 @@ freecodecamp-python
 | - | ----------------------- | ------ |
 | 1 | Travel Weather Planner  | ✅      |
 | 2 | Apply Discount Function | ✅      |
+| 3 | Build an RPG Character  | ✅      |
 
 ### Certification Projects
 
@@ -53,12 +54,12 @@ freecodecamp-python
 | Category               | Completed |
 | ---------------------- | --------- |
 | Workshops              | 5         |
-| Labs                   | 2         |
+| Labs                   | 3         |
 | Certification Projects | 0         |
 
 ```text
 Workshops             █████░░░░░ 5
-Labs                  ██░░░░░░░░ 2
+Labs                  ███░░░░░░░ 3
 Certification         ░░░░░░░░░░ 0
 ```
 
@@ -81,6 +82,7 @@ Certification         ░░░░░░░░░░ 0
 * Comparison Operators
 * Decision-Making Logic
 * Input Validation
+* Business Rule Validation
 
 ### Functions
 
@@ -97,12 +99,20 @@ Certification         ░░░░░░░░░░ 0
 * Encryption and Decryption
 * Caesar Cipher Implementation
 
+### Data Validation
+
+* Type Checking with `isinstance()`
+* Numeric Range Validation
+* String Validation
+* User Input Verification
+
 ### Problem Solving
 
 * Requirement Analysis
 * Translating User Stories into Code
 * Business Logic Implementation
 * Debugging and Testing
+* Structured Program Design
 
 ---
 
@@ -140,6 +150,3 @@ Future areas of development include:
 * GitHub
 * Open Source Learning Materials
 * Scientific Computing Communities
-
-```
-```
