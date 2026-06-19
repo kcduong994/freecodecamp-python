@@ -4,7 +4,7 @@
 
 This repository documents my progress in learning Python through workshops, labs, and certification projects.
 
-While the certification focuses on Python fundamentals, my broader objective is to apply programming and computational methods to coastal and environmental engineering challenges, including hydrodynamic modeling, salinity intrusion analysis, and data-driven decision making.
+While the certification focuses on Python fundamentals, my broader objective is to apply programming and computational methods to coastal and environmental engineering challenges, including hydrodynamic modeling, salinity intrusion analysis, environmental data analysis, and data-driven decision making.
 
 ---
 
@@ -32,6 +32,7 @@ freecodecamp-python
 | 3 | Bill Splitter                   | ✅      |
 | 4 | Movie Ticket Booking Calculator | ✅      |
 | 5 | Build a Caesar Cipher           | ✅      |
+| 6 | Build a PIN Extractor           | ✅      |
 
 ### Labs
 
@@ -53,12 +54,12 @@ freecodecamp-python
 
 | Category               | Completed |
 | ---------------------- | --------- |
-| Workshops              | 5         |
+| Workshops              | 6         |
 | Labs                   | 3         |
 | Certification Projects | 0         |
 
 ```text
-Workshops             █████░░░░░ 5
+Workshops             ██████░░░░ 6
 Labs                  ███░░░░░░░ 3
 Certification         ░░░░░░░░░░ 0
 ```
@@ -94,10 +95,12 @@ Certification         ░░░░░░░░░░ 0
 ### Text Processing
 
 * String Slicing
+* String Splitting
 * Character Mapping
 * Translation Tables
 * Encryption and Decryption
 * Caesar Cipher Implementation
+* Multi-Line Text Processing
 
 ### Data Validation
 
@@ -105,6 +108,15 @@ Certification         ░░░░░░░░░░ 0
 * Numeric Range Validation
 * String Validation
 * User Input Verification
+
+### Working with Collections
+
+* Lists
+* List Iteration
+* Nested Loops
+* `enumerate()`
+* Data Aggregation
+* Structured Text Extraction
 
 ### Problem Solving
 
@@ -129,6 +141,7 @@ Future areas of development include:
 * Salinity Intrusion Analysis
 * Coastal and Environmental Processes
 * Engineering Applications of Python
+* Research-Oriented Programming
 
 ---
 
@@ -150,3 +163,6 @@ Future areas of development include:
 * GitHub
 * Open Source Learning Materials
 * Scientific Computing Communities
+
+```
+```
