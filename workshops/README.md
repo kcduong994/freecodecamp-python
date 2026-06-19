@@ -15,6 +15,7 @@ Workshops provide guided, step-by-step exercises designed to introduce core Pyth
 | 3 | Bill Splitter                   | ✅ Completed |
 | 4 | Movie Ticket Booking Calculator | ✅ Completed |
 | 5 | Build a Caesar Cipher           | ✅ Completed |
+| 6 | Build a PIN Extractor           | ✅ Completed |
 
 ---
 
@@ -33,30 +34,41 @@ Workshops provide guided, step-by-step exercises designed to introduce core Pyth
 * Boolean Logic
 * Comparison Operators
 * Basic Problem Solving
+* Input Validation
 
 ### Functions
 
 * Function Definitions
 * Parameters and Arguments
 * Return Values
+* Function Reusability
 
 ### Working with Text
 
 * String Slicing
+* String Splitting
 * Translation Tables
 * Text Encryption and Decryption
 * Caesar Cipher Implementation
+
+### Working with Collections
+
+* Lists
+* List Appending
+* Nested Loops
+* Iteration with `enumerate()`
+* Processing Multi-Line Text
 
 ---
 
 ## Progress
 
 ```text
-Workshops Completed: 5
+Workshops Completed: 6
 ```
 
 ```text
-█████░░░░░ 5 Completed
+██████░░░░ 6 Completed
 ```
 
 ---
@@ -67,6 +79,14 @@ Workshops focus on learning programming concepts through guided exercises.
 
 These projects serve as the foundation for more challenging labs and certification projects completed later in the learning journey.
 
-The Caesar Cipher workshop introduced more advanced concepts such as string translation, encryption logic, function design, and input validation.
+Notable concepts introduced through workshops include:
+
+* Function Design
+* String Processing
+* Caesar Cipher Encryption and Decryption
+* Translation Tables with `str.maketrans()`
+* Multi-Line Text Parsing
+* List Processing and Iteration
+* Extracting Structured Information from Text
 
 Additional workshops will be added as progress continues through the freeCodeCamp Python Certification.
