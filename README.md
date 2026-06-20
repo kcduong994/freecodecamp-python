@@ -36,11 +36,12 @@ freecodecamp-python
 
 ### Labs
 
-| # | Project                 | Status |
-| - | ----------------------- | ------ |
-| 1 | Travel Weather Planner  | ✅      |
-| 2 | Apply Discount Function | ✅      |
-| 3 | Build an RPG Character  | ✅      |
+| # | Project                          | Status |
+| - | -------------------------------- | ------ |
+| 1 | Travel Weather Planner           | ✅      |
+| 2 | Apply Discount Function          | ✅      |
+| 3 | Build an RPG Character           | ✅      |
+| 4 | Build a Number Pattern Generator | ✅      |
 
 ### Certification Projects
 
@@ -55,12 +56,12 @@ freecodecamp-python
 | Category               | Completed |
 | ---------------------- | --------- |
 | Workshops              | 6         |
-| Labs                   | 3         |
+| Labs                   | 4         |
 | Certification Projects | 0         |
 
 ```text
 Workshops             ██████░░░░ 6
-Labs                  ███░░░░░░░ 3
+Labs                  ████░░░░░░ 4
 Certification         ░░░░░░░░░░ 0
 ```
 
@@ -118,6 +119,15 @@ Certification         ░░░░░░░░░░ 0
 * Data Aggregation
 * Structured Text Extraction
 
+### Iteration and Pattern Generation
+
+* `for` Loops
+* `range()`
+* Number Sequences
+* Pattern Generation
+* String Concatenation
+* Loop Control Logic
+
 ### Problem Solving
 
 * Requirement Analysis
@@ -163,6 +173,3 @@ Future areas of development include:
 * GitHub
 * Open Source Learning Materials
 * Scientific Computing Communities
-
-```
-```
