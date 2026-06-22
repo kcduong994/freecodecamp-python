@@ -2,7 +2,7 @@
 
 This directory contains workshop projects completed while studying the freeCodeCamp Python Certification.
 
-Workshops provide guided, step-by-step exercises designed to introduce core Python concepts and programming fundamentals.
+Workshops provide guided, step-by-step exercises designed to introduce core Python concepts, programming fundamentals, and practical problem-solving techniques.
 
 ---
 
@@ -16,6 +16,7 @@ Workshops provide guided, step-by-step exercises designed to introduce core Pyth
 | 4 | Movie Ticket Booking Calculator | ✅ Completed |
 | 5 | Build a Caesar Cipher           | ✅ Completed |
 | 6 | Build a PIN Extractor           | ✅ Completed |
+| 7 | Build a Medical Data Validator  | ✅ Completed |
 
 ---
 
@@ -33,8 +34,9 @@ Workshops provide guided, step-by-step exercises designed to introduce core Pyth
 * Conditional Statements
 * Boolean Logic
 * Comparison Operators
-* Basic Problem Solving
 * Input Validation
+* Error Detection
+* Data Validation
 
 ### Functions
 
@@ -50,25 +52,40 @@ Workshops provide guided, step-by-step exercises designed to introduce core Pyth
 * Translation Tables
 * Text Encryption and Decryption
 * Caesar Cipher Implementation
+* Pattern Matching
+* Regular Expressions
 
 ### Working with Collections
 
 * Lists
+* Dictionaries
 * List Appending
 * Nested Loops
 * Iteration with `enumerate()`
+* Dictionary Iteration
+* List Comprehensions
 * Processing Multi-Line Text
+
+### Data Validation
+
+* Type Checking with `isinstance()`
+* Regular Expressions with `re`
+* Dictionary Key Validation
+* Sequence Validation
+* Data Constraints
+* Invalid Record Detection
+* Validation Messages
 
 ---
 
 ## Progress
 
 ```text
-Workshops Completed: 6
+Workshops Completed: 7
 ```
 
 ```text
-██████░░░░ 6 Completed
+███████░░░ 7 Completed
 ```
 
 ---
@@ -77,7 +94,7 @@ Workshops Completed: 6
 
 Workshops focus on learning programming concepts through guided exercises.
 
-These projects serve as the foundation for more challenging labs and certification projects completed later in the learning journey.
+These projects serve as the foundation for more advanced labs and certification projects completed later in the learning journey.
 
 Notable concepts introduced through workshops include:
 
@@ -88,5 +105,10 @@ Notable concepts introduced through workshops include:
 * Multi-Line Text Parsing
 * List Processing and Iteration
 * Extracting Structured Information from Text
+* Dictionary-Based Data Modeling
+* Regular Expressions
+* Medical Data Validation
+* Data Integrity Checks
+* Error Reporting and Validation Messages
 
 Additional workshops will be added as progress continues through the freeCodeCamp Python Certification.
