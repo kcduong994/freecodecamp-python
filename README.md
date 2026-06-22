@@ -1,6 +1,6 @@
 # freecodecamp-python
 
-> A Python learning portfolio focused on scientific computing, numerical modeling, and engineering applications through the freeCodeCamp Python Certification.
+> A Python learning portfolio focused on scientific computing, numerical modeling, data validation, and engineering applications through the freeCodeCamp Python Certification.
 
 This repository documents my progress in learning Python through workshops, labs, and certification projects.
 
@@ -33,6 +33,7 @@ freecodecamp-python
 | 4 | Movie Ticket Booking Calculator | ✅      |
 | 5 | Build a Caesar Cipher           | ✅      |
 | 6 | Build a PIN Extractor           | ✅      |
+| 7 | Build a Medical Data Validator  | ✅      |
 
 ### Labs
 
@@ -55,12 +56,12 @@ freecodecamp-python
 
 | Category               | Completed |
 | ---------------------- | --------- |
-| Workshops              | 6         |
+| Workshops              | 7         |
 | Labs                   | 4         |
 | Certification Projects | 0         |
 
 ```text
-Workshops             ██████░░░░ 6
+Workshops             ███████░░░ 7
 Labs                  ████░░░░░░ 4
 Certification         ░░░░░░░░░░ 0
 ```
@@ -85,6 +86,7 @@ Certification         ░░░░░░░░░░ 0
 * Decision-Making Logic
 * Input Validation
 * Business Rule Validation
+* Data Integrity Checks
 
 ### Functions
 
@@ -106,16 +108,24 @@ Certification         ░░░░░░░░░░ 0
 ### Data Validation
 
 * Type Checking with `isinstance()`
-* Numeric Range Validation
-* String Validation
-* User Input Verification
+* Dictionary Validation
+* Sequence Validation
+* Data Constraints
+* Invalid Record Detection
+* Validation Messages
+* Regular Expressions (`re`)
+* Pattern Matching with `re.search()`
+* Full String Validation with `re.fullmatch()`
 
 ### Working with Collections
 
 * Lists
+* Dictionaries
 * List Iteration
+* Dictionary Iteration
 * Nested Loops
 * `enumerate()`
+* List Comprehensions
 * Data Aggregation
 * Structured Text Extraction
 
@@ -135,6 +145,7 @@ Certification         ░░░░░░░░░░ 0
 * Business Logic Implementation
 * Debugging and Testing
 * Structured Program Design
+* Data Validation Workflows
 
 ---
 
@@ -152,6 +163,18 @@ Future areas of development include:
 * Coastal and Environmental Processes
 * Engineering Applications of Python
 * Research-Oriented Programming
+
+---
+
+## Current Focus
+
+Current learning objectives include:
+
+* Strengthening Python fundamentals
+* Improving software problem-solving skills
+* Developing reliable data validation workflows
+* Building engineering-oriented programming habits
+* Preparing for scientific computing applications
 
 ---
 
@@ -173,3 +196,15 @@ Future areas of development include:
 * GitHub
 * Open Source Learning Materials
 * Scientific Computing Communities
+
+---
+
+## Long-Term Direction
+
+The long-term goal of this repository is to bridge Python programming with coastal and environmental engineering applications, supporting future work in:
+
+* Numerical modeling
+* Scientific computing
+* Data-driven engineering
+* Environmental analysis
+* Research software development
