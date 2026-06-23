@@ -2,26 +2,50 @@
 
 This directory contains the official certification projects completed as part of the freeCodeCamp Python Certification.
 
-Certification projects represent the final stage of the learning path and demonstrate the practical application of Python programming concepts learned through workshops and labs.
+These projects combine Python fundamentals, problem solving, and practical programming skills developed through workshops and labs.
+
+---
+
+## Completed Projects
+
+| Project | Status |
+|---------|---------|
+| Build a User Configuration Manager | ✅ Completed |
+
+---
+
+### Build a User Configuration Manager
+
+Implemented a simple configuration management system using Python dictionaries.
+
+Features:
+
+- Add settings
+- Update settings
+- Delete settings
+- Display user settings
+- Input normalization
+- Data validation
+
+Technologies and concepts:
+
+- Python dictionaries
+- Functions
+- String manipulation
+- Conditional logic
+- Data validation
+- Formatted output
 
 ---
 
 ## Progress
 
-| Category               | Completed |
-| ---------------------- | --------- |
-| Certification Projects | 0         |
+| Category | Completed |
+|----------|-----------|
+| Certification Projects | 1 |
 
 ---
 
-## Status
+## Long-Term Goal
 
-No certification projects have been completed yet.
-
-Projects will be added to this directory as they are completed.
-
----
-
-## Objective
-
-Apply Python fundamentals, problem-solving techniques, and project development skills to successfully complete the freeCodeCamp Python Certification.
+Develop practical Python programming skills for scientific computing, data analysis, automation, and engineering applications.
