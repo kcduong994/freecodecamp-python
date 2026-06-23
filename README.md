@@ -2,7 +2,7 @@
 
 > A Python learning portfolio focused on scientific computing, numerical modeling, data validation, and engineering applications through the freeCodeCamp Python Certification.
 
-This repository documents my progress in learning Python through workshops, labs, and certification projects.
+This repository documents my progress in learning Python through workshops, labs, and certification projects completed as part of the freeCodeCamp Python Certification.
 
 While the certification focuses on Python fundamentals, my broader objective is to apply programming and computational methods to coastal and environmental engineering challenges, including hydrodynamic modeling, salinity intrusion analysis, environmental data analysis, and data-driven decision making.
 
@@ -35,6 +35,8 @@ freecodecamp-python
 | 6 | Build a PIN Extractor           | ✅      |
 | 7 | Build a Medical Data Validator  | ✅      |
 
+---
+
 ### Labs
 
 | # | Project                          | Status |
@@ -44,11 +46,13 @@ freecodecamp-python
 | 3 | Build an RPG Character           | ✅      |
 | 4 | Build a Number Pattern Generator | ✅      |
 
+---
+
 ### Certification Projects
 
-| # | Project     | Status |
-| - | ----------- | ------ |
-| - | Coming Soon | ⏳      |
+| # | Project                            | Status |
+| - | ---------------------------------- | ------ |
+| 1 | Build a User Configuration Manager | ✅      |
 
 ---
 
@@ -58,12 +62,12 @@ freecodecamp-python
 | ---------------------- | --------- |
 | Workshops              | 7         |
 | Labs                   | 4         |
-| Certification Projects | 0         |
+| Certification Projects | 1         |
 
 ```text
 Workshops             ███████░░░ 7
 Labs                  ████░░░░░░ 4
-Certification         ░░░░░░░░░░ 0
+Certification         █░░░░░░░░░ 1
 ```
 
 ---
@@ -128,6 +132,16 @@ Certification         ░░░░░░░░░░ 0
 * List Comprehensions
 * Data Aggregation
 * Structured Text Extraction
+
+### Configuration Management
+
+* Dictionary-Based Configuration
+* Key-Value Data Storage
+* CRUD Operations
+* Input Normalization
+* User Settings Management
+* Configuration Validation
+* Formatted Data Presentation
 
 ### Iteration and Pattern Generation
 
@@ -203,8 +217,18 @@ Current learning objectives include:
 
 The long-term goal of this repository is to bridge Python programming with coastal and environmental engineering applications, supporting future work in:
 
-* Numerical modeling
-* Scientific computing
-* Data-driven engineering
-* Environmental analysis
-* Research software development
+* Numerical Modeling
+* Scientific Computing
+* Data-Driven Engineering
+* Environmental Analysis
+* Research Software Development
+
+---
+
+## Author
+
+**Duong Kim Cuong**
+
+Coastal Engineering • Scientific Computing • Python • AI
+
+GitHub: https://github.com/kcduong994
