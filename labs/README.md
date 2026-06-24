@@ -14,6 +14,7 @@ Unlike workshops, labs require applying concepts independently to solve problems
 | 2 | Apply Discount Function          | ✅ Completed |
 | 3 | Build an RPG Character           | ✅ Completed |
 | 4 | Build a Number Pattern Generator | ✅ Completed |
+| 5 | Debug an ISBN Validator          | ✅ Completed |
 
 ---
 
@@ -32,6 +33,8 @@ Unlike workshops, labs require applying concepts independently to solve problems
 * Integer Validation
 * Positive Number Validation
 * User Input Verification
+* Length Validation
+* Character Validation
 
 ### Programming Logic
 
@@ -39,6 +42,7 @@ Unlike workshops, labs require applying concepts independently to solve problems
 * Boolean Logic (`and`, `or`, `not`)
 * Comparison Operators
 * Decision-Making Logic
+* Early Return Patterns
 
 ### Data Types and Strings
 
@@ -47,12 +51,32 @@ Unlike workshops, labs require applying concepts independently to solve problems
 * String Formatting
 * String Concatenation
 * String Operations
+* String Slicing
+* String Splitting with `split()`
 
 ### Loops
 
 * `for` Loops
 * Iteration with `range()`
 * Sequence Generation
+* Iteration with `enumerate()`
+
+### Error Handling
+
+* `try`
+* `except`
+* `ValueError`
+* Input Error Handling
+* Defensive Programming
+
+### Debugging
+
+* Debugging Existing Code
+* Fixing Indentation Errors
+* Fixing Index Errors
+* Fixing Off-by-One Errors
+* Tracing Program Flow
+* Exception Debugging
 
 ### Problem Solving
 
@@ -67,11 +91,11 @@ Unlike workshops, labs require applying concepts independently to solve problems
 ## Progress
 
 ```text
-Labs Completed: 4
+Labs Completed: 5
 ```
 
 ```text
-████░░░░░░ 4 Completed
+█████░░░░░ 5 Completed
 ```
 
 ---
@@ -90,6 +114,10 @@ Key areas practiced include:
 * Using loops to generate patterns and sequences
 * Developing problem-solving skills through independent coding challenges
 
-The Build an RPG Character lab introduced more advanced validation logic and business rules, while the Build a Number Pattern Generator lab reinforced iteration, loops, and string construction techniques.
+The Build an RPG Character lab introduced more advanced validation logic and business rules.
+
+The Build a Number Pattern Generator lab reinforced iteration, loops, and string construction techniques.
+
+The Debug an ISBN Validator lab introduced practical debugging skills, exception handling, off-by-one errors, input validation, and defensive programming techniques.
 
 Additional labs will be added as progress continues through the freeCodeCamp Python Certification.
