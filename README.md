@@ -45,6 +45,7 @@ freecodecamp-python
 | 2 | Apply Discount Function          | ✅      |
 | 3 | Build an RPG Character           | ✅      |
 | 4 | Build a Number Pattern Generator | ✅      |
+| 5 | Debug an ISBN Validator          | ✅      |
 
 ---
 
@@ -61,12 +62,12 @@ freecodecamp-python
 | Category               | Completed |
 | ---------------------- | --------- |
 | Workshops              | 7         |
-| Labs                   | 4         |
+| Labs                   | 5         |
 | Certification Projects | 1         |
 
 ```text
 Workshops             ███████░░░ 7
-Labs                  ████░░░░░░ 4
+Labs                  █████░░░░░ 5
 Certification         █░░░░░░░░░ 1
 ```
 
@@ -120,6 +121,18 @@ Certification         █░░░░░░░░░ 1
 * Regular Expressions (`re`)
 * Pattern Matching with `re.search()`
 * Full String Validation with `re.fullmatch()`
+
+### Error Handling and Debugging
+
+* Exception Handling (`try`, `except`)
+* `ValueError`
+* Defensive Programming
+* Early Return Patterns
+* Input Error Handling
+* Off-by-One Errors
+* Index Error Debugging
+* Debugging Existing Code
+* Program Flow Tracing
 
 ### Working with Collections
 
