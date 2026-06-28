@@ -4,7 +4,8 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python\&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp\&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-16-success)
+![Projects](https://img.shields.io/badge/Projects_Completed-17-success)
+![Certification Projects](https://img.shields.io/badge/Certification_Projects-2-blue)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 This repository documents my progress in learning Python through workshops, labs, and certification projects completed as part of the **freeCodeCamp Python Certification**.
@@ -50,14 +51,22 @@ freecodecamp-python/
 │   └── README.md
 │
 ├── certification-projects/
-│   └── build-a-user-configuration-manager/
+│   ├── build-a-user-configuration-manager/
+│   │   ├── main.py
+│   │   └── README.md
+│   │
+│   └── build-a-budget-app/
+│       ├── main.py
+│       └── README.md
 │
 └── README.md
 ```
 
 Workshop projects are organized in individual directories because they are developed through multiple guided steps and may include their own documentation.
 
-Lab projects are stored as individual Python files, while the shared `labs/README.md` documents overall lab progress and concepts practiced.
+Lab projects are stored as individual Python files, while the shared `labs/README.md` documents overall lab progress and the concepts practiced.
+
+Certification projects are organized in separate directories. Each project contains its own Python implementation and dedicated README documentation.
 
 ---
 
@@ -94,9 +103,10 @@ Lab projects are stored as individual Python files, while the shared `labs/READM
 
 ### Certification Projects
 
-|  # | Project                            | Primary Concepts                                        | Status |
-| -: | ---------------------------------- | ------------------------------------------------------- | :----: |
-|  1 | Build a User Configuration Manager | CRUD operations, dictionaries, configuration management |    ✅   |
+|  # | Project                            | Primary Concepts                                                             | Status |
+| -: | ---------------------------------- | ---------------------------------------------------------------------------- | :----: |
+|  1 | Build a User Configuration Manager | CRUD operations, dictionaries, configuration management                      |    ✅   |
+|  2 | Build a Budget App                 | Classes, ledgers, transfers, validation, formatted output, text-based charts |    ✅   |
 
 ---
 
@@ -106,14 +116,14 @@ Lab projects are stored as individual Python files, while the shared `labs/READM
 | ---------------------- | --------: |
 | Workshops              |         9 |
 | Labs                   |         6 |
-| Certification Projects |         1 |
-| **Total Projects**     |    **16** |
+| Certification Projects |         2 |
+| **Total Projects**     |    **17** |
 
 ```text
 Workshops             █████████░  9 completed
 Labs                  ██████░░░░  6 completed
-Certification         █░░░░░░░░░  1 completed
-Overall               ████████████████  16 projects completed
+Certification         ██░░░░░░░░  2 completed
+Overall               █████████████████  17 projects completed
 ```
 
 ---
@@ -153,6 +163,8 @@ Overall               ████████████████  16 proje
 * Parameters and arguments
 * Positional arguments
 * Keyword arguments
+* Optional parameters
+* Default parameter values
 * Return values
 * Function reusability
 * Separation of responsibilities
@@ -177,6 +189,8 @@ Overall               ████████████████  16 proje
 * Interactions between multiple objects
 * The `__str__()` special method
 * Readable object representations
+* Modeling transaction-based systems
+* Transferring data between object instances
 
 ### Text Processing
 
@@ -190,6 +204,9 @@ Overall               ████████████████  16 proje
 * Multi-line text processing
 * Structured text extraction
 * Dynamic output with f-strings
+* Fixed-width string formatting
+* Left and right text alignment
+* Vertical text rendering
 
 ### Regular Expressions
 
@@ -214,6 +231,9 @@ Overall               ████████████████  16 proje
 * Error reporting
 * Index boundary checking
 * Data integrity workflows
+* Balance validation
+* Insufficient-fund detection
+* Preventing invalid transactions
 
 ### Error and Exception Handling
 
@@ -239,12 +259,15 @@ Overall               ████████████████  16 proje
 * Off-by-one error detection
 * Testing expected output
 * Testing invalid inputs and edge cases
+* Diagnosing exact-spacing test failures
+* Inspecting formatted multi-line output
 
 ### Working with Collections
 
 * Lists
 * Dictionaries
 * Nested data structures
+* Lists of dictionaries
 * List iteration
 * Dictionary iteration
 * Nested loops
@@ -256,6 +279,19 @@ Overall               ████████████████  16 proje
 * One-based and zero-based indexing
 * Data aggregation
 * Record-based data modeling
+* Filtering values by conditions
+* Summing selected values
+
+### Numerical and Percentage Calculations
+
+* Summing transaction values
+* Calculating category balances
+* Calculating proportional spending
+* Converting ratios to percentages
+* Rounding values down
+* Grouping percentages into intervals of ten
+* Comparing numeric thresholds
+* Building percentage-based visualizations
 
 ### Date and Time Handling
 
@@ -286,6 +322,24 @@ Overall               ████████████████  16 proje
 * Loop control logic
 * Iterative data processing
 * Numbered output with `enumerate()`
+* Descending ranges
+* Nested chart-generation loops
+* Dynamic row and column generation
+
+### Formatting and Text-Based Visualization
+
+* Fixed-width text columns
+* Left-aligned descriptions
+* Right-aligned numeric values
+* Two-decimal-place formatting
+* Centered headings
+* Custom fill characters
+* Horizontal chart axes
+* Vertical percentage axes
+* Character-based bar charts
+* Vertical category labels
+* Exact whitespace control
+* Avoiding trailing newline characters
 
 ### Problem Solving
 
@@ -299,6 +353,8 @@ Overall               ████████████████  16 proje
 * Data validation workflows
 * Incremental development
 * Refactoring for readability
+* Mapping automated tests to methods
+* Building a solution test by test
 
 ---
 
@@ -315,11 +371,17 @@ Implemented text encryption and decryption using:
 * Reusable functions
 * String transformation logic
 
-Example concepts:
+Example:
 
 ```python
-translation_table = str.maketrans(alphabet, shifted_alphabet)
-encrypted_text = text.translate(translation_table)
+translation_table = str.maketrans(
+    alphabet,
+    shifted_alphabet,
+)
+
+encrypted_text = text.translate(
+    translation_table
+)
 ```
 
 ---
@@ -372,8 +434,15 @@ Concepts practiced included:
 Example:
 
 ```python
-instrument_1 = MusicalInstrument("Oboe", "woodwind")
-instrument_2 = MusicalInstrument("Trumpet", "brass")
+instrument_1 = MusicalInstrument(
+    "Oboe",
+    "woodwind",
+)
+
+instrument_2 = MusicalInstrument(
+    "Trumpet",
+    "brass",
+)
 
 instrument_1.play()
 print(instrument_1.get_fact())
@@ -449,8 +518,17 @@ Created a validated `Planet` class with:
 Example:
 
 ```python
-planet_1 = Planet("Earth", "terrestrial", "Sun")
-planet_2 = Planet("Jupiter", "gas giant", "Sun")
+planet_1 = Planet(
+    "Earth",
+    "terrestrial",
+    "Sun",
+)
+
+planet_2 = Planet(
+    "Jupiter",
+    "gas giant",
+    "Sun",
+)
 
 print(planet_1)
 print(planet_1.orbit())
@@ -489,6 +567,133 @@ Developed a dictionary-based configuration system supporting:
 * Formatted output
 * CRUD-style operations
 
+The project strengthened skills in dictionary management, reusable functions, validation, and user-facing configuration workflows.
+
+---
+
+### Build a Budget App
+
+Developed a class-based budget management system that records transactions across different spending categories and generates a text-based chart showing relative spending percentages.
+
+The project includes:
+
+* A reusable `Category` class
+* Category-specific transaction ledgers
+* Deposits with optional descriptions
+* Withdrawals stored as negative values
+* Current balance calculations
+* Fund availability checks
+* Transfers between category objects
+* Automatically generated transfer descriptions
+* Custom category string representations
+* Fixed-width transaction formatting
+* Spending calculations based on withdrawals only
+* Percentage calculations rounded down to the nearest ten
+* Text-based vertical bar-chart generation
+* Exact whitespace and newline control
+
+Example:
+
+```python
+food = Category("Food")
+clothing = Category("Clothing")
+
+food.deposit(
+    1000,
+    "initial deposit",
+)
+
+food.withdraw(
+    10.15,
+    "groceries",
+)
+
+food.withdraw(
+    15.89,
+    "restaurant and more food for dessert",
+)
+
+food.transfer(
+    50,
+    clothing,
+)
+
+print(food)
+```
+
+Formatted category output:
+
+```text
+*************Food*************
+initial deposit        1000.00
+groceries               -10.15
+restaurant and more foo -15.89
+Transfer to Clothing    -50.00
+Total: 923.96
+```
+
+The `create_spend_chart()` function:
+
+1. Extracts withdrawals from every category.
+2. Excludes deposits from spending calculations.
+3. Calculates each category’s share of total spending.
+4. Rounds percentages down to the nearest multiple of ten.
+5. Generates percentage labels from 100 to 0.
+6. Draws category bars using `o` characters.
+7. Creates the horizontal chart axis.
+8. Writes category names vertically.
+9. Preserves the exact spacing required by the specification.
+10. Avoids a trailing newline at the end of the chart.
+
+Example:
+
+```python
+chart = create_spend_chart(
+    [
+        food,
+        clothing,
+        auto,
+    ]
+)
+
+print(chart)
+```
+
+Example chart structure:
+
+```text
+Percentage spent by category
+100|          
+ 90|          
+ 80|          
+ 70|          
+ 60| o        
+ 50| o        
+ 40| o        
+ 30| o        
+ 20| o  o     
+ 10| o  o  o  
+  0| o  o  o  
+    ----------
+     F  C  A  
+     o  l  u  
+     o  o  t  
+     d  t  o  
+        h     
+        i     
+        n     
+        g     
+```
+
+Test result:
+
+```text
+Status: Completed
+Automated tests: 24/24 passed
+```
+
+This project combines object-oriented programming, validation, data aggregation, formatted output, percentage calculations, nested loops, and exact whitespace control.
+
 ---
 
 ## Object-Oriented Learning Progression
@@ -509,9 +714,19 @@ Email, User, and Inbox
 Multiple classes with shared responsibilities
         ↓
 Objects interacting with other objects
+        ↓
+Category
+        ↓
+Transaction ledgers and balance calculations
+        ↓
+Transfers between object instances
+        ↓
+Formatted reporting and text-based visualization
 ```
 
 This progression develops the foundation needed for larger class-based applications and engineering software systems.
+
+The `Category` class introduced an important concept: an object can maintain its own independent state while interacting with another object through controlled methods such as fund transfers.
 
 ---
 
@@ -531,22 +746,46 @@ Each project follows an incremental learning process:
 10. Add comments and project documentation.
 11. Commit the completed project to GitHub.
 
+For certification projects, the automated tests are also used as an implementation roadmap:
+
+```text
+Initialize data
+        ↓
+Implement basic methods
+        ↓
+Calculate derived values
+        ↓
+Add validation
+        ↓
+Handle failed operations
+        ↓
+Format object output
+        ↓
+Generate complete reports or charts
+        ↓
+Verify exact spacing and edge cases
+```
+
 This workflow strengthens Python knowledge, debugging ability, technical documentation, and practical software-development habits.
 
 ---
 
 ## Common Errors Encountered
 
-| Error            | Typical Cause                                                       |
-| ---------------- | ------------------------------------------------------------------- |
-| `SyntaxError`    | Invalid syntax, missing parentheses, or incorrect keyword placement |
-| `NameError`      | Using a variable or function that has not been defined              |
-| `TypeError`      | Passing the wrong number or type of arguments                       |
-| `AttributeError` | Accessing an attribute or method that an object does not have       |
-| `ValueError`     | Supplying a value with the correct type but an invalid value        |
-| `IndexError`     | Attempting to access an invalid list position                       |
+| Error               | Typical Cause                                                                     |
+| ------------------- | --------------------------------------------------------------------------------- |
+| `SyntaxError`       | Invalid syntax, incomplete assignment, or requirement text written as Python code |
+| `IndentationError`  | A method or statement does not match the expected indentation level               |
+| `NameError`         | Using a variable or function that has not been defined                            |
+| `TypeError`         | Passing the wrong number or type of arguments                                     |
+| `AttributeError`    | Accessing an attribute or method that an object does not have                     |
+| `ValueError`        | Supplying a value with the correct type but an invalid value                      |
+| `IndexError`        | Attempting to access an invalid list position                                     |
+| Formatting mismatch | Incorrect spacing, alignment, truncation, or newline placement                    |
 
 Understanding these errors helps improve debugging speed and code reliability.
+
+The Budget App project particularly reinforced the importance of exact output formatting because a visually small difference in spacing or newline placement can cause an automated test to fail.
 
 ---
 
@@ -633,6 +872,22 @@ HydrodynamicModel produces results
 Validation tools evaluate performance
 ```
 
+The transaction-ledger structure practiced in the Budget App could later be adapted to engineering data systems:
+
+```text
+MonitoringStation
+        ↓
+stores measurement records
+        ↓
+Each record contains a value and description
+        ↓
+Validation methods check data availability
+        ↓
+Records are transferred between datasets
+        ↓
+Reporting functions summarize observations
+```
+
 This structure could support maintainable systems for environmental monitoring, numerical model configuration, and research automation.
 
 ---
@@ -650,6 +905,8 @@ Current learning priorities include:
 * Working safely with list indices
 * Formatting dates and times
 * Improving debugging and program-tracing ability
+* Controlling exact string formatting and alignment
+* Building text-based data visualizations
 * Preparing for scientific computing applications
 * Developing engineering-oriented programming habits
 
@@ -701,7 +958,9 @@ Data Validation and Processing
         ↓
 Object-Oriented Programming
         ↓
-Object Composition
+Object Composition and Interaction
+        ↓
+Formatted Reporting and Visualization
         ↓
 NumPy and pandas
         ↓
@@ -737,8 +996,17 @@ Current completed work:
 ```text
 Workshops:              9
 Labs:                   6
-Certification Projects: 1
-Total Projects:         16
+Certification Projects: 2
+Total Projects:         17
+```
+
+All currently documented projects have been completed.
+
+The latest completed certification project is:
+
+```text
+Build a Budget App
+24/24 automated tests passed
 ```
 
 Additional workshops, labs, certification projects, and engineering applications will be added as progress continues.
