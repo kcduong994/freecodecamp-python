@@ -2,9 +2,9 @@
 
 > A Python learning portfolio focused on programming fundamentals, object-oriented programming, data validation, scientific computing, numerical modeling, and engineering applications through the freeCodeCamp Python Certification.
 
-![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python\&logoColor=white)
-![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp\&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-17-success)
+![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
+![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
+![Projects](https://img.shields.io/badge/Projects_Completed-18-success)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-2-blue)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
@@ -39,6 +39,7 @@ freecodecamp-python/
 │   ├── build-a-medical-data-validator/
 │   ├── build-a-musical-instrument-inventory/
 │   ├── build-an-email-simulator/
+│   ├── build-a-salary-tracker/
 │   └── README.md
 │
 ├── labs/
@@ -74,17 +75,18 @@ Certification projects are organized in separate directories. Each project conta
 
 ### Workshops
 
-|  # | Project                              | Primary Concepts                                  | Status |
-| -: | ------------------------------------ | ------------------------------------------------- | :----: |
-|  1 | Report Card Printer                  | Variables, arithmetic, formatted output           |    ✅   |
-|  2 | Employee Profile Generator           | Functions, parameters, strings                    |    ✅   |
-|  3 | Bill Splitter                        | User input, calculations, validation              |    ✅   |
-|  4 | Movie Ticket Booking Calculator      | Conditional logic, pricing rules                  |    ✅   |
-|  5 | Build a Caesar Cipher                | Translation tables, encryption, string processing |    ✅   |
-|  6 | Build a PIN Extractor                | Regular expressions, text parsing                 |    ✅   |
-|  7 | Build a Medical Data Validator       | Dictionaries, validation, error reporting         |    ✅   |
-|  8 | Build a Musical Instrument Inventory | Classes, objects, attributes, methods             |    ✅   |
-|  9 | Build an Email Simulator             | Object composition, inbox management, timestamps  |    ✅   |
+|  # | Project                              | Primary Concepts                                             | Status |
+| -: | ------------------------------------ | ------------------------------------------------------------ | :----: |
+|  1 | Report Card Printer                  | Variables, arithmetic, formatted output                      |   ✅   |
+|  2 | Employee Profile Generator           | Functions, parameters, strings                               |   ✅   |
+|  3 | Bill Splitter                        | User input, calculations, validation                         |   ✅   |
+|  4 | Movie Ticket Booking Calculator      | Conditional logic, pricing rules                             |   ✅   |
+|  5 | Build a Caesar Cipher                | Translation tables, encryption, string processing            |   ✅   |
+|  6 | Build a PIN Extractor                | Regular expressions, text parsing                            |   ✅   |
+|  7 | Build a Medical Data Validator       | Dictionaries, validation, error reporting                    |   ✅   |
+|  8 | Build a Musical Instrument Inventory | Classes, objects, attributes, methods                        |   ✅   |
+|  9 | Build an Email Simulator             | Object composition, inbox management, timestamps             |   ✅   |
+| 10 | Build a Salary Tracker               | Properties, setters, encapsulation, validation, class state  |   ✅   |
 
 ---
 
@@ -92,12 +94,12 @@ Certification projects are organized in separate directories. Each project conta
 
 |  # | Project                          | Primary Concepts                                    | Status |
 | -: | -------------------------------- | --------------------------------------------------- | :----: |
-|  1 | Travel Weather Planner           | Conditions, user input, decision logic              |    ✅   |
-|  2 | Apply Discount Function          | Functions, calculations, business rules             |    ✅   |
-|  3 | Build an RPG Character           | Dictionaries, validation, structured data           |    ✅   |
-|  4 | Build a Number Pattern Generator | Loops, ranges, pattern generation                   |    ✅   |
-|  5 | Debug an ISBN Validator          | Debugging, validation algorithms, control flow      |    ✅   |
-|  6 | Build a Planet Class             | Classes, exceptions, methods, object representation |    ✅   |
+|  1 | Travel Weather Planner           | Conditions, user input, decision logic              |   ✅   |
+|  2 | Apply Discount Function          | Functions, calculations, business rules             |   ✅   |
+|  3 | Build an RPG Character           | Dictionaries, validation, structured data           |   ✅   |
+|  4 | Build a Number Pattern Generator | Loops, ranges, pattern generation                   |   ✅   |
+|  5 | Debug an ISBN Validator          | Debugging, validation algorithms, control flow      |   ✅   |
+|  6 | Build a Planet Class             | Classes, exceptions, methods, object representation |   ✅   |
 
 ---
 
@@ -105,8 +107,8 @@ Certification projects are organized in separate directories. Each project conta
 
 |  # | Project                            | Primary Concepts                                                             | Status |
 | -: | ---------------------------------- | ---------------------------------------------------------------------------- | :----: |
-|  1 | Build a User Configuration Manager | CRUD operations, dictionaries, configuration management                      |    ✅   |
-|  2 | Build a Budget App                 | Classes, ledgers, transfers, validation, formatted output, text-based charts |    ✅   |
+|  1 | Build a User Configuration Manager | CRUD operations, dictionaries, configuration management                      |   ✅   |
+|  2 | Build a Budget App                 | Classes, ledgers, transfers, validation, formatted output, text-based charts |   ✅   |
 
 ---
 
@@ -114,16 +116,16 @@ Certification projects are organized in separate directories. Each project conta
 
 | Category               | Completed |
 | ---------------------- | --------: |
-| Workshops              |         9 |
+| Workshops              |        10 |
 | Labs                   |         6 |
 | Certification Projects |         2 |
-| **Total Projects**     |    **17** |
+| **Total Projects**     |    **18** |
 
 ```text
-Workshops             █████████░  9 completed
-Labs                  ██████░░░░  6 completed
-Certification         ██░░░░░░░░  2 completed
-Overall               █████████████████  17 projects completed
+Workshops             ██████████  10 completed
+Labs                  ██████░░░░   6 completed
+Certification         ██░░░░░░░░   2 completed
+Overall               ██████████████████  18 projects completed
 ```
 
 ---
@@ -132,229 +134,268 @@ Overall               █████████████████  17 pr
 
 ### Python Fundamentals
 
-* Variables and data types
-* Assignment statements
-* User input and output
-* Arithmetic operations
-* String formatting
-* String manipulation
-* Python syntax and indentation
-* Naming conventions
-* Code organization
-* Readable program structure
+- Variables and data types
+- Assignment statements
+- User input and output
+- Arithmetic operations
+- String formatting
+- String manipulation
+- Python syntax and indentation
+- Naming conventions
+- Code organization
+- Readable program structure
+- Type annotations
+- Docstrings
+- Code comments
 
 ### Programming Logic
 
-* Conditional statements
-* Boolean logic
-* Comparison operators
-* Decision-making logic
-* Nested conditions
-* Branching program behavior
-* Input validation
-* Business rule validation
-* Data integrity checks
-* Guard clauses
-* Early return patterns
+- Conditional statements
+- Boolean logic
+- Comparison operators
+- Membership operators
+- Decision-making logic
+- Nested conditions
+- Branching program behavior
+- Input validation
+- Business rule validation
+- Data integrity checks
+- Guard clauses
+- Early return patterns
+- State-dependent validation
 
 ### Functions
 
-* Function definitions
-* Parameters and arguments
-* Positional arguments
-* Keyword arguments
-* Optional parameters
-* Default parameter values
-* Return values
-* Function reusability
-* Separation of responsibilities
-* Returning values versus printing output
-* Defining and calling a `main()` function
-* Using the main execution guard
+- Function definitions
+- Parameters and arguments
+- Positional arguments
+- Keyword arguments
+- Optional parameters
+- Default parameter values
+- Return values
+- Function reusability
+- Separation of responsibilities
+- Returning values versus printing output
+- Defining and calling a `main()` function
+- Using the main execution guard
 
 ### Object-Oriented Programming
 
-* Class definitions
-* Objects and instances
-* The `__init__()` constructor
-* The `self` parameter
-* Instance attributes
-* Instance methods
-* Dot notation
-* Object-specific state
-* Method return values
-* Class-based data modeling
-* Object composition
-* Passing objects as arguments
-* Interactions between multiple objects
-* The `__str__()` special method
-* Readable object representations
-* Modeling transaction-based systems
-* Transferring data between object instances
+- Class definitions
+- Objects and instances
+- The `__init__()` constructor
+- The `self` parameter
+- Instance attributes
+- Class attributes
+- Instance methods
+- Dot notation
+- Object-specific state
+- Shared class-level state
+- Method return values
+- Class-based data modeling
+- Encapsulation
+- Internal attributes
+- Property getters
+- Property setters
+- Validation inside setters
+- Reusing setters during initialization
+- Object composition
+- Passing objects as arguments
+- Interactions between multiple objects
+- The `__str__()` special method
+- The `__repr__()` special method
+- Readable object representations
+- Developer-oriented object representations
+- Modeling transaction-based systems
+- Transferring data between object instances
+- Coordinating related attributes
+- Controlling valid state transitions
 
 ### Text Processing
 
-* String indexing
-* String slicing
-* String splitting
-* Character mapping
-* Translation tables
-* Encryption and decryption
-* Caesar cipher implementation
-* Multi-line text processing
-* Structured text extraction
-* Dynamic output with f-strings
-* Fixed-width string formatting
-* Left and right text alignment
-* Vertical text rendering
+- String indexing
+- String slicing
+- String splitting
+- Character mapping
+- Translation tables
+- Encryption and decryption
+- Caesar cipher implementation
+- Multi-line text processing
+- Structured text extraction
+- Dynamic output with f-strings
+- Fixed-width string formatting
+- Left and right text alignment
+- Vertical text rendering
+- Exact error-message formatting
 
 ### Regular Expressions
 
-* Pattern matching with the `re` module
-* Searching with `re.search()`
-* Full-string validation with `re.fullmatch()`
-* Extracting structured information
-* Validating formatted text
-* Detecting invalid records
-* Working with multi-line text
+- Pattern matching with the `re` module
+- Searching with `re.search()`
+- Full-string validation with `re.fullmatch()`
+- Extracting structured information
+- Validating formatted text
+- Detecting invalid records
+- Working with multi-line text
 
 ### Data Validation
 
-* Type checking with `isinstance()`
-* Dictionary validation
-* Required key validation
-* Sequence validation
-* Empty-string validation
-* Data constraints
-* Invalid record detection
-* Validation messages
-* Error reporting
-* Index boundary checking
-* Data integrity workflows
-* Balance validation
-* Insufficient-fund detection
-* Preventing invalid transactions
+- Type checking with `isinstance()`
+- Multiple-type validation with tuples
+- Attribute existence checks with `hasattr()`
+- Dictionary validation
+- Dictionary key validation
+- Required key validation
+- Sequence validation
+- Empty-string validation
+- Data constraints
+- Invalid record detection
+- Validation messages
+- Error reporting
+- Index boundary checking
+- Data integrity workflows
+- Balance validation
+- Insufficient-fund detection
+- Preventing invalid transactions
+- Preventing duplicate level assignments
+- Preventing downward level changes
+- Enforcing minimum salary values
+- Validating object state before assignment
 
 ### Error and Exception Handling
 
-* Exception handling with `try` and `except`
-* Raising exceptions with `raise`
-* `TypeError`
-* `ValueError`
-* Input error handling
-* Defensive programming
-* Invalid value detection
-* Clear validation messages
+- Exception handling with `try` and `except`
+- Raising exceptions with `raise`
+- `TypeError`
+- `ValueError`
+- `AttributeError`
+- `IndexError`
+- `KeyError`
+- Input error handling
+- Defensive programming
+- Invalid value detection
+- Clear validation messages
+- Validation before state mutation
 
 ### Debugging
 
-* Reading and understanding existing code
-* Program flow tracing
-* Syntax error diagnosis
-* Indentation error correction
-* Name error diagnosis
-* Attribute error diagnosis
-* Missing argument detection
-* Index error debugging
-* Off-by-one error detection
-* Testing expected output
-* Testing invalid inputs and edge cases
-* Diagnosing exact-spacing test failures
-* Inspecting formatted multi-line output
+- Reading and understanding existing code
+- Program flow tracing
+- Syntax error diagnosis
+- Indentation error correction
+- Name error diagnosis
+- Attribute error diagnosis
+- Missing argument detection
+- Index error debugging
+- Dictionary key error debugging
+- Off-by-one error detection
+- Testing expected output
+- Testing invalid inputs and edge cases
+- Diagnosing exact-spacing test failures
+- Inspecting formatted multi-line output
+- Reading Python tracebacks
+- Distinguishing syntax, runtime, and logic errors
 
 ### Working with Collections
 
-* Lists
-* Dictionaries
-* Nested data structures
-* Lists of dictionaries
-* List iteration
-* Dictionary iteration
-* Nested loops
-* `enumerate()`
-* List comprehensions
-* List appending
-* List indexing
-* Element deletion with `del`
-* One-based and zero-based indexing
-* Data aggregation
-* Record-based data modeling
-* Filtering values by conditions
-* Summing selected values
+- Lists
+- Dictionaries
+- Nested data structures
+- Lists of dictionaries
+- Class-level dictionaries
+- Dictionary membership testing
+- Dictionary key lookup
+- List iteration
+- Dictionary iteration
+- Nested loops
+- `enumerate()`
+- List comprehensions
+- List appending
+- List indexing
+- Element deletion with `del`
+- One-based and zero-based indexing
+- Data aggregation
+- Record-based data modeling
+- Filtering values by conditions
+- Summing selected values
 
 ### Numerical and Percentage Calculations
 
-* Summing transaction values
-* Calculating category balances
-* Calculating proportional spending
-* Converting ratios to percentages
-* Rounding values down
-* Grouping percentages into intervals of ten
-* Comparing numeric thresholds
-* Building percentage-based visualizations
+- Summing transaction values
+- Calculating category balances
+- Calculating proportional spending
+- Converting ratios to percentages
+- Rounding values down
+- Grouping percentages into intervals of ten
+- Comparing numeric thresholds
+- Building percentage-based visualizations
+- Comparing salary values
+- Enforcing numeric minimums
 
 ### Date and Time Handling
 
-* Importing the `datetime` module
-* Creating timestamps with `datetime.datetime.now()`
-* Storing timestamps as object attributes
-* Formatting dates and times with `strftime()`
-* Using date-time format codes
-* Displaying timestamps in object representations
+- Importing the `datetime` module
+- Creating timestamps with `datetime.datetime.now()`
+- Storing timestamps as object attributes
+- Formatting dates and times with `strftime()`
+- Using date-time format codes
+- Displaying timestamps in object representations
 
 ### Configuration Management
 
-* Dictionary-based configuration
-* Key-value data storage
-* CRUD operations
-* Input normalization
-* User settings management
-* Configuration validation
-* Formatted data presentation
+- Dictionary-based configuration
+- Key-value data storage
+- CRUD operations
+- Input normalization
+- User settings management
+- Configuration validation
+- Formatted data presentation
 
 ### Iteration and Pattern Generation
 
-* `for` loops
-* `range()`
-* Number sequences
-* Pattern generation
-* String concatenation
-* Loop control logic
-* Iterative data processing
-* Numbered output with `enumerate()`
-* Descending ranges
-* Nested chart-generation loops
-* Dynamic row and column generation
+- `for` loops
+- `range()`
+- Number sequences
+- Pattern generation
+- String concatenation
+- Loop control logic
+- Iterative data processing
+- Numbered output with `enumerate()`
+- Descending ranges
+- Nested chart-generation loops
+- Dynamic row and column generation
 
 ### Formatting and Text-Based Visualization
 
-* Fixed-width text columns
-* Left-aligned descriptions
-* Right-aligned numeric values
-* Two-decimal-place formatting
-* Centered headings
-* Custom fill characters
-* Horizontal chart axes
-* Vertical percentage axes
-* Character-based bar charts
-* Vertical category labels
-* Exact whitespace control
-* Avoiding trailing newline characters
+- Fixed-width text columns
+- Left-aligned descriptions
+- Right-aligned numeric values
+- Two-decimal-place formatting
+- Centered headings
+- Custom fill characters
+- Horizontal chart axes
+- Vertical percentage axes
+- Character-based bar charts
+- Vertical category labels
+- Exact whitespace control
+- Avoiding trailing newline characters
 
 ### Problem Solving
 
-* Requirement analysis
-* Translating user stories into code
-* Breaking problems into smaller tasks
-* Business logic implementation
-* Independent solution design
-* Debugging and testing
-* Structured program design
-* Data validation workflows
-* Incremental development
-* Refactoring for readability
-* Mapping automated tests to methods
-* Building a solution test by test
+- Requirement analysis
+- Translating user stories into code
+- Breaking problems into smaller tasks
+- Business logic implementation
+- Independent solution design
+- Debugging and testing
+- Structured program design
+- Data validation workflows
+- Incremental development
+- Refactoring for readability
+- Mapping automated tests to methods
+- Building a solution test by test
+- Protecting object invariants
+- Coordinating updates across related properties
 
 ---
 
@@ -364,12 +405,12 @@ Overall               █████████████████  17 pr
 
 Implemented text encryption and decryption using:
 
-* Alphabet shifting
-* Translation tables
-* `str.maketrans()`
-* `str.translate()`
-* Reusable functions
-* String transformation logic
+- Alphabet shifting
+- Translation tables
+- `str.maketrans()`
+- `str.translate()`
+- Reusable functions
+- String transformation logic
 
 Example:
 
@@ -390,11 +431,11 @@ encrypted_text = text.translate(
 
 Extracted structured information from multi-line text using:
 
-* Regular expressions
-* Pattern matching
-* Text parsing
-* List processing
-* Match validation
+- Regular expressions
+- Pattern matching
+- Text parsing
+- List processing
+- Match validation
 
 This workshop introduced practical extraction of structured values from unstructured text.
 
@@ -404,14 +445,14 @@ This workshop introduced practical extraction of structured values from unstruct
 
 Validated structured medical records using:
 
-* Lists of dictionaries
-* Required fields
-* Type checking
-* Regular expressions
-* Validation rules
-* Invalid record reporting
-* Data integrity checks
-* Clear validation messages
+- Lists of dictionaries
+- Required fields
+- Type checking
+- Regular expressions
+- Validation rules
+- Invalid record reporting
+- Data integrity checks
+- Clear validation messages
 
 This workshop demonstrated how Python can be used to inspect and validate record-based datasets.
 
@@ -423,13 +464,13 @@ Introduced object-oriented programming by creating a class representing musical 
 
 Concepts practiced included:
 
-* Creating classes
-* Instantiating objects
-* Initializing attributes with `__init__()`
-* Accessing data through dot notation
-* Defining instance methods
-* Printing method output
-* Returning reusable values
+- Creating classes
+- Instantiating objects
+- Initializing attributes with `__init__()`
+- Accessing data through dot notation
+- Defining instance methods
+- Printing method output
+- Returning reusable values
 
 Example:
 
@@ -454,21 +495,21 @@ print(instrument_1.get_fact())
 
 Expanded object-oriented programming by creating three cooperating classes:
 
-* `Email`
-* `User`
-* `Inbox`
+- `Email`
+- `User`
+- `Inbox`
 
 The simulator supports:
 
-* Creating users with individual inboxes
-* Sending emails between users
-* Storing sender, receiver, subject, and body information
-* Recording email timestamps
-* Tracking read and unread states
-* Listing inbox messages
-* Displaying complete email content
-* Deleting messages
-* Validating email numbers
+- Creating users with individual inboxes
+- Sending emails between users
+- Storing sender, receiver, subject, and body information
+- Recording email timestamps
+- Tracking read and unread states
+- Listing inbox messages
+- Displaying complete email content
+- Deleting messages
+- Validating email numbers
 
 Example:
 
@@ -503,17 +544,103 @@ This workshop represents an important progression from isolated classes toward a
 
 ---
 
+### Build a Salary Tracker
+
+Developed an employee salary-tracking system with validated properties and controlled state updates.
+
+The project contains:
+
+- An `Employee` class
+- A class-level `_base_salaries` dictionary
+- Validated `name`, `level`, and `salary` properties
+- Property getter and setter methods
+- Automatic salary updates when an employee is promoted
+- Validation against duplicate level assignments
+- Protection against promotion to a lower-paying level
+- Protection against salaries below the minimum for the current level
+- Custom `__str__()` and `__repr__()` methods
+- Explicit `TypeError` and `ValueError` messages
+
+Example:
+
+```python
+charlie_brown = Employee(
+    "Charlie Brown",
+    "trainee",
+)
+
+print(charlie_brown)
+print(
+    f"Base salary: ${charlie_brown.salary}"
+)
+
+charlie_brown.level = "junior"
+```
+
+The level update flow is:
+
+```text
+Assign a new level
+        ↓
+Validate the data type
+        ↓
+Check that the level exists
+        ↓
+Reject duplicate selections
+        ↓
+Reject lower-paying levels
+        ↓
+Look up the new base salary
+        ↓
+Update salary through its setter
+        ↓
+Store the new level
+```
+
+The salary update flow is:
+
+```text
+Assign a new salary
+        ↓
+Validate numeric type
+        ↓
+Read the current employee level
+        ↓
+Look up the minimum base salary
+        ↓
+Reject values below the minimum
+        ↓
+Store the validated salary
+```
+
+Key concepts reinforced:
+
+- Encapsulation
+- Class and instance attributes
+- The `@property` decorator
+- Property setters
+- Attribute validation
+- Dictionary-based business rules
+- State-aware validation with `hasattr()`
+- Reusing setters inside `__init__()`
+- Coordinating related attributes
+- Protecting object invariants
+
+This workshop introduced a more disciplined object-oriented design in which an object is responsible for maintaining its own valid state.
+
+---
+
 ### Build a Planet Class
 
 Created a validated `Planet` class with:
 
-* Constructor argument validation
-* `TypeError` for incorrect data types
-* `ValueError` for empty strings
-* Instance attributes
-* An `orbit()` method
-* A custom `__str__()` representation
-* Multiple object instances
+- Constructor argument validation
+- `TypeError` for incorrect data types
+- `ValueError` for empty strings
+- Instance attributes
+- An `orbit()` method
+- A custom `__str__()` representation
+- Multiple object instances
 
 Example:
 
@@ -542,13 +669,13 @@ This lab reinforced independent implementation of object-oriented requirements.
 
 Practiced reading, tracing, and repairing an existing validation algorithm through:
 
-* Program flow analysis
-* Index and range inspection
-* Off-by-one error detection
-* Input normalization
-* Validation logic
-* Checksum calculation
-* Exception handling
+- Program flow analysis
+- Index and range inspection
+- Off-by-one error detection
+- Input normalization
+- Validation logic
+- Checksum calculation
+- Exception handling
 
 This lab emphasized debugging and understanding an existing implementation rather than building one entirely from scratch.
 
@@ -558,14 +685,14 @@ This lab emphasized debugging and understanding an existing implementation rathe
 
 Developed a dictionary-based configuration system supporting:
 
-* Adding settings
-* Updating settings
-* Deleting settings
-* Retrieving settings
-* Input normalization
-* Configuration validation
-* Formatted output
-* CRUD-style operations
+- Adding settings
+- Updating settings
+- Deleting settings
+- Retrieving settings
+- Input normalization
+- Configuration validation
+- Formatted output
+- CRUD-style operations
 
 The project strengthened skills in dictionary management, reusable functions, validation, and user-facing configuration workflows.
 
@@ -577,20 +704,20 @@ Developed a class-based budget management system that records transactions acros
 
 The project includes:
 
-* A reusable `Category` class
-* Category-specific transaction ledgers
-* Deposits with optional descriptions
-* Withdrawals stored as negative values
-* Current balance calculations
-* Fund availability checks
-* Transfers between category objects
-* Automatically generated transfer descriptions
-* Custom category string representations
-* Fixed-width transaction formatting
-* Spending calculations based on withdrawals only
-* Percentage calculations rounded down to the nearest ten
-* Text-based vertical bar-chart generation
-* Exact whitespace and newline control
+- A reusable `Category` class
+- Category-specific transaction ledgers
+- Deposits with optional descriptions
+- Withdrawals stored as negative values
+- Current balance calculations
+- Fund availability checks
+- Transfers between category objects
+- Automatically generated transfer descriptions
+- Custom category string representations
+- Fixed-width transaction formatting
+- Spending calculations based on withdrawals only
+- Percentage calculations rounded down to the nearest ten
+- Text-based vertical bar-chart generation
+- Exact whitespace and newline control
 
 Example:
 
@@ -663,26 +790,26 @@ Example chart structure:
 
 ```text
 Percentage spent by category
-100|          
- 90|          
- 80|          
- 70|          
- 60| o        
- 50| o        
- 40| o        
- 30| o        
- 20| o  o     
- 10| o  o  o  
-  0| o  o  o  
+100|
+ 90|
+ 80|
+ 70|
+ 60| o
+ 50| o
+ 40| o
+ 30| o
+ 20| o  o
+ 10| o  o  o
+  0| o  o  o
     ----------
-     F  C  A  
-     o  l  u  
-     o  o  t  
-     d  t  o  
-        h     
-        i     
-        n     
-        g     
+     F  C  A
+     o  l  u
+     o  o  t
+     d  t  o
+        h
+        i
+        n
+        g
 ```
 
 Test result:
@@ -715,6 +842,12 @@ Multiple classes with shared responsibilities
         ↓
 Objects interacting with other objects
         ↓
+Employee
+        ↓
+Properties, setters, and encapsulation
+        ↓
+Controlled state transitions
+        ↓
 Category
         ↓
 Transaction ledgers and balance calculations
@@ -726,7 +859,9 @@ Formatted reporting and text-based visualization
 
 This progression develops the foundation needed for larger class-based applications and engineering software systems.
 
-The `Category` class introduced an important concept: an object can maintain its own independent state while interacting with another object through controlled methods such as fund transfers.
+The `Employee` class introduced internal state protection through properties and setters. It demonstrated how related attributes such as level and salary can be coordinated through validation rules.
+
+The `Category` class introduced another important concept: an object can maintain its own independent state while interacting with another object through controlled methods such as fund transfers.
 
 ---
 
@@ -743,7 +878,7 @@ Each project follows an incremental learning process:
 7. Diagnose syntax, runtime, and logic errors.
 8. Test invalid inputs and edge cases.
 9. Refactor the final implementation for readability.
-10. Add comments and project documentation.
+10. Add type hints, comments, and project documentation.
 11. Commit the completed project to GitHub.
 
 For certification projects, the automated tests are also used as an implementation roadmap:
@@ -766,7 +901,7 @@ Generate complete reports or charts
 Verify exact spacing and edge cases
 ```
 
-This workflow strengthens Python knowledge, debugging ability, technical documentation, and practical software-development habits.
+This workflow strengthens Python knowledge, debugging ability, technical documentation, object-oriented design, and practical software-development habits.
 
 ---
 
@@ -778,14 +913,17 @@ This workflow strengthens Python knowledge, debugging ability, technical documen
 | `IndentationError`  | A method or statement does not match the expected indentation level               |
 | `NameError`         | Using a variable or function that has not been defined                            |
 | `TypeError`         | Passing the wrong number or type of arguments                                     |
-| `AttributeError`    | Accessing an attribute or method that an object does not have                     |
-| `ValueError`        | Supplying a value with the correct type but an invalid value                      |
+| `AttributeError`    | Accessing an attribute before it exists or using a missing method                  |
+| `ValueError`        | Supplying a correctly typed value that violates a validation rule                 |
 | `IndexError`        | Attempting to access an invalid list position                                     |
+| `KeyError`          | Looking up a dictionary key that does not exist                                   |
 | Formatting mismatch | Incorrect spacing, alignment, truncation, or newline placement                    |
 
 Understanding these errors helps improve debugging speed and code reliability.
 
-The Budget App project particularly reinforced the importance of exact output formatting because a visually small difference in spacing or newline placement can cause an automated test to fail.
+The Salary Tracker reinforced the importance of initialization order. An attribute such as `_level` may not exist when a setter runs for the first time, so `hasattr()` can be used to avoid an `AttributeError`.
+
+The Budget App particularly reinforced the importance of exact output formatting because a visually small difference in spacing or newline placement can cause an automated test to fail.
 
 ---
 
@@ -795,16 +933,16 @@ This repository represents the first stage of a broader transition toward comput
 
 The current Python foundation will support future development in:
 
-* Scientific computing
-* Numerical methods
-* Data analysis
-* Scientific visualization
-* Hydrodynamic modeling
-* Salinity intrusion analysis
-* Coastal process analysis
-* Environmental data processing
-* Engineering automation
-* Research-oriented software development
+- Scientific computing
+- Numerical methods
+- Data analysis
+- Scientific visualization
+- Hydrodynamic modeling
+- Salinity intrusion analysis
+- Coastal process analysis
+- Environmental data processing
+- Engineering automation
+- Research-oriented software development
 
 ---
 
@@ -826,14 +964,16 @@ coastal-engineering-python/
 
 Potential applications include:
 
-* Processing observed and simulated water levels
-* Comparing measured and modeled salinity
-* Calculating RMSE, MAE, NSE, and R²
-* Analyzing tidal signals
-* Visualizing hydrodynamic model outputs
-* Automating repetitive research workflows
-* Converting and validating environmental datasets
-* Supporting numerical modeling studies
+- Processing observed and simulated water levels
+- Comparing measured and modeled salinity
+- Calculating RMSE, MAE, NSE, and R²
+- Analyzing tidal signals
+- Visualizing hydrodynamic model outputs
+- Automating repetitive research workflows
+- Converting and validating environmental datasets
+- Supporting numerical modeling studies
+- Enforcing physical parameter constraints
+- Coordinating related simulation settings
 
 ---
 
@@ -872,6 +1012,27 @@ HydrodynamicModel produces results
 Validation tools evaluate performance
 ```
 
+The property and setter approach practiced in the Salary Tracker could support controlled engineering parameters:
+
+```python
+class MonitoringStation:
+    @property
+    def water_level(self):
+        return self._water_level
+
+    @water_level.setter
+    def water_level(self, new_value):
+        if not isinstance(
+            new_value,
+            (int, float),
+        ):
+            raise TypeError(
+                "'water_level' must be numeric."
+            )
+
+        self._water_level = new_value
+```
+
 The transaction-ledger structure practiced in the Budget App could later be adapted to engineering data systems:
 
 ```text
@@ -888,7 +1049,7 @@ Records are transferred between datasets
 Reporting functions summarize observations
 ```
 
-This structure could support maintainable systems for environmental monitoring, numerical model configuration, and research automation.
+These structures could support maintainable systems for environmental monitoring, numerical model configuration, physical parameter validation, and research automation.
 
 ---
 
@@ -896,33 +1057,37 @@ This structure could support maintainable systems for environmental monitoring, 
 
 Current learning priorities include:
 
-* Strengthening Python fundamentals
-* Improving object-oriented programming skills
-* Understanding relationships between classes
-* Writing clean and readable methods
-* Managing object state
-* Developing reliable data-validation workflows
-* Working safely with list indices
-* Formatting dates and times
-* Improving debugging and program-tracing ability
-* Controlling exact string formatting and alignment
-* Building text-based data visualizations
-* Preparing for scientific computing applications
-* Developing engineering-oriented programming habits
+- Strengthening Python fundamentals
+- Improving object-oriented programming skills
+- Understanding relationships between classes
+- Applying encapsulation consistently
+- Writing property getters and setters
+- Coordinating related object attributes
+- Writing clean and readable methods
+- Managing object state safely
+- Developing reliable data-validation workflows
+- Working safely with list indices
+- Formatting dates and times
+- Improving debugging and program-tracing ability
+- Controlling exact string formatting and alignment
+- Building text-based data visualizations
+- Preparing for scientific computing applications
+- Developing engineering-oriented programming habits
 
 ---
 
 ## Learning Goals
 
-* Complete the freeCodeCamp Python Certification
-* Build a strong foundation in Python programming
-* Improve analytical and computational problem-solving skills
-* Develop reliable data-processing workflows
-* Strengthen object-oriented programming knowledge
-* Learn scientific Python libraries
-* Create engineering-oriented computational tools
-* Build a public portfolio documenting continuous technical growth
-* Prepare for advanced work in numerical modeling and research software
+- Complete the freeCodeCamp Python Certification
+- Build a strong foundation in Python programming
+- Improve analytical and computational problem-solving skills
+- Develop reliable data-processing workflows
+- Strengthen object-oriented programming knowledge
+- Apply encapsulation and validation correctly
+- Learn scientific Python libraries
+- Create engineering-oriented computational tools
+- Build a public portfolio documenting continuous technical growth
+- Prepare for advanced work in numerical modeling and research software
 
 ---
 
@@ -960,6 +1125,10 @@ Object-Oriented Programming
         ↓
 Object Composition and Interaction
         ↓
+Properties, Setters, and Encapsulation
+        ↓
+Validated Object State
+        ↓
 Formatted Reporting and Visualization
         ↓
 NumPy and pandas
@@ -977,13 +1146,13 @@ AI-Assisted Engineering Workflows
 
 This direction supports future work in:
 
-* Numerical modeling
-* Scientific computing
-* Data-driven engineering
-* Environmental analysis
-* Coastal process research
-* Research software development
-* AI-assisted scientific workflows
+- Numerical modeling
+- Scientific computing
+- Data-driven engineering
+- Environmental analysis
+- Coastal process research
+- Research software development
+- AI-assisted scientific workflows
 
 ---
 
@@ -994,13 +1163,19 @@ This repository is actively maintained as part of an ongoing learning process.
 Current completed work:
 
 ```text
-Workshops:              9
-Labs:                   6
-Certification Projects: 2
-Total Projects:         17
+Workshops:              10
+Labs:                    6
+Certification Projects:  2
+Total Projects:         18
 ```
 
 All currently documented projects have been completed.
+
+The latest completed workshop is:
+
+```text
+Build a Salary Tracker
+```
 
 The latest completed certification project is:
 
@@ -1015,13 +1190,13 @@ Additional workshops, labs, certification projects, and engineering applications
 
 ## Resources
 
-* [freeCodeCamp Python Certification](https://www.freecodecamp.org/)
-* [Python Documentation](https://docs.python.org/3/)
-* GitHub
-* Open-source learning materials
-* Scientific Python documentation
-* Scientific computing communities
-* Coastal and environmental engineering research
+- [freeCodeCamp Python Certification](https://www.freecodecamp.org/)
+- [Python Documentation](https://docs.python.org/3/)
+- GitHub
+- Open-source learning materials
+- Scientific Python documentation
+- Scientific computing communities
+- Coastal and environmental engineering research
 
 ---
 
