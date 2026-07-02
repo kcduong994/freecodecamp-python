@@ -5,12 +5,12 @@ A collection of guided Python workshop projects completed while studying the
 
 These workshops document my progress from Python fundamentals to text processing,
 structured data validation, regular expressions, object-oriented programming,
-object composition, encapsulation, properties, setters, and interactions between
-multiple objects.
+object composition, encapsulation, properties, setters, inheritance, polymorphism,
+custom exceptions, and interactions between multiple objects.
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Workshops](https://img.shields.io/badge/Workshops_Completed-10-success)
+![Workshops](https://img.shields.io/badge/Workshops_Completed-11-success)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -19,30 +19,31 @@ multiple objects.
 
 | Category               |   Completed |
 | ---------------------- | ----------: |
-| Workshops              |          10 |
-| Guided Python Projects |          10 |
+| Workshops              |          11 |
+| Guided Python Projects |          11 |
 | Current Status         | In Progress |
 
 ```text
-Progress: ██████████  10 workshops completed
+Progress: ███████████  11 workshops completed
 ```
 
 ---
 
 ## Completed Workshops
 
-|  # | Workshop                             | Primary Concepts                                             | Status |
-| -: | ------------------------------------ | ------------------------------------------------------------ | :----: |
-|  1 | Report Card Printer                  | Variables, arithmetic, formatted output                      |   ✅   |
-|  2 | Employee Profile Generator           | Functions, parameters, strings                               |   ✅   |
-|  3 | Bill Splitter                        | User input, calculations, validation                         |   ✅   |
-|  4 | Movie Ticket Booking Calculator      | Conditional logic, pricing rules                             |   ✅   |
-|  5 | Build a Caesar Cipher                | String translation, encryption                               |   ✅   |
-|  6 | Build a PIN Extractor                | Regular expressions, text parsing                            |   ✅   |
-|  7 | Build a Medical Data Validator       | Dictionaries, validation, error reporting                    |   ✅   |
-|  8 | Build a Musical Instrument Inventory | Classes, objects, attributes, methods                        |   ✅   |
-|  9 | Build an Email Simulator             | Object composition, inbox management, timestamps             |   ✅   |
-| 10 | Build a Salary Tracker               | Properties, setters, encapsulation, validation, class state  |   ✅   |
+|  # | Workshop                             | Primary Concepts                                                | Status |
+| -: | ------------------------------------ | --------------------------------------------------------------- | :----: |
+|  1 | Report Card Printer                  | Variables, arithmetic, formatted output                         |   ✅   |
+|  2 | Employee Profile Generator           | Functions, parameters, strings                                  |   ✅   |
+|  3 | Bill Splitter                        | User input, calculations, validation                            |   ✅   |
+|  4 | Movie Ticket Booking Calculator      | Conditional logic, pricing rules                                |   ✅   |
+|  5 | Build a Caesar Cipher                | String translation, encryption                                  |   ✅   |
+|  6 | Build a PIN Extractor                | Regular expressions, text parsing                               |   ✅   |
+|  7 | Build a Medical Data Validator       | Dictionaries, validation, error reporting                       |   ✅   |
+|  8 | Build a Musical Instrument Inventory | Classes, objects, attributes, methods                           |   ✅   |
+|  9 | Build an Email Simulator             | Object composition, inbox management, timestamps                |   ✅   |
+| 10 | Build a Salary Tracker               | Properties, setters, encapsulation, validation, class state     |   ✅   |
+| 11 | Build a Media Catalogue              | Inheritance, polymorphism, custom exceptions, collection filtering |   ✅   |
 
 ---
 
@@ -60,6 +61,7 @@ workshops/
 ├── build-a-musical-instrument-inventory/
 ├── build-an-email-simulator/
 ├── build-a-salary-tracker/
+├── build-a-media-catalogue/
 └── README.md
 ```
 
@@ -91,7 +93,8 @@ workshop-name/
 - Code organization
 - Readable naming conventions
 - Type annotations
-- Docstrings and code comments
+- Docstrings
+- Code comments
 
 ### Programming Logic
 
@@ -107,6 +110,8 @@ workshop-name/
 - Early returns
 - Index range validation
 - State-dependent validation
+- Conditional output sections
+- Validation before object creation
 
 ### Functions
 
@@ -119,12 +124,20 @@ workshop-name/
 - Separation of responsibilities
 - Returning data versus printing output
 - Defining and calling a `main()` function
+- Using functions and methods to filter data
 
 ### Object-Oriented Programming
 
 - Class definitions
 - Object creation
 - Class instances
+- Parent and child classes
+- Inheritance
+- Subclassing
+- Method overriding
+- Polymorphic behavior
+- The `super()` function
+- Reusing parent-class initialization
 - The `__init__()` constructor
 - The `self` parameter
 - Instance attributes
@@ -144,6 +157,21 @@ workshop-name/
 - Reusing setter logic during initialization
 - Object composition
 - Interactions between multiple objects
+- Mixed collections of related objects
+- Grouping objects by class
+- Validating object types before storage
+
+### Inheritance and Polymorphism
+
+- Creating a child class from a parent class
+- Inheriting common attributes and methods
+- Calling a parent constructor with `super().__init__()`
+- Adding child-specific attributes
+- Overriding inherited methods
+- Storing parent and child objects in the same collection
+- Treating subclass instances as parent-class instances
+- Distinguishing exact class matches from inherited matches
+- Using polymorphic `__str__()` output
 
 ### Working with Text
 
@@ -158,6 +186,9 @@ workshop-name/
 - Structured information extraction
 - Dynamic output with f-strings
 - Exact error-message formatting
+- Multi-section formatted output
+- Adding newline characters with `\n`
+- Building output strings incrementally
 
 ### Working with Collections
 
@@ -176,6 +207,20 @@ workshop-name/
 - One-based and zero-based indexing
 - List comprehensions
 - Record-based data modeling
+- Filtering objects by type
+- Storing different subclasses in one list
+- Creating filtered views of a collection
+- Counting collection items with `len()`
+
+### Type Inspection
+
+- Type checking with `isinstance()`
+- Exact class checking with `type() is`
+- Understanding inheritance-aware type checks
+- Accepting subclasses through `isinstance()`
+- Excluding subclasses through exact type comparison
+- Inspecting an object with `type()`
+- Validating supported object types
 
 ### Data Validation
 
@@ -194,16 +239,29 @@ workshop-name/
 - Preventing invalid state transitions
 - Preventing salary values below a level minimum
 - Preventing duplicate or downward level changes
+- Rejecting empty or whitespace-only strings
+- Validating numeric lower bounds
+- Validating release years
+- Validating movie duration
+- Validating season and episode counts
+- Rejecting unsupported catalogue objects
 
 ### Exceptions and Error Handling
 
 - Raising `TypeError`
 - Raising `ValueError`
+- Creating custom exception classes
+- Inheriting from `Exception`
+- Calling `super().__init__()` in an exception class
+- Attaching additional context to an exception
+- Storing the invalid object in an exception
+- Catching multiple exception types
 - Reading tracebacks
 - Distinguishing syntax, runtime, and logic errors
 - Writing exact exception messages
 - Validating before assigning object state
 - Avoiding `AttributeError` during initialization
+- Reporting the object that caused an error
 
 ### Date and Time Handling
 
@@ -223,6 +281,9 @@ workshop-name/
 - Building interactions across multiple classes
 - Incremental program development
 - Keeping validation close to the data it protects
+- Separating models from catalogue management
+- Reusing parent-class logic
+- Organizing output by media category
 
 ---
 
@@ -472,6 +533,195 @@ Reject invalid salary or update _salary
 
 ---
 
+### Media Catalogue
+
+Built a catalogue capable of storing, validating, filtering, and displaying movies and television series.
+
+The completed project contains:
+
+- A `Movie` parent class
+- A `TVSeries` child class
+- A `MediaCatalogue` management class
+- A custom `MediaError` exception
+- Validation for movie and television-series data
+- Inheritance through `class TVSeries(Movie)`
+- Parent constructor reuse with `super().__init__()`
+- Overridden `__str__()` methods
+- A mixed collection containing related object types
+- Separate movie and TV-series filtering methods
+- Numbered catalogue output
+- Conditional output sections
+- Multiple exception handlers
+
+The `Movie` class validates:
+
+- Non-empty titles
+- Release years from 1895 onward
+- Non-empty director names
+- Positive duration values
+
+The `TVSeries` class adds:
+
+- A positive number of seasons
+- A positive total episode count
+- Average episode duration
+- A specialized string representation
+
+The `MediaCatalogue` class supports:
+
+- Adding `Movie` objects
+- Adding `TVSeries` objects
+- Rejecting unsupported objects
+- Returning movies only
+- Returning television series only
+- Formatting grouped catalogue output
+- Displaying an empty-catalogue message
+
+Example:
+
+```python
+catalogue = MediaCatalogue()
+
+movie1 = Movie(
+    "The Matrix",
+    1999,
+    "The Wachowskis",
+    136,
+)
+
+series1 = TVSeries(
+    "Scrubs",
+    2001,
+    "Bill Lawrence",
+    24,
+    9,
+    182,
+)
+
+catalogue.add(movie1)
+catalogue.add(series1)
+
+print(catalogue)
+```
+
+Example output:
+
+```text
+Media Catalogue (2 items):
+
+=== MOVIES ===
+1. The Matrix (1999) - 136 min, The Wachowskis
+=== TV SERIES ===
+1. Scrubs (2001) - 9 seasons, 182 episodes, 24 min avg, Bill Lawrence
+```
+
+Class relationship:
+
+```text
+Movie
+  ↓
+TVSeries inherits Movie
+  ↓
+Both can be stored in MediaCatalogue
+  ↓
+MediaCatalogue filters and groups them
+```
+
+Inheritance flow:
+
+```text
+TVSeries(...)
+    ↓
+super().__init__(...)
+    ↓
+Movie validates shared attributes
+    ↓
+TVSeries validates seasons and episodes
+    ↓
+Complete TVSeries object is created
+```
+
+Catalogue filtering flow:
+
+```text
+MediaCatalogue.items
+        ↓
+get_movies()
+        ↓
+type(item) is Movie
+        ↓
+Exact Movie objects only
+```
+
+```text
+MediaCatalogue.items
+        ↓
+get_tv_series()
+        ↓
+isinstance(item, TVSeries)
+        ↓
+TVSeries objects
+```
+
+The distinction between the two type checks is important:
+
+```python
+type(item) is Movie
+```
+
+returns only objects created directly from `Movie`, while:
+
+```python
+isinstance(item, Movie)
+```
+
+also accepts objects created from subclasses such as `TVSeries`.
+
+Custom exception handling:
+
+```python
+class MediaError(Exception):
+    def __init__(self, message, obj):
+        super().__init__(message)
+        self.obj = obj
+```
+
+This exception stores both:
+
+- The error message
+- The invalid object that caused the error
+
+Example:
+
+```python
+try:
+    catalogue.add("invalid item")
+except MediaError as error:
+    print(f"Media Error: {error}")
+    print(
+        f"Unable to add {error.obj}: "
+        f"{type(error.obj)}"
+    )
+```
+
+Key concepts reinforced:
+
+- Inheritance
+- Subclassing
+- Method overriding
+- Polymorphism
+- Parent constructor reuse
+- Custom exception classes
+- Additional exception context
+- Type inspection
+- List comprehensions
+- Collection filtering
+- Conditional formatting
+- Mixed object collections
+- Separation of responsibilities
+
+---
+
 ## Object-Oriented Progression
 
 The object-oriented workshops introduced concepts incrementally:
@@ -490,10 +740,30 @@ Objects interacting with other objects
 Employee Salary Tracker
         ↓
 Properties, setters, encapsulation, and controlled state changes
+        ↓
+Movie and TVSeries
+        ↓
+Inheritance and method overriding
+        ↓
+MediaCatalogue
+        ↓
+Mixed object collections and filtering
+        ↓
+MediaError
+        ↓
+Custom exceptions with additional context
 ```
 
-The Salary Tracker extends the progression from basic classes and object composition
+The Salary Tracker extended the progression from basic classes and object composition
 toward reliable object models that enforce business rules internally.
+
+The Media Catalogue introduced inheritance by placing shared media data and validation
+inside the `Movie` parent class. `TVSeries` then reused and extended this behavior through
+`super()`.
+
+The project also introduced polymorphism. Calling `str()` on a `Movie` object and a
+`TVSeries` object executes different `__str__()` implementations even though both objects
+can be stored in the same catalogue.
 
 ---
 
@@ -509,13 +779,13 @@ The general learning process is:
 4. Run the automated tests.
 5. Inspect console output and error messages.
 6. Diagnose syntax, runtime, and logic errors.
-7. Correct indexing, validation, and state-management issues.
-8. Refactor the completed code for readability.
-9. Add type hints, comments, and documentation.
+7. Correct indexing, validation, inheritance, and state-management issues.
+8. Refactor the completed code for readability without changing required behavior.
+9. Add comments and documentation.
 10. Save the completed implementation to GitHub.
 
 This process reinforces Python syntax, debugging skills, program organization,
-object-oriented design, and practical problem-solving habits.
+object-oriented design, inheritance, error handling, and practical problem-solving habits.
 
 ---
 
@@ -526,21 +796,33 @@ The workshops have provided practical experience with common Python errors:
 | Error            | Typical Cause                                                       |
 | ---------------- | ------------------------------------------------------------------- |
 | `SyntaxError`    | Invalid syntax, missing punctuation, or incorrect keyword placement |
+| `IndentationError` | A statement is placed at an invalid indentation level             |
 | `NameError`      | Using a variable or function that has not been defined              |
 | `TypeError`      | Passing the wrong number or type of arguments                       |
-| `AttributeError` | Accessing an attribute before it exists or using a missing method    |
+| `AttributeError` | Accessing an attribute before it exists or using a missing method   |
 | `ValueError`     | Supplying a correctly typed value that violates a rule              |
 | `IndexError`     | Attempting to access an invalid list position                       |
 | `KeyError`       | Looking up a dictionary key that does not exist                     |
 
 Understanding these errors improves debugging speed, validation design, and code reliability.
 
+The Media Catalogue workshop also reinforced several specific debugging lessons:
+
+- Instance methods require `self`.
+- Constructors must be named exactly `__init__`.
+- Custom exception constructors require all declared arguments.
+- `enumerate()` is a built-in function, not a list method.
+- `type(item) is Movie` and `isinstance(item, Movie)` behave differently.
+- A subclass instance also passes an `isinstance()` check for its parent class.
+- A method must explicitly `return` its result.
+- Output-building code must maintain valid indentation.
+
 ---
 
 ## Current Progress
 
 ```text
-Completed:  ██████████  10
+Completed:  ███████████  11
 Continuing: ░░░░░░░░░░  More workshops will be added
 ```
 
@@ -566,6 +848,14 @@ Small Object-Oriented Applications
 Properties, Setters, and Encapsulation
         ↓
 Validated Object State
+        ↓
+Inheritance and Subclassing
+        ↓
+Polymorphism and Method Overriding
+        ↓
+Custom Exceptions
+        ↓
+Mixed Object Collections
 ```
 
 ---
@@ -580,6 +870,14 @@ Current priorities include:
 - Applying encapsulation consistently
 - Writing property getters and setters
 - Coordinating related object attributes
+- Understanding parent and child classes
+- Reusing logic through inheritance
+- Applying `super()` correctly
+- Overriding inherited methods
+- Understanding polymorphic behavior
+- Creating custom exception classes
+- Adding useful context to exceptions
+- Filtering mixed object collections
 - Writing clean and readable methods
 - Managing object state safely
 - Working safely with list indices
@@ -605,6 +903,14 @@ class Observation:
     pass
 
 
+class WaterLevelObservation(Observation):
+    pass
+
+
+class SalinityObservation(Observation):
+    pass
+
+
 class SimulationScenario:
     pass
 
@@ -624,23 +930,50 @@ class MonitoringStation:
     @water_level.setter
     def water_level(self, new_value):
         if not isinstance(new_value, (int, float)):
-            raise TypeError("'water_level' must be numeric.")
+            raise TypeError(
+                "'water_level' must be numeric."
+            )
 
         self._water_level = new_value
 ```
 
-These classes could interact in ways similar to the Email Simulator and Salary Tracker:
+Inheritance could organize related engineering data types:
+
+```text
+Observation
+    ├── WaterLevelObservation
+    ├── SalinityObservation
+    ├── WaveObservation
+    └── CurrentObservation
+```
+
+A catalogue-like system could manage engineering datasets:
+
+```python
+class ObservationCatalogue:
+    def __init__(self):
+        self.items = []
+
+    def add(self, observation):
+        self.items.append(observation)
+```
+
+The relationship could be organized as:
 
 ```text
 MonitoringStation
         ↓
-validates and stores Observation objects
+produces Observation objects
         ↓
-SimulationScenario uses observations
+ObservationCatalogue stores them
+        ↓
+Observation subclasses are filtered by type
+        ↓
+SimulationScenario uses selected observations
         ↓
 HydrodynamicModel produces results
         ↓
-Validation rules protect model configuration
+Validation tools evaluate performance
 ```
 
 Relevant future applications include:
@@ -654,6 +987,9 @@ Relevant future applications include:
 - Research workflow automation
 - Validation of physical parameter ranges
 - Controlled updates to model state
+- Classification of observation types
+- Filtering model results by variable
+- Custom exceptions for invalid engineering data
 
 ---
 
@@ -664,8 +1000,11 @@ These workshops provide the foundation for more advanced Python topics, includin
 - Larger program architecture
 - Advanced object-oriented programming
 - Inheritance and polymorphism
+- Abstract classes
+- Multiple inheritance
 - File processing
 - Exception handling
+- Custom exceptions
 - Automated testing
 - Data analysis
 - Scientific computing
@@ -693,6 +1032,8 @@ Future workshops and projects will gradually introduce:
 | File I/O              | Reading and writing engineering data         |
 | Exception Handling    | Reliable processing of invalid input         |
 | Unit Testing          | Verifying calculation and validation logic   |
+| Inheritance           | Organizing related engineering data models   |
+| Abstract Classes      | Defining shared interfaces for model types   |
 | NumPy                 | Numerical arrays and scientific calculations |
 | pandas                | Tabular and time-series data processing      |
 | Matplotlib            | Scientific visualization                     |
