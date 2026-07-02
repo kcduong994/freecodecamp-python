@@ -4,13 +4,13 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-19-success)
-![Workshops](https://img.shields.io/badge/Workshops-10-2563EB)
+![Projects](https://img.shields.io/badge/Projects_Completed-20-success)
+![Workshops](https://img.shields.io/badge/Workshops-11-2563EB)
 ![Labs](https://img.shields.io/badge/Labs-7-16A34A)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-2-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
-This repository documents my progression from Python fundamentals to object-oriented programming, validation, debugging, formatted reporting, and larger certification projects.
+This repository documents my progression from Python fundamentals to object-oriented programming, validation, debugging, inheritance, polymorphism, custom exceptions, formatted reporting, and larger certification projects.
 
 The immediate goal is to complete the freeCodeCamp Python Certification with clean, well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data processing, numerical methods, scientific visualization, and engineering automation.
 
@@ -41,16 +41,16 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cle
 
 | Area | Purpose | Completed |
 | --- | --- | ---: |
-| Workshops | Guided projects introducing new Python concepts incrementally | 10 |
+| Workshops | Guided projects introducing new Python concepts incrementally | 11 |
 | Labs | Independent implementations based on user stories and automated tests | 7 |
 | Certification Projects | Larger projects combining multiple programming concepts | 2 |
-| **Total** | **Documented Python projects** | **19** |
+| **Total** | **Documented Python projects** | **20** |
 
 ```text
-Workshops              ██████████  10 completed
+Workshops              ███████████  11 completed
 Labs                   ███████░░░   7 completed
 Certification Projects ██░░░░░░░░   2 completed
-Overall                ███████████████████  19 completed
+Overall                ████████████████████  20 completed
 ```
 
 ### Current Learning Stage
@@ -71,6 +71,12 @@ Object Composition
 Properties and Encapsulation
         ↓
 Validated Object State
+        ↓
+Inheritance and Subclassing
+        ↓
+Polymorphism and Method Overriding
+        ↓
+Custom Exceptions
         ↓
 Formatted Reports and Visualizations
 ```
@@ -93,6 +99,7 @@ Formatted Reports and Visualizations
 | 8 | Build a Musical Instrument Inventory | Classes, objects, attributes, methods | ✅ |
 | 9 | Build an Email Simulator | Object composition, inbox management, timestamps | ✅ |
 | 10 | Build a Salary Tracker | Properties, setters, encapsulation, class state | ✅ |
+| 11 | Build a Media Catalogue | Inheritance, polymorphism, custom exceptions, collection filtering | ✅ |
 
 ### Labs
 
@@ -130,6 +137,7 @@ freecodecamp-python/
 │   ├── build-a-musical-instrument-inventory/
 │   ├── build-an-email-simulator/
 │   ├── build-a-salary-tracker/
+│   ├── build-a-media-catalogue/
 │   └── README.md
 │
 ├── labs/
@@ -175,7 +183,11 @@ They are used to:
 - Build confidence before independent work
 - Develop reusable programming habits
 
-The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, and controlled class state.
+The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, and custom exceptions.
+
+The latest completed workshop, **Build a Media Catalogue**, introduced parent and child classes, `super()`, method overriding, custom exception objects, and type-based collection filtering.
+
+Detailed workshop documentation is maintained in [`workshops/README.md`](workshops/README.md).
 
 ---
 
@@ -291,6 +303,9 @@ Status: Completed
 - Filtering
 - Summation
 - Record-based modeling
+- List comprehensions
+- Mixed collections of related objects
+- Filtering objects by exact class or subclass type
 
 ### Loops and Iteration
 
@@ -350,6 +365,11 @@ Status: Completed
 - `AttributeError`
 - `IndexError`
 - `KeyError`
+- Custom exception classes
+- Inheriting from `Exception`
+- Passing messages through `super().__init__()`
+- Storing the invalid object inside an exception
+- Catching multiple exception types
 - Defensive programming
 - Validation before mutation
 - Explicit error messages
@@ -361,6 +381,13 @@ Status: Completed
 - Instance attributes
 - Class attributes
 - Instance methods
+- Parent and child classes
+- Inheritance and subclassing
+- Reusing parent initialization with `super()`
+- Method overriding
+- Polymorphism
+- Exact type checks with `type() is`
+- Inheritance-aware checks with `isinstance()`
 - Object composition
 - Passing objects as arguments
 - Object interaction
@@ -415,6 +442,93 @@ Status: Completed
 ---
 
 ## Selected Project Highlights
+
+### Build a Media Catalogue
+
+Built a catalogue that stores, validates, filters, and displays movies and television series.
+
+The completed workshop includes:
+
+- A `Movie` parent class
+- A `TVSeries` child class
+- A `MediaCatalogue` management class
+- A custom `MediaError` exception
+- Shared validation through inheritance
+- Parent-constructor reuse with `super().__init__()`
+- Overridden `__str__()` methods
+- Mixed collections containing parent and child objects
+- Separate filtering methods for movies and TV series
+- Conditional, numbered catalogue output
+
+Example:
+
+```python
+catalogue = MediaCatalogue()
+
+movie = Movie(
+    "The Matrix",
+    1999,
+    "The Wachowskis",
+    136,
+)
+
+series = TVSeries(
+    "Breaking Bad",
+    2008,
+    "Vince Gilligan",
+    47,
+    5,
+    62,
+)
+
+catalogue.add(movie)
+catalogue.add(series)
+print(catalogue)
+```
+
+Class relationship:
+
+```text
+Movie
+  ↓
+TVSeries inherits shared Movie behavior
+  ↓
+MediaCatalogue stores both object types
+  ↓
+Filtering methods separate movies and TV series
+```
+
+The workshop also clarified the difference between these checks:
+
+```python
+isinstance(item, Movie)
+```
+
+This accepts both `Movie` objects and instances of subclasses such as `TVSeries`.
+
+```python
+type(item) is Movie
+```
+
+This accepts only objects created directly from the `Movie` class.
+
+Custom exception flow:
+
+```text
+Unsupported object
+        ↓
+MediaCatalogue.add()
+        ↓
+Raise MediaError(message, object)
+        ↓
+Catch the exception
+        ↓
+Report both the message and invalid object
+```
+
+This workshop introduced inheritance, method overriding, polymorphic string representations, custom exception design, and type-based collection filtering.
+
+---
 
 ### Build a Salary Tracker
 
@@ -654,6 +768,10 @@ GameCharacter
         ↓
 Read-only properties and clamped state
         ↓
+Movie + TVSeries + MediaCatalogue
+        ↓
+Inheritance, polymorphism, filtering, and custom exceptions
+        ↓
 Category
         ↓
 Ledgers, transfers, reporting, and visualization
@@ -668,6 +786,7 @@ Ledgers, transfers, reporting, and visualization
 | Email Simulator | Multiple interacting classes |
 | Salary Tracker | Encapsulation and controlled state transitions |
 | Game Character Tracker | Read-only properties and bounded attributes |
+| Media Catalogue | Inheritance, polymorphism, custom exceptions, and collection filtering |
 | Budget App | Transaction systems, cross-object transfers, reporting |
 
 This progression establishes a foundation for maintainable engineering software.
@@ -744,6 +863,11 @@ Regression check
 - A small whitespace difference can fail an exact-output test.
 - Two independent `if` statements are not equivalent to `if` / `elif` / `else`.
 - Initialization order matters when setters depend on existing attributes.
+- Constructors must be named exactly `__init__()`.
+- Instance methods require `self` as their first parameter.
+- A method must explicitly `return` a value when its result is needed.
+- `isinstance()` includes subclasses, while `type() is` checks the exact class.
+- Custom exceptions must receive every argument declared by their constructor.
 - Automated tests often check both behavior and implementation structure.
 - A readable object representation greatly improves debugging.
 
@@ -791,6 +915,14 @@ class Observation:
     pass
 
 
+class WaterLevelObservation(Observation):
+    pass
+
+
+class SalinityObservation(Observation):
+    pass
+
+
 class SimulationScenario:
     pass
 
@@ -804,9 +936,11 @@ Possible interaction:
 ```text
 MonitoringStation
         ↓
-stores Observation objects
+produces Observation subclasses
         ↓
-SimulationScenario references observations
+ObservationCatalogue stores and filters them
+        ↓
+SimulationScenario references selected observations
         ↓
 HydrodynamicModel produces results
         ↓
@@ -847,7 +981,8 @@ This is directly related to the validation and encapsulation patterns practiced 
 - Continue the freeCodeCamp Python Certification
 - Complete additional workshops and labs
 - Deepen object-oriented programming skills
-- Improve exception design
+- Strengthen inheritance and polymorphism
+- Improve custom exception design
 - Practice automated testing
 - Strengthen documentation quality
 
@@ -879,6 +1014,8 @@ Object Composition
         ↓
 Encapsulation and Validated State
         ↓
+Inheritance, Polymorphism, and Custom Exceptions
+        ↓
 Testing and Documentation
         ↓
 NumPy and pandas
@@ -901,16 +1038,16 @@ AI-Assisted Engineering Workflows
 This repository is actively maintained as part of an ongoing learning process.
 
 ```text
-Workshops:               10
+Workshops:               11
 Labs:                     7
 Certification Projects:   2
-Total Projects:          19
+Total Projects:          20
 ```
 
 Latest completed workshop:
 
 ```text
-Build a Salary Tracker
+Build a Media Catalogue
 ```
 
 Latest completed lab:
