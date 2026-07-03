@@ -6,11 +6,11 @@ A collection of guided Python workshop projects completed while studying the
 These workshops document my progress from Python fundamentals to text processing,
 structured data validation, regular expressions, object-oriented programming,
 object composition, encapsulation, properties, setters, inheritance, polymorphism,
-custom exceptions, and interactions between multiple objects.
+custom exceptions, abstract base classes, polymorphic strategies, and interactions between multiple objects.
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Workshops](https://img.shields.io/badge/Workshops_Completed-11-success)
+![Workshops](https://img.shields.io/badge/Workshops_Completed-12-success)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -19,12 +19,12 @@ custom exceptions, and interactions between multiple objects.
 
 | Category               |   Completed |
 | ---------------------- | ----------: |
-| Workshops              |          11 |
-| Guided Python Projects |          11 |
+| Workshops              |          12 |
+| Guided Python Projects |          12 |
 | Current Status         | In Progress |
 
 ```text
-Progress: ███████████  11 workshops completed
+Progress: ████████████  12 workshops completed
 ```
 
 ---
@@ -44,6 +44,7 @@ Progress: ███████████  11 workshops completed
 |  9 | Build an Email Simulator             | Object composition, inbox management, timestamps                |   ✅   |
 | 10 | Build a Salary Tracker               | Properties, setters, encapsulation, validation, class state     |   ✅   |
 | 11 | Build a Media Catalogue              | Inheritance, polymorphism, custom exceptions, collection filtering |   ✅   |
+| 12 | Build a Discount Calculator          | Abstract base classes, strategy pattern, polymorphism, type hints   |   ✅   |
 
 ---
 
@@ -62,6 +63,7 @@ workshops/
 ├── build-an-email-simulator/
 ├── build-a-salary-tracker/
 ├── build-a-media-catalogue/
+├── build-a-discount-calculator/
 └── README.md
 ```
 
@@ -160,6 +162,10 @@ workshop-name/
 - Mixed collections of related objects
 - Grouping objects by class
 - Validating object types before storage
+- Abstract base classes with `ABC`
+- Abstract methods with `@abstractmethod`
+- Strategy-pattern design
+- Interchangeable algorithm objects
 
 ### Inheritance and Polymorphism
 
@@ -172,6 +178,9 @@ workshop-name/
 - Treating subclass instances as parent-class instances
 - Distinguishing exact class matches from inherited matches
 - Using polymorphic `__str__()` output
+- Defining a shared strategy interface
+- Implementing multiple concrete strategy classes
+- Calling overridden methods through a common parent type
 
 ### Working with Text
 
@@ -211,6 +220,9 @@ workshop-name/
 - Storing different subclasses in one list
 - Creating filtered views of a collection
 - Counting collection items with `len()`
+- Storing strategy objects in a list
+- Collecting candidate numeric results
+- Selecting the lowest result with `min()`
 
 ### Type Inspection
 
@@ -262,6 +274,8 @@ workshop-name/
 - Validating before assigning object state
 - Avoiding `AttributeError` during initialization
 - Reporting the object that caused an error
+- Preventing direct instantiation of incomplete abstract classes
+- Enforcing required subclass methods
 
 ### Date and Time Handling
 
@@ -284,6 +298,9 @@ workshop-name/
 - Separating models from catalogue management
 - Reusing parent-class logic
 - Organizing output by media category
+- Separating discount rules from calculation orchestration
+- Injecting strategies into a calculation engine
+- Selecting the best result from multiple algorithms
 
 ---
 
@@ -720,6 +737,157 @@ Key concepts reinforced:
 - Mixed object collections
 - Separation of responsibilities
 
+
+---
+
+### Discount Calculator
+
+Built a flexible discount-calculation system that evaluates multiple pricing
+strategies and returns the lowest valid price.
+
+The completed project contains:
+
+- A `Product` class for product data
+- An abstract `DiscountStrategy` base class
+- A `PercentageDiscount` strategy
+- A `FixedAmountDiscount` strategy
+- A `PremiumUserDiscount` strategy
+- A `DiscountEngine` that evaluates all available strategies
+- Type hints for parameters, return values, and strategy collections
+- A main execution guard
+- Two-decimal-place currency formatting
+
+The abstract strategy interface defines two required operations:
+
+```python
+class DiscountStrategy(ABC):
+    @abstractmethod
+    def is_applicable(
+        self,
+        product: Product,
+        user_tier: str,
+    ) -> bool:
+        pass
+
+    @abstractmethod
+    def apply_discount(
+        self,
+        product: Product,
+    ) -> float:
+        pass
+```
+
+Each concrete strategy decides:
+
+1. Whether it applies to the current product and user.
+2. How it calculates the discounted price.
+
+Example strategies:
+
+```python
+strategies = [
+    PercentageDiscount(10),
+    FixedAmountDiscount(5),
+    PremiumUserDiscount(),
+]
+```
+
+The discount engine accepts the strategies through its constructor:
+
+```python
+engine = DiscountEngine(strategies)
+best_price = engine.calculate_best_price(
+    product,
+    user_tier,
+)
+```
+
+Calculation flow:
+
+```text
+Original product price
+        ↓
+Check each discount strategy
+        ↓
+Call is_applicable(...)
+        ↓
+Apply valid discounts
+        ↓
+Store all candidate prices
+        ↓
+Return min(prices)
+```
+
+The original price is included in the list of candidates:
+
+```python
+prices = [product.price]
+```
+
+This ensures that the calculator can safely return the original price when no
+discount applies.
+
+Example:
+
+```python
+product = Product("Wireless Mouse", 50.0)
+user_tier = "Premium"
+
+strategies = [
+    PercentageDiscount(10),
+    FixedAmountDiscount(5),
+    PremiumUserDiscount(),
+]
+
+engine = DiscountEngine(strategies)
+best_price = engine.calculate_best_price(
+    product,
+    user_tier,
+)
+
+print(
+    f"Best price for {product.name} "
+    f"for {user_tier} user: ${best_price:.2f}"
+)
+```
+
+Expected output:
+
+```text
+Best price for Wireless Mouse for Premium user: $40.00
+```
+
+Class relationship:
+
+```text
+DiscountStrategy
+    ├── PercentageDiscount
+    ├── FixedAmountDiscount
+    └── PremiumUserDiscount
+              ↓
+        DiscountEngine
+              ↓
+Evaluates applicable strategies
+              ↓
+Returns the lowest price
+```
+
+Key concepts reinforced:
+
+- Abstract base classes
+- Abstract methods
+- Inheritance
+- Method overriding
+- Runtime polymorphism
+- Strategy pattern
+- Dependency injection through constructors
+- Type hints
+- Lists of related objects
+- Candidate-result aggregation
+- Built-in `min()`
+- Main execution guards
+- Currency formatting with `:.2f`
+
 ---
 
 ## Object-Oriented Progression
@@ -752,6 +920,18 @@ Mixed object collections and filtering
 MediaError
         ↓
 Custom exceptions with additional context
+        ↓
+DiscountStrategy
+        ↓
+Abstract interfaces and required subclass behavior
+        ↓
+Percentage, fixed-amount, and premium strategies
+        ↓
+Polymorphic discount calculations
+        ↓
+DiscountEngine
+        ↓
+Strategy orchestration and best-price selection
 ```
 
 The Salary Tracker extended the progression from basic classes and object composition
@@ -764,6 +944,8 @@ inside the `Movie` parent class. `TVSeries` then reused and extended this behavi
 The project also introduced polymorphism. Calling `str()` on a `Movie` object and a
 `TVSeries` object executes different `__str__()` implementations even though both objects
 can be stored in the same catalogue.
+
+The Discount Calculator extended this progression with abstract base classes and the strategy pattern. Multiple discount algorithms implement the same interface, allowing `DiscountEngine` to evaluate them uniformly without depending on their individual calculation details.
 
 ---
 
@@ -785,7 +967,7 @@ The general learning process is:
 10. Save the completed implementation to GitHub.
 
 This process reinforces Python syntax, debugging skills, program organization,
-object-oriented design, inheritance, error handling, and practical problem-solving habits.
+object-oriented design, inheritance, abstract interfaces, design patterns, error handling, and practical problem-solving habits.
 
 ---
 
@@ -817,12 +999,22 @@ The Media Catalogue workshop also reinforced several specific debugging lessons:
 - A method must explicitly `return` its result.
 - Output-building code must maintain valid indentation.
 
+The Discount Calculator workshop also reinforced these debugging lessons:
+
+- Abstract subclasses must implement every required abstract method.
+- Parameter names must match the names used inside a method body.
+- A list uses the built-in `min(prices)` function rather than `prices.min()`.
+- Objects must be created only after their required input variables exist.
+- Instance methods must be called through an instance such as `engine.calculate_best_price(...)`.
+- Variables inside the main execution block must remain correctly indented.
+- Exact f-string syntax and `:.2f` formatting matter for required output.
+
 ---
 
 ## Current Progress
 
 ```text
-Completed:  ███████████  11
+Completed:  ████████████  12
 Continuing: ░░░░░░░░░░  More workshops will be added
 ```
 
@@ -856,6 +1048,12 @@ Polymorphism and Method Overriding
 Custom Exceptions
         ↓
 Mixed Object Collections
+        ↓
+Abstract Base Classes
+        ↓
+Strategy Pattern
+        ↓
+Polymorphic Algorithm Selection
 ```
 
 ---
@@ -884,6 +1082,11 @@ Current priorities include:
 - Formatting dates and times
 - Developing reliable validation logic
 - Improving debugging ability
+- Understanding abstract base classes
+- Defining consistent interfaces with abstract methods
+- Applying the strategy pattern
+- Injecting interchangeable behaviors into an engine class
+- Comparing candidate results safely
 - Preparing for larger labs and certification projects
 
 ---
@@ -990,6 +1193,9 @@ Relevant future applications include:
 - Classification of observation types
 - Filtering model results by variable
 - Custom exceptions for invalid engineering data
+- Strategy-based selection of calibration methods
+- Interchangeable validation metrics
+- Scenario-specific processing algorithms
 
 ---
 
@@ -1001,6 +1207,7 @@ These workshops provide the foundation for more advanced Python topics, includin
 - Advanced object-oriented programming
 - Inheritance and polymorphism
 - Abstract classes
+- Design patterns
 - Multiple inheritance
 - File processing
 - Exception handling
@@ -1033,7 +1240,7 @@ Future workshops and projects will gradually introduce:
 | Exception Handling    | Reliable processing of invalid input         |
 | Unit Testing          | Verifying calculation and validation logic   |
 | Inheritance           | Organizing related engineering data models   |
-| Abstract Classes      | Defining shared interfaces for model types   |
+| Design Patterns       | Selecting interchangeable engineering logic  |
 | NumPy                 | Numerical arrays and scientific calculations |
 | pandas                | Tabular and time-series data processing      |
 | Matplotlib            | Scientific visualization                     |
