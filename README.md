@@ -4,15 +4,15 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-20-success)
-![Workshops](https://img.shields.io/badge/Workshops-11-2563EB)
+![Projects](https://img.shields.io/badge/Projects_Completed-21-success)
+![Workshops](https://img.shields.io/badge/Workshops-12-2563EB)
 ![Labs](https://img.shields.io/badge/Labs-7-16A34A)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-2-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
-This repository documents my progression from Python fundamentals to object-oriented programming, validation, debugging, inheritance, polymorphism, custom exceptions, formatted reporting, and larger certification projects.
+This repository documents my progression from Python fundamentals to object-oriented programming, validation, debugging, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, formatted reporting, and larger certification projects.
 
-The immediate goal is to complete the freeCodeCamp Python Certification with clean, well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data processing, numerical methods, scientific visualization, and engineering automation.
+The immediate goal is to complete the freeCodeCamp Python Certification with correct, readable, well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data processing, numerical methods, scientific visualization, and engineering automation.
 
 ---
 
@@ -41,16 +41,16 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cle
 
 | Area | Purpose | Completed |
 | --- | --- | ---: |
-| Workshops | Guided projects introducing new Python concepts incrementally | 11 |
+| Workshops | Guided projects introducing new Python concepts incrementally | 12 |
 | Labs | Independent implementations based on user stories and automated tests | 7 |
 | Certification Projects | Larger projects combining multiple programming concepts | 2 |
-| **Total** | **Documented Python projects** | **20** |
+| **Total** | **Documented Python projects** | **21** |
 
 ```text
-Workshops              ███████████  11 completed
+Workshops              ████████████  12 completed
 Labs                   ███████░░░   7 completed
 Certification Projects ██░░░░░░░░   2 completed
-Overall                ████████████████████  20 completed
+Overall                █████████████████████  21 completed
 ```
 
 ### Current Learning Stage
@@ -78,6 +78,10 @@ Polymorphism and Method Overriding
         ↓
 Custom Exceptions
         ↓
+Abstract Base Classes
+        ↓
+Strategy Pattern and Polymorphic Algorithms
+        ↓
 Formatted Reports and Visualizations
 ```
 
@@ -100,6 +104,7 @@ Formatted Reports and Visualizations
 | 9 | Build an Email Simulator | Object composition, inbox management, timestamps | ✅ |
 | 10 | Build a Salary Tracker | Properties, setters, encapsulation, class state | ✅ |
 | 11 | Build a Media Catalogue | Inheritance, polymorphism, custom exceptions, collection filtering | ✅ |
+| 12 | Build a Discount Calculator | Abstract base classes, strategy pattern, polymorphic pricing, type hints | ✅ |
 
 ### Labs
 
@@ -138,6 +143,7 @@ freecodecamp-python/
 │   ├── build-an-email-simulator/
 │   ├── build-a-salary-tracker/
 │   ├── build-a-media-catalogue/
+│   ├── build-a-discount-calculator/
 │   └── README.md
 │
 ├── labs/
@@ -183,9 +189,9 @@ They are used to:
 - Build confidence before independent work
 - Develop reusable programming habits
 
-The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, and custom exceptions.
+The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, custom exceptions, abstract base classes, and strategy-based software design.
 
-The latest completed workshop, **Build a Media Catalogue**, introduced parent and child classes, `super()`, method overriding, custom exception objects, and type-based collection filtering.
+The latest completed workshop, **Build a Discount Calculator**, introduced abstract base classes, `@abstractmethod`, runtime polymorphism, the Strategy design pattern, constructor-based dependency injection, and best-price selection across interchangeable discount algorithms.
 
 Detailed workshop documentation is maintained in [`workshops/README.md`](workshops/README.md).
 
@@ -278,6 +284,8 @@ Status: Completed
 - Guard clauses
 - Early returns
 - Small, testable units of logic
+- Constructor-based dependency injection
+- Strategy orchestration through dedicated engine classes
 
 ### Programming Logic
 
@@ -306,6 +314,9 @@ Status: Completed
 - List comprehensions
 - Mixed collections of related objects
 - Filtering objects by exact class or subclass type
+- Storing interchangeable strategy objects in a list
+- Aggregating candidate numeric results
+- Selecting an optimal result with `min()`
 
 ### Loops and Iteration
 
@@ -402,6 +413,11 @@ Status: Completed
 - `__repr__()`
 - Transaction-based object models
 - State-aware validation
+- Abstract base classes with `ABC`
+- Required subclass interfaces with `@abstractmethod`
+- Strategy-pattern implementations
+- Runtime polymorphism through a shared contract
+- Separation of algorithm selection from algorithm implementation
 
 ### Date and Time
 
@@ -438,10 +454,133 @@ Status: Completed
 - Automated test interpretation
 - Edge-case testing
 - Incremental correction
+- Diagnosing parameter-name mismatches
+- Distinguishing built-in functions from collection methods
+- Debugging variable scope and execution-order problems
 
 ---
 
 ## Selected Project Highlights
+
+
+### Build a Discount Calculator
+
+Implemented a strategy-driven pricing engine that evaluates multiple discount
+algorithms and returns the lowest valid price.
+
+The completed workshop includes:
+
+- A `Product` model
+- An abstract `DiscountStrategy` interface
+- `PercentageDiscount`
+- `FixedAmountDiscount`
+- `PremiumUserDiscount`
+- A `DiscountEngine` responsible for evaluating strategies
+- Type hints for products, prices, user tiers, and strategy collections
+- A main execution guard
+- Currency output formatted to two decimal places
+
+The shared strategy contract is defined with `ABC` and `@abstractmethod`:
+
+```python
+class DiscountStrategy(ABC):
+    @abstractmethod
+    def is_applicable(
+        self,
+        product: Product,
+        user_tier: str,
+    ) -> bool:
+        pass
+
+    @abstractmethod
+    def apply_discount(
+        self,
+        product: Product,
+    ) -> float:
+        pass
+```
+
+Each concrete strategy implements the same interface while preserving its own
+business rule:
+
+```text
+PercentageDiscount
+        ↓
+Valid only up to 70%
+
+FixedAmountDiscount
+        ↓
+Valid only when the amount is below 90% of the original price
+
+PremiumUserDiscount
+        ↓
+Valid only for premium users
+```
+
+The engine receives the strategies through its constructor:
+
+```python
+strategies = [
+    PercentageDiscount(10),
+    FixedAmountDiscount(5),
+    PremiumUserDiscount(),
+]
+
+engine = DiscountEngine(strategies)
+```
+
+Calculation flow:
+
+```text
+Original price
+      ↓
+Evaluate each strategy
+      ↓
+Check is_applicable(...)
+      ↓
+Apply valid discounts
+      ↓
+Collect candidate prices
+      ↓
+Return min(prices)
+```
+
+Example:
+
+```python
+product = Product("Wireless Mouse", 50.0)
+user_tier = "Premium"
+
+best_price = engine.calculate_best_price(
+    product,
+    user_tier,
+)
+
+print(
+    f"Best price for {product.name} "
+    f"for {user_tier} user: ${best_price:.2f}"
+)
+```
+
+Expected output:
+
+```text
+Best price for Wireless Mouse for Premium user: $40.00
+```
+
+This workshop strengthened:
+
+- Abstract interface design
+- Runtime polymorphism
+- Strategy-pattern architecture
+- Dependency injection
+- Separation of responsibilities
+- Business-rule encapsulation
+- Candidate-result comparison
+- Type annotations
+- Exact monetary formatting
+
+---
 
 ### Build a Media Catalogue
 
@@ -772,6 +911,10 @@ Movie + TVSeries + MediaCatalogue
         ↓
 Inheritance, polymorphism, filtering, and custom exceptions
         ↓
+DiscountStrategy + DiscountEngine
+        ↓
+Abstract interfaces, strategy objects, and best-result selection
+        ↓
 Category
         ↓
 Ledgers, transfers, reporting, and visualization
@@ -787,6 +930,7 @@ Ledgers, transfers, reporting, and visualization
 | Salary Tracker | Encapsulation and controlled state transitions |
 | Game Character Tracker | Read-only properties and bounded attributes |
 | Media Catalogue | Inheritance, polymorphism, custom exceptions, and collection filtering |
+| Discount Calculator | Abstract interfaces, strategy pattern, dependency injection, and runtime polymorphism |
 | Budget App | Transaction systems, cross-object transfers, reporting |
 
 This progression establishes a foundation for maintainable engineering software.
@@ -809,8 +953,9 @@ Each project follows a repeatable implementation process.
 8. Apply a focused correction.
 9. Test boundary values and invalid inputs.
 10. Refactor for readability.
-11. Add comments, docstrings, and README documentation.
-12. Commit the completed project.
+11. Preserve required behavior while improving readability.
+12. Add comments, docstrings, and README documentation.
+13. Commit the completed project.
 
 ### Test-Driven Feedback Loop
 
@@ -840,6 +985,8 @@ Regression check
 - Match required output exactly.
 - Add comments that explain intent.
 - Refactor only after the behavior is correct.
+- Preserve the original workshop contract when documenting completed code.
+- Prefer interfaces that allow new behavior without modifying existing orchestration logic.
 
 ---
 
@@ -870,6 +1017,12 @@ Regression check
 - Custom exceptions must receive every argument declared by their constructor.
 - Automated tests often check both behavior and implementation structure.
 - A readable object representation greatly improves debugging.
+- Parameter names must match the identifiers used inside the method body.
+- Built-in functions such as `min(prices)` are different from collection methods.
+- Instance methods must be called through an object, such as `engine.calculate_best_price(...)`.
+- Variables must be defined before they are passed into constructors.
+- Code inside `if __name__ == '__main__':` must remain consistently indented.
+- Abstract subclasses must implement every required abstract method before they can be instantiated.
 
 ---
 
@@ -972,6 +1125,31 @@ class MonitoringStation:
 
 This is directly related to the validation and encapsulation patterns practiced in the Salary Tracker and Game Character Stats Tracker.
 
+The Strategy pattern from the Discount Calculator also maps naturally to engineering software. Different calibration metrics, numerical solvers, boundary-condition treatments, or model-selection rules can implement a shared interface and be evaluated by one orchestration engine.
+
+
+A strategy-oriented engineering design could look like this:
+
+```python
+class ValidationMetric(ABC):
+    @abstractmethod
+    def calculate(self, observed, simulated):
+        pass
+
+
+class RMSEMetric(ValidationMetric):
+    def calculate(self, observed, simulated):
+        pass
+
+
+class NSEMetric(ValidationMetric):
+    def calculate(self, observed, simulated):
+        pass
+```
+
+This allows a validation engine to compare interchangeable metrics without
+hard-coding the details of each calculation.
+
 ---
 
 ## Current Roadmap
@@ -983,6 +1161,8 @@ This is directly related to the validation and encapsulation patterns practiced 
 - Deepen object-oriented programming skills
 - Strengthen inheritance and polymorphism
 - Improve custom exception design
+- Strengthen abstract interface design
+- Apply design patterns to larger applications
 - Practice automated testing
 - Strengthen documentation quality
 
@@ -1016,6 +1196,8 @@ Encapsulation and Validated State
         ↓
 Inheritance, Polymorphism, and Custom Exceptions
         ↓
+Abstract Interfaces and Strategy-Based Design
+        ↓
 Testing and Documentation
         ↓
 NumPy and pandas
@@ -1038,16 +1220,16 @@ AI-Assisted Engineering Workflows
 This repository is actively maintained as part of an ongoing learning process.
 
 ```text
-Workshops:               11
+Workshops:               12
 Labs:                     7
 Certification Projects:   2
-Total Projects:          20
+Total Projects:          21
 ```
 
 Latest completed workshop:
 
 ```text
-Build a Media Catalogue
+Build a Discount Calculator
 ```
 
 Latest completed lab:
@@ -1081,7 +1263,7 @@ Automated tests: 24/24 passed
 
 The workshop, lab, and certification-project requirements are provided through the **freeCodeCamp Python Certification**.
 
-The implementations, comments, documentation, repository organization, and engineering-oriented extensions reflect my personal learning process.
+The implementations, comments, documentation, repository organization, and engineering-oriented extensions reflect my independent learning process and technical portfolio development.
 
 ---
 
