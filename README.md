@@ -4,9 +4,9 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-21-success)
+![Projects](https://img.shields.io/badge/Projects_Completed-22-success)
 ![Workshops](https://img.shields.io/badge/Workshops-12-2563EB)
-![Labs](https://img.shields.io/badge/Labs-7-16A34A)
+![Labs](https://img.shields.io/badge/Labs-8-16A34A)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-2-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
@@ -42,15 +42,15 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 | Area | Purpose | Completed |
 | --- | --- | ---: |
 | Workshops | Guided projects introducing new Python concepts incrementally | 12 |
-| Labs | Independent implementations based on user stories and automated tests | 7 |
+| Labs | Independent implementations based on user stories and automated tests | 8 |
 | Certification Projects | Larger projects combining multiple programming concepts | 2 |
-| **Total** | **Documented Python projects** | **21** |
+| **Total** | **Documented Python projects** | **22** |
 
 ```text
 Workshops              ████████████  12 completed
-Labs                   ███████░░░   7 completed
+Labs                   ████████░░   8 completed
 Certification Projects ██░░░░░░░░   2 completed
-Overall                █████████████████████  21 completed
+Overall                ██████████████████████  22 completed
 ```
 
 ### Current Learning Stage
@@ -79,6 +79,8 @@ Polymorphism and Method Overriding
 Custom Exceptions
         ↓
 Abstract Base Classes
+        ↓
+Interface-Oriented Inheritance
         ↓
 Strategy Pattern and Polymorphic Algorithms
         ↓
@@ -117,6 +119,7 @@ Formatted Reports and Visualizations
 | 5 | Debug an ISBN Validator | Debugging, checksum logic, control flow | ✅ |
 | 6 | Build a Planet Class | Classes, exceptions, methods, object representation | ✅ |
 | 7 | Build a Game Character Stats Tracker | Properties, getters, setters, encapsulation | ✅ |
+| 8 | Build a Player Interface | Abstract base classes, inheritance, random movement, path tracking | ✅ |
 
 ### Certification Projects
 
@@ -154,6 +157,7 @@ freecodecamp-python/
 │   ├── debug-an-isbn-validator.py
 │   ├── build-a-planet-class.py
 │   ├── build-a-game-character-stats-tracker.py
+│   ├── build-a-player-interface.py
 │   └── README.md
 │
 ├── certification-projects/
@@ -211,7 +215,7 @@ They are used to practice:
 - Matching exact output formats
 - Refactoring final solutions for clarity
 
-The latest completed lab, **Build a Game Character Stats Tracker**, strengthened property-based state management through read-only properties, validated setters, clamped numeric ranges, and controlled level progression.
+The latest completed lab, **Build a Player Interface**, introduced abstract base classes, required subclass methods, parent-constructor reuse with `super()`, tuple-based movement vectors, random movement selection, and path-history tracking.
 
 Detailed lab documentation is maintained in [`labs/README.md`](labs/README.md).
 
@@ -317,6 +321,9 @@ Status: Completed
 - Storing interchangeable strategy objects in a list
 - Aggregating candidate numeric results
 - Selecting an optimal result with `min()`
+- Storing two-dimensional movement vectors as tuples
+- Recording position history in lists
+- Extending movement sets with `list.extend()`
 
 ### Loops and Iteration
 
@@ -329,6 +336,7 @@ Status: Completed
 - Numbered output
 - Iterative text construction
 - Dynamic row and column generation
+- Random selection with `random.choice()`
 
 ### Text Processing
 
@@ -418,6 +426,10 @@ Status: Completed
 - Strategy-pattern implementations
 - Runtime polymorphism through a shared contract
 - Separation of algorithm selection from algorithm implementation
+- Abstract parent classes for shared state and behavior
+- Concrete subclasses that implement required methods
+- Parent-constructor reuse with `super()`
+- Interface-oriented inheritance
 
 ### Date and Time
 
@@ -457,6 +469,9 @@ Status: Completed
 - Diagnosing parameter-name mismatches
 - Distinguishing built-in functions from collection methods
 - Debugging variable scope and execution-order problems
+- Distinguishing tuple concatenation from coordinate arithmetic
+- Diagnosing incomplete abstract subclass implementations
+- Verifying inherited initialization and state
 
 ---
 
@@ -719,6 +734,130 @@ This workshop introduced disciplined object-oriented design in which the object 
 
 ---
 
+
+### Build a Player Interface
+
+Implemented an extensible movement system using an abstract parent class and a
+concrete pawn subclass.
+
+The completed lab includes:
+
+- An abstract `Player` class
+- A concrete `Pawn` class
+- Shared player state
+- Random movement selection
+- Two-dimensional coordinate updates
+- Path-history tracking
+- An abstract `level_up()` contract
+- Diagonal movement upgrades
+
+The parent class defines the shared state:
+
+```python
+class Player(ABC):
+    def __init__(self):
+        self.moves = []
+        self.position = (0, 0)
+        self.path = [self.position]
+```
+
+The shared movement logic is implemented once in the parent class:
+
+```python
+def make_move(self):
+    move = random.choice(self.moves)
+
+    self.position = (
+        self.position[0] + move[0],
+        self.position[1] + move[1],
+    )
+
+    self.path.append(self.position)
+    return self.position
+```
+
+The parent class requires every concrete player type to implement its own
+level-up behavior:
+
+```python
+@abstractmethod
+def level_up(self):
+    pass
+```
+
+The `Pawn` subclass reuses the common initialization and defines four initial
+movement vectors:
+
+```python
+class Pawn(Player):
+    def __init__(self):
+        super().__init__()
+
+        self.moves = [
+            (0, 1),
+            (0, -1),
+            (-1, 0),
+            (1, 0),
+        ]
+```
+
+After leveling up, the pawn receives four diagonal movements:
+
+```python
+def level_up(self):
+    self.moves.extend([
+        (1, 1),
+        (1, -1),
+        (-1, 1),
+        (-1, -1),
+    ])
+```
+
+Class relationship:
+
+```text
+Player (abstract)
+    ├── position
+    ├── path
+    ├── make_move()
+    └── level_up() contract
+              ↓
+Pawn (concrete)
+    ├── cardinal movements
+    └── diagonal level-up movements
+```
+
+Movement flow:
+
+```text
+Current position
+      ↓
+Choose a random movement vector
+      ↓
+Add x and y offsets
+      ↓
+Update position
+      ↓
+Append position to path
+      ↓
+Return the new position
+```
+
+This lab strengthened:
+
+- Abstract base classes
+- Abstract methods
+- Inheritance
+- Parent-constructor reuse
+- Concrete subclass implementation
+- Random selection
+- Tuple-based coordinates
+- Movement-vector arithmetic
+- Path-history tracking
+- Interface-oriented design
+
+---
+
 ### Build a Game Character Stats Tracker
 
 Created a `GameCharacter` class with:
@@ -907,6 +1046,10 @@ GameCharacter
         ↓
 Read-only properties and clamped state
         ↓
+Player + Pawn
+        ↓
+Abstract inheritance, shared movement logic, and required subclass behavior
+        ↓
 Movie + TVSeries + MediaCatalogue
         ↓
 Inheritance, polymorphism, filtering, and custom exceptions
@@ -929,6 +1072,7 @@ Ledgers, transfers, reporting, and visualization
 | Email Simulator | Multiple interacting classes |
 | Salary Tracker | Encapsulation and controlled state transitions |
 | Game Character Tracker | Read-only properties and bounded attributes |
+| Player Interface | Abstract inheritance, shared behavior, movement vectors, and path tracking |
 | Media Catalogue | Inheritance, polymorphism, custom exceptions, and collection filtering |
 | Discount Calculator | Abstract interfaces, strategy pattern, dependency injection, and runtime polymorphism |
 | Budget App | Transaction systems, cross-object transfers, reporting |
@@ -987,6 +1131,8 @@ Regression check
 - Refactor only after the behavior is correct.
 - Preserve the original workshop contract when documenting completed code.
 - Prefer interfaces that allow new behavior without modifying existing orchestration logic.
+- Keep shared behavior in parent classes and subclass-specific behavior in concrete classes.
+- Use abstract methods when every subclass must provide a required operation.
 
 ---
 
@@ -1023,6 +1169,9 @@ Regression check
 - Variables must be defined before they are passed into constructors.
 - Code inside `if __name__ == '__main__':` must remain consistently indented.
 - Abstract subclasses must implement every required abstract method before they can be instantiated.
+- Adding tuples concatenates them; coordinate arithmetic requires adding x and y components separately.
+- Tests for parent-class behavior may rely on a concrete subclass being instantiable.
+- Shared initialization should be reused through `super().__init__()` when required.
 
 ---
 
@@ -1127,6 +1276,8 @@ This is directly related to the validation and encapsulation patterns practiced 
 
 The Strategy pattern from the Discount Calculator also maps naturally to engineering software. Different calibration metrics, numerical solvers, boundary-condition treatments, or model-selection rules can implement a shared interface and be evaluated by one orchestration engine.
 
+The Player Interface lab adds another directly relevant pattern: an abstract parent class can define shared state and movement logic, while concrete subclasses provide specialized behavior. The same structure can be used for particles, drifters, monitoring platforms, or multiple numerical-model types.
+
 
 A strategy-oriented engineering design could look like this:
 
@@ -1150,6 +1301,39 @@ class NSEMetric(ValidationMetric):
 This allows a validation engine to compare interchangeable metrics without
 hard-coding the details of each calculation.
 
+
+A trajectory-oriented engineering model could use the same pattern:
+
+```python
+class MovingEntity(ABC):
+    def __init__(self):
+        self.position = (0.0, 0.0)
+        self.path = [self.position]
+
+    @abstractmethod
+    def update_position(self):
+        pass
+
+
+class SurfaceDrifter(MovingEntity):
+    def update_position(self):
+        pass
+
+
+class NumericalParticle(MovingEntity):
+    def update_position(self):
+        pass
+```
+
+This structure separates:
+
+- Shared trajectory state
+- Common path-history storage
+- Specialized movement or transport rules
+
+It can later support particle tracking, Lagrangian transport, sensor trajectories,
+or model-specific movement behavior.
+
 ---
 
 ## Current Roadmap
@@ -1162,6 +1346,7 @@ hard-coding the details of each calculation.
 - Strengthen inheritance and polymorphism
 - Improve custom exception design
 - Strengthen abstract interface design
+- Practice reusable class hierarchies and parent-child contracts
 - Apply design patterns to larger applications
 - Practice automated testing
 - Strengthen documentation quality
@@ -1198,6 +1383,8 @@ Inheritance, Polymorphism, and Custom Exceptions
         ↓
 Abstract Interfaces and Strategy-Based Design
         ↓
+Reusable Class Hierarchies and Movement Models
+        ↓
 Testing and Documentation
         ↓
 NumPy and pandas
@@ -1221,9 +1408,9 @@ This repository is actively maintained as part of an ongoing learning process.
 
 ```text
 Workshops:               12
-Labs:                     7
+Labs:                     8
 Certification Projects:   2
-Total Projects:          21
+Total Projects:          22
 ```
 
 Latest completed workshop:
@@ -1235,7 +1422,7 @@ Build a Discount Calculator
 Latest completed lab:
 
 ```text
-Build a Game Character Stats Tracker
+Build a Player Interface
 ```
 
 Latest completed certification project:
