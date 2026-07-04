@@ -7,8 +7,8 @@ These labs focus on translating user stories into working software, designing pr
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Labs](https://img.shields.io/badge/Labs_Completed-7-success)
-![OOP Labs](https://img.shields.io/badge/OOP_Labs-2-6f42c1)
+![Labs](https://img.shields.io/badge/Labs_Completed-8-success)
+![OOP Labs](https://img.shields.io/badge/OOP_Labs-3-6f42c1)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -45,7 +45,7 @@ Each exercise requires some combination of:
 - Refactoring code for clarity
 - Documenting the final implementation
 
-The current learning path has progressed from fundamental control flow and functions to structured data, debugging, classes, properties, controlled state updates, and object-oriented design.
+The current learning path has progressed from fundamental control flow and functions to structured data, debugging, classes, properties, controlled state updates, abstract base classes, inheritance, and object-oriented design.
 
 ---
 
@@ -60,6 +60,7 @@ The current learning path has progressed from fundamental control flow and funct
 | 5 | Debug an ISBN Validator | Debugging, exceptions, checksum validation | ✅ |
 | 6 | Build a Planet Class | Classes, constructors, methods, exceptions | ✅ |
 | 7 | Build a Game Character Stats Tracker | Properties, getters, setters, encapsulation | ✅ |
+| 8 | Build a Player Interface | Abstract base classes, inheritance, random movement, path tracking | ✅ |
 
 ---
 
@@ -67,16 +68,16 @@ The current learning path has progressed from fundamental control flow and funct
 
 | Category | Completed |
 | --- | ---: |
-| Total Labs | 7 |
+| Total Labs | 8 |
 | Debugging-Focused Labs | 1 |
-| Object-Oriented Labs | 2 |
+| Object-Oriented Labs | 3 |
 | Labs Using Validation Rules | 5 |
 | Current Status | In Progress |
 
 ```text
-Labs Completed: 7
-Progress:       ███████░░░ 7 completed
-Current Focus:  Object-oriented programming and controlled object state
+Labs Completed: 8
+Progress:       ████████░░ 8 completed
+Current Focus:  Abstract interfaces, inheritance, and reusable object behavior
 ```
 
 ### Concept Progression
@@ -95,6 +96,8 @@ Debugging Existing Programs
 Classes and Object Construction
         ↓
 Properties, Getters, and Setters
+        ↓
+Abstract Base Classes and Inheritance
 ```
 
 ---
@@ -110,6 +113,7 @@ labs/
 ├── debug-an-isbn-validator.py
 ├── build-a-planet-class.py
 ├── build-a-game-character-stats-tracker.py
+├── build-a-player-interface.py
 └── README.md
 ```
 
@@ -198,6 +202,14 @@ The shared `README.md` records:
 - Controlled state mutation
 - The `__str__()` special method
 - Readable object representations
+- Parent and child classes
+- Inheritance
+- Abstract base classes with `ABC`
+- Abstract methods with `@abstractmethod`
+- Calling parent constructors with `super()`
+- Concrete implementations of abstract interfaces
+- Shared behavior in parent classes
+- Specialized behavior in subclasses
 
 ### Properties and State Management
 
@@ -209,6 +221,7 @@ The shared `README.md` records:
 - Resetting object state through public setters
 - Using augmented assignment with properties
 - Designing read-only public interfaces
+- Defining required subclass behavior through abstract methods
 
 Example:
 
@@ -241,6 +254,10 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Dictionary validation
 - Data aggregation
 - Record-based data modeling
+- Tuples for two-dimensional coordinates
+- Lists of movement vectors
+- Path-history storage
+- Extending lists with `extend()`
 
 ### Loops and Iteration
 
@@ -252,6 +269,8 @@ The getter provides the current value, Python performs the arithmetic operation,
 - String construction
 - Loop-control logic
 - Repeated data processing
+- Random item selection with `random.choice()`
+- Coordinate updates using tuple indexing
 
 ### Error and Exception Handling
 
@@ -279,6 +298,9 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Testing expected output
 - Testing edge cases
 - Identifying incorrect assumptions
+- Distinguishing tuple concatenation from numeric coordinate addition
+- Debugging abstract-class instantiation requirements
+- Verifying inherited initialization
 
 ### Problem Solving
 
@@ -292,6 +314,8 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Refactoring for readability
 - Matching exact output formats
 - Distinguishing implementation requirements from runtime behavior
+- Translating interface requirements into abstract methods
+- Reusing common state and behavior through inheritance
 
 ---
 
@@ -504,6 +528,146 @@ The same pattern is used for mana.
 
 ---
 
+
+### 8. Build a Player Interface
+
+Built an extensible player-movement system using an abstract parent class and a
+concrete pawn implementation.
+
+The completed lab contains:
+
+- An abstract `Player` class
+- A concrete `Pawn` subclass
+- Shared movement state
+- Two-dimensional coordinate tuples
+- Random movement selection
+- Position updates
+- Path-history tracking
+- An abstract `level_up()` interface
+- Additional diagonal movements after leveling up
+
+The `Player` class initializes the common state:
+
+```python
+self.moves = []
+self.position = (0, 0)
+self.path = [self.position]
+```
+
+The `make_move()` method:
+
+1. Selects one available move with `random.choice()`.
+2. Adds the selected x and y offsets to the current coordinates.
+3. Stores the updated position.
+4. Appends the position to the movement history.
+5. Returns the new position.
+
+```python
+def make_move(self):
+    move = random.choice(self.moves)
+
+    self.position = (
+        self.position[0] + move[0],
+        self.position[1] + move[1],
+    )
+
+    self.path.append(self.position)
+    return self.position
+```
+
+The parent class defines `level_up()` as an abstract method:
+
+```python
+@abstractmethod
+def level_up(self):
+    pass
+```
+
+This prevents incomplete player types from being instantiated and requires every
+concrete subclass to define its own leveling behavior.
+
+The `Pawn` class reuses the shared initialization through `super()`:
+
+```python
+class Pawn(Player):
+    def __init__(self):
+        super().__init__()
+
+        self.moves = [
+            (0, 1),
+            (0, -1),
+            (-1, 0),
+            (1, 0),
+        ]
+```
+
+Its initial movement vectors represent:
+
+```text
+(0, 1)   → up
+(0, -1)  → down
+(-1, 0)  → left
+(1, 0)   → right
+```
+
+After leveling up, the pawn gains four diagonal movements:
+
+```python
+def level_up(self):
+    self.moves.extend([
+        (1, 1),
+        (1, -1),
+        (-1, 1),
+        (-1, -1),
+    ])
+```
+
+Class relationship:
+
+```text
+Player (abstract)
+    ├── shared position
+    ├── shared path history
+    ├── shared make_move()
+    └── required level_up()
+              ↓
+Pawn (concrete)
+    ├── four initial movement vectors
+    └── four diagonal level-up movements
+```
+
+Movement flow:
+
+```text
+Current position
+      ↓
+Select a random move
+      ↓
+Add x and y offsets
+      ↓
+Update position
+      ↓
+Append position to path
+      ↓
+Return new position
+```
+
+This lab reinforced:
+
+- Abstract base classes
+- Abstract methods
+- Inheritance
+- Parent-constructor reuse
+- Concrete subclass implementation
+- Random selection
+- Tuple-based coordinates
+- Movement-vector arithmetic
+- Path-history tracking
+- List extension
+- Interface-oriented design
+
+---
+
 ## Development Workflow
 
 Each lab follows an independent problem-solving workflow:
@@ -558,6 +722,8 @@ The completed labs aim to follow these principles:
 - Match required output formats exactly.
 - Prefer readable logic over unnecessarily compact expressions.
 - Add comments that explain intent rather than restating syntax.
+- Keep shared behavior in parent classes and specialized behavior in subclasses.
+- Use abstract methods when concrete subclasses must provide specific behavior.
 
 ---
 
@@ -584,8 +750,14 @@ Current priorities include:
 
 - Strengthening Python fundamentals
 - Deepening object-oriented programming knowledge
+- Understanding abstract base classes and interfaces
+- Reusing behavior through inheritance
+- Applying `super()` correctly
 - Understanding properties and encapsulation
-- Managing object state safely
+- Managing object state
+- Designing reusable class hierarchies
+- Implementing abstract interfaces safely
+- Modeling coordinates and movement histories
 - Writing reliable validation logic
 - Using exceptions correctly
 - Reading automated test feedback
@@ -612,6 +784,9 @@ Potential applications include:
 - Debugging scientific-analysis scripts
 - Enforcing data-integrity constraints
 - Automating repetitive research tasks
+- Defining shared interfaces for multiple model types
+- Tracking movement, trajectories, or station paths
+- Extending specialized engineering classes from common parent classes
 
 Object-oriented programming can later support structures such as:
 
@@ -654,6 +829,42 @@ class MonitoringStation:
 
 This pattern helps keep scientific data objects internally consistent.
 
+
+Abstract interfaces can also support related engineering models:
+
+```python
+from abc import ABC, abstractmethod
+
+
+class NumericalModel(ABC):
+    @abstractmethod
+    def run(self):
+        pass
+
+
+class HydrodynamicModel(NumericalModel):
+    def run(self):
+        pass
+
+
+class SalinityModel(NumericalModel):
+    def run(self):
+        pass
+```
+
+A path-tracking pattern can represent moving sensors, particles, drifters, or
+computed trajectories:
+
+```python
+class Particle:
+    def __init__(self):
+        self.position = (0.0, 0.0)
+        self.path = [self.position]
+```
+
+These patterns provide a foundation for reusable simulation components and
+consistent interfaces across related model types.
+
 ---
 
 ## Future Learning Areas
@@ -661,6 +872,7 @@ This pattern helps keep scientific data objects internally consistent.
 Future labs will gradually support development in:
 
 - Advanced object-oriented programming
+- Abstract interfaces and polymorphism
 - Inheritance and composition
 - Class methods and static methods
 - File input and output
@@ -702,6 +914,8 @@ Data Validation
         ↓
 Object-Oriented Programming
         ↓
+Abstract Interfaces and Inheritance
+        ↓
 Scientific Data Processing
         ↓
 Numerical Methods
@@ -742,6 +956,8 @@ Each completed lab documents progress in:
 - Writing reusable solutions
 - Applying Python concepts independently
 - Managing object state
+- Designing reusable class hierarchies
+- Implementing abstract interfaces
 - Improving technical documentation
 
 Additional labs will be added as progress continues through the freeCodeCamp Python Certification.
