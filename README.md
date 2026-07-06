@@ -4,8 +4,8 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-23-success)
-![Workshops](https://img.shields.io/badge/Workshops-12-2563EB)
+![Projects](https://img.shields.io/badge/Projects_Completed-24-success)
+![Workshops](https://img.shields.io/badge/Workshops-13-2563EB)
 ![Labs](https://img.shields.io/badge/Labs-8-16A34A)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-3-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
@@ -41,16 +41,16 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 
 | Area | Purpose | Completed |
 | --- | --- | ---: |
-| Workshops | Guided projects introducing new Python concepts incrementally | 12 |
+| Workshops | Guided projects introducing new Python concepts incrementally | 13 |
 | Labs | Independent implementations based on user stories and automated tests | 8 |
 | Certification Projects | Larger projects combining multiple programming concepts | 3 |
-| **Total** | **Documented Python projects** | **23** |
+| **Total** | **Documented Python projects** | **24** |
 
 ```text
-Workshops              ████████████  12 completed
+Workshops              █████████████  13 completed
 Labs                   ████████░░   8 completed
 Certification Projects ███░░░░░░░   3 completed
-Overall                ███████████████████████  23 completed
+Overall                ████████████████████████  24 completed
 ```
 
 ### Current Learning Stage
@@ -86,6 +86,10 @@ Reusable Class Hierarchies and Object Invariants
         ↓
 Strategy Pattern and Polymorphic Algorithms
         ↓
+Custom Data Structures
+        ↓
+Linked Lists, Nodes, and References
+        ↓
 Formatted Reports and Visualizations
 ```
 
@@ -109,6 +113,7 @@ Formatted Reports and Visualizations
 | 10 | Build a Salary Tracker | Properties, setters, encapsulation, class state | ✅ |
 | 11 | Build a Media Catalogue | Inheritance, polymorphism, custom exceptions, collection filtering | ✅ |
 | 12 | Build a Discount Calculator | Abstract base classes, strategy pattern, polymorphic pricing, type hints | ✅ |
+| 13 | Build a Linked List | Nodes, references, traversal, insertion, removal, custom data structures | ✅ |
 
 ### Labs
 
@@ -150,6 +155,7 @@ freecodecamp-python/
 │   ├── build-a-salary-tracker/
 │   ├── build-a-media-catalogue/
 │   ├── build-a-discount-calculator/
+│   ├── build-a-linked-list/
 │   └── README.md
 │
 ├── labs/
@@ -202,9 +208,9 @@ They are used to:
 - Build confidence before independent work
 - Develop reusable programming habits
 
-The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, custom exceptions, abstract base classes, and strategy-based software design.
+The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based software design, and custom reference-based data structures.
 
-The latest completed workshop, **Build a Discount Calculator**, introduced abstract base classes, `@abstractmethod`, runtime polymorphism, the Strategy design pattern, constructor-based dependency injection, and best-price selection across interchangeable discount algorithms.
+The latest completed workshop, **Build a Linked List**, introduced custom node objects, a `head` reference, `.next` links, linked-list traversal, insertion at the end of a chain, removal by link reassignment, and manual length tracking.
 
 Detailed workshop documentation is maintained in [`workshops/README.md`](workshops/README.md).
 
@@ -516,6 +522,27 @@ Detailed certification-project documentation is maintained in
 - Storing two-dimensional movement vectors as tuples
 - Recording position history in lists
 - Extending movement sets with `list.extend()`
+- Building custom node-based data structures
+- Maintaining a linked-list `head` reference
+- Connecting objects through `.next` references
+- Updating links during insertion and removal
+- Maintaining a manual collection length
+
+### Data Structures
+
+- Custom linked lists
+- Nested `Node` classes
+- Node objects storing elements
+- Reference-based object chains
+- The `head` reference
+- The `next` reference
+- Empty-list detection
+- Appending nodes to the end of a linked list
+- Removing the first matching node
+- Bypassing removed nodes through reference reassignment
+- Handling head-node removal
+- Handling missing elements safely
+- Comparing linked lists with built-in Python lists
 
 ### Loops and Iteration
 
@@ -530,6 +557,9 @@ Detailed certification-project documentation is maintained in
 - Dynamic row and column generation
 - String repetition for shape rendering
 - Random selection with `random.choice()`
+- Traversal with `while` loops
+- Stopping traversal at `None`
+- Moving from one node to the next through object references
 
 ### Text Processing
 
@@ -626,6 +656,9 @@ Detailed certification-project documentation is maintained in
 - Reusable geometric parent classes
 - Subclass invariants such as `width == height`
 - Method overriding to preserve valid subclass state
+- Nested classes for implementation details
+- Reference-based relationships between objects
+- Object chains created through attributes
 
 ### Date and Time
 
@@ -673,11 +706,177 @@ Detailed certification-project documentation is maintained in
 - Diagnosing misspelled method names
 - Preserving subclass invariants after state changes
 - Debugging exact newline requirements in generated pictures
+- Debugging assignment direction in linked structures
+- Checking `None` with `is None` and `is not None`
+- Avoiding infinite traversal loops
+- Updating `head` correctly when removing the first node
 
 ---
 
 ## Selected Project Highlights
 
+
+
+### Build a Linked List
+
+Implemented a custom linked list using a nested `Node` class and object references.
+
+The completed workshop includes:
+
+- A `LinkedList` class
+- A nested `Node` class
+- A `length` counter
+- A `head` reference
+- An `is_empty()` method
+- An `add()` method
+- A `remove()` method
+- Node traversal through `.next`
+- Safe handling of missing elements
+- Removal from the head of the list
+- Removal from the middle or end of the list
+
+The `Node` class stores one element and a reference to the next node:
+
+```python
+class Node:
+    def __init__(self, element):
+        self.element = element
+        self.next = None
+```
+
+The linked list starts empty:
+
+```python
+def __init__(self):
+    self.length = 0
+    self.head = None
+```
+
+The `head` attribute points to the first node. If the list is empty, `head` is
+`None`.
+
+Adding a node follows this flow:
+
+```text
+Create a new node
+        ↓
+Check whether the list is empty
+        ↓
+If empty, assign the new node to head
+        ↓
+If not empty, traverse to the final node
+        ↓
+Connect the final node to the new node
+        ↓
+Increase length
+```
+
+The empty-list case requires this assignment:
+
+```python
+self.head = node
+```
+
+The direction matters. `self.head = node` makes the list point to the new node.
+The reverse assignment, `node = self.head`, would only overwrite the local
+variable and would not update the linked list.
+
+For a non-empty list, the code traverses the chain until it reaches the final
+node:
+
+```python
+while current_node.next is not None:
+    current_node = current_node.next
+```
+
+This checks whether another node exists after the current one. The condition uses
+`is not None` because `None` should be checked by identity in Python.
+
+Removal uses both `previous_node` and `current_node`:
+
+```python
+previous_node = None
+current_node = self.head
+```
+
+The search loop moves forward until the target element is found or the end of
+the list is reached:
+
+```python
+while current_node is not None and current_node.element != element:
+    previous_node = current_node
+    current_node = current_node.next
+```
+
+If the element is not found, the method returns without changing the list:
+
+```python
+if current_node is None:
+    return
+```
+
+If the node to remove is not the head, the previous node bypasses it:
+
+```python
+previous_node.next = current_node.next
+```
+
+If the node to remove is the head, the list entry point must move forward:
+
+```python
+self.head = current_node.next
+```
+
+Structure after adding two elements:
+
+```text
+LinkedList
+    ├── length = 2
+    └── head ──▶ Node(element=1)
+                   └── next ──▶ Node(element=2)
+                                   └── next ──▶ None
+```
+
+Example:
+
+```python
+my_list = LinkedList()
+print(my_list.is_empty())
+
+my_list.add(1)
+my_list.add(2)
+
+print(my_list.is_empty())
+print(my_list.length)
+
+my_list.remove(1)
+print(my_list.length)
+```
+
+Expected output:
+
+```text
+True
+False
+2
+1
+```
+
+This workshop strengthened:
+
+- Custom data structures
+- Nested classes
+- Object references
+- Linked nodes
+- Manual length tracking
+- Linked-list traversal
+- Reference assignment
+- Head-node handling
+- Node removal by bypassing links
+- `None` checks with `is not None`
+- The difference between a built-in list and a custom linked structure
+
+---
 
 ### Build a Discount Calculator
 
@@ -1259,6 +1458,10 @@ DiscountStrategy + DiscountEngine
         ↓
 Abstract interfaces, strategy objects, and best-result selection
         ↓
+LinkedList + Node
+        ↓
+Reference-based data structures, traversal, and link updates
+        ↓
 Rectangle + Square
         ↓
 Reusable geometry, method overriding, and subclass invariants
@@ -1280,10 +1483,11 @@ Ledgers, transfers, reporting, and visualization
 | Player Interface | Abstract inheritance, shared behavior, movement vectors, and path tracking |
 | Media Catalogue | Inheritance, polymorphism, custom exceptions, and collection filtering |
 | Discount Calculator | Abstract interfaces, strategy pattern, dependency injection, and runtime polymorphism |
+| Linked List | Custom node objects, references, traversal, insertion, and removal |
 | Polygon Area Calculator | Reusable geometry, method overriding, object invariants, and containment logic |
 | Budget App | Transaction systems, cross-object transfers, reporting |
 
-This progression establishes a foundation for maintainable engineering software.
+This progression establishes a foundation for maintainable engineering software. The Linked List workshop adds an important lower-level perspective: objects can be connected directly through references rather than stored only inside built-in containers.
 
 ---
 
@@ -1384,6 +1588,12 @@ Regression check
 - Floor division is appropriate when only complete contained objects should be counted.
 - Generated text pictures may require a newline after the final row.
 - A subclass setter may need to update multiple attributes to preserve a valid invariant.
+- Assignment direction matters in reference-based structures: `self.head = node` and `node = self.head` do not mean the same thing.
+- `None` should be checked with `is None` or `is not None`.
+- Traversal loops must advance to the next node to avoid infinite loops.
+- Removing the head node requires updating `self.head`.
+- Removing a non-head node requires updating `previous_node.next`.
+- A manual `length` counter must be updated after successful insertion or removal.
 
 ---
 
@@ -1581,6 +1791,46 @@ The same invariant-preservation principle applies to engineering objects. If a s
 patch must always have equal dimensions, every public update operation should preserve that
 relationship.
 
+
+The Linked List workshop also maps to engineering workflows where data or operations form
+a chain.
+
+A linked processing chain could be represented as:
+
+```python
+class ProcessingStepNode:
+    def __init__(self, step):
+        self.step = step
+        self.next = None
+```
+
+Possible engineering uses include:
+
+- Chaining preprocessing steps
+- Sequencing validation operations
+- Connecting time-ordered observations
+- Building simple workflow pipelines
+- Representing ordered model-processing stages
+- Creating custom containers when built-in lists are not the desired abstraction
+
+For example, a hydrodynamic workflow might be organized as:
+
+```text
+Read raw data
+        ↓
+Clean missing values
+        ↓
+Interpolate time series
+        ↓
+Compare with model output
+        ↓
+Generate validation metrics
+```
+
+A linked structure can represent that kind of ordered sequence explicitly, where each node
+points to the next processing step.
+
+
 ---
 
 ## Current Roadmap
@@ -1597,6 +1847,8 @@ relationship.
 - Strengthen object invariants and method overriding
 - Apply design patterns to larger applications
 - Practice automated testing
+- Strengthen custom data-structure understanding
+- Practice linked-list traversal and reference updates
 - Strengthen documentation quality
 
 ### Next Technical Stage
@@ -1633,6 +1885,8 @@ Abstract Interfaces and Strategy-Based Design
         ↓
 Reusable Class Hierarchies and Movement Models
         ↓
+Custom Data Structures and Linked References
+        ↓
 Geometric Models and Object Invariants
         ↓
 Testing and Documentation
@@ -1657,16 +1911,16 @@ AI-Assisted Engineering Workflows
 This repository is actively maintained as part of an ongoing learning process.
 
 ```text
-Workshops:               12
+Workshops:               13
 Labs:                     8
 Certification Projects:   3
-Total Projects:          23
+Total Projects:          24
 ```
 
 Latest completed workshop:
 
 ```text
-Build a Discount Calculator
+Build a Linked List
 ```
 
 Latest completed lab:
