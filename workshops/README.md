@@ -6,11 +6,11 @@ A collection of guided Python workshop projects completed while studying the
 These workshops document my progress from Python fundamentals to text processing,
 structured data validation, regular expressions, object-oriented programming,
 object composition, encapsulation, properties, setters, inheritance, polymorphism,
-custom exceptions, abstract base classes, polymorphic strategies, and interactions between multiple objects.
+custom exceptions, abstract base classes, polymorphic strategies, interactions between multiple objects, and reference-based data structures.
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Workshops](https://img.shields.io/badge/Workshops_Completed-12-success)
+![Workshops](https://img.shields.io/badge/Workshops_Completed-13-success)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -19,12 +19,12 @@ custom exceptions, abstract base classes, polymorphic strategies, and interactio
 
 | Category               |   Completed |
 | ---------------------- | ----------: |
-| Workshops              |          12 |
-| Guided Python Projects |          12 |
+| Workshops              |          13 |
+| Guided Python Projects |          13 |
 | Current Status         | In Progress |
 
 ```text
-Progress: ████████████  12 workshops completed
+Progress: █████████████  13 workshops completed
 ```
 
 ---
@@ -45,6 +45,7 @@ Progress: ████████████  12 workshops completed
 | 10 | Build a Salary Tracker               | Properties, setters, encapsulation, validation, class state     |   ✅   |
 | 11 | Build a Media Catalogue              | Inheritance, polymorphism, custom exceptions, collection filtering |   ✅   |
 | 12 | Build a Discount Calculator          | Abstract base classes, strategy pattern, polymorphism, type hints   |   ✅   |
+| 13 | Build a Linked List                  | Nodes, references, traversal, insertion, removal, custom data structures |   ✅   |
 
 ---
 
@@ -64,6 +65,7 @@ workshops/
 ├── build-a-salary-tracker/
 ├── build-a-media-catalogue/
 ├── build-a-discount-calculator/
+├── build-a-linked-list/
 └── README.md
 ```
 
@@ -223,6 +225,30 @@ workshop-name/
 - Storing strategy objects in a list
 - Collecting candidate numeric results
 - Selecting the lowest result with `min()`
+- Building a linked data structure from custom node objects
+- Maintaining a `head` reference to the first node
+- Traversing a chain of objects through `.next` references
+- Updating links when adding or removing nodes
+
+### Data Structures
+
+- Custom linked lists
+- Nested `Node` classes
+- Node objects with stored elements
+- Reference-based connections between objects
+- The `head` reference
+- The `next` reference
+- Empty-list detection
+- Appending a node to the end of a linked list
+- Traversing nodes with a `while` loop
+- Stopping traversal at `None`
+- Removing the first matching node
+- Updating links to bypass a removed node
+- Handling removal from the head of the list
+- Handling removal from the middle or end of the list
+- Maintaining a manual `length` counter
+- Understanding reference assignment direction
+- Comparing linked lists with built-in Python lists
 
 ### Type Inspection
 
@@ -301,6 +327,10 @@ workshop-name/
 - Separating discount rules from calculation orchestration
 - Injecting strategies into a calculation engine
 - Selecting the best result from multiple algorithms
+- Building a custom linked list from node objects
+- Maintaining the head of a linked structure
+- Traversing object references until `None`
+- Updating links safely during removal
 
 ---
 
@@ -740,6 +770,159 @@ Key concepts reinforced:
 
 ---
 
+### Linked List
+
+Built a custom linked list implementation using nested node objects and reference-based traversal.
+
+The completed workshop contains:
+
+- A `LinkedList` class
+- A nested `Node` class
+- A `length` counter
+- A `head` reference
+- An `is_empty()` method
+- An `add()` method for appending elements
+- A `remove()` method for deleting the first matching element
+- Traversal through `.next` references
+- Safe handling of empty lists
+- Safe handling of missing elements
+- Removal from the head of the list
+- Removal from the middle or end of the list
+
+The `Node` class stores one value and a reference to the next node:
+
+```python
+class Node:
+    def __init__(self, element):
+        self.element = element
+        self.next = None
+```
+
+The linked list itself stores the first node and the number of nodes:
+
+```python
+def __init__(self):
+    self.length = 0
+    self.head = None
+```
+
+Adding a node follows this flow:
+
+```text
+Create a new node
+        ↓
+Check whether the list is empty
+        ↓
+If empty, assign the new node to head
+        ↓
+If not empty, traverse to the final node
+        ↓
+Set the final node's next reference to the new node
+        ↓
+Increase length
+```
+
+The `add()` method uses `self.head = node` when the list is empty. The assignment direction is important because the list's head must point to the newly created node.
+
+```python
+if self.is_empty():
+    self.head = node
+```
+
+For a non-empty list, traversal continues until the final node is found:
+
+```python
+while current_node.next is not None:
+    current_node = current_node.next
+```
+
+The condition uses `is not None` because `None` is a singleton value in Python and should be checked by identity.
+
+Removing a node follows this flow:
+
+```text
+Start at head
+        ↓
+Track previous_node and current_node
+        ↓
+Move forward until the target element is found
+        ↓
+If not found, return without changing the list
+        ↓
+If removing the head, move head to the next node
+        ↓
+Otherwise, bypass the current node
+        ↓
+Decrease length
+```
+
+The removal logic handles two important cases:
+
+```python
+elif previous_node is not None:
+    previous_node.next = current_node.next
+else:
+    self.head = current_node.next
+```
+
+This distinction is necessary because removing the head changes the list entry point, while removing a later node only changes the previous node's `.next` reference.
+
+Example:
+
+```python
+my_list = LinkedList()
+print(my_list.is_empty())
+
+my_list.add(1)
+my_list.add(2)
+print(my_list.is_empty())
+print(my_list.length)
+
+my_list.remove(1)
+print(my_list.length)
+```
+
+Expected output:
+
+```text
+True
+False
+2
+1
+```
+
+Class relationship:
+
+```text
+LinkedList
+    ├── length
+    ├── head ──▶ Node(element=1)
+    │              └── next ──▶ Node(element=2)
+    │                              └── next ──▶ None
+    └── methods
+        ├── is_empty()
+        ├── add(...)
+        └── remove(...)
+```
+
+Key concepts reinforced:
+
+- Custom data structures
+- Nested classes
+- Nodes and links
+- Object references
+- Manual length tracking
+- Linked-list traversal
+- `while` loops
+- `None` checks with `is not None`
+- Reference reassignment
+- Head-node updates
+- Removing elements by bypassing nodes
+- Distinguishing an empty list from a non-empty list
+- Understanding how linked lists differ from built-in Python lists
+
+---
+
 ### Discount Calculator
 
 Built a flexible discount-calculation system that evaluates multiple pricing
@@ -932,6 +1115,10 @@ Polymorphic discount calculations
 DiscountEngine
         ↓
 Strategy orchestration and best-price selection
+        ↓
+LinkedList and Node
+        ↓
+Reference-based data structures, traversal, and link updates
 ```
 
 The Salary Tracker extended the progression from basic classes and object composition
@@ -946,6 +1133,8 @@ The project also introduced polymorphism. Calling `str()` on a `Movie` object an
 can be stored in the same catalogue.
 
 The Discount Calculator extended this progression with abstract base classes and the strategy pattern. Multiple discount algorithms implement the same interface, allowing `DiscountEngine` to evaluate them uniformly without depending on their individual calculation details.
+
+The Linked List workshop then introduced a lower-level data-structure perspective. Instead of storing values directly in a built-in Python list, values are stored in `Node` objects connected through `.next` references. This reinforces how objects can form chains and how program state can be managed through references.
 
 ---
 
@@ -999,6 +1188,16 @@ The Media Catalogue workshop also reinforced several specific debugging lessons:
 - A method must explicitly `return` its result.
 - Output-building code must maintain valid indentation.
 
+The Linked List workshop also reinforced these debugging lessons:
+
+- Assignment direction matters: `self.head = node` and `node = self.head` mean completely different things.
+- `None` should be checked with `is None` or `is not None`.
+- A traversal loop must move to the next node, otherwise it can become an infinite loop.
+- Removing the head node requires updating `self.head`.
+- Removing a non-head node requires updating `previous_node.next`.
+- A manual `length` counter must be updated when nodes are added or removed.
+- Returning early is appropriate when the target element is not found.
+
 The Discount Calculator workshop also reinforced these debugging lessons:
 
 - Abstract subclasses must implement every required abstract method.
@@ -1014,7 +1213,7 @@ The Discount Calculator workshop also reinforced these debugging lessons:
 ## Current Progress
 
 ```text
-Completed:  ████████████  12
+Completed:  █████████████  13
 Continuing: ░░░░░░░░░░  More workshops will be added
 ```
 
@@ -1054,6 +1253,10 @@ Abstract Base Classes
 Strategy Pattern
         ↓
 Polymorphic Algorithm Selection
+        ↓
+Custom Data Structures
+        ↓
+Linked Lists, Nodes, and References
 ```
 
 ---
@@ -1088,6 +1291,9 @@ Current priorities include:
 - Injecting interchangeable behaviors into an engine class
 - Comparing candidate results safely
 - Preparing for larger labs and certification projects
+- Understanding custom data structures
+- Traversing linked nodes through object references
+- Updating links safely during insertion and deletion
 
 ---
 
@@ -1159,6 +1365,15 @@ class ObservationCatalogue:
 
     def add(self, observation):
         self.items.append(observation)
+```
+
+A linked-list-like structure could model a chain of observations or processing steps:
+
+```python
+class ObservationNode:
+    def __init__(self, observation):
+        self.observation = observation
+        self.next = None
 ```
 
 The relationship could be organized as:
@@ -1241,6 +1456,7 @@ Future workshops and projects will gradually introduce:
 | Unit Testing          | Verifying calculation and validation logic   |
 | Inheritance           | Organizing related engineering data models   |
 | Design Patterns       | Selecting interchangeable engineering logic  |
+| Data Structures       | Building custom containers and processing chains |
 | NumPy                 | Numerical arrays and scientific calculations |
 | pandas                | Tabular and time-series data processing      |
 | Matplotlib            | Scientific visualization                     |
