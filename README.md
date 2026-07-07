@@ -1,18 +1,18 @@
 # freecodecamp-python
 
-> A structured Python learning portfolio built through the **freeCodeCamp Python Certification**, with a long-term focus on scientific computing, numerical modeling, and coastal engineering applications.
+> A structured Python learning portfolio built through the **freeCodeCamp Python Certification**, with a long-term focus on scientific computing, numerical modeling, environmental data processing, and coastal engineering applications.
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-24-success)
+![Projects](https://img.shields.io/badge/Projects_Completed-25-success)
 ![Workshops](https://img.shields.io/badge/Workshops-13-2563EB)
 ![Labs](https://img.shields.io/badge/Labs-8-16A34A)
-![Certification Projects](https://img.shields.io/badge/Certification_Projects-3-7C3AED)
+![Certification Projects](https://img.shields.io/badge/Certification_Projects-4-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
-This repository documents my progression from Python fundamentals to object-oriented programming, validation, debugging, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, formatted reporting, and larger certification projects.
+This repository documents my progression from Python fundamentals to object-oriented programming, validation, debugging, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, custom data structures, formatted reporting, and larger certification projects.
 
-The immediate goal is to complete the freeCodeCamp Python Certification with correct, readable, well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data processing, numerical methods, scientific visualization, and engineering automation.
+The immediate goal is to complete the freeCodeCamp Python Certification with correct, readable, tested, and well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data validation, numerical methods, scientific visualization, and research automation.
 
 ---
 
@@ -26,11 +26,12 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 - [Certification Projects](#certification-projects)
 - [Technical Competencies](#technical-competencies)
 - [Selected Project Highlights](#selected-project-highlights)
-- [Object-Oriented Learning Progression](#object-oriented-learning-progression)
+- [Object-Oriented and Data-Structure Progression](#object-oriented-and-data-structure-progression)
 - [Development Methodology](#development-methodology)
 - [Common Debugging Lessons](#common-debugging-lessons)
 - [Engineering-Oriented Direction](#engineering-oriented-direction)
 - [Current Roadmap](#current-roadmap)
+- [Project Status](#project-status)
 - [Resources](#resources)
 - [Acknowledgements](#acknowledgements)
 - [Author](#author)
@@ -43,14 +44,14 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 | --- | --- | ---: |
 | Workshops | Guided projects introducing new Python concepts incrementally | 13 |
 | Labs | Independent implementations based on user stories and automated tests | 8 |
-| Certification Projects | Larger projects combining multiple programming concepts | 3 |
-| **Total** | **Documented Python projects** | **24** |
+| Certification Projects | Larger projects combining multiple programming concepts | 4 |
+| **Total** | **Documented Python projects** | **25** |
 
 ```text
 Workshops              █████████████  13 completed
-Labs                   ████████░░   8 completed
-Certification Projects ███░░░░░░░   3 completed
-Overall                ████████████████████████  24 completed
+Labs                   ████████░░░░░  8 completed
+Certification Projects ████░░░░░░░░░  4 completed
+Overall                █████████████████████████  25 completed
 ```
 
 ### Current Learning Stage
@@ -89,6 +90,8 @@ Strategy Pattern and Polymorphic Algorithms
 Custom Data Structures
         ↓
 Linked Lists, Nodes, and References
+        ↓
+Hash Tables, Buckets, and Collision Handling
         ↓
 Formatted Reports and Visualizations
 ```
@@ -130,11 +133,12 @@ Formatted Reports and Visualizations
 
 ### Certification Projects
 
-| # | Project | Primary Concepts | Status |
-| -: | --- | --- | :---: |
-| 1 | Build a User Configuration Manager | CRUD operations, dictionaries, configuration management | ✅ |
-| 2 | Build a Budget App | Classes, ledgers, transfers, validation, reports, charts | ✅ |
-| 3 | Build a Polygon Area Calculator | Inheritance, method overriding, geometry, object invariants | ✅ |
+| # | Project | Primary Concepts | Tests | Status |
+| -: | --- | --- | :---: | :---: |
+| 1 | Build a User Configuration Manager | CRUD operations, dictionaries, configuration management | 27/27 | ✅ |
+| 2 | Build a Budget App | Classes, ledgers, transfers, validation, reports, charts | 24/24 | ✅ |
+| 3 | Build a Polygon Area Calculator | Inheritance, method overriding, geometry, object invariants | 22/22 | ✅ |
+| 4 | Build a Hash Table | Hashing, nested dictionaries, collision handling, lookup and deletion | 22/22 | ✅ |
 
 ---
 
@@ -182,6 +186,10 @@ freecodecamp-python/
 │   │   ├── main.py
 │   │   └── README.md
 │   │
+│   ├── build-a-hash-table/
+│   │   ├── main.py
+│   │   └── README.md
+│   │
 │   └── README.md
 │
 └── README.md
@@ -191,8 +199,8 @@ freecodecamp-python/
 
 - **Workshops** use separate directories because they are developed through multiple guided stages and often include dedicated documentation.
 - **Labs** are stored as individual Python files because they are compact, independent exercises.
-- **Certification projects** use dedicated directories because they combine multiple concepts and require their own project-level documentation.
-- The root README provides the overall learning narrative, while subdirectory READMEs document detailed progress in each category.
+- **Certification projects** use dedicated directories because they combine multiple concepts and require project-level documentation.
+- The root README provides the overall learning narrative, while subdirectory READMEs document category-specific progress.
 
 ---
 
@@ -210,7 +218,7 @@ They are used to:
 
 The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based software design, and custom reference-based data structures.
 
-The latest completed workshop, **Build a Linked List**, introduced custom node objects, a `head` reference, `.next` links, linked-list traversal, insertion at the end of a chain, removal by link reassignment, and manual length tracking.
+The latest completed workshop, **Build a Linked List**, introduced custom node objects, a `head` reference, `.next` links, linked-list traversal, insertion at the end of a chain, removal by reference reassignment, and manual length tracking.
 
 Detailed workshop documentation is maintained in [`workshops/README.md`](workshops/README.md).
 
@@ -240,6 +248,22 @@ Detailed lab documentation is maintained in [`labs/README.md`](labs/README.md).
 
 Certification projects combine multiple Python concepts into larger implementations.
 
+The latest completed certification project, **Build a Hash Table**, introduced manual key-value storage, hashing with `ord()`, nested dictionary buckets, collision-safe insertion, safe deletion, and lookup behavior.
+
+Detailed certification-project documentation is maintained in [`certification-projects/README.md`](certification-projects/README.md).
+
+### Completed Certification Sequence
+
+```text
+User Configuration Manager
+        ↓
+Budget App
+        ↓
+Polygon Area Calculator
+        ↓
+Hash Table
+```
+
 ### Build a User Configuration Manager
 
 A dictionary-based settings manager supporting:
@@ -247,163 +271,12 @@ A dictionary-based settings manager supporting:
 - Add
 - Update
 - Delete
-- Retrieve
+- Display
 - Normalize
 - Validate
-- Display
+- Formatted output
 
-The project reinforced CRUD-style workflows, reusable functions, and consistent configuration handling.
-
-
-### Build a Polygon Area Calculator
-
-Implemented a reusable geometric class hierarchy with a `Rectangle` parent class and a
-`Square` subclass.
-
-The completed certification project includes:
-
-- Width and height state
-- Rectangle and square construction
-- Area calculation
-- Perimeter calculation
-- Diagonal calculation
-- Text-based shape rendering
-- Shape-containment calculation
-- Parent-constructor reuse with `super()`
-- Method overriding
-- Custom `__str__()` representations
-
-Class relationship:
-
-```text
-Rectangle
-├── width
-├── height
-├── set_width()
-├── set_height()
-├── get_area()
-├── get_perimeter()
-├── get_diagonal()
-├── get_picture()
-├── get_amount_inside()
-└── __str__()
-        ↑
-        │ inheritance
-        │
-Square
-├── set_width()      overridden
-├── set_height()     overridden
-├── set_side()
-└── __str__()        overridden
-```
-
-The square constructor reuses rectangle initialization:
-
-```python
-class Square(Rectangle):
-    def __init__(self, side):
-        super().__init__(side, side)
-```
-
-The square overrides both dimension setters because changing only one dimension would
-invalidate the square:
-
-```python
-def set_width(self, side):
-    self.width = side
-    self.height = side
-
-
-def set_height(self, side):
-    self.width = side
-    self.height = side
-```
-
-This protects the object invariant:
-
-```text
-width == height
-```
-
-Geometry methods are implemented once in the parent class:
-
-```python
-def get_area(self):
-    return self.width * self.height
-
-
-def get_perimeter(self):
-    return 2 * (self.width + self.height)
-
-
-def get_diagonal(self):
-    return math.sqrt(
-        self.width ** 2 + self.height ** 2
-    )
-```
-
-The picture method uses string multiplication:
-
-```python
-def get_picture(self):
-    if self.width > 50 or self.height > 50:
-        return "Too big for picture."
-
-    return ("*" * self.width + "\n") * self.height
-```
-
-Containment is calculated without rotation:
-
-```python
-def get_amount_inside(self, shape):
-    return (
-        self.width // shape.width
-    ) * (
-        self.height // shape.height
-    )
-```
-
-Calculation flow:
-
-```text
-Outer width // inner width
-            ↓
-Outer height // inner height
-            ↓
-Multiply complete horizontal and vertical fits
-            ↓
-Return total contained shapes
-```
-
-Example:
-
-```python
-rect = Rectangle(16, 8)
-square = Square(4)
-
-print(rect.get_amount_inside(square))
-```
-
-Expected output:
-
-```text
-8
-```
-
-This certification project strengthened:
-
-- Inheritance
-- Parent-constructor reuse
-- Method overriding
-- Object invariants
-- Reusable calculations
-- Pythagorean geometry
-- Floor division
-- String multiplication
-- Exact output formatting
-- Object-to-object method interaction
-
----
+The project reinforced CRUD-style workflows, reusable functions, string normalization, and consistent configuration handling.
 
 ### Build a Budget App
 
@@ -418,13 +291,7 @@ A class-based financial tracking application supporting:
 - Spending percentages
 - Text-based charts
 
-The project passed all required automated tests:
-
-```text
-Automated tests: 24/24 passed
-Status: Completed
-```
-
+The project combines object-oriented programming, validation, aggregation, percentage calculations, nested loops, and exact string formatting.
 
 ### Build a Polygon Area Calculator
 
@@ -439,19 +306,43 @@ An inheritance-based geometry application featuring:
 - Shape-containment calculations
 - Custom string representations
 
-The project passed all required automated tests:
+The project reinforced the principle that a subclass should reuse shared behavior while protecting its own stricter rules. `Square` inherits rectangle calculations but overrides dimension setters so that `width == height` remains true.
 
-```text
-Automated tests: 22/22 passed
-Status: Completed
+### Build a Hash Table
+
+A data-structure implementation featuring:
+
+- A custom `HashTable` class
+- A `collection` dictionary
+- A `hash()` method using `ord()`
+- `add()`, `remove()`, and `lookup()` methods
+- Nested dictionary buckets
+- Collision-safe storage
+- Safe deletion of missing keys
+- Lookup that returns `None` when the original key is absent
+
+The storage model is:
+
+```python
+{
+    hashed_key: {
+        original_key: value
+    }
+}
 ```
 
-The project reinforced the principle that a subclass should reuse shared behavior while
-protecting its own stricter rules. `Square` inherits the rectangle calculations, but overrides
-dimension setters so that `width == height` remains true.
+Example:
 
-Detailed certification-project documentation is maintained in
-[`certification-projects/README.md`](certification-projects/README.md).
+```python
+{
+    300: {
+        "fcc": "coding",
+        "cfc": "chemical"
+    }
+}
+```
+
+This project made the internal mechanics of dictionary-style key-value lookup more explicit. It also clarified why a hash value alone is not enough: different original keys can produce the same hash, so the original key must still be stored and checked inside the bucket.
 
 ---
 
@@ -470,6 +361,7 @@ Detailed certification-project documentation is maintained in
 - Docstrings
 - Code comments
 - Main execution guards
+- Built-in functions such as `sum()`, `ord()`, `min()`, and `isinstance()`
 
 ### Functions and Program Design
 
@@ -484,6 +376,7 @@ Detailed certification-project documentation is maintained in
 - Small, testable units of logic
 - Constructor-based dependency injection
 - Strategy orchestration through dedicated engine classes
+- Method-level responsibilities for add, remove, lookup, and validation behavior
 
 ### Programming Logic
 
@@ -497,12 +390,13 @@ Detailed certification-project documentation is maintained in
 - Controlled program flow
 - Geometry-based condition handling
 - Complete-fit calculations with floor division
+- Safe mutation after existence checks
 
 ### Collections and Structured Data
 
 - Lists
 - Dictionaries
-- Nested collections
+- Nested dictionaries
 - Lists of dictionaries
 - Class-level dictionaries
 - Membership tests
@@ -527,6 +421,7 @@ Detailed certification-project documentation is maintained in
 - Connecting objects through `.next` references
 - Updating links during insertion and removal
 - Maintaining a manual collection length
+- Storing colliding hash keys in nested buckets
 
 ### Data Structures
 
@@ -542,11 +437,19 @@ Detailed certification-project documentation is maintained in
 - Bypassing removed nodes through reference reassignment
 - Handling head-node removal
 - Handling missing elements safely
-- Comparing linked lists with built-in Python lists
+- Hash tables
+- Hash functions
+- Unicode-based hashing with `ord()`
+- Hash buckets
+- Collision handling
+- Key-value lookup
+- Safe deletion
+- Comparing custom data structures with built-in Python containers
 
 ### Loops and Iteration
 
 - `for` loops
+- `while` loops
 - `range()`
 - `enumerate()`
 - Nested loops
@@ -557,15 +460,17 @@ Detailed certification-project documentation is maintained in
 - Dynamic row and column generation
 - String repetition for shape rendering
 - Random selection with `random.choice()`
-- Traversal with `while` loops
-- Stopping traversal at `None`
+- Traversal until `None`
 - Moving from one node to the next through object references
+- Generator expressions such as `sum(ord(char) for char in string)`
 
 ### Text Processing
 
 - String indexing
 - String slicing
 - `split()`
+- `lower()`
+- `capitalize()`
 - Translation tables
 - Caesar cipher logic
 - Multi-line parsing
@@ -597,6 +502,8 @@ Detailed certification-project documentation is maintained in
 - Minimum-value enforcement
 - Duplicate-state prevention
 - Downward-transition prevention
+- Validation before dictionary deletion
+- Defensive lookup of missing keys
 
 ### Error and Exception Handling
 
@@ -607,6 +514,7 @@ Detailed certification-project documentation is maintained in
 - `AttributeError`
 - `IndexError`
 - `KeyError`
+- `SyntaxError`
 - Custom exception classes
 - Inheriting from `Exception`
 - Passing messages through `super().__init__()`
@@ -681,6 +589,7 @@ Detailed certification-project documentation is maintained in
 - Precise newline handling
 - Asterisk-based geometric rendering
 - Shape dimensions represented through formatted strings
+- Exact dictionary output expected by tests
 
 ### Debugging and Testing
 
@@ -710,12 +619,115 @@ Detailed certification-project documentation is maintained in
 - Checking `None` with `is None` and `is not None`
 - Avoiding infinite traversal loops
 - Updating `head` correctly when removing the first node
+- Preventing `KeyError` by checking nested dictionary membership
+- Debugging hash collisions by checking the original key inside the bucket
 
 ---
 
 ## Selected Project Highlights
 
+### Build a Hash Table
 
+Implemented a simplified hash table that stores key-value pairs using computed hash values and nested buckets.
+
+The completed certification project includes:
+
+- `HashTable` class
+- `collection` dictionary
+- `hash()` method
+- `add()` method
+- `remove()` method
+- `lookup()` method
+- Collision-safe nested dictionaries
+- Safe handling of missing keys
+- Exact collection structures required by tests
+
+Hash calculation:
+
+```python
+def hash(self, string):
+    return sum(ord(char) for char in string)
+```
+
+Example:
+
+```text
+'golf'
+    ↓
+103 + 111 + 108 + 102
+    ↓
+424
+```
+
+Storage structure:
+
+```python
+{
+    424: {
+        "golf": "sport"
+    }
+}
+```
+
+Collision example:
+
+```python
+table.add("fcc", "coding")
+table.add("cfc", "chemical")
+```
+
+Both keys hash to `300`, so the final structure is:
+
+```python
+{
+    300: {
+        "fcc": "coding",
+        "cfc": "chemical"
+    }
+}
+```
+
+Lookup flow:
+
+```text
+Original key
+        ↓
+Compute hash
+        ↓
+Find bucket
+        ↓
+Check original key inside bucket
+        ↓
+Return value or None
+```
+
+Removal flow:
+
+```text
+Original key
+        ↓
+Compute hash
+        ↓
+Check bucket exists
+        ↓
+Check original key exists
+        ↓
+Delete only that key-value pair
+```
+
+This project strengthened:
+
+- Hash-table concepts
+- Key-value storage
+- Unicode-based hashing
+- Nested dictionaries
+- Collision handling
+- Safe deletion
+- Lookup design
+- Defensive programming
+- Exact dictionary-structure matching
+
+---
 
 ### Build a Linked List
 
@@ -735,99 +747,7 @@ The completed workshop includes:
 - Removal from the head of the list
 - Removal from the middle or end of the list
 
-The `Node` class stores one element and a reference to the next node:
-
-```python
-class Node:
-    def __init__(self, element):
-        self.element = element
-        self.next = None
-```
-
-The linked list starts empty:
-
-```python
-def __init__(self):
-    self.length = 0
-    self.head = None
-```
-
-The `head` attribute points to the first node. If the list is empty, `head` is
-`None`.
-
-Adding a node follows this flow:
-
-```text
-Create a new node
-        ↓
-Check whether the list is empty
-        ↓
-If empty, assign the new node to head
-        ↓
-If not empty, traverse to the final node
-        ↓
-Connect the final node to the new node
-        ↓
-Increase length
-```
-
-The empty-list case requires this assignment:
-
-```python
-self.head = node
-```
-
-The direction matters. `self.head = node` makes the list point to the new node.
-The reverse assignment, `node = self.head`, would only overwrite the local
-variable and would not update the linked list.
-
-For a non-empty list, the code traverses the chain until it reaches the final
-node:
-
-```python
-while current_node.next is not None:
-    current_node = current_node.next
-```
-
-This checks whether another node exists after the current one. The condition uses
-`is not None` because `None` should be checked by identity in Python.
-
-Removal uses both `previous_node` and `current_node`:
-
-```python
-previous_node = None
-current_node = self.head
-```
-
-The search loop moves forward until the target element is found or the end of
-the list is reached:
-
-```python
-while current_node is not None and current_node.element != element:
-    previous_node = current_node
-    current_node = current_node.next
-```
-
-If the element is not found, the method returns without changing the list:
-
-```python
-if current_node is None:
-    return
-```
-
-If the node to remove is not the head, the previous node bypasses it:
-
-```python
-previous_node.next = current_node.next
-```
-
-If the node to remove is the head, the list entry point must move forward:
-
-```python
-self.head = current_node.next
-```
-
-Structure after adding two elements:
+Class relationship:
 
 ```text
 LinkedList
@@ -837,51 +757,13 @@ LinkedList
                                    └── next ──▶ None
 ```
 
-Example:
-
-```python
-my_list = LinkedList()
-print(my_list.is_empty())
-
-my_list.add(1)
-my_list.add(2)
-
-print(my_list.is_empty())
-print(my_list.length)
-
-my_list.remove(1)
-print(my_list.length)
-```
-
-Expected output:
-
-```text
-True
-False
-2
-1
-```
-
-This workshop strengthened:
-
-- Custom data structures
-- Nested classes
-- Object references
-- Linked nodes
-- Manual length tracking
-- Linked-list traversal
-- Reference assignment
-- Head-node handling
-- Node removal by bypassing links
-- `None` checks with `is not None`
-- The difference between a built-in list and a custom linked structure
+This workshop strengthened reference-based thinking, traversal with `while` loops, and safe link updates.
 
 ---
 
 ### Build a Discount Calculator
 
-Implemented a strategy-driven pricing engine that evaluates multiple discount
-algorithms and returns the lowest valid price.
+Implemented a strategy-driven pricing engine that evaluates multiple discount algorithms and returns the lowest valid price.
 
 The completed workshop includes:
 
@@ -892,57 +774,7 @@ The completed workshop includes:
 - `PremiumUserDiscount`
 - A `DiscountEngine` responsible for evaluating strategies
 - Type hints for products, prices, user tiers, and strategy collections
-- A main execution guard
 - Currency output formatted to two decimal places
-
-The shared strategy contract is defined with `ABC` and `@abstractmethod`:
-
-```python
-class DiscountStrategy(ABC):
-    @abstractmethod
-    def is_applicable(
-        self,
-        product: Product,
-        user_tier: str,
-    ) -> bool:
-        pass
-
-    @abstractmethod
-    def apply_discount(
-        self,
-        product: Product,
-    ) -> float:
-        pass
-```
-
-Each concrete strategy implements the same interface while preserving its own
-business rule:
-
-```text
-PercentageDiscount
-        ↓
-Valid only up to 70%
-
-FixedAmountDiscount
-        ↓
-Valid only when the amount is below 90% of the original price
-
-PremiumUserDiscount
-        ↓
-Valid only for premium users
-```
-
-The engine receives the strategies through its constructor:
-
-```python
-strategies = [
-    PercentageDiscount(10),
-    FixedAmountDiscount(5),
-    PremiumUserDiscount(),
-]
-
-engine = DiscountEngine(strategies)
-```
 
 Calculation flow:
 
@@ -960,430 +792,34 @@ Collect candidate prices
 Return min(prices)
 ```
 
-Example:
-
-```python
-product = Product("Wireless Mouse", 50.0)
-user_tier = "Premium"
-
-best_price = engine.calculate_best_price(
-    product,
-    user_tier,
-)
-
-print(
-    f"Best price for {product.name} "
-    f"for {user_tier} user: ${best_price:.2f}"
-)
-```
-
-Expected output:
-
-```text
-Best price for Wireless Mouse for Premium user: $40.00
-```
-
-This workshop strengthened:
-
-- Abstract interface design
-- Runtime polymorphism
-- Strategy-pattern architecture
-- Dependency injection
-- Separation of responsibilities
-- Business-rule encapsulation
-- Candidate-result comparison
-- Type annotations
-- Exact monetary formatting
+This workshop strengthened abstract interface design, runtime polymorphism, strategy-pattern architecture, and exact monetary formatting.
 
 ---
 
-### Build a Media Catalogue
+### Build a Polygon Area Calculator
 
-Built a catalogue that stores, validates, filters, and displays movies and television series.
+Implemented an inheritance-based geometry application with a reusable `Rectangle` parent class and a specialized `Square` subclass.
 
-The completed workshop includes:
+The completed certification project includes:
 
-- A `Movie` parent class
-- A `TVSeries` child class
-- A `MediaCatalogue` management class
-- A custom `MediaError` exception
-- Shared validation through inheritance
-- Parent-constructor reuse with `super().__init__()`
-- Overridden `__str__()` methods
-- Mixed collections containing parent and child objects
-- Separate filtering methods for movies and TV series
-- Conditional, numbered catalogue output
-
-Example:
-
-```python
-catalogue = MediaCatalogue()
-
-movie = Movie(
-    "The Matrix",
-    1999,
-    "The Wachowskis",
-    136,
-)
-
-series = TVSeries(
-    "Breaking Bad",
-    2008,
-    "Vince Gilligan",
-    47,
-    5,
-    62,
-)
-
-catalogue.add(movie)
-catalogue.add(series)
-print(catalogue)
-```
+- Area calculation
+- Perimeter calculation
+- Diagonal calculation
+- Shape rendering
+- Shape containment
+- Method overriding
+- Object invariant preservation
 
 Class relationship:
 
 ```text
-Movie
-  ↓
-TVSeries inherits shared Movie behavior
-  ↓
-MediaCatalogue stores both object types
-  ↓
-Filtering methods separate movies and TV series
+Rectangle
+        ↑
+        │ inheritance
+Square
 ```
 
-The workshop also clarified the difference between these checks:
-
-```python
-isinstance(item, Movie)
-```
-
-This accepts both `Movie` objects and instances of subclasses such as `TVSeries`.
-
-```python
-type(item) is Movie
-```
-
-This accepts only objects created directly from the `Movie` class.
-
-Custom exception flow:
-
-```text
-Unsupported object
-        ↓
-MediaCatalogue.add()
-        ↓
-Raise MediaError(message, object)
-        ↓
-Catch the exception
-        ↓
-Report both the message and invalid object
-```
-
-This workshop introduced inheritance, method overriding, polymorphic string representations, custom exception design, and type-based collection filtering.
-
----
-
-### Build a Salary Tracker
-
-Developed an employee salary-tracking system with:
-
-- A class-level salary table
-- Validated `name`, `level`, and `salary` properties
-- Automatic salary updates during promotion
-- Protection against invalid or downward level changes
-- Protection against salaries below the level minimum
-- Custom `__str__()` and `__repr__()`
-- Explicit exception messages
-
-Example:
-
-```python
-charlie_brown = Employee(
-    "Charlie Brown",
-    "trainee",
-)
-
-print(charlie_brown)
-print(f"Base salary: ${charlie_brown.salary}")
-
-charlie_brown.level = "junior"
-```
-
-State transition:
-
-```text
-Assign new level
-      ↓
-Validate type
-      ↓
-Check supported level
-      ↓
-Reject duplicates
-      ↓
-Reject downward movement
-      ↓
-Look up base salary
-      ↓
-Update salary through setter
-      ↓
-Store level
-```
-
-This workshop introduced disciplined object-oriented design in which the object is responsible for preserving its own valid state.
-
----
-
-
-### Build a Player Interface
-
-Implemented an extensible movement system using an abstract parent class and a
-concrete pawn subclass.
-
-The completed lab includes:
-
-- An abstract `Player` class
-- A concrete `Pawn` class
-- Shared player state
-- Random movement selection
-- Two-dimensional coordinate updates
-- Path-history tracking
-- An abstract `level_up()` contract
-- Diagonal movement upgrades
-
-The parent class defines the shared state:
-
-```python
-class Player(ABC):
-    def __init__(self):
-        self.moves = []
-        self.position = (0, 0)
-        self.path = [self.position]
-```
-
-The shared movement logic is implemented once in the parent class:
-
-```python
-def make_move(self):
-    move = random.choice(self.moves)
-
-    self.position = (
-        self.position[0] + move[0],
-        self.position[1] + move[1],
-    )
-
-    self.path.append(self.position)
-    return self.position
-```
-
-The parent class requires every concrete player type to implement its own
-level-up behavior:
-
-```python
-@abstractmethod
-def level_up(self):
-    pass
-```
-
-The `Pawn` subclass reuses the common initialization and defines four initial
-movement vectors:
-
-```python
-class Pawn(Player):
-    def __init__(self):
-        super().__init__()
-
-        self.moves = [
-            (0, 1),
-            (0, -1),
-            (-1, 0),
-            (1, 0),
-        ]
-```
-
-After leveling up, the pawn receives four diagonal movements:
-
-```python
-def level_up(self):
-    self.moves.extend([
-        (1, 1),
-        (1, -1),
-        (-1, 1),
-        (-1, -1),
-    ])
-```
-
-Class relationship:
-
-```text
-Player (abstract)
-    ├── position
-    ├── path
-    ├── make_move()
-    └── level_up() contract
-              ↓
-Pawn (concrete)
-    ├── cardinal movements
-    └── diagonal level-up movements
-```
-
-Movement flow:
-
-```text
-Current position
-      ↓
-Choose a random movement vector
-      ↓
-Add x and y offsets
-      ↓
-Update position
-      ↓
-Append position to path
-      ↓
-Return the new position
-```
-
-This lab strengthened:
-
-- Abstract base classes
-- Abstract methods
-- Inheritance
-- Parent-constructor reuse
-- Concrete subclass implementation
-- Random selection
-- Tuple-based coordinates
-- Movement-vector arithmetic
-- Path-history tracking
-- Interface-oriented design
-
----
-
-### Build a Game Character Stats Tracker
-
-Created a `GameCharacter` class with:
-
-- Read-only `name`
-- Validated `health`
-- Validated `mana`
-- Read-only `level`
-- A `level_up()` method
-- A formatted `__str__()` representation
-
-Range constraints:
-
-```text
-0 ≤ health ≤ 100
-0 ≤ mana ≤ 50
-```
-
-Example:
-
-```python
-hero = GameCharacter("Kratos")
-
-hero.health -= 30
-hero.mana -= 10
-
-print(hero)
-
-hero.level_up()
-print(hero)
-```
-
-Expected output:
-
-```text
-Name: Kratos
-Level: 1
-Health: 70
-Mana: 40
-
-Kratos leveled up to 2!
-
-Name: Kratos
-Level: 2
-Health: 100
-Mana: 50
-```
-
-The implementation separates internal storage from public access:
-
-```python
-@property
-def health(self):
-    return self._health
-
-
-@health.setter
-def health(self, value):
-    if value < 0:
-        self._health = 0
-    elif value > 100:
-        self._health = 100
-    else:
-        self._health = value
-```
-
-This lab reinforced encapsulation, property-based validation, and controlled object state.
-
----
-
-### Build an Email Simulator
-
-Built a small object-oriented application with three cooperating classes:
-
-```text
-User
- ├── owns an Inbox
- └── sends an Email
-          ↓
-    receiver's Inbox
-          ↓
-      stores Email
-```
-
-Supported operations include:
-
-- Sending email
-- Storing sender and receiver data
-- Recording timestamps
-- Tracking read status
-- Listing messages
-- Reading messages
-- Deleting messages
-- Validating message numbers
-
-This workshop marked the transition from isolated classes to interacting objects with distributed responsibilities.
-
----
-
-### Build a Medical Data Validator
-
-Validated structured records using:
-
-- Lists of dictionaries
-- Required fields
-- Type checking
-- Regular expressions
-- Invalid-record reporting
-- Clear validation messages
-
-This project demonstrated how Python can inspect and protect the integrity of record-based datasets.
-
----
-
-### Debug an ISBN Validator
-
-Repaired an existing validation algorithm by analyzing:
-
-- Program flow
-- Index handling
-- Off-by-one errors
-- Input normalization
-- Checksum logic
-- Exception behavior
-
-The lab strengthened the ability to understand and correct an unfamiliar implementation.
+The project reinforced the principle that a subclass should reuse shared behavior while protecting its own stricter rules.
 
 ---
 
@@ -1401,29 +837,13 @@ Developed a reusable `Category` class with:
 - Spending percentages
 - Vertical text-based charts
 
-Example transaction flow:
-
-```text
-Category object
-      ↓
-stores ledger entries
-      ↓
-calculates current balance
-      ↓
-validates withdrawals
-      ↓
-transfers funds to another Category
-      ↓
-produces formatted financial output
-```
-
 The project combines object-oriented programming, validation, aggregation, percentage calculations, nested loops, and exact string formatting.
 
 ---
 
-## Object-Oriented Learning Progression
+## Object-Oriented and Data-Structure Progression
 
-Object-oriented concepts were introduced incrementally:
+Object-oriented and data-structure concepts were introduced incrementally:
 
 ```text
 MusicalInstrument
@@ -1466,6 +886,10 @@ Rectangle + Square
         ↓
 Reusable geometry, method overriding, and subclass invariants
         ↓
+HashTable
+        ↓
+Hashing, buckets, collision handling, safe lookup, and deletion
+        ↓
 Category
         ↓
 Ledgers, transfers, reporting, and visualization
@@ -1485,9 +909,10 @@ Ledgers, transfers, reporting, and visualization
 | Discount Calculator | Abstract interfaces, strategy pattern, dependency injection, and runtime polymorphism |
 | Linked List | Custom node objects, references, traversal, insertion, and removal |
 | Polygon Area Calculator | Reusable geometry, method overriding, object invariants, and containment logic |
+| Hash Table | Hashing, nested dictionaries, collision handling, lookup, and deletion |
 | Budget App | Transaction systems, cross-object transfers, reporting |
 
-This progression establishes a foundation for maintainable engineering software. The Linked List workshop adds an important lower-level perspective: objects can be connected directly through references rather than stored only inside built-in containers.
+This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add a lower-level data-structure perspective: data can be connected through object references or indexed through computed keys instead of being stored only in ordinary lists.
 
 ---
 
@@ -1508,7 +933,7 @@ Each project follows a repeatable implementation process.
 9. Test boundary values and invalid inputs.
 10. Refactor for readability.
 11. Preserve required behavior while improving readability.
-12. Add comments, docstrings, and README documentation.
+12. Add comments and README documentation.
 13. Commit the completed project.
 
 ### Test-Driven Feedback Loop
@@ -1537,14 +962,15 @@ Regression check
 - Reuse property setters when appropriate.
 - Avoid duplicate logic.
 - Match required output exactly.
-- Add comments that explain intent.
+- Add comments that explain intent, not obvious syntax.
 - Refactor only after the behavior is correct.
-- Preserve the original workshop contract when documenting completed code.
+- Preserve the original workshop or project contract when documenting completed code.
 - Prefer interfaces that allow new behavior without modifying existing orchestration logic.
 - Keep shared behavior in parent classes and subclass-specific behavior in concrete classes.
 - Use abstract methods when every subclass must provide a required operation.
 - Override inherited methods when a subclass must enforce stricter state rules.
 - Preserve object invariants after every public state-changing operation.
+- Validate keys before accessing or deleting nested dictionary values.
 
 ---
 
@@ -1552,16 +978,16 @@ Regression check
 
 | Error | Typical Cause | Practical Lesson |
 | --- | --- | --- |
-| `SyntaxError` | Invalid syntax or incomplete statements | Check the exact failing line first |
+| `SyntaxError` | Invalid syntax or copied instruction text | Check whether the failing line is executable Python |
 | `IndentationError` | Incorrect block alignment | Verify class, method, and branch indentation |
 | `NameError` | Undefined variable or function | Check scope and spelling |
 | `TypeError` | Wrong argument count or data type | Compare the call with the function signature |
-| `AttributeError` | Attribute used before initialization | Review constructor and setter order |
+| `AttributeError` | Attribute or method does not exist | Review constructor, method spelling, and initialization |
 | `ValueError` | Valid type but invalid content | Separate type validation from value validation |
 | `IndexError` | Invalid sequence position | Review zero-based indexing and boundaries |
-| `KeyError` | Missing dictionary key | Validate keys before access |
-| Test mismatch | Exact output differs | Inspect whitespace, punctuation, and newlines |
-| Logic failure | Conditions overlap or execute incorrectly | Use `if` / `elif` / `else` for exclusive branches |
+| `KeyError` | Missing dictionary key | Validate keys before access or deletion |
+| Test mismatch | Exact output differs | Inspect whitespace, punctuation, newlines, and dictionary structure |
+| Logic failure | Conditions overlap or execute incorrectly | Use focused condition checks and test one behavior at a time |
 
 ### Important Lessons Reinforced
 
@@ -1594,6 +1020,10 @@ Regression check
 - Removing the head node requires updating `self.head`.
 - Removing a non-head node requires updating `previous_node.next`.
 - A manual `length` counter must be updated after successful insertion or removal.
+- A hash table should store original keys inside buckets because different keys can share one hash value.
+- `remove()` should delete only the requested key-value pair, not the entire collision bucket.
+- `lookup()` must check both the hash bucket and the original key.
+- Missing hash-table keys should return `None` or do nothing, depending on the operation, instead of raising unnecessary errors.
 
 ---
 
@@ -1653,6 +1083,10 @@ class SimulationScenario:
 
 class HydrodynamicModel:
     pass
+
+
+class ResultIndex:
+    pass
 ```
 
 Possible interaction:
@@ -1670,6 +1104,8 @@ HydrodynamicModel produces results
         ↓
 Validation tools evaluate model performance
 ```
+
+### Validation Pattern
 
 A property-based validation pattern can protect engineering parameters:
 
@@ -1694,14 +1130,11 @@ class MonitoringStation:
         self._salinity = value
 ```
 
-This is directly related to the validation and encapsulation patterns practiced in the Salary Tracker and Game Character Stats Tracker.
+This pattern is directly related to the validation and encapsulation techniques practiced in the Salary Tracker and Game Character Stats Tracker.
 
-The Strategy pattern from the Discount Calculator also maps naturally to engineering software. Different calibration metrics, numerical solvers, boundary-condition treatments, or model-selection rules can implement a shared interface and be evaluated by one orchestration engine.
+### Strategy Pattern for Engineering Metrics
 
-The Player Interface lab adds another directly relevant pattern: an abstract parent class can define shared state and movement logic, while concrete subclasses provide specialized behavior. The same structure can be used for particles, drifters, monitoring platforms, or multiple numerical-model types.
-
-
-A strategy-oriented engineering design could look like this:
+The Strategy pattern from the Discount Calculator maps naturally to engineering software. Different calibration metrics, numerical solvers, boundary-condition treatments, or model-selection rules can implement a shared interface and be evaluated by one orchestration engine.
 
 ```python
 class ValidationMetric(ABC):
@@ -1720,11 +1153,9 @@ class NSEMetric(ValidationMetric):
         pass
 ```
 
-This allows a validation engine to compare interchangeable metrics without
-hard-coding the details of each calculation.
+### Trajectory and Movement Models
 
-
-A trajectory-oriented engineering model could use the same pattern:
+The Player Interface lab adds another directly relevant pattern: an abstract parent class can define shared state and movement logic, while concrete subclasses provide specialized behavior.
 
 ```python
 class MovingEntity(ABC):
@@ -1747,20 +1178,11 @@ class NumericalParticle(MovingEntity):
         pass
 ```
 
-This structure separates:
+This structure can later support particle tracking, Lagrangian transport, sensor trajectories, or model-specific movement behavior.
 
-- Shared trajectory state
-- Common path-history storage
-- Specialized movement or transport rules
+### Geometric Domains
 
-It can later support particle tracking, Lagrangian transport, sensor trajectories,
-or model-specific movement behavior.
-
-
-The geometry and containment patterns from the Polygon Area Calculator can also support
-engineering software.
-
-A simplified computational-domain hierarchy could look like this:
+The geometry and containment patterns from the Polygon Area Calculator can support computational-domain modeling.
 
 ```python
 class RectangularDomain:
@@ -1787,15 +1209,9 @@ Possible applications include:
 - Sensor-layout planning
 - Domain-packing calculations
 
-The same invariant-preservation principle applies to engineering objects. If a square grid
-patch must always have equal dimensions, every public update operation should preserve that
-relationship.
+### Processing Chains
 
-
-The Linked List workshop also maps to engineering workflows where data or operations form
-a chain.
-
-A linked processing chain could be represented as:
+The Linked List workshop maps to workflows where data or operations form a chain.
 
 ```python
 class ProcessingStepNode:
@@ -1804,16 +1220,7 @@ class ProcessingStepNode:
         self.next = None
 ```
 
-Possible engineering uses include:
-
-- Chaining preprocessing steps
-- Sequencing validation operations
-- Connecting time-ordered observations
-- Building simple workflow pipelines
-- Representing ordered model-processing stages
-- Creating custom containers when built-in lists are not the desired abstraction
-
-For example, a hydrodynamic workflow might be organized as:
+Example workflow:
 
 ```text
 Read raw data
@@ -1827,9 +1234,40 @@ Compare with model output
 Generate validation metrics
 ```
 
-A linked structure can represent that kind of ordered sequence explicitly, where each node
-points to the next processing step.
+A linked structure can represent an ordered sequence explicitly, where each node points to the next processing step.
 
+### Hash-Based Indexing
+
+The Hash Table project maps to engineering tasks that require fast key-based access.
+
+```python
+class ResultIndex:
+    def __init__(self):
+        self.collection = {}
+
+    def hash(self, key):
+        return sum(ord(char) for char in key)
+
+    def add(self, key, value):
+        hashed_key = self.hash(key)
+
+        if hashed_key not in self.collection:
+            self.collection[hashed_key] = {}
+
+        self.collection[hashed_key][key] = value
+```
+
+Possible uses include:
+
+- Station ID lookup
+- Scenario-name indexing
+- Model-result indexing
+- Parameter-set lookup
+- Cached validation metrics
+- Fast retrieval of processed observations
+- Duplicate detection in environmental records
+
+The same collision-handling principle applies: computed identifiers are useful for indexing, but original keys must still be preserved and checked.
 
 ---
 
@@ -1838,7 +1276,7 @@ points to the next processing step.
 ### Immediate Priorities
 
 - Continue the freeCodeCamp Python Certification
-- Complete additional workshops and labs
+- Complete additional workshops, labs, and certification projects
 - Deepen object-oriented programming skills
 - Strengthen inheritance and polymorphism
 - Improve custom exception design
@@ -1849,6 +1287,7 @@ points to the next processing step.
 - Practice automated testing
 - Strengthen custom data-structure understanding
 - Practice linked-list traversal and reference updates
+- Practice hash-table lookup, deletion, and collision handling
 - Strengthen documentation quality
 
 ### Next Technical Stage
@@ -1889,6 +1328,8 @@ Custom Data Structures and Linked References
         ↓
 Geometric Models and Object Invariants
         ↓
+Hash-Based Storage and Lookup
+        ↓
 Testing and Documentation
         ↓
 NumPy and pandas
@@ -1913,8 +1354,8 @@ This repository is actively maintained as part of an ongoing learning process.
 ```text
 Workshops:               13
 Labs:                     8
-Certification Projects:   3
-Total Projects:          24
+Certification Projects:   4
+Total Projects:          25
 ```
 
 Latest completed workshop:
@@ -1932,7 +1373,7 @@ Build a Player Interface
 Latest completed certification project:
 
 ```text
-Build a Polygon Area Calculator
+Build a Hash Table
 Automated tests: 22/22 passed
 ```
 
