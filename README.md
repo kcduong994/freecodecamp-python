@@ -1,18 +1,18 @@
 # freecodecamp-python
 
-> A structured Python learning portfolio built through the **freeCodeCamp Python Certification**, with a long-term focus on scientific computing, numerical modeling, environmental data processing, and coastal engineering applications.
+> A structured Python learning portfolio built through the **freeCodeCamp Python Certification**, with a long-term focus on scientific computing, numerical modeling, environmental data processing, coastal engineering applications, and algorithmic problem solving.
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-25-success)
-![Workshops](https://img.shields.io/badge/Workshops-13-2563EB)
+![Projects](https://img.shields.io/badge/Projects_Completed-26-success)
+![Workshops](https://img.shields.io/badge/Workshops-14-2563EB)
 ![Labs](https://img.shields.io/badge/Labs-8-16A34A)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-4-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
-This repository documents my progression from Python fundamentals to object-oriented programming, validation, debugging, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, custom data structures, formatted reporting, and larger certification projects.
+This repository documents my progression from Python fundamentals to functions, validation, debugging, object-oriented programming, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, custom data structures, search algorithms, formatted reporting, and larger certification projects.
 
-The immediate goal is to complete the freeCodeCamp Python Certification with correct, readable, tested, and well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data validation, numerical methods, scientific visualization, and research automation.
+The immediate goal is to complete the freeCodeCamp Python Certification with correct, readable, tested, and well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data validation, numerical methods, scientific visualization, search/indexing utilities, and research automation.
 
 ---
 
@@ -26,7 +26,7 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 - [Certification Projects](#certification-projects)
 - [Technical Competencies](#technical-competencies)
 - [Selected Project Highlights](#selected-project-highlights)
-- [Object-Oriented and Data-Structure Progression](#object-oriented-and-data-structure-progression)
+- [Object-Oriented, Data-Structure, and Algorithm Progression](#object-oriented-data-structure-and-algorithm-progression)
 - [Development Methodology](#development-methodology)
 - [Common Debugging Lessons](#common-debugging-lessons)
 - [Engineering-Oriented Direction](#engineering-oriented-direction)
@@ -42,16 +42,16 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 
 | Area | Purpose | Completed |
 | --- | --- | ---: |
-| Workshops | Guided projects introducing new Python concepts incrementally | 13 |
+| Workshops | Guided projects introducing new Python concepts incrementally | 14 |
 | Labs | Independent implementations based on user stories and automated tests | 8 |
 | Certification Projects | Larger projects combining multiple programming concepts | 4 |
-| **Total** | **Documented Python projects** | **25** |
+| **Total** | **Documented Python projects** | **26** |
 
 ```text
-Workshops              █████████████  13 completed
-Labs                   ████████░░░░░  8 completed
-Certification Projects ████░░░░░░░░░  4 completed
-Overall                █████████████████████████  25 completed
+Workshops              ██████████████  14 completed
+Labs                   ████████░░░░░░  8 completed
+Certification Projects ████░░░░░░░░░░  4 completed
+Overall                ██████████████████████████  26 completed
 ```
 
 ### Current Learning Stage
@@ -93,6 +93,8 @@ Linked Lists, Nodes, and References
         ↓
 Hash Tables, Buckets, and Collision Handling
         ↓
+Binary Search and Algorithmic Thinking
+        ↓
 Formatted Reports and Visualizations
 ```
 
@@ -117,6 +119,7 @@ Formatted Reports and Visualizations
 | 11 | Build a Media Catalogue | Inheritance, polymorphism, custom exceptions, collection filtering | ✅ |
 | 12 | Build a Discount Calculator | Abstract base classes, strategy pattern, polymorphic pricing, type hints | ✅ |
 | 13 | Build a Linked List | Nodes, references, traversal, insertion, removal, custom data structures | ✅ |
+| 14 | Build a Binary Search | Sorted data, midpoint comparison, boundary updates, algorithm tracing | ✅ |
 
 ### Labs
 
@@ -160,6 +163,7 @@ freecodecamp-python/
 │   ├── build-a-media-catalogue/
 │   ├── build-a-discount-calculator/
 │   ├── build-a-linked-list/
+│   ├── build-a-binary-search/
 │   └── README.md
 │
 ├── labs/
@@ -197,7 +201,7 @@ freecodecamp-python/
 
 ### Organization Principles
 
-- **Workshops** use separate directories because they are developed through multiple guided stages and often include dedicated documentation.
+- **Workshops** use separate directories because they are developed through guided stages and often include dedicated documentation.
 - **Labs** are stored as individual Python files because they are compact, independent exercises.
 - **Certification projects** use dedicated directories because they combine multiple concepts and require project-level documentation.
 - The root README provides the overall learning narrative, while subdirectory READMEs document category-specific progress.
@@ -215,10 +219,11 @@ They are used to:
 - Practice one concept at a time
 - Build confidence before independent work
 - Develop reusable programming habits
+- Connect syntax with algorithmic reasoning
 
-The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based software design, and custom reference-based data structures.
+The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based software design, reference-based data structures, and algorithmic search.
 
-The latest completed workshop, **Build a Linked List**, introduced custom node objects, a `head` reference, `.next` links, linked-list traversal, insertion at the end of a chain, removal by reference reassignment, and manual length tracking.
+The latest completed workshop, **Build a Binary Search**, introduced sorted-list search, midpoint calculation, `low` and `high` boundary management, iterative range reduction, early returns, not-found handling, and path tracing for algorithm explanation.
 
 Detailed workshop documentation is maintained in [`workshops/README.md`](workshops/README.md).
 
@@ -266,60 +271,19 @@ Hash Table
 
 ### Build a User Configuration Manager
 
-A dictionary-based settings manager supporting:
-
-- Add
-- Update
-- Delete
-- Display
-- Normalize
-- Validate
-- Formatted output
-
-The project reinforced CRUD-style workflows, reusable functions, string normalization, and consistent configuration handling.
+A dictionary-based settings manager supporting add, update, delete, display, normalization, validation, and formatted output.
 
 ### Build a Budget App
 
-A class-based financial tracking application supporting:
-
-- Deposits
-- Withdrawals
-- Transfers
-- Balance checks
-- Transaction ledgers
-- Formatted reports
-- Spending percentages
-- Text-based charts
-
-The project combines object-oriented programming, validation, aggregation, percentage calculations, nested loops, and exact string formatting.
+A class-based financial tracking application supporting deposits, withdrawals, transfers, balance checks, transaction ledgers, formatted reports, spending percentages, and text-based charts.
 
 ### Build a Polygon Area Calculator
 
-An inheritance-based geometry application featuring:
-
-- A reusable `Rectangle` parent class
-- A specialized `Square` subclass
-- Area, perimeter, and diagonal calculations
-- Parent-constructor reuse with `super()`
-- Method overriding to preserve square dimensions
-- Text-based shape rendering
-- Shape-containment calculations
-- Custom string representations
-
-The project reinforced the principle that a subclass should reuse shared behavior while protecting its own stricter rules. `Square` inherits rectangle calculations but overrides dimension setters so that `width == height` remains true.
+An inheritance-based geometry application featuring a reusable `Rectangle` parent class, a specialized `Square` subclass, area and perimeter calculations, diagonal calculation, method overriding, shape rendering, and object invariant preservation.
 
 ### Build a Hash Table
 
-A data-structure implementation featuring:
-
-- A custom `HashTable` class
-- A `collection` dictionary
-- A `hash()` method using `ord()`
-- `add()`, `remove()`, and `lookup()` methods
-- Nested dictionary buckets
-- Collision-safe storage
-- Safe deletion of missing keys
-- Lookup that returns `None` when the original key is absent
+A data-structure implementation featuring a custom `HashTable` class, Unicode-based hashing with `ord()`, nested dictionary buckets, collision-safe storage, safe deletion, and lookup behavior.
 
 The storage model is:
 
@@ -327,17 +291,6 @@ The storage model is:
 {
     hashed_key: {
         original_key: value
-    }
-}
-```
-
-Example:
-
-```python
-{
-    300: {
-        "fcc": "coding",
-        "cfc": "chemical"
     }
 }
 ```
@@ -361,7 +314,7 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Docstrings
 - Code comments
 - Main execution guards
-- Built-in functions such as `sum()`, `ord()`, `min()`, and `isinstance()`
+- Built-in functions such as `sum()`, `ord()`, `min()`, `len()`, and `isinstance()`
 
 ### Functions and Program Design
 
@@ -376,7 +329,7 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Small, testable units of logic
 - Constructor-based dependency injection
 - Strategy orchestration through dedicated engine classes
-- Method-level responsibilities for add, remove, lookup, and validation behavior
+- Method-level responsibilities for add, remove, lookup, validation, and search behavior
 
 ### Programming Logic
 
@@ -391,6 +344,7 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Geometry-based condition handling
 - Complete-fit calculations with floor division
 - Safe mutation after existence checks
+- Search-space reduction through boundary updates
 
 ### Collections and Structured Data
 
@@ -422,6 +376,8 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Updating links during insertion and removal
 - Maintaining a manual collection length
 - Storing colliding hash keys in nested buckets
+- Searching sorted collections efficiently
+- Recording checked values during algorithm execution
 
 ### Data Structures
 
@@ -446,6 +402,20 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Safe deletion
 - Comparing custom data structures with built-in Python containers
 
+### Algorithms
+
+- Binary search
+- Sorted input requirements
+- Search boundaries
+- `low`, `high`, and `mid` variables
+- Midpoint calculation with integer division
+- Middle-value comparison
+- Discarding half of the search range
+- Early return when the target is found
+- Not-found handling
+- Search-path tracing
+- Algorithmic reasoning about efficiency
+
 ### Loops and Iteration
 
 - `for` loops
@@ -463,6 +433,7 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Traversal until `None`
 - Moving from one node to the next through object references
 - Generator expressions such as `sum(ord(char) for char in string)`
+- Iterative narrowing of a search interval
 
 ### Text Processing
 
@@ -504,6 +475,7 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Downward-transition prevention
 - Validation before dictionary deletion
 - Defensive lookup of missing keys
+- Boundary validation for index-based algorithms
 
 ### Error and Exception Handling
 
@@ -557,13 +529,6 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Strategy-pattern implementations
 - Runtime polymorphism through a shared contract
 - Separation of algorithm selection from algorithm implementation
-- Abstract parent classes for shared state and behavior
-- Concrete subclasses that implement required methods
-- Parent-constructor reuse with `super()`
-- Interface-oriented inheritance
-- Reusable geometric parent classes
-- Subclass invariants such as `width == height`
-- Method overriding to preserve valid subclass state
 - Nested classes for implementation details
 - Reference-based relationships between objects
 - Object chains created through attributes
@@ -590,6 +555,7 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Asterisk-based geometric rendering
 - Shape dimensions represented through formatted strings
 - Exact dictionary output expected by tests
+- Structured tuple output for algorithm results
 
 ### Debugging and Testing
 
@@ -621,10 +587,88 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Updating `head` correctly when removing the first node
 - Preventing `KeyError` by checking nested dictionary membership
 - Debugging hash collisions by checking the original key inside the bucket
+- Debugging binary-search boundary updates
+- Confirming whether a function return value is actually printed
 
 ---
 
 ## Selected Project Highlights
+
+### Build a Binary Search
+
+Implemented an iterative binary search algorithm for sorted lists.
+
+The completed workshop includes:
+
+- A `binary_search()` function
+- A sorted input list
+- A target value
+- `low` and `high` search boundaries
+- `mid` midpoint calculation
+- Middle-value comparison
+- Path tracing through `path_to_target`
+- Early return when the target is found
+- Not-found handling when the search range becomes invalid
+
+Core implementation:
+
+```python
+def binary_search(search_list, value):
+    path_to_target = []
+    low = 0
+    high = len(search_list) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        value_at_middle = search_list[mid]
+        path_to_target.append(value_at_middle)
+
+        if value == value_at_middle:
+            return path_to_target, f'Value found at index {mid}'
+        elif value > value_at_middle:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return [], 'Value not found'
+```
+
+Search flow:
+
+```text
+Sorted list
+        ↓
+Set low and high boundaries
+        ↓
+Calculate middle index
+        ↓
+Compare target with middle value
+        ↓
+Discard half of the search range
+        ↓
+Repeat until found or range is empty
+```
+
+Example output:
+
+```text
+([3], 'Value found at index 2')
+([3, 5, 4], 'Value found at index 3')
+([], 'Value not found')
+```
+
+This workshop strengthened:
+
+- Algorithmic thinking
+- Search boundaries
+- Integer division
+- Index management
+- Conditional branching
+- Iterative search
+- Search-path tracing
+- Debugging off-by-one and direction errors
+
+---
 
 ### Build a Hash Table
 
@@ -642,90 +686,7 @@ The completed certification project includes:
 - Safe handling of missing keys
 - Exact collection structures required by tests
 
-Hash calculation:
-
-```python
-def hash(self, string):
-    return sum(ord(char) for char in string)
-```
-
-Example:
-
-```text
-'golf'
-    ↓
-103 + 111 + 108 + 102
-    ↓
-424
-```
-
-Storage structure:
-
-```python
-{
-    424: {
-        "golf": "sport"
-    }
-}
-```
-
-Collision example:
-
-```python
-table.add("fcc", "coding")
-table.add("cfc", "chemical")
-```
-
-Both keys hash to `300`, so the final structure is:
-
-```python
-{
-    300: {
-        "fcc": "coding",
-        "cfc": "chemical"
-    }
-}
-```
-
-Lookup flow:
-
-```text
-Original key
-        ↓
-Compute hash
-        ↓
-Find bucket
-        ↓
-Check original key inside bucket
-        ↓
-Return value or None
-```
-
-Removal flow:
-
-```text
-Original key
-        ↓
-Compute hash
-        ↓
-Check bucket exists
-        ↓
-Check original key exists
-        ↓
-Delete only that key-value pair
-```
-
-This project strengthened:
-
-- Hash-table concepts
-- Key-value storage
-- Unicode-based hashing
-- Nested dictionaries
-- Collision handling
-- Safe deletion
-- Lookup design
-- Defensive programming
-- Exact dictionary-structure matching
+This project strengthened hash-table concepts, Unicode-based hashing, nested dictionaries, collision handling, safe deletion, lookup design, defensive programming, and exact dictionary-structure matching.
 
 ---
 
@@ -776,22 +737,6 @@ The completed workshop includes:
 - Type hints for products, prices, user tiers, and strategy collections
 - Currency output formatted to two decimal places
 
-Calculation flow:
-
-```text
-Original price
-      ↓
-Evaluate each strategy
-      ↓
-Check is_applicable(...)
-      ↓
-Apply valid discounts
-      ↓
-Collect candidate prices
-      ↓
-Return min(prices)
-```
-
 This workshop strengthened abstract interface design, runtime polymorphism, strategy-pattern architecture, and exact monetary formatting.
 
 ---
@@ -800,50 +745,19 @@ This workshop strengthened abstract interface design, runtime polymorphism, stra
 
 Implemented an inheritance-based geometry application with a reusable `Rectangle` parent class and a specialized `Square` subclass.
 
-The completed certification project includes:
-
-- Area calculation
-- Perimeter calculation
-- Diagonal calculation
-- Shape rendering
-- Shape containment
-- Method overriding
-- Object invariant preservation
-
-Class relationship:
-
-```text
-Rectangle
-        ↑
-        │ inheritance
-Square
-```
-
-The project reinforced the principle that a subclass should reuse shared behavior while protecting its own stricter rules.
+The completed certification project includes area calculation, perimeter calculation, diagonal calculation, shape rendering, shape containment, method overriding, and object invariant preservation.
 
 ---
 
 ### Build a Budget App
 
-Developed a reusable `Category` class with:
-
-- Transaction ledgers
-- Deposits
-- Withdrawals
-- Transfers
-- Balance calculations
-- Fund checks
-- Fixed-width output
-- Spending percentages
-- Vertical text-based charts
-
-The project combines object-oriented programming, validation, aggregation, percentage calculations, nested loops, and exact string formatting.
+Developed a reusable `Category` class with transaction ledgers, deposits, withdrawals, transfers, balance calculations, fund checks, fixed-width output, spending percentages, and vertical text-based charts.
 
 ---
 
-## Object-Oriented and Data-Structure Progression
+## Object-Oriented, Data-Structure, and Algorithm Progression
 
-Object-oriented and data-structure concepts were introduced incrementally:
+Object-oriented, data-structure, and algorithmic concepts were introduced incrementally:
 
 ```text
 MusicalInstrument
@@ -882,13 +796,17 @@ LinkedList + Node
         ↓
 Reference-based data structures, traversal, and link updates
         ↓
-Rectangle + Square
-        ↓
-Reusable geometry, method overriding, and subclass invariants
-        ↓
 HashTable
         ↓
 Hashing, buckets, collision handling, safe lookup, and deletion
+        ↓
+Binary Search
+        ↓
+Sorted data, midpoint comparison, range reduction, and algorithm tracing
+        ↓
+Rectangle + Square
+        ↓
+Reusable geometry, method overriding, and subclass invariants
         ↓
 Category
         ↓
@@ -908,11 +826,12 @@ Ledgers, transfers, reporting, and visualization
 | Media Catalogue | Inheritance, polymorphism, custom exceptions, and collection filtering |
 | Discount Calculator | Abstract interfaces, strategy pattern, dependency injection, and runtime polymorphism |
 | Linked List | Custom node objects, references, traversal, insertion, and removal |
-| Polygon Area Calculator | Reusable geometry, method overriding, object invariants, and containment logic |
 | Hash Table | Hashing, nested dictionaries, collision handling, lookup, and deletion |
+| Binary Search | Sorted data, midpoint comparison, boundary updates, and logarithmic search thinking |
+| Polygon Area Calculator | Reusable geometry, method overriding, object invariants, and containment logic |
 | Budget App | Transaction systems, cross-object transfers, reporting |
 
-This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add a lower-level data-structure perspective: data can be connected through object references or indexed through computed keys instead of being stored only in ordinary lists.
+This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, while binary search introduces algorithmic efficiency and systematic range reduction.
 
 ---
 
@@ -968,9 +887,8 @@ Regression check
 - Prefer interfaces that allow new behavior without modifying existing orchestration logic.
 - Keep shared behavior in parent classes and subclass-specific behavior in concrete classes.
 - Use abstract methods when every subclass must provide a required operation.
-- Override inherited methods when a subclass must enforce stricter state rules.
-- Preserve object invariants after every public state-changing operation.
 - Validate keys before accessing or deleting nested dictionary values.
+- Maintain algorithm boundaries carefully when working with index-based search.
 
 ---
 
@@ -1000,30 +918,28 @@ Regression check
 - `isinstance()` includes subclasses, while `type() is` checks the exact class.
 - Custom exceptions must receive every argument declared by their constructor.
 - Automated tests often check both behavior and implementation structure.
-- A readable object representation greatly improves debugging.
 - Parameter names must match the identifiers used inside the method body.
 - Built-in functions such as `min(prices)` are different from collection methods.
-- Instance methods must be called through an object, such as `engine.calculate_best_price(...)`.
 - Variables must be defined before they are passed into constructors.
-- Code inside `if __name__ == '__main__':` must remain consistently indented.
 - Abstract subclasses must implement every required abstract method before they can be instantiated.
-- Adding tuples concatenates them; coordinate arithmetic requires adding x and y components separately.
 - Tests for parent-class behavior may rely on a concrete subclass being instantiable.
 - Shared initialization should be reused through `super().__init__()` when required.
 - Method names must match the specification exactly; `set_heigth` and `set_height` are different identifiers.
 - Floor division is appropriate when only complete contained objects should be counted.
 - Generated text pictures may require a newline after the final row.
-- A subclass setter may need to update multiple attributes to preserve a valid invariant.
 - Assignment direction matters in reference-based structures: `self.head = node` and `node = self.head` do not mean the same thing.
 - `None` should be checked with `is None` or `is not None`.
 - Traversal loops must advance to the next node to avoid infinite loops.
 - Removing the head node requires updating `self.head`.
-- Removing a non-head node requires updating `previous_node.next`.
-- A manual `length` counter must be updated after successful insertion or removal.
 - A hash table should store original keys inside buckets because different keys can share one hash value.
 - `remove()` should delete only the requested key-value pair, not the entire collision bucket.
 - `lookup()` must check both the hash bucket and the original key.
-- Missing hash-table keys should return `None` or do nothing, depending on the operation, instead of raising unnecessary errors.
+- Binary search requires sorted input data.
+- The midpoint should be calculated with integer division: `(low + high) // 2`.
+- If the target is greater than the middle value, update the lower boundary with `low = mid + 1`.
+- If the target is less than the middle value, update the upper boundary with `high = mid - 1`.
+- A function call must be inside `print(...)` when the returned value needs to be displayed.
+- Returning the checked path is useful for explaining and debugging the search process.
 
 ---
 
@@ -1089,22 +1005,6 @@ class ResultIndex:
     pass
 ```
 
-Possible interaction:
-
-```text
-MonitoringStation
-        ↓
-produces Observation subclasses
-        ↓
-ObservationCatalogue stores and filters them
-        ↓
-SimulationScenario references selected observations
-        ↓
-HydrodynamicModel produces results
-        ↓
-Validation tools evaluate model performance
-```
-
 ### Validation Pattern
 
 A property-based validation pattern can protect engineering parameters:
@@ -1130,8 +1030,6 @@ class MonitoringStation:
         self._salinity = value
 ```
 
-This pattern is directly related to the validation and encapsulation techniques practiced in the Salary Tracker and Game Character Stats Tracker.
-
 ### Strategy Pattern for Engineering Metrics
 
 The Strategy pattern from the Discount Calculator maps naturally to engineering software. Different calibration metrics, numerical solvers, boundary-condition treatments, or model-selection rules can implement a shared interface and be evaluated by one orchestration engine.
@@ -1141,75 +1039,9 @@ class ValidationMetric(ABC):
     @abstractmethod
     def calculate(self, observed, simulated):
         pass
-
-
-class RMSEMetric(ValidationMetric):
-    def calculate(self, observed, simulated):
-        pass
-
-
-class NSEMetric(ValidationMetric):
-    def calculate(self, observed, simulated):
-        pass
 ```
 
-### Trajectory and Movement Models
-
-The Player Interface lab adds another directly relevant pattern: an abstract parent class can define shared state and movement logic, while concrete subclasses provide specialized behavior.
-
-```python
-class MovingEntity(ABC):
-    def __init__(self):
-        self.position = (0.0, 0.0)
-        self.path = [self.position]
-
-    @abstractmethod
-    def update_position(self):
-        pass
-
-
-class SurfaceDrifter(MovingEntity):
-    def update_position(self):
-        pass
-
-
-class NumericalParticle(MovingEntity):
-    def update_position(self):
-        pass
-```
-
-This structure can later support particle tracking, Lagrangian transport, sensor trajectories, or model-specific movement behavior.
-
-### Geometric Domains
-
-The geometry and containment patterns from the Polygon Area Calculator can support computational-domain modeling.
-
-```python
-class RectangularDomain:
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
-
-    def get_area(self):
-        return self.width * self.height
-
-
-class SquareDomain(RectangularDomain):
-    def __init__(self, side):
-        super().__init__(side, side)
-```
-
-Possible applications include:
-
-- Rectangular numerical-model domains
-- Square grid patches
-- Survey-area subdivision
-- Raster-cell allocation
-- Laboratory-flume dimensions
-- Sensor-layout planning
-- Domain-packing calculations
-
-### Processing Chains
+### Data Structures for Engineering Workflows
 
 The Linked List workshop maps to workflows where data or operations form a chain.
 
@@ -1234,28 +1066,9 @@ Compare with model output
 Generate validation metrics
 ```
 
-A linked structure can represent an ordered sequence explicitly, where each node points to the next processing step.
-
 ### Hash-Based Indexing
 
 The Hash Table project maps to engineering tasks that require fast key-based access.
-
-```python
-class ResultIndex:
-    def __init__(self):
-        self.collection = {}
-
-    def hash(self, key):
-        return sum(ord(char) for char in key)
-
-    def add(self, key, value):
-        hashed_key = self.hash(key)
-
-        if hashed_key not in self.collection:
-            self.collection[hashed_key] = {}
-
-        self.collection[hashed_key][key] = value
-```
 
 Possible uses include:
 
@@ -1268,6 +1081,39 @@ Possible uses include:
 - Duplicate detection in environmental records
 
 The same collision-handling principle applies: computed identifiers are useful for indexing, but original keys must still be preserved and checked.
+
+### Binary Search for Sorted Engineering Data
+
+Binary search maps directly to sorted engineering datasets such as timestamps, station lists, ordered result files, and model-output time steps.
+
+```python
+def find_time_index(times, target_time):
+    low = 0
+    high = len(times) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if times[mid] == target_time:
+            return mid
+        elif target_time > times[mid]:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return None
+```
+
+Possible uses include:
+
+- Searching sorted observation timestamps
+- Locating model-output time steps
+- Matching calibration windows
+- Finding ordered scenario identifiers
+- Reducing lookup time before interpolation
+- Supporting efficient time-series processing
+
+The key engineering lesson is that algorithm choice matters. When data is sorted, binary search can avoid checking every element one by one.
 
 ---
 
@@ -1288,11 +1134,12 @@ The same collision-handling principle applies: computed identifiers are useful f
 - Strengthen custom data-structure understanding
 - Practice linked-list traversal and reference updates
 - Practice hash-table lookup, deletion, and collision handling
+- Practice binary search and search-boundary management
 - Strengthen documentation quality
 
 ### Next Technical Stage
 
-| Technology | Intended Application |
+| Technology or Concept | Intended Application |
 | --- | --- |
 | NumPy | Arrays, vectorized calculations, numerical workflows |
 | pandas | Tabular and time-series data |
@@ -1302,6 +1149,8 @@ The same collision-handling principle applies: computed identifiers are useful f
 | Jupyter | Research notebooks and exploratory analysis |
 | openpyxl | Automated Excel processing |
 | Git | Version control and project management |
+| Search Algorithms | Efficient retrieval from sorted data |
+| Algorithmic Complexity | Choosing appropriate algorithms for data size |
 
 ### Long-Term Progression
 
@@ -1326,9 +1175,11 @@ Reusable Class Hierarchies and Movement Models
         ↓
 Custom Data Structures and Linked References
         ↓
-Geometric Models and Object Invariants
-        ↓
 Hash-Based Storage and Lookup
+        ↓
+Search Algorithms and Algorithmic Efficiency
+        ↓
+Geometric Models and Object Invariants
         ↓
 Testing and Documentation
         ↓
@@ -1352,16 +1203,16 @@ AI-Assisted Engineering Workflows
 This repository is actively maintained as part of an ongoing learning process.
 
 ```text
-Workshops:               13
+Workshops:               14
 Labs:                     8
 Certification Projects:   4
-Total Projects:          25
+Total Projects:          26
 ```
 
 Latest completed workshop:
 
 ```text
-Build a Linked List
+Build a Binary Search
 ```
 
 Latest completed lab:
