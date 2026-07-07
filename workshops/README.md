@@ -6,11 +6,11 @@ A collection of guided Python workshop projects completed while studying the
 These workshops document my progress from Python fundamentals to text processing,
 structured data validation, regular expressions, object-oriented programming,
 object composition, encapsulation, properties, setters, inheritance, polymorphism,
-custom exceptions, abstract base classes, polymorphic strategies, interactions between multiple objects, and reference-based data structures.
+custom exceptions, abstract base classes, polymorphic strategies, interactions between multiple objects, reference-based data structures, and algorithmic search.
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Workshops](https://img.shields.io/badge/Workshops_Completed-13-success)
+![Workshops](https://img.shields.io/badge/Workshops_Completed-14-success)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -19,12 +19,12 @@ custom exceptions, abstract base classes, polymorphic strategies, interactions b
 
 | Category               |   Completed |
 | ---------------------- | ----------: |
-| Workshops              |          13 |
-| Guided Python Projects |          13 |
+| Workshops              |          14 |
+| Guided Python Projects |          14 |
 | Current Status         | In Progress |
 
 ```text
-Progress: █████████████  13 workshops completed
+Progress: ██████████████  14 workshops completed
 ```
 
 ---
@@ -46,6 +46,7 @@ Progress: █████████████  13 workshops completed
 | 11 | Build a Media Catalogue              | Inheritance, polymorphism, custom exceptions, collection filtering |   ✅   |
 | 12 | Build a Discount Calculator          | Abstract base classes, strategy pattern, polymorphism, type hints   |   ✅   |
 | 13 | Build a Linked List                  | Nodes, references, traversal, insertion, removal, custom data structures |   ✅   |
+| 14 | Build a Binary Search                | Sorted data, midpoint comparison, search boundaries, algorithm tracing |   ✅   |
 
 ---
 
@@ -66,6 +67,7 @@ workshops/
 ├── build-a-media-catalogue/
 ├── build-a-discount-calculator/
 ├── build-a-linked-list/
+├── build-a-binary-search/
 └── README.md
 ```
 
@@ -229,6 +231,9 @@ workshop-name/
 - Maintaining a `head` reference to the first node
 - Traversing a chain of objects through `.next` references
 - Updating links when adding or removing nodes
+- Searching sorted collections efficiently
+- Tracking values checked during an algorithm
+- Returning structured search results
 
 ### Data Structures
 
@@ -249,6 +254,20 @@ workshop-name/
 - Maintaining a manual `length` counter
 - Understanding reference assignment direction
 - Comparing linked lists with built-in Python lists
+
+### Search Algorithms
+
+- Linear search versus binary search
+- Sorted input requirements
+- Search boundaries
+- `low`, `high`, and `mid` variables
+- Integer division for midpoint calculation
+- Middle-value comparison
+- Reducing the search range by half
+- Returning early when the target is found
+- Returning a not-found result when the range is exhausted
+- Tracing checked values during the search
+- Understanding algorithmic efficiency
 
 ### Type Inspection
 
@@ -331,6 +350,8 @@ workshop-name/
 - Maintaining the head of a linked structure
 - Traversing object references until `None`
 - Updating links safely during removal
+- Maintaining search boundaries during iterative algorithms
+- Returning diagnostic information from algorithmic functions
 
 ---
 
@@ -770,6 +791,136 @@ Key concepts reinforced:
 
 ---
 
+### Binary Search
+
+Implemented an iterative binary search algorithm for sorted lists.
+
+The completed workshop contains:
+
+- A `binary_search()` function
+- A sorted input list
+- A target value
+- A `path_to_target` list for tracing checked values
+- `low` and `high` search boundaries
+- A `mid` index calculation
+- Middle-value comparison
+- Right-side search when the target is larger
+- Left-side search when the target is smaller
+- A found result with the target index
+- A not-found result when the search range is exhausted
+
+The function signature is:
+
+```python
+def binary_search(search_list, value):
+```
+
+The algorithm starts by defining the search range:
+
+```python
+low = 0
+high = len(search_list) - 1
+```
+
+The loop continues while the range is valid:
+
+```python
+while low <= high:
+```
+
+On each iteration, the middle index is calculated:
+
+```python
+mid = (low + high) // 2
+```
+
+The value at the middle index is then checked:
+
+```python
+value_at_middle = search_list[mid]
+path_to_target.append(value_at_middle)
+```
+
+If the target is found, the function returns both the checked path and the index:
+
+```python
+if value == value_at_middle:
+    return path_to_target, f'Value found at index {mid}'
+```
+
+If the target is greater than the middle value, the left half can be ignored:
+
+```python
+elif value > value_at_middle:
+    low = mid + 1
+```
+
+If the target is less than the middle value, the right half can be ignored:
+
+```python
+else:
+    high = mid - 1
+```
+
+If the loop ends without finding the value, the target is not present:
+
+```python
+return [], 'Value not found'
+```
+
+Search flow:
+
+```text
+Sorted list
+        ↓
+Set low and high boundaries
+        ↓
+Find the middle index
+        ↓
+Compare target with middle value
+        ↓
+Discard half of the search range
+        ↓
+Repeat until found or range is empty
+```
+
+Example:
+
+```python
+print(binary_search([1, 2, 3, 4, 5], 3))
+print(binary_search([1, 2, 3, 4, 5, 9], 4))
+print(binary_search([1, 3, 5, 9, 14, 22], 10))
+```
+
+Expected output:
+
+```text
+([3], 'Value found at index 2')
+([3, 5, 4], 'Value found at index 3')
+([], 'Value not found')
+```
+
+Important condition:
+
+```text
+Binary search only works correctly when the input list is sorted.
+```
+
+Key concepts reinforced:
+
+- Search algorithms
+- Sorted data
+- Integer division
+- Index boundaries
+- Loop conditions
+- Midpoint comparison
+- Algorithm tracing
+- Early returns
+- Not-found handling
+- Debugging boundary updates
+
+---
+
 ### Linked List
 
 Built a custom linked list implementation using nested node objects and reference-based traversal.
@@ -1119,6 +1270,10 @@ Strategy orchestration and best-price selection
 LinkedList and Node
         ↓
 Reference-based data structures, traversal, and link updates
+        ↓
+Binary Search
+        ↓
+Sorted data, midpoint comparison, and logarithmic search
 ```
 
 The Salary Tracker extended the progression from basic classes and object composition
@@ -1188,6 +1343,15 @@ The Media Catalogue workshop also reinforced several specific debugging lessons:
 - A method must explicitly `return` its result.
 - Output-building code must maintain valid indentation.
 
+The Binary Search workshop also reinforced these debugging lessons:
+
+- Binary search requires sorted input data.
+- The middle index should be calculated with integer division: `(low + high) // 2`.
+- If the target is greater than the middle value, move the lower boundary with `low = mid + 1`.
+- If the target is less than the middle value, move the upper boundary with `high = mid - 1`.
+- A function call must be placed inside `print(...)` when the returned result needs to be displayed.
+- Returning a path of checked values is useful for understanding how the algorithm narrows the search range.
+
 The Linked List workshop also reinforced these debugging lessons:
 
 - Assignment direction matters: `self.head = node` and `node = self.head` mean completely different things.
@@ -1213,7 +1377,7 @@ The Discount Calculator workshop also reinforced these debugging lessons:
 ## Current Progress
 
 ```text
-Completed:  █████████████  13
+Completed:  ██████████████  14
 Continuing: ░░░░░░░░░░  More workshops will be added
 ```
 
@@ -1257,6 +1421,8 @@ Polymorphic Algorithm Selection
 Custom Data Structures
         ↓
 Linked Lists, Nodes, and References
+        ↓
+Binary Search and Algorithmic Thinking
 ```
 
 ---
@@ -1294,6 +1460,10 @@ Current priorities include:
 - Understanding custom data structures
 - Traversing linked nodes through object references
 - Updating links safely during insertion and deletion
+- Understanding binary search on sorted lists
+- Maintaining `low`, `high`, and `mid` boundaries
+- Reducing the search space by half on each iteration
+- Tracing algorithm paths for debugging and explanation
 
 ---
 
@@ -1394,6 +1564,37 @@ HydrodynamicModel produces results
 Validation tools evaluate performance
 ```
 
+Binary search can later support engineering workflows where sorted data must be searched efficiently.
+
+For example, sorted time-series timestamps can be searched by narrowing the range:
+
+```python
+def find_nearest_time_index(times, target_time):
+    low = 0
+    high = len(times) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if times[mid] == target_time:
+            return mid
+        elif times[mid] < target_time:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return None
+```
+
+Possible engineering applications include:
+
+- Searching sorted observation timestamps
+- Locating model-output time steps
+- Finding sorted station identifiers
+- Matching calibration periods
+- Looking up ordered scenario results
+- Supporting efficient data retrieval before interpolation
+
 Relevant future applications include:
 
 - Environmental monitoring systems
@@ -1429,6 +1630,8 @@ These workshops provide the foundation for more advanced Python topics, includin
 - Custom exceptions
 - Automated testing
 - Data analysis
+- Search algorithms
+- Algorithmic complexity
 - Scientific computing
 - Engineering-oriented Python applications
 
@@ -1457,6 +1660,7 @@ Future workshops and projects will gradually introduce:
 | Inheritance           | Organizing related engineering data models   |
 | Design Patterns       | Selecting interchangeable engineering logic  |
 | Data Structures       | Building custom containers and processing chains |
+| Search Algorithms     | Finding values efficiently in ordered data       |
 | NumPy                 | Numerical arrays and scientific calculations |
 | pandas                | Tabular and time-series data processing      |
 | Matplotlib            | Scientific visualization                     |
