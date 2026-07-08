@@ -4,15 +4,15 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-28-success)
+![Projects](https://img.shields.io/badge/Projects_Completed-31-success)
 ![Workshops](https://img.shields.io/badge/Workshops-15-2563EB)
-![Labs](https://img.shields.io/badge/Labs-9-16A34A)
+![Labs](https://img.shields.io/badge/Labs-12-16A34A)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-4-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
-This repository documents my progression from Python fundamentals to functions, validation, debugging, object-oriented programming, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, custom data structures, search algorithms, divide-and-conquer sorting, numerical root finding, formatted reporting, and larger certification projects.
+This repository documents my progression from Python fundamentals to functions, validation, debugging, object-oriented programming, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, custom data structures, search algorithms, divide-and-conquer sorting, in-place sorting, recursive partitioning, checksum validation, numerical root finding, formatted reporting, and larger certification projects.
 
-The immediate goal is to complete the freeCodeCamp Python Certification with correct, readable, tested, and well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data validation, numerical methods, tolerance-based approximation, scientific visualization, search/indexing utilities, sorting workflows, and research automation.
+The immediate goal is to complete the freeCodeCamp Python Certification with correct, readable, tested, and well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data validation, numerical methods, tolerance-based approximation, scientific visualization, search/indexing utilities, sorting workflows, checksum-style validation, and research automation.
 
 ---
 
@@ -43,15 +43,15 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 | Area | Purpose | Completed |
 | --- | --- | ---: |
 | Workshops | Guided projects introducing new Python concepts incrementally | 15 |
-| Labs | Independent implementations based on user stories and automated tests | 9 |
+| Labs | Independent implementations based on user stories and automated tests | 12 |
 | Certification Projects | Larger projects combining multiple programming concepts | 4 |
-| **Total** | **Documented Python projects** | **28** |
+| **Total** | **Documented Python projects** | **31** |
 
 ```text
 Workshops              ███████████████  15 completed
-Labs                   █████████░░░░░  9 completed
+Labs                   ████████████░░  12 completed
 Certification Projects ████░░░░░░░░░░  4 completed
-Overall                ████████████████████████████  28 completed
+Overall                ███████████████████████████████  31 completed
 ```
 
 ### Current Learning Stage
@@ -97,6 +97,12 @@ Binary Search and Algorithmic Thinking
         ↓
 Merge Sort and Divide-and-Conquer Thinking
         ↓
+Quicksort and Recursive Partitioning
+        ↓
+Selection Sort and In-Place Mutation
+        ↓
+Luhn Algorithm and Checksum Validation
+        ↓
 Bisection Method and Numerical Root Finding
         ↓
 Formatted Reports and Visualizations
@@ -139,6 +145,9 @@ Formatted Reports and Visualizations
 | 7 | Build a Game Character Stats Tracker | Properties, getters, setters, encapsulation | ✅ |
 | 8 | Build a Player Interface | Abstract base classes, inheritance, random movement, path tracking | ✅ |
 | 9 | Implement the Bisection Method | Numerical approximation, interval halving, tolerance, convergence | ✅ |
+| 10 | Implement the Quicksort Algorithm | Recursion, pivot partitioning, new-list sorting, duplicate handling | ✅ |
+| 11 | Implement the Selection Sort Algorithm | In-place sorting, minimum search, nested loops, controlled swaps | ✅ |
+| 12 | Implement the Luhn Algorithm | Checksum validation, string cleaning, digit processing, modulo checks | ✅ |
 
 ### Certification Projects
 
@@ -183,6 +192,9 @@ freecodecamp-python/
 │   ├── build-a-game-character-stats-tracker.py
 │   ├── build-a-player-interface.py
 │   ├── implement-the-bisection-method.py
+│   ├── implement-the-quicksort-algorithm.py
+│   ├── implement-the-selection-sort-algorithm.py
+│   ├── implement-the-luhn-algorithm.py
 │   └── README.md
 │
 ├── certification-projects/
@@ -251,7 +263,7 @@ They are used to practice:
 - Matching exact output formats
 - Refactoring final solutions for clarity
 
-The latest completed lab, **Implement the Bisection Method**, introduced numerical root finding, interval halving, tolerance-based stopping, maximum-iteration safeguards, exact output matching, and non-convergence reporting.
+The latest completed lab, **Implement the Luhn Algorithm**, introduced checksum validation, card-number normalization, right-to-left digit processing, modulo checks, exact return values, and failure handling for invalid identification numbers. Recent sorting labs also added quicksort and selection sort, strengthening recursive partitioning, in-place mutation, duplicate handling, and controlled swap logic.
 
 Detailed lab documentation is maintained in [`labs/README.md`](labs/README.md).
 
@@ -414,8 +426,14 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 
 - Binary search
 - Merge sort
+- Quicksort
+- Selection sort
 - Bisection method
+- Luhn algorithm
 - Divide-and-conquer algorithms
+- Recursive partitioning
+- In-place sorting
+- Checksum validation
 - Numerical root finding
 - Tolerance-based approximation
 - Sorted input requirements
@@ -429,10 +447,17 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Search-path tracing
 - Algorithmic reasoning about efficiency
 - Recursive decomposition of lists
+- Pivot selection and partitioning
+- Partitioning values into less-than, equal-to, and greater-than groups
+- Preserving duplicate values during sorting
 - Merging sorted sublists
+- Finding the minimum value in an unsorted portion
+- Avoiding unnecessary swaps
 - Iterative interval halving
 - Convergence checks with tolerance
 - Maximum-iteration safeguards
+- Modulo-based validity checks
+- Right-to-left checksum processing
 
 ### Loops and Iteration
 
@@ -454,6 +479,10 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Iterative narrowing of a search interval
 - Recursive sorting of left and right partitions
 - Copying remaining values after merge comparisons
+- Partitioning lists into smaller groups
+- Nested-loop minimum search for selection sort
+- Iterating through reversed strings with `enumerate()`
+- Processing alternating digits for checksum algorithms
 
 ### Text Processing
 
@@ -469,6 +498,9 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Alignment
 - Truncation
 - Exact whitespace control
+- Removing dashes and spaces from structured identifiers
+- Reversing strings with slicing
+- Converting digit characters to integers for arithmetic validation
 
 ### Regular Expressions
 
@@ -496,6 +528,8 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Validation before dictionary deletion
 - Defensive lookup of missing keys
 - Boundary validation for index-based algorithms
+- Checksum validation for identification numbers
+- Normalizing formatted numeric strings before validation
 
 ### Error and Exception Handling
 
@@ -614,6 +648,13 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Debugging merge indexes for left, right, and sorted positions
 - Matching exact numerical-output messages in automated tests
 - Distinguishing return values from printed output in numerical labs
+- Distinguishing in-place sorting from new-list sorting
+- Avoiding forbidden built-in sorting methods such as `.sort()` and `sorted()` when required
+- Preserving input-list identity when a lab requires in-place mutation
+- Preserving original input data when a lab requires returning a new list
+- Handling duplicate values in partition-based sorting
+- Debugging odd/even index logic in the Luhn algorithm
+- Verifying exact string returns such as `VALID!` and `INVALID!`
 
 ---
 
@@ -687,6 +728,166 @@ This workshop strengthened:
 - In-place mutation
 - Algorithm tracing
 - Debugging merge loops
+
+---
+
+### Implement the Quicksort Algorithm
+
+Implemented a recursive quicksort algorithm that returns a new sorted list without modifying the original input list.
+
+The completed lab includes:
+
+- A `quick_sort()` function
+- A base case for empty and single-item lists
+- Pivot selection using the first list element
+- Partitioning into less-than, equal-to, and greater-than groups
+- Recursive sorting of lower and higher partitions
+- Correct handling of duplicate values
+- Concatenation of sorted partitions into a new list
+- Compliance with the requirement to avoid built-in sorting methods
+
+Core implementation pattern:
+
+```python
+def quick_sort(numbers):
+    if len(numbers) <= 1:
+        return numbers[:]
+
+    pivot = numbers[0]
+    less_than_pivot = []
+    equal_to_pivot = []
+    greater_than_pivot = []
+```
+
+Quicksort flow:
+
+```text
+Choose a pivot
+        ↓
+Partition values into less, equal, and greater groups
+        ↓
+Recursively sort the less and greater groups
+        ↓
+Concatenate sorted less + equal + sorted greater
+        ↓
+Return a new sorted list
+```
+
+This lab strengthened:
+
+- Recursion
+- Base-case design
+- Pivot selection
+- Partitioning logic
+- Duplicate handling
+- New-list construction
+- Avoiding mutation when the specification requires preserving the input list
+
+---
+
+### Implement the Selection Sort Algorithm
+
+Implemented an in-place selection sort algorithm that repeatedly finds the minimum value in the unsorted portion of a list and swaps it into the current position.
+
+The completed lab includes:
+
+- A `selection_sort()` function
+- In-place mutation of the input list
+- A current-position loop
+- A nested minimum-search loop
+- Index tracking for the smallest remaining value
+- Conditional swapping only when needed
+- Returning the same list object after sorting
+- Compliance with the requirement to avoid `sort()` and `sorted()`
+
+Core implementation pattern:
+
+```python
+def selection_sort(array):
+    for current_index in range(len(array)):
+        minimum_index = current_index
+
+        for search_index in range(current_index + 1, len(array)):
+            if array[search_index] < array[minimum_index]:
+                minimum_index = search_index
+```
+
+Selection sort flow:
+
+```text
+Start at the first unsorted position
+        ↓
+Find the smallest value in the remaining list
+        ↓
+Swap it into the current position if needed
+        ↓
+Move to the next position
+        ↓
+Repeat until the list is sorted
+```
+
+This lab strengthened:
+
+- In-place sorting
+- Nested-loop reasoning
+- Index management
+- Controlled swaps
+- Avoiding unnecessary mutation
+- Understanding quadratic-time sorting behavior
+
+---
+
+### Implement the Luhn Algorithm
+
+Implemented a card-number validator using the Luhn checksum algorithm.
+
+The completed lab includes:
+
+- A `verify_card_number()` function
+- Removal of spaces and dashes from formatted card numbers
+- Right-to-left digit processing
+- Alternating-digit doubling
+- Reducing doubled values greater than 9 by subtracting 9
+- Checksum accumulation
+- Modulo-10 validity checking
+- Exact string returns of `VALID!` and `INVALID!`
+
+Core implementation pattern:
+
+```python
+def verify_card_number(numbers):
+    cleaned_number = numbers.replace("-", "")
+    cleaned_number = cleaned_number.replace(" ", "")
+
+    total = 0
+    reversed_number = cleaned_number[::-1]
+```
+
+Luhn validation flow:
+
+```text
+Normalize the card number
+        ↓
+Reverse the digits
+        ↓
+Double every other digit after the check digit
+        ↓
+Subtract 9 from doubled values greater than 9
+        ↓
+Sum all processed digits
+        ↓
+Return VALID! when the total is divisible by 10
+```
+
+This lab strengthened:
+
+- Checksum validation
+- String normalization
+- String slicing
+- `enumerate()` with index-based rules
+- Numeric conversion with `int()`
+- Modulo checks
+- Exact return-value matching
 
 ---
 
@@ -965,6 +1166,18 @@ Merge Sort
         ↓
 Recursive splitting, sorted merging, and divide-and-conquer design
         ↓
+Quick Sort
+        ↓
+Pivot partitioning, recursive sorting, and new-list construction
+        ↓
+Selection Sort
+        ↓
+In-place minimum selection, controlled swaps, and nested-loop sorting
+        ↓
+Luhn Algorithm
+        ↓
+Checksum validation, formatted-number normalization, and modulo checks
+        ↓
 Bisection Method
         ↓
 Interval halving, tolerance-based approximation, and convergence checks
@@ -994,11 +1207,14 @@ Ledgers, transfers, reporting, and visualization
 | Hash Table | Hashing, nested dictionaries, collision handling, lookup, and deletion |
 | Binary Search | Sorted data, midpoint comparison, boundary updates, and logarithmic search thinking |
 | Merge Sort | Recursive splitting, sorted merging, divide-and-conquer reasoning, and in-place mutation |
+| Quicksort | Pivot partitioning, recursive sorting, duplicate handling, and new-list construction |
+| Selection Sort | In-place minimum selection, nested-loop scanning, and controlled swaps |
+| Luhn Algorithm | Checksum validation, formatted-number cleaning, alternating-digit processing, and modulo checks |
 | Bisection Method | Interval halving, numerical approximation, convergence, and tolerance-based stopping |
 | Polygon Area Calculator | Reusable geometry, method overriding, object invariants, and containment logic |
 | Budget App | Transaction systems, cross-object transfers, reporting |
 
-This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, merge sort adds recursive divide-and-conquer sorting, and the bisection method introduces numerical approximation through interval halving.
+This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, and the bisection method introduces numerical approximation through interval halving.
 
 ---
 
@@ -1056,6 +1272,8 @@ Regression check
 - Use abstract methods when every subclass must provide a required operation.
 - Validate keys before accessing or deleting nested dictionary values.
 - Maintain algorithm boundaries carefully when working with index-based search.
+- Respect whether a specification requires mutating the original list or returning a new list.
+- Avoid built-in shortcuts when an exercise is designed to teach the underlying algorithm.
 
 ---
 
@@ -1114,6 +1332,13 @@ Regression check
 - Bisection works by shrinking an interval, not by guessing the exact answer immediately.
 - For numbers between 0 and 1, the square root is larger than the original number, so the upper bound should be 1.
 - Exact punctuation in `print()` output can decide whether an automated test passes.
+- Quicksort should preserve duplicate values by keeping an equal-to-pivot partition.
+- A recursive sorting function needs a base case for empty and single-item lists.
+- Selection sort should only swap when the minimum value is not already in the current position.
+- In-place sorting requirements mean the same list object must be modified and returned.
+- Some labs require returning a new list instead of modifying the input list.
+- The Luhn algorithm starts from the right and excludes the rightmost check digit from doubling.
+- Removing spaces and dashes before checksum validation prevents formatted card numbers from failing incorrectly.
 
 ---
 
@@ -1132,6 +1357,7 @@ This repository is the programming foundation for future coastal and environment
 - Scientific visualization
 - Engineering automation
 - Sorting and indexing engineering records
+- Checksum-style validation for structured identifiers
 - Numerical root finding for engineering calculations
 - Research reproducibility
 - AI-assisted technical workflows
@@ -1313,6 +1539,50 @@ def sort_observations_by_time(observations):
     pass
 ```
 
+### Quicksort and Selection Sort for Engineering Data Organization
+
+The quicksort and selection sort labs reinforce two different approaches to ordering data.
+
+Quicksort is useful for understanding recursive partitioning and new-list construction, while selection sort is useful for understanding in-place mutation and controlled swaps.
+
+Possible engineering uses include:
+
+- Ordering measurement values before statistical analysis
+- Sorting station metadata for reporting
+- Preparing records for search or comparison
+- Understanding when mutation is acceptable and when original data should be preserved
+- Building intuition about algorithmic trade-offs
+
+Conceptual example:
+
+```python
+def sort_station_records(records):
+    # Future implementation could sort stations by ID,
+    # location, timestamp, or measured variable.
+    pass
+```
+
+### Luhn-Style Checksum Validation for Structured Identifiers
+
+The Luhn algorithm introduces checksum-style validation, which is useful whenever an identifier should be checked for transcription or formatting errors.
+
+Possible engineering-related uses include:
+
+- Validating structured station codes
+- Checking imported equipment identifiers
+- Detecting simple data-entry mistakes
+- Normalizing formatted identifiers before validation
+- Designing lightweight integrity checks before data processing
+
+Conceptual example:
+
+```python
+def validate_station_code_checksum(station_code):
+    # Future implementation could apply a checksum rule
+    # to structured engineering identifiers.
+    pass
+```
+
 ### Bisection Method for Numerical Engineering Calculations
 
 The bisection method maps directly to engineering calculations where a value must be found iteratively within a specified tolerance.
@@ -1356,6 +1626,8 @@ def find_parameter_root(function, lower_bound, upper_bound, tolerance):
 - Practice hash-table lookup, deletion, and collision handling
 - Practice binary search and search-boundary management
 - Practice recursive divide-and-conquer sorting
+- Practice in-place sorting and controlled mutation
+- Practice checksum validation and formatted-identifier normalization
 - Practice numerical root finding and convergence checks
 - Strengthen documentation quality
 
@@ -1373,6 +1645,7 @@ def find_parameter_root(function, lower_bound, upper_bound, tolerance):
 | Git | Version control and project management |
 | Search Algorithms | Efficient retrieval from sorted data |
 | Sorting Algorithms | Preparing ordered data for search, reporting, and analysis |
+| Checksum Validation | Detecting simple errors in structured identifiers |
 | Numerical Methods | Root finding, convergence checks, and tolerance-based calculations |
 | Algorithmic Complexity | Choosing appropriate algorithms for data size |
 
@@ -1403,7 +1676,9 @@ Hash-Based Storage and Lookup
         ↓
 Search Algorithms and Algorithmic Efficiency
         ↓
-Sorting Algorithms and Divide-and-Conquer Design
+Sorting Algorithms, Partitioning, and In-Place Mutation
+        ↓
+Checksum Validation and Data Integrity Checks
         ↓
 Numerical Root Finding and Tolerance-Based Approximation
         ↓
@@ -1432,9 +1707,9 @@ This repository is actively maintained as part of an ongoing learning process.
 
 ```text
 Workshops:               15
-Labs:                     9
+Labs:                    12
 Certification Projects:   4
-Total Projects:          28
+Total Projects:          31
 ```
 
 Latest completed workshop:
@@ -1446,7 +1721,7 @@ Implement the Merge Sort Algorithm
 Latest completed lab:
 
 ```text
-Implement the Bisection Method
+Implement the Luhn Algorithm
 ```
 
 Latest completed certification project:
