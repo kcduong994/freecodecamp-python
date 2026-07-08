@@ -4,15 +4,15 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-26-success)
-![Workshops](https://img.shields.io/badge/Workshops-14-2563EB)
-![Labs](https://img.shields.io/badge/Labs-8-16A34A)
+![Projects](https://img.shields.io/badge/Projects_Completed-28-success)
+![Workshops](https://img.shields.io/badge/Workshops-15-2563EB)
+![Labs](https://img.shields.io/badge/Labs-9-16A34A)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-4-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
-This repository documents my progression from Python fundamentals to functions, validation, debugging, object-oriented programming, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, custom data structures, search algorithms, formatted reporting, and larger certification projects.
+This repository documents my progression from Python fundamentals to functions, validation, debugging, object-oriented programming, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, custom data structures, search algorithms, divide-and-conquer sorting, numerical root finding, formatted reporting, and larger certification projects.
 
-The immediate goal is to complete the freeCodeCamp Python Certification with correct, readable, tested, and well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data validation, numerical methods, scientific visualization, search/indexing utilities, and research automation.
+The immediate goal is to complete the freeCodeCamp Python Certification with correct, readable, tested, and well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data validation, numerical methods, tolerance-based approximation, scientific visualization, search/indexing utilities, sorting workflows, and research automation.
 
 ---
 
@@ -42,16 +42,16 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 
 | Area | Purpose | Completed |
 | --- | --- | ---: |
-| Workshops | Guided projects introducing new Python concepts incrementally | 14 |
-| Labs | Independent implementations based on user stories and automated tests | 8 |
+| Workshops | Guided projects introducing new Python concepts incrementally | 15 |
+| Labs | Independent implementations based on user stories and automated tests | 9 |
 | Certification Projects | Larger projects combining multiple programming concepts | 4 |
-| **Total** | **Documented Python projects** | **26** |
+| **Total** | **Documented Python projects** | **28** |
 
 ```text
-Workshops              ██████████████  14 completed
-Labs                   ████████░░░░░░  8 completed
+Workshops              ███████████████  15 completed
+Labs                   █████████░░░░░  9 completed
 Certification Projects ████░░░░░░░░░░  4 completed
-Overall                ██████████████████████████  26 completed
+Overall                ████████████████████████████  28 completed
 ```
 
 ### Current Learning Stage
@@ -95,6 +95,10 @@ Hash Tables, Buckets, and Collision Handling
         ↓
 Binary Search and Algorithmic Thinking
         ↓
+Merge Sort and Divide-and-Conquer Thinking
+        ↓
+Bisection Method and Numerical Root Finding
+        ↓
 Formatted Reports and Visualizations
 ```
 
@@ -120,6 +124,7 @@ Formatted Reports and Visualizations
 | 12 | Build a Discount Calculator | Abstract base classes, strategy pattern, polymorphic pricing, type hints | ✅ |
 | 13 | Build a Linked List | Nodes, references, traversal, insertion, removal, custom data structures | ✅ |
 | 14 | Build a Binary Search | Sorted data, midpoint comparison, boundary updates, algorithm tracing | ✅ |
+| 15 | Implement the Merge Sort Algorithm | Recursion, divide and conquer, slicing, merging sorted halves | ✅ |
 
 ### Labs
 
@@ -133,6 +138,7 @@ Formatted Reports and Visualizations
 | 6 | Build a Planet Class | Classes, exceptions, methods, object representation | ✅ |
 | 7 | Build a Game Character Stats Tracker | Properties, getters, setters, encapsulation | ✅ |
 | 8 | Build a Player Interface | Abstract base classes, inheritance, random movement, path tracking | ✅ |
+| 9 | Implement the Bisection Method | Numerical approximation, interval halving, tolerance, convergence | ✅ |
 
 ### Certification Projects
 
@@ -164,6 +170,7 @@ freecodecamp-python/
 │   ├── build-a-discount-calculator/
 │   ├── build-a-linked-list/
 │   ├── build-a-binary-search/
+│   ├── implement-the-merge-sort-algorithm/
 │   └── README.md
 │
 ├── labs/
@@ -175,6 +182,7 @@ freecodecamp-python/
 │   ├── build-a-planet-class.py
 │   ├── build-a-game-character-stats-tracker.py
 │   ├── build-a-player-interface.py
+│   ├── implement-the-bisection-method.py
 │   └── README.md
 │
 ├── certification-projects/
@@ -221,9 +229,9 @@ They are used to:
 - Develop reusable programming habits
 - Connect syntax with algorithmic reasoning
 
-The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based software design, reference-based data structures, and algorithmic search.
+The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based software design, reference-based data structures, algorithmic search, and divide-and-conquer sorting.
 
-The latest completed workshop, **Build a Binary Search**, introduced sorted-list search, midpoint calculation, `low` and `high` boundary management, iterative range reduction, early returns, not-found handling, and path tracing for algorithm explanation.
+The latest completed workshop, **Implement the Merge Sort Algorithm**, introduced recursion, list slicing, divide-and-conquer design, sorted-half merging, index-based merge control, and in-place list mutation.
 
 Detailed workshop documentation is maintained in [`workshops/README.md`](workshops/README.md).
 
@@ -243,7 +251,7 @@ They are used to practice:
 - Matching exact output formats
 - Refactoring final solutions for clarity
 
-The latest completed lab, **Build a Player Interface**, introduced abstract base classes, required subclass methods, parent-constructor reuse with `super()`, tuple-based movement vectors, random movement selection, and path-history tracking.
+The latest completed lab, **Implement the Bisection Method**, introduced numerical root finding, interval halving, tolerance-based stopping, maximum-iteration safeguards, exact output matching, and non-convergence reporting.
 
 Detailed lab documentation is maintained in [`labs/README.md`](labs/README.md).
 
@@ -405,6 +413,11 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 ### Algorithms
 
 - Binary search
+- Merge sort
+- Bisection method
+- Divide-and-conquer algorithms
+- Numerical root finding
+- Tolerance-based approximation
 - Sorted input requirements
 - Search boundaries
 - `low`, `high`, and `mid` variables
@@ -415,6 +428,11 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Not-found handling
 - Search-path tracing
 - Algorithmic reasoning about efficiency
+- Recursive decomposition of lists
+- Merging sorted sublists
+- Iterative interval halving
+- Convergence checks with tolerance
+- Maximum-iteration safeguards
 
 ### Loops and Iteration
 
@@ -434,6 +452,8 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Moving from one node to the next through object references
 - Generator expressions such as `sum(ord(char) for char in string)`
 - Iterative narrowing of a search interval
+- Recursive sorting of left and right partitions
+- Copying remaining values after merge comparisons
 
 ### Text Processing
 
@@ -589,10 +609,147 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Debugging hash collisions by checking the original key inside the bucket
 - Debugging binary-search boundary updates
 - Confirming whether a function return value is actually printed
+- Debugging slice boundaries when splitting lists
+- Debugging recursive base cases
+- Debugging merge indexes for left, right, and sorted positions
+- Matching exact numerical-output messages in automated tests
+- Distinguishing return values from printed output in numerical labs
 
 ---
 
 ## Selected Project Highlights
+
+### Implement the Merge Sort Algorithm
+
+Implemented a recursive merge sort algorithm that sorts a list in ascending order by repeatedly splitting it into smaller parts and merging those parts back together in sorted order.
+
+The completed workshop includes:
+
+- A `merge_sort()` function
+- A recursive base case for lists with zero or one element
+- Middle-point calculation with integer division
+- List slicing for left and right partitions
+- Recursive sorting of both halves
+- Index-based merging into the original list
+- Copying leftover values after one half is exhausted
+- A main execution guard for demonstration output
+
+Core implementation pattern:
+
+```python
+def merge_sort(array):
+    if len(array) <= 1:
+        return
+
+    middle_point = len(array) // 2
+    left_part = array[:middle_point]
+    right_part = array[middle_point:]
+
+    merge_sort(left_part)
+    merge_sort(right_part)
+
+    left_array_index = 0
+    right_array_index = 0
+    sorted_index = 0
+```
+
+Merge flow:
+
+```text
+Original list
+        ↓
+Split into left and right halves
+        ↓
+Recursively sort each half
+        ↓
+Compare the smallest remaining values
+        ↓
+Write the smaller value back into the original array
+        ↓
+Copy any remaining values
+```
+
+Example:
+
+```text
+[4, 10, 6, 14, 2, 1, 8, 5]
+        ↓
+[1, 2, 4, 5, 6, 8, 10, 14]
+```
+
+This workshop strengthened:
+
+- Recursion
+- Base-case design
+- Divide-and-conquer reasoning
+- List slicing
+- Index management
+- In-place mutation
+- Algorithm tracing
+- Debugging merge loops
+
+---
+
+### Implement the Bisection Method
+
+Implemented a numerical root-finding function that approximates the square root of a non-negative number by repeatedly halving an interval.
+
+The completed lab includes:
+
+- A `square_root_bisection()` function
+- Default `tolerance` and `max_iterations` parameters
+- Validation for negative inputs
+- Exact handling for 0 and 1
+- Lower and upper interval bounds
+- Iterative midpoint calculation
+- Bound updates based on midpoint squared
+- Tolerance-based stopping
+- Non-convergence reporting
+
+Core implementation pattern:
+
+```python
+def square_root_bisection(square_target, tolerance=1e-7, max_iterations=100):
+    if square_target < 0:
+        raise ValueError(
+            "Square root of negative number is not defined in real numbers"
+        )
+
+    lower_bound = 0
+    upper_bound = square_target if square_target > 1 else 1
+
+    for _ in range(max_iterations):
+        root = (lower_bound + upper_bound) / 2
+        root_squared = root * root
+```
+
+Bisection flow:
+
+```text
+Start with an interval
+        ↓
+Calculate the midpoint
+        ↓
+Square the midpoint
+        ↓
+Compare with the target number
+        ↓
+Keep the half that contains the square root
+        ↓
+Stop when the interval is within tolerance
+```
+
+This lab strengthened:
+
+- Numerical approximation
+- Interval halving
+- Tolerance-based stopping
+- Maximum-iteration safeguards
+- Boundary-condition handling
+- Exact `print()` output matching
+- Difference between returning a value and printing a message
+
+---
 
 ### Build a Binary Search
 
@@ -804,6 +961,14 @@ Binary Search
         ↓
 Sorted data, midpoint comparison, range reduction, and algorithm tracing
         ↓
+Merge Sort
+        ↓
+Recursive splitting, sorted merging, and divide-and-conquer design
+        ↓
+Bisection Method
+        ↓
+Interval halving, tolerance-based approximation, and convergence checks
+        ↓
 Rectangle + Square
         ↓
 Reusable geometry, method overriding, and subclass invariants
@@ -828,10 +993,12 @@ Ledgers, transfers, reporting, and visualization
 | Linked List | Custom node objects, references, traversal, insertion, and removal |
 | Hash Table | Hashing, nested dictionaries, collision handling, lookup, and deletion |
 | Binary Search | Sorted data, midpoint comparison, boundary updates, and logarithmic search thinking |
+| Merge Sort | Recursive splitting, sorted merging, divide-and-conquer reasoning, and in-place mutation |
+| Bisection Method | Interval halving, numerical approximation, convergence, and tolerance-based stopping |
 | Polygon Area Calculator | Reusable geometry, method overriding, object invariants, and containment logic |
 | Budget App | Transaction systems, cross-object transfers, reporting |
 
-This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, while binary search introduces algorithmic efficiency and systematic range reduction.
+This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, merge sort adds recursive divide-and-conquer sorting, and the bisection method introduces numerical approximation through interval halving.
 
 ---
 
@@ -940,6 +1107,13 @@ Regression check
 - If the target is less than the middle value, update the upper boundary with `high = mid - 1`.
 - A function call must be inside `print(...)` when the returned value needs to be displayed.
 - Returning the checked path is useful for explaining and debugging the search process.
+- Merge sort requires a base case; otherwise recursion will never stop.
+- Slice syntax such as `array[:middle_point]` and `array[middle_point:]` is different from the `slice()` constructor.
+- Merge logic requires separate indexes for the left half, right half, and original array.
+- Remaining values from either half must be copied after the main merge loop finishes.
+- Bisection works by shrinking an interval, not by guessing the exact answer immediately.
+- For numbers between 0 and 1, the square root is larger than the original number, so the upper bound should be 1.
+- Exact punctuation in `print()` output can decide whether an automated test passes.
 
 ---
 
@@ -957,6 +1131,8 @@ This repository is the programming foundation for future coastal and environment
 - Calibration and validation metrics
 - Scientific visualization
 - Engineering automation
+- Sorting and indexing engineering records
+- Numerical root finding for engineering calculations
 - Research reproducibility
 - AI-assisted technical workflows
 
@@ -1113,7 +1289,51 @@ Possible uses include:
 - Reducing lookup time before interpolation
 - Supporting efficient time-series processing
 
-The key engineering lesson is that algorithm choice matters. When data is sorted, binary search can avoid checking every element one by one.
+The key engineering lesson is that algorithm choice matters. When data is sorted, binary search can avoid checking every element one by one. When data is unsorted, sorting algorithms such as merge sort can prepare records for efficient search, comparison, reporting, or time-series analysis.
+
+### Merge Sort for Engineering Records
+
+Merge sort is useful when engineering records need to be ordered before later analysis.
+
+Possible uses include:
+
+- Sorting observation timestamps
+- Ordering station records
+- Sorting scenario results before comparison
+- Preparing data for binary search
+- Organizing model-output records before reporting
+- Building reproducible pre-processing pipelines
+
+Conceptual example:
+
+```python
+def sort_observations_by_time(observations):
+    # Future implementation could sort observation records
+    # before validation, interpolation, or model comparison.
+    pass
+```
+
+### Bisection Method for Numerical Engineering Calculations
+
+The bisection method maps directly to engineering calculations where a value must be found iteratively within a specified tolerance.
+
+Possible uses include:
+
+- Solving simple nonlinear equations
+- Finding water-level thresholds
+- Estimating parameter values from target criteria
+- Locating roots in calibration equations
+- Supporting introductory numerical-method utilities
+- Demonstrating convergence and stopping criteria
+
+Conceptual example:
+
+```python
+def find_parameter_root(function, lower_bound, upper_bound, tolerance):
+    # Future implementation could use interval halving
+    # to solve engineering equations numerically.
+    pass
+```
 
 ---
 
@@ -1135,6 +1355,8 @@ The key engineering lesson is that algorithm choice matters. When data is sorted
 - Practice linked-list traversal and reference updates
 - Practice hash-table lookup, deletion, and collision handling
 - Practice binary search and search-boundary management
+- Practice recursive divide-and-conquer sorting
+- Practice numerical root finding and convergence checks
 - Strengthen documentation quality
 
 ### Next Technical Stage
@@ -1150,6 +1372,8 @@ The key engineering lesson is that algorithm choice matters. When data is sorted
 | openpyxl | Automated Excel processing |
 | Git | Version control and project management |
 | Search Algorithms | Efficient retrieval from sorted data |
+| Sorting Algorithms | Preparing ordered data for search, reporting, and analysis |
+| Numerical Methods | Root finding, convergence checks, and tolerance-based calculations |
 | Algorithmic Complexity | Choosing appropriate algorithms for data size |
 
 ### Long-Term Progression
@@ -1179,6 +1403,10 @@ Hash-Based Storage and Lookup
         ↓
 Search Algorithms and Algorithmic Efficiency
         ↓
+Sorting Algorithms and Divide-and-Conquer Design
+        ↓
+Numerical Root Finding and Tolerance-Based Approximation
+        ↓
 Geometric Models and Object Invariants
         ↓
 Testing and Documentation
@@ -1203,22 +1431,22 @@ AI-Assisted Engineering Workflows
 This repository is actively maintained as part of an ongoing learning process.
 
 ```text
-Workshops:               14
-Labs:                     8
+Workshops:               15
+Labs:                     9
 Certification Projects:   4
-Total Projects:          26
+Total Projects:          28
 ```
 
 Latest completed workshop:
 
 ```text
-Build a Binary Search
+Implement the Merge Sort Algorithm
 ```
 
 Latest completed lab:
 
 ```text
-Build a Player Interface
+Implement the Bisection Method
 ```
 
 Latest completed certification project:
