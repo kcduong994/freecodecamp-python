@@ -7,8 +7,9 @@ These labs focus on translating user stories into working software, designing pr
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Labs](https://img.shields.io/badge/Labs_Completed-8-success)
+![Labs](https://img.shields.io/badge/Labs_Completed-9-success)
 ![OOP Labs](https://img.shields.io/badge/OOP_Labs-3-6f42c1)
+![Numerical Labs](https://img.shields.io/badge/Numerical_Labs-1-0A66C2)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -45,7 +46,7 @@ Each exercise requires some combination of:
 - Refactoring code for clarity
 - Documenting the final implementation
 
-The current learning path has progressed from fundamental control flow and functions to structured data, debugging, classes, properties, controlled state updates, abstract base classes, inheritance, and object-oriented design.
+The current learning path has progressed from fundamental control flow and functions to structured data, debugging, classes, properties, controlled state updates, abstract base classes, inheritance, object-oriented design, and numerical root-finding with tolerance-based convergence.
 
 ---
 
@@ -61,6 +62,7 @@ The current learning path has progressed from fundamental control flow and funct
 | 6 | Build a Planet Class | Classes, constructors, methods, exceptions | ✅ |
 | 7 | Build a Game Character Stats Tracker | Properties, getters, setters, encapsulation | ✅ |
 | 8 | Build a Player Interface | Abstract base classes, inheritance, random movement, path tracking | ✅ |
+| 9 | Implement the Bisection Method | Numerical approximation, binary search, tolerance, convergence | ✅ |
 
 ---
 
@@ -68,16 +70,17 @@ The current learning path has progressed from fundamental control flow and funct
 
 | Category | Completed |
 | --- | ---: |
-| Total Labs | 8 |
+| Total Labs | 9 |
 | Debugging-Focused Labs | 1 |
 | Object-Oriented Labs | 3 |
-| Labs Using Validation Rules | 5 |
+| Labs Using Validation Rules | 6 |
+| Numerical Method Labs | 1 |
 | Current Status | In Progress |
 
 ```text
-Labs Completed: 8
-Progress:       ████████░░ 8 completed
-Current Focus:  Abstract interfaces, inheritance, and reusable object behavior
+Labs Completed: 9
+Progress:       █████████░ 9 completed
+Current Focus:  Numerical root-finding, convergence checks, and test-driven debugging
 ```
 
 ### Concept Progression
@@ -98,6 +101,10 @@ Classes and Object Construction
 Properties, Getters, and Setters
         ↓
 Abstract Base Classes and Inheritance
+        ↓
+Binary Search and Bisection
+        ↓
+Tolerance-Based Numerical Approximation
 ```
 
 ---
@@ -114,6 +121,7 @@ labs/
 ├── build-a-planet-class.py
 ├── build-a-game-character-stats-tracker.py
 ├── build-a-player-interface.py
+├── implement-the-bisection-method.py
 └── README.md
 ```
 
@@ -181,6 +189,22 @@ The shared `README.md` records:
 - Boundary-condition handling
 - Exclusive branches with `if` / `elif` / `else`
 - State-dependent behavior
+- Stopping conditions for iterative algorithms
+- Failure branches when convergence is not reached
+
+### Numerical Methods and Approximation
+
+- Bisection method
+- Binary-search-style interval halving
+- Lower and upper bounds
+- Midpoint calculation
+- Square-root approximation
+- Tolerance-based stopping conditions
+- Maximum-iteration limits
+- Non-convergence handling
+- Floating-point approximation
+- Boundary cases for `0`, `1`, values below `1`, and values above `1`
+- Distinguishing exact results from approximate results
 
 ### Object-Oriented Programming
 
@@ -268,6 +292,7 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Pattern generation
 - String construction
 - Loop-control logic
+- Bounded iteration with a maximum number of attempts
 - Repeated data processing
 - Random item selection with `random.choice()`
 - Coordinate updates using tuple indexing
@@ -282,6 +307,7 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Input-error handling
 - Invalid-value detection
 - Clear validation messages
+- Failure messages for non-convergent algorithms
 - Failure-oriented testing
 
 ### Debugging
@@ -301,6 +327,8 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Distinguishing tuple concatenation from numeric coordinate addition
 - Debugging abstract-class instantiation requirements
 - Verifying inherited initialization
+- Matching exact printed output for automated tests
+- Diagnosing convergence and tolerance failures
 
 ### Problem Solving
 
@@ -316,6 +344,8 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Distinguishing implementation requirements from runtime behavior
 - Translating interface requirements into abstract methods
 - Reusing common state and behavior through inheritance
+- Translating mathematical algorithms into program logic
+- Designing clear stopping criteria for iterative methods
 
 ---
 
@@ -668,6 +698,85 @@ This lab reinforced:
 
 ---
 
+
+### 9. Implement the Bisection Method
+
+Implemented a numerical square-root approximation using the bisection method.
+
+This lab introduced a direct connection between programming fundamentals and numerical computing. The function repeatedly halves an interval that contains the square root until the interval width is smaller than the required tolerance.
+
+The completed function handles:
+
+- Negative-number validation
+- Exact results for `0` and `1`
+- Positive numbers greater than `1`
+- Positive numbers between `0` and `1`
+- Default tolerance
+- Maximum iteration limits
+- Approximate square-root output
+- Failure reporting when convergence is not reached
+
+The core interval setup is:
+
+```python
+lower_bound = 0
+
+if square_target > 1:
+    upper_bound = square_target
+else:
+    upper_bound = 1
+```
+
+The separate upper-bound case for numbers below `1` is important. For example, the square root of `0.001` is approximately `0.0316`, which is greater than `0.001` but less than `1`.
+
+The bisection loop follows this pattern:
+
+```text
+Start with lower and upper bounds
+        ↓
+Compute the midpoint
+        ↓
+Square the midpoint
+        ↓
+Compare it with the target
+        ↓
+Keep the half-interval that still contains the root
+        ↓
+Stop when the interval width is within tolerance
+```
+
+The key stopping condition is:
+
+```python
+if upper_bound - lower_bound <= tolerance:
+    root = (lower_bound + upper_bound) / 2
+    print(f"The square root of {square_target} is approximately {root}")
+    return root
+```
+
+If the method does not converge within the allowed number of iterations, the function reports failure and returns `None`:
+
+```python
+print(f"Failed to converge within {max_iterations} iterations")
+return None
+```
+
+This lab reinforced:
+
+- Numerical approximation
+- Binary search logic
+- Interval halving
+- Floating-point reasoning
+- Tolerance-based stopping
+- Maximum-iteration safeguards
+- Exact output matching
+- Distinguishing `print()` behavior from `return` values
+- Debugging automated test feedback one failure at a time
+
+This is the first lab in the sequence that directly supports future scientific-computing and engineering-analysis work.
+
+---
+
 ## Development Workflow
 
 Each lab follows an independent problem-solving workflow:
@@ -680,7 +789,7 @@ Each lab follows an independent problem-solving workflow:
 6. Run the provided automated tests.
 7. Inspect failures one test at a time.
 8. Diagnose syntax, runtime, and logic errors.
-9. Test boundary values and invalid inputs.
+9. Test boundary values, invalid inputs, and convergence behavior.
 10. Refactor the final solution for readability.
 11. Add comments and documentation.
 12. Record the completed work in the repository.
@@ -720,6 +829,7 @@ The completed labs aim to follow these principles:
 - Keep object state valid after every public operation.
 - Avoid duplicate implementations.
 - Match required output formats exactly.
+- Use explicit failure messages when an algorithm cannot produce a valid result.
 - Prefer readable logic over unnecessarily compact expressions.
 - Add comments that explain intent rather than restating syntax.
 - Keep shared behavior in parent classes and specialized behavior in subclasses.
@@ -758,6 +868,8 @@ Current priorities include:
 - Designing reusable class hierarchies
 - Implementing abstract interfaces safely
 - Modeling coordinates and movement histories
+- Implementing numerical approximation algorithms
+- Understanding tolerance and convergence behavior
 - Writing reliable validation logic
 - Using exceptions correctly
 - Reading automated test feedback
@@ -779,6 +891,8 @@ Potential applications include:
 - Protecting model parameters from invalid values
 - Detecting missing or invalid measurements
 - Building reusable calculation functions
+- Implementing numerical root-finding routines
+- Designing convergence checks for iterative calculations
 - Processing time-series data
 - Processing numerical-model output
 - Debugging scientific-analysis scripts
@@ -787,6 +901,8 @@ Potential applications include:
 - Defining shared interfaces for multiple model types
 - Tracking movement, trajectories, or station paths
 - Extending specialized engineering classes from common parent classes
+
+The bisection method is also relevant to engineering workflows where a target value must be found iteratively, such as solving simplified rating-curve problems, calibrating a parameter until a residual approaches zero, or finding a threshold value in a model response.
 
 Object-oriented programming can later support structures such as:
 
@@ -932,7 +1048,7 @@ Potential future projects include:
 - Tide-data analysis
 - Water-level processing
 - Salinity-intrusion analysis
-- Model-validation metrics
+- Model validation metrics
 - Environmental-data cleaning
 - Hydrodynamic-result processing
 - Scientific visualization
@@ -958,6 +1074,7 @@ Each completed lab documents progress in:
 - Managing object state
 - Designing reusable class hierarchies
 - Implementing abstract interfaces
+- Implementing basic numerical methods
 - Improving technical documentation
 
 Additional labs will be added as progress continues through the freeCodeCamp Python Certification.
