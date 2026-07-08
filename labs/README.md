@@ -7,9 +7,11 @@ These labs focus on translating user stories into working software, designing pr
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Labs](https://img.shields.io/badge/Labs_Completed-9-success)
+![Labs](https://img.shields.io/badge/Labs_Completed-12-success)
 ![OOP Labs](https://img.shields.io/badge/OOP_Labs-3-6f42c1)
 ![Numerical Labs](https://img.shields.io/badge/Numerical_Labs-1-0A66C2)
+![Sorting Labs](https://img.shields.io/badge/Sorting_Labs-2-8B5CF6)
+![Checksum Labs](https://img.shields.io/badge/Checksum_Labs-2-DC2626)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -46,7 +48,7 @@ Each exercise requires some combination of:
 - Refactoring code for clarity
 - Documenting the final implementation
 
-The current learning path has progressed from fundamental control flow and functions to structured data, debugging, classes, properties, controlled state updates, abstract base classes, inheritance, object-oriented design, and numerical root-finding with tolerance-based convergence.
+The current learning path has progressed from fundamental control flow and functions to structured data, debugging, classes, properties, controlled state updates, abstract base classes, inheritance, object-oriented design, numerical root-finding with tolerance-based convergence, sorting algorithms, recursion, in-place mutation, and checksum validation.
 
 ---
 
@@ -63,6 +65,9 @@ The current learning path has progressed from fundamental control flow and funct
 | 7 | Build a Game Character Stats Tracker | Properties, getters, setters, encapsulation | ✅ |
 | 8 | Build a Player Interface | Abstract base classes, inheritance, random movement, path tracking | ✅ |
 | 9 | Implement the Bisection Method | Numerical approximation, binary search, tolerance, convergence | ✅ |
+| 10 | Implement the Quicksort Algorithm | Divide-and-conquer sorting, recursion, pivot partitioning | ✅ |
+| 11 | Implement the Selection Sort Algorithm | In-place sorting, minimum search, swaps, quadratic complexity | ✅ |
+| 12 | Implement the Luhn Algorithm | Checksum validation, string cleaning, modulo arithmetic | ✅ |
 
 ---
 
@@ -70,17 +75,19 @@ The current learning path has progressed from fundamental control flow and funct
 
 | Category | Completed |
 | --- | ---: |
-| Total Labs | 9 |
+| Total Labs | 12 |
 | Debugging-Focused Labs | 1 |
 | Object-Oriented Labs | 3 |
-| Labs Using Validation Rules | 6 |
+| Labs Using Validation Rules | 7 |
 | Numerical Method Labs | 1 |
+| Sorting Algorithm Labs | 2 |
+| Checksum Algorithm Labs | 2 |
 | Current Status | In Progress |
 
 ```text
-Labs Completed: 9
-Progress:       █████████░ 9 completed
-Current Focus:  Numerical root-finding, convergence checks, and test-driven debugging
+Labs Completed: 12
+Progress:       ████████████ 12 completed
+Current Focus:  Sorting algorithms, checksum validation, recursion, and in-place mutation
 ```
 
 ### Concept Progression
@@ -105,6 +112,12 @@ Abstract Base Classes and Inheritance
 Binary Search and Bisection
         ↓
 Tolerance-Based Numerical Approximation
+        ↓
+Recursive Quicksort and Pivot Partitioning
+        ↓
+In-Place Selection Sort and Swap Control
+        ↓
+Checksum Validation with the Luhn Algorithm
 ```
 
 ---
@@ -122,6 +135,9 @@ labs/
 ├── build-a-game-character-stats-tracker.py
 ├── build-a-player-interface.py
 ├── implement-the-bisection-method.py
+├── implement-the-quicksort-algorithm.py
+├── implement-the-selection-sort-algorithm.py
+├── implement-the-luhn-algorithm.py
 └── README.md
 ```
 
@@ -206,6 +222,35 @@ The shared `README.md` records:
 - Boundary cases for `0`, `1`, values below `1`, and values above `1`
 - Distinguishing exact results from approximate results
 
+### Sorting Algorithms
+
+- Quicksort
+- Selection sort
+- Recursive divide-and-conquer sorting
+- Pivot selection
+- Three-way partitioning: less than, equal to, and greater than the pivot
+- Recursive base cases
+- Returning a new sorted list without mutating the input
+- In-place sorting
+- Minimum-value search in an unsorted portion
+- Controlled element swapping
+- Avoiding unnecessary swaps
+- Understanding quadratic time complexity in selection sort
+- Avoiding prohibited built-in sorting helpers such as `sort()` and `sorted()`
+
+### Checksum and Identifier Validation
+
+- Luhn algorithm
+- Modulus 10 validation
+- Check digit handling
+- Cleaning formatted identifiers with spaces and dashes
+- Processing digits from right to left
+- Doubling every other digit
+- Reducing two-digit doubled values by subtracting 9
+- Accumulating checksum totals
+- Returning exact validation messages
+- Distinguishing checksum validation from general numeric conversion
+
 ### Object-Oriented Programming
 
 - Class definitions
@@ -266,6 +311,8 @@ The getter provides the current value, Python performs the arithmetic operation,
 - String slicing
 - String splitting with `split()`
 - Character inspection
+- String cleaning with `replace()`
+- String reversal with slicing
 - Multi-line output formatting
 
 ### Collections and Structured Data
@@ -282,6 +329,9 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Lists of movement vectors
 - Path-history storage
 - Extending lists with `extend()`
+- Creating partition lists for recursive sorting
+- In-place element swapping
+- Preserving duplicate values during partitioning
 
 ### Loops and Iteration
 
@@ -296,6 +346,9 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Repeated data processing
 - Random item selection with `random.choice()`
 - Coordinate updates using tuple indexing
+- Nested loops for minimum-value search
+- Recursive calls for divide-and-conquer sorting
+- Iterating over reversed strings with `enumerate()`
 
 ### Error and Exception Handling
 
@@ -309,6 +362,7 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Clear validation messages
 - Failure messages for non-convergent algorithms
 - Failure-oriented testing
+- Valid and invalid result strings for checksum algorithms
 
 ### Debugging
 
@@ -329,6 +383,10 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Verifying inherited initialization
 - Matching exact printed output for automated tests
 - Diagnosing convergence and tolerance failures
+- Distinguishing in-place algorithms from algorithms that return new lists
+- Avoiding prohibited built-in sorting methods
+- Debugging recursive base cases and partition logic
+- Matching exact `VALID!` and `INVALID!` return values
 
 ### Problem Solving
 
@@ -346,6 +404,9 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Reusing common state and behavior through inheritance
 - Translating mathematical algorithms into program logic
 - Designing clear stopping criteria for iterative methods
+- Translating sorting algorithms into loop and recursion logic
+- Choosing when to mutate input data and when to return new data
+- Implementing checksum validation without external libraries
 
 ---
 
@@ -777,6 +838,164 @@ This is the first lab in the sequence that directly supports future scientific-c
 
 ---
 
+### 10. Implement the Quicksort Algorithm
+
+Implemented a recursive quicksort function that returns a new sorted list without modifying the original input list.
+
+The completed function uses:
+
+- A recursive base case for empty and single-item lists
+- A pivot value selected from the input list
+- Three partition lists
+- Recursive sorting of smaller and greater partitions
+- Concatenation of sorted partitions
+- Duplicate-value preservation through an equal-to-pivot partition
+
+The core partitioning structure is:
+
+```python
+pivot = numbers[0]
+
+less_than_pivot = []
+equal_to_pivot = []
+greater_than_pivot = []
+
+for number in numbers:
+    if number < pivot:
+        less_than_pivot.append(number)
+    elif number == pivot:
+        equal_to_pivot.append(number)
+    else:
+        greater_than_pivot.append(number)
+```
+
+The recursive return combines the sorted pieces:
+
+```python
+return (
+    quick_sort(less_than_pivot)
+    + equal_to_pivot
+    + quick_sort(greater_than_pivot)
+)
+```
+
+This lab reinforced:
+
+- Recursive problem solving
+- Divide-and-conquer thinking
+- Pivot-based partitioning
+- Returning a new list rather than mutating the original
+- Preserving duplicate values
+- Avoiding built-in sorting methods
+- Understanding how a sorting algorithm can be expressed through smaller subproblems
+
+---
+
+### 11. Implement the Selection Sort Algorithm
+
+Implemented an in-place selection sort function that modifies the original input list and returns the same list object after sorting.
+
+The completed function uses:
+
+- An outer loop for each unsorted position
+- A `minimum_index` tracker
+- An inner loop to scan the remaining unsorted portion
+- Tuple assignment for swapping values
+- A guard condition to avoid unnecessary swaps
+
+The core minimum-search pattern is:
+
+```python
+for current_index in range(len(array)):
+    minimum_index = current_index
+
+    for search_index in range(current_index + 1, len(array)):
+        if array[search_index] < array[minimum_index]:
+            minimum_index = search_index
+```
+
+The swap is only performed when necessary:
+
+```python
+if minimum_index != current_index:
+    array[current_index], array[minimum_index] = (
+        array[minimum_index],
+        array[current_index],
+    )
+```
+
+This lab reinforced:
+
+- In-place list mutation
+- Minimum-value search
+- Nested-loop algorithm structure
+- Swap control
+- Avoiding unnecessary operations
+- Returning the same list object
+- Understanding why selection sort has quadratic time complexity
+
+---
+
+### 12. Implement the Luhn Algorithm
+
+Implemented a card-number validator using the Luhn checksum algorithm.
+
+The completed function handles:
+
+- Card numbers containing dashes
+- Card numbers containing spaces
+- Right-to-left digit processing
+- Check-digit preservation
+- Doubling every other digit
+- Reducing doubled values greater than `9`
+- Modulus 10 validation
+- Exact return values: `VALID!` and `INVALID!`
+
+The input is normalized first:
+
+```python
+cleaned_number = numbers.replace("-", "")
+cleaned_number = cleaned_number.replace(" ", "")
+```
+
+The reversed-number loop makes the check digit easy to skip:
+
+```python
+reversed_number = cleaned_number[::-1]
+
+for index, digit in enumerate(reversed_number):
+    number = int(digit)
+
+    if index % 2 == 1:
+        number = number * 2
+
+        if number > 9:
+            number = number - 9
+
+    total = total + number
+```
+
+The final checksum condition is:
+
+```python
+if total % 10 == 0:
+    return "VALID!"
+
+return "INVALID!"
+```
+
+This lab reinforced:
+
+- Checksum validation
+- String normalization
+- Reverse slicing
+- `enumerate()` for index-aware iteration
+- Modulo arithmetic
+- Exact string returns
+- Translating written algorithm steps into reliable program logic
+
+---
+
 ## Development Workflow
 
 Each lab follows an independent problem-solving workflow:
@@ -789,7 +1008,7 @@ Each lab follows an independent problem-solving workflow:
 6. Run the provided automated tests.
 7. Inspect failures one test at a time.
 8. Diagnose syntax, runtime, and logic errors.
-9. Test boundary values, invalid inputs, and convergence behavior.
+9. Test boundary values, invalid inputs, sorting behavior, checksum behavior, and convergence behavior.
 10. Refactor the final solution for readability.
 11. Add comments and documentation.
 12. Record the completed work in the repository.
@@ -829,6 +1048,8 @@ The completed labs aim to follow these principles:
 - Keep object state valid after every public operation.
 - Avoid duplicate implementations.
 - Match required output formats exactly.
+- Respect whether the required algorithm mutates input in place or returns a new list.
+- Avoid prohibited shortcuts such as built-in sorting functions when the goal is to implement the algorithm manually.
 - Use explicit failure messages when an algorithm cannot produce a valid result.
 - Prefer readable logic over unnecessarily compact expressions.
 - Add comments that explain intent rather than restating syntax.
@@ -870,6 +1091,9 @@ Current priorities include:
 - Modeling coordinates and movement histories
 - Implementing numerical approximation algorithms
 - Understanding tolerance and convergence behavior
+- Implementing recursive sorting algorithms
+- Implementing in-place sorting algorithms
+- Understanding checksum validation and modulus checks
 - Writing reliable validation logic
 - Using exceptions correctly
 - Reading automated test feedback
@@ -893,6 +1117,8 @@ Potential applications include:
 - Building reusable calculation functions
 - Implementing numerical root-finding routines
 - Designing convergence checks for iterative calculations
+- Sorting environmental records before analysis
+- Validating identifier-like records with checksum-style logic
 - Processing time-series data
 - Processing numerical-model output
 - Debugging scientific-analysis scripts
@@ -903,6 +1129,10 @@ Potential applications include:
 - Extending specialized engineering classes from common parent classes
 
 The bisection method is also relevant to engineering workflows where a target value must be found iteratively, such as solving simplified rating-curve problems, calibrating a parameter until a residual approaches zero, or finding a threshold value in a model response.
+
+Sorting algorithms are relevant when environmental observations, station records, timestamps, or scenario results need to be ordered before searching, interpolation, reporting, or validation. Quicksort reinforces recursive partitioning, while selection sort reinforces in-place mutation and explicit swap control.
+
+The Luhn algorithm strengthens checksum-style validation thinking. Although credit-card validation is not an engineering task, the pattern of cleaning identifiers, processing digits, and returning exact validity results is useful for validating structured IDs, station codes, sample labels, or other formatted records.
 
 Object-oriented programming can later support structures such as:
 
@@ -997,6 +1227,8 @@ Future labs will gradually support development in:
 - Data processing
 - Scientific computing
 - Numerical methods
+- Sorting algorithms
+- Checksum and data-integrity algorithms
 - Scientific visualization
 - Engineering automation
 - Research-oriented programming
@@ -1035,6 +1267,8 @@ Abstract Interfaces and Inheritance
 Scientific Data Processing
         ↓
 Numerical Methods
+        ↓
+Algorithms for Sorting, Search, and Data Integrity
         ↓
 Hydrodynamic and Salinity Analysis
         ↓
@@ -1075,6 +1309,8 @@ Each completed lab documents progress in:
 - Designing reusable class hierarchies
 - Implementing abstract interfaces
 - Implementing basic numerical methods
+- Implementing sorting algorithms
+- Implementing checksum validation
 - Improving technical documentation
 
 Additional labs will be added as progress continues through the freeCodeCamp Python Certification.
