@@ -6,11 +6,11 @@ A collection of guided Python workshop projects completed while studying the
 These workshops document my progress from Python fundamentals to text processing,
 structured data validation, regular expressions, object-oriented programming,
 object composition, encapsulation, properties, setters, inheritance, polymorphism,
-custom exceptions, abstract base classes, polymorphic strategies, interactions between multiple objects, reference-based data structures, and algorithmic search.
+custom exceptions, abstract base classes, polymorphic strategies, interactions between multiple objects, reference-based data structures, algorithmic search, recursion, and divide-and-conquer sorting.
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Workshops](https://img.shields.io/badge/Workshops_Completed-14-success)
+![Workshops](https://img.shields.io/badge/Workshops_Completed-15-success)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -19,12 +19,12 @@ custom exceptions, abstract base classes, polymorphic strategies, interactions b
 
 | Category               |   Completed |
 | ---------------------- | ----------: |
-| Workshops              |          14 |
-| Guided Python Projects |          14 |
+| Workshops              |          15 |
+| Guided Python Projects |          15 |
 | Current Status         | In Progress |
 
 ```text
-Progress: ██████████████  14 workshops completed
+Progress: ███████████████  15 workshops completed
 ```
 
 ---
@@ -47,6 +47,7 @@ Progress: ██████████████  14 workshops completed
 | 12 | Build a Discount Calculator          | Abstract base classes, strategy pattern, polymorphism, type hints   |   ✅   |
 | 13 | Build a Linked List                  | Nodes, references, traversal, insertion, removal, custom data structures |   ✅   |
 | 14 | Build a Binary Search                | Sorted data, midpoint comparison, search boundaries, algorithm tracing |   ✅   |
+| 15 | Implement the Merge Sort Algorithm   | Recursion, divide and conquer, slice syntax, sorted merging, in-place updates |   ✅   |
 
 ---
 
@@ -68,6 +69,7 @@ workshops/
 ├── build-a-discount-calculator/
 ├── build-a-linked-list/
 ├── build-a-binary-search/
+├── implement-the-merge-sort-algorithm/
 └── README.md
 ```
 
@@ -234,6 +236,10 @@ workshop-name/
 - Searching sorted collections efficiently
 - Tracking values checked during an algorithm
 - Returning structured search results
+- Splitting lists into left and right halves
+- Merging sorted sublists into the original list
+- Updating sorted positions with multiple indexes
+- Performing in-place sorting through recursive function calls
 
 ### Data Structures
 
@@ -268,6 +274,22 @@ workshop-name/
 - Returning a not-found result when the range is exhausted
 - Tracing checked values during the search
 - Understanding algorithmic efficiency
+
+### Sorting Algorithms
+
+- Merge sort
+- Divide-and-conquer problem solving
+- Recursive sorting
+- Base cases in recursive functions
+- List splitting with slice syntax
+- Left and right subarray management
+- Merging two sorted lists
+- Comparing current values from two halves
+- Maintaining multiple index variables
+- Updating the original list in place
+- Copying remaining values after one side is exhausted
+- Understanding stable sorting behavior conceptually
+- Tracing recursive algorithm flow
 
 ### Type Inspection
 
@@ -352,6 +374,10 @@ workshop-name/
 - Updating links safely during removal
 - Maintaining search boundaries during iterative algorithms
 - Returning diagnostic information from algorithmic functions
+- Using recursive function calls to solve smaller versions of the same problem
+- Separating divide, sort, and merge phases in an algorithm
+- Protecting base cases to prevent infinite recursion
+- Using a main execution guard for algorithm demonstrations
 
 ---
 
@@ -921,6 +947,157 @@ Key concepts reinforced:
 
 ---
 
+### Merge Sort
+
+Implemented a recursive merge sort algorithm that sorts a list in ascending order by dividing the data into smaller parts and merging the sorted results back into the original list.
+
+The completed workshop contains:
+
+- A `merge_sort()` function
+- A recursive base case for lists with 0 or 1 element
+- A middle-point calculation
+- Left and right list slicing
+- Recursive sorting of each half
+- Three index variables for merge control
+- Comparison between current values from each sorted half
+- In-place updates to the original list
+- Cleanup loops for remaining left-side or right-side values
+- A main execution guard for demonstration output
+
+The function starts with the recursive base case:
+
+```python
+if len(array) <= 1:
+    return
+```
+
+This prevents the function from endlessly calling itself. A list with zero or one element is already sorted.
+
+The list is then divided into two halves:
+
+```python
+middle_point = len(array) // 2
+left_part = array[:middle_point]
+right_part = array[middle_point:]
+```
+
+Each half is sorted by calling the same function again:
+
+```python
+merge_sort(left_part)
+merge_sort(right_part)
+```
+
+After both halves are sorted, the function merges them back into the original list using three indexes:
+
+```python
+left_array_index = 0
+right_array_index = 0
+sorted_index = 0
+```
+
+The main merge loop compares the current values from each half:
+
+```python
+while left_array_index < len(left_part) and right_array_index < len(right_part):
+    if left_part[left_array_index] < right_part[right_array_index]:
+        array[sorted_index] = left_part[left_array_index]
+        left_array_index += 1
+    else:
+        array[sorted_index] = right_part[right_array_index]
+        right_array_index += 1
+
+    sorted_index += 1
+```
+
+If one half still has values left after the other half has been fully copied, the remaining values are copied into the original list:
+
+```python
+while left_array_index < len(left_part):
+    array[sorted_index] = left_part[left_array_index]
+    left_array_index += 1
+    sorted_index += 1
+
+while right_array_index < len(right_part):
+    array[sorted_index] = right_part[right_array_index]
+    right_array_index += 1
+    sorted_index += 1
+```
+
+Example:
+
+```python
+numbers = [4, 10, 6, 14, 2, 1, 8, 5]
+
+print("Unsorted array: ")
+print(numbers)
+
+merge_sort(numbers)
+
+print("Sorted array: ")
+print(numbers)
+```
+
+Expected output:
+
+```text
+Unsorted array:
+[4, 10, 6, 14, 2, 1, 8, 5]
+Sorted array:
+[1, 2, 4, 5, 6, 8, 10, 14]
+```
+
+Merge sort flow:
+
+```text
+Original list
+        ↓
+Split into left and right halves
+        ↓
+Recursively sort each half
+        ↓
+Compare current values from both halves
+        ↓
+Write the smaller value back into the original list
+        ↓
+Copy any remaining values
+        ↓
+Sorted list
+```
+
+Recursive structure:
+
+```text
+merge_sort([4, 10, 6, 14, 2, 1, 8, 5])
+        ↓
+merge_sort([4, 10, 6, 14])        merge_sort([2, 1, 8, 5])
+        ↓                                      ↓
+merge_sort([4, 10])  merge_sort([6, 14])      merge_sort([2, 1])  merge_sort([8, 5])
+        ↓                                      ↓
+Single-element lists become the base cases
+        ↓
+Sorted halves are merged back together
+```
+
+Key concepts reinforced:
+
+- Sorting algorithms
+- Merge sort
+- Recursion
+- Base cases
+- Divide-and-conquer design
+- Slice syntax
+- Integer division
+- Multiple index variables
+- In-place list updates
+- Ordered merging
+- Cleanup loops
+- Main execution guards
+- Algorithm tracing
+- Debugging recursive flow
+
+---
+
 ### Linked List
 
 Built a custom linked list implementation using nested node objects and reference-based traversal.
@@ -1274,6 +1451,10 @@ Reference-based data structures, traversal, and link updates
 Binary Search
         ↓
 Sorted data, midpoint comparison, and logarithmic search
+        ↓
+Merge Sort
+        ↓
+Recursive divide-and-conquer sorting and ordered merging
 ```
 
 The Salary Tracker extended the progression from basic classes and object composition
@@ -1290,6 +1471,8 @@ can be stored in the same catalogue.
 The Discount Calculator extended this progression with abstract base classes and the strategy pattern. Multiple discount algorithms implement the same interface, allowing `DiscountEngine` to evaluate them uniformly without depending on their individual calculation details.
 
 The Linked List workshop then introduced a lower-level data-structure perspective. Instead of storing values directly in a built-in Python list, values are stored in `Node` objects connected through `.next` references. This reinforces how objects can form chains and how program state can be managed through references.
+
+The Merge Sort workshop extended the algorithmic progression from searching sorted data to sorting unsorted data. It reinforced recursion, base cases, divide-and-conquer design, list slicing, and careful index management during the merge phase.
 
 ---
 
@@ -1352,6 +1535,17 @@ The Binary Search workshop also reinforced these debugging lessons:
 - A function call must be placed inside `print(...)` when the returned result needs to be displayed.
 - Returning a path of checked values is useful for understanding how the algorithm narrows the search range.
 
+The Merge Sort workshop also reinforced these debugging lessons:
+
+- The recursive base case must return before the list is split again.
+- Slice syntax uses `array[:middle_point]` and `array[middle_point:]`, not the `slice()` constructor for this workshop.
+- Recursive calls sort the left and right copies before merging them back into the original list.
+- Three indexes are needed during the merge phase: one for the left half, one for the right half, and one for the original list.
+- Each index must be incremented in the correct branch to avoid repeated values or infinite loops.
+- Cleanup loops are required because one half may still contain remaining values after the main comparison loop ends.
+- The `if __name__ == "__main__":` guard requires `==`, not `is`, when comparing `__name__` with `"__main__"`.
+- Exact `print()` output matters in guided workshop steps.
+
 The Linked List workshop also reinforced these debugging lessons:
 
 - Assignment direction matters: `self.head = node` and `node = self.head` mean completely different things.
@@ -1377,7 +1571,7 @@ The Discount Calculator workshop also reinforced these debugging lessons:
 ## Current Progress
 
 ```text
-Completed:  ██████████████  14
+Completed:  ███████████████  15
 Continuing: ░░░░░░░░░░  More workshops will be added
 ```
 
@@ -1423,6 +1617,8 @@ Custom Data Structures
 Linked Lists, Nodes, and References
         ↓
 Binary Search and Algorithmic Thinking
+        ↓
+Merge Sort, Recursion, and Divide-and-Conquer Sorting
 ```
 
 ---
@@ -1464,6 +1660,12 @@ Current priorities include:
 - Maintaining `low`, `high`, and `mid` boundaries
 - Reducing the search space by half on each iteration
 - Tracing algorithm paths for debugging and explanation
+- Understanding merge sort
+- Applying recursion with clear base cases
+- Splitting lists with slice syntax
+- Merging sorted sublists through index management
+- Updating arrays in place during sorting
+- Tracing divide-and-conquer algorithms
 
 ---
 
@@ -1595,6 +1797,47 @@ Possible engineering applications include:
 - Looking up ordered scenario results
 - Supporting efficient data retrieval before interpolation
 
+Merge sort can later support engineering workflows where unsorted records must be ordered reliably before analysis.
+
+For example, observation records can be sorted by timestamp:
+
+```python
+def merge_sort_records(records):
+    if len(records) <= 1:
+        return records
+
+    middle = len(records) // 2
+    left = merge_sort_records(records[:middle])
+    right = merge_sort_records(records[middle:])
+
+    merged = []
+    left_index = 0
+    right_index = 0
+
+    while left_index < len(left) and right_index < len(right):
+        if left[left_index]["time"] <= right[right_index]["time"]:
+            merged.append(left[left_index])
+            left_index += 1
+        else:
+            merged.append(right[right_index])
+            right_index += 1
+
+    merged.extend(left[left_index:])
+    merged.extend(right[right_index:])
+    return merged
+```
+
+Possible engineering applications include:
+
+- Sorting environmental observations by time
+- Ordering model-output records before comparison
+- Preparing data before binary search
+- Sorting station metadata by identifier
+- Ordering calibration scenarios by score
+- Sorting event records before report generation
+- Organizing particle or trajectory outputs by timestamp
+- Preparing time-series data for interpolation
+
 Relevant future applications include:
 
 - Environmental monitoring systems
@@ -1631,6 +1874,8 @@ These workshops provide the foundation for more advanced Python topics, includin
 - Automated testing
 - Data analysis
 - Search algorithms
+- Sorting algorithms
+- Recursion and divide-and-conquer design
 - Algorithmic complexity
 - Scientific computing
 - Engineering-oriented Python applications
@@ -1661,6 +1906,7 @@ Future workshops and projects will gradually introduce:
 | Design Patterns       | Selecting interchangeable engineering logic  |
 | Data Structures       | Building custom containers and processing chains |
 | Search Algorithms     | Finding values efficiently in ordered data       |
+| Sorting Algorithms     | Ordering records before analysis and reporting   |
 | NumPy                 | Numerical arrays and scientific calculations |
 | pandas                | Tabular and time-series data processing      |
 | Matplotlib            | Scientific visualization                     |
