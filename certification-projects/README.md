@@ -4,14 +4,14 @@ This directory contains the certification projects completed as part of my
 **freeCodeCamp Python Certification** learning path.
 
 These projects are larger than individual workshops or labs. They combine Python
-fundamentals, object-oriented programming, data structures, validation, exact
-formatted output, and debugging through automated test feedback.
+fundamentals, object-oriented programming, data structures, recursion, validation,
+exact formatted output, and debugging through automated test feedback.
 
 Each project has its own folder, source file, and project-specific README.
 
 ![Python](https://img.shields.io/badge/Python-Certification_Projects-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-4-success)
+![Projects](https://img.shields.io/badge/Projects_Completed-5-success)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -25,6 +25,7 @@ Each project has its own folder, source file, and project-specific README.
   - [2. Build a Budget App](#2-build-a-budget-app)
   - [3. Build a Polygon Area Calculator](#3-build-a-polygon-area-calculator)
   - [4. Build a Hash Table](#4-build-a-hash-table)
+  - [5. Implement the Tower of Hanoi Algorithm](#5-implement-the-tower-of-hanoi-algorithm)
 - [Repository Structure](#repository-structure)
 - [Skills Practiced](#skills-practiced)
 - [Development Workflow](#development-workflow)
@@ -48,8 +49,9 @@ The main goals of this directory are to:
 - Document completed certification projects.
 - Preserve the reasoning behind each implementation.
 - Track progress across the Python certification path.
-- Show practical use of Python data structures and object-oriented programming.
+- Show practical use of Python data structures, recursion, and object-oriented programming.
 - Build a portfolio-style record of tested Python projects.
+- Explain why each implementation decision was made.
 
 ---
 
@@ -61,6 +63,7 @@ The main goals of this directory are to:
 | 2 | Build a Budget App | Classes, ledgers, transfers, aggregation, text charts | 24/24 | ✅ |
 | 3 | Build a Polygon Area Calculator | Inheritance, method overriding, geometry, object representation | 22/22 | ✅ |
 | 4 | Build a Hash Table | Hashing, nested dictionaries, collision handling, lookup and deletion | 22/22 | ✅ |
+| 5 | Implement the Tower of Hanoi Algorithm | Recursion, lists, stack behavior, exact formatted output | 8/8 | ✅ |
 
 ---
 
@@ -249,92 +252,14 @@ Why this matters:
 
 #### Concepts Practiced
 
-##### Dictionaries
-
-Store settings as key-value pairs.
-
-```python
-settings["theme"] = "dark"
-```
-
----
-
-##### Tuple Unpacking
-
-Extract values from a tuple.
-
-```python
-key, value = setting
-```
-
----
-
-##### String Methods
-
-Normalize and format text.
-
-```python
-key.lower()
-key.capitalize()
-```
-
----
-
-##### Dictionary Operations
-
-Add values:
-
-```python
-settings[key] = value
-```
-
-Delete values:
-
-```python
-del settings[key]
-```
-
-Check existing keys:
-
-```python
-if key in settings:
-```
-
----
-
-##### Conditional Statements
-
-```python
-if key in settings:
-```
-
-```python
-if not settings:
-```
-
----
-
-##### Iteration
-
-Loop through dictionary items.
-
-```python
-for key, value in settings.items():
-```
-
----
-
-#### Skills Developed
-
-- Dictionary manipulation
-- Configuration management
-- Input normalization
-- Data validation
-- Function design
-- String processing
-- Conditional logic
-- Formatted output
-- Problem-solving
+- Dictionaries
+- Tuple unpacking
+- String normalization
+- Conditional checks
+- Dictionary mutation
+- Dictionary deletion
+- Iteration through dictionary items
+- Human-readable formatted output
 
 ---
 
@@ -510,25 +435,6 @@ Percentage spent by category
 
 ---
 
-#### Concepts Practiced
-
-- Python classes and objects
-- Instance attributes
-- Instance methods
-- Lists and dictionaries
-- Transaction ledgers
-- Default parameters
-- Boolean return values
-- Balance validation
-- Object-to-object transfers
-- Data aggregation
-- Percentage calculations
-- Nested loops
-- Fixed-width string formatting
-- Vertical text-chart generation
-
----
-
 #### Why This Project Matters
 
 The project models a small transaction system.
@@ -553,6 +459,25 @@ Both ledgers updated
 ```
 
 This is a practical introduction to transaction-oriented object design.
+
+---
+
+#### Concepts Practiced
+
+- Python classes and objects
+- Instance attributes
+- Instance methods
+- Lists and dictionaries
+- Transaction ledgers
+- Default parameters
+- Boolean return values
+- Balance validation
+- Object-to-object transfers
+- Data aggregation
+- Percentage calculations
+- Nested loops
+- Fixed-width string formatting
+- Vertical text-chart generation
 
 ---
 
@@ -779,53 +704,6 @@ Calculation:
 15 // 5 = 3
 10 // 5 = 2
 3 × 2 = 6
-```
-
----
-
-#### Usage Example
-
-```python
-rect = Rectangle(10, 5)
-print(rect.get_area())
-
-rect.set_height(3)
-print(rect.get_perimeter())
-print(rect)
-print(rect.get_picture())
-
-sq = Square(9)
-print(sq.get_area())
-
-sq.set_side(4)
-print(sq.get_diagonal())
-print(sq)
-print(sq.get_picture())
-
-rect.set_height(8)
-rect.set_width(16)
-print(rect.get_amount_inside(sq))
-```
-
-Expected output:
-
-```text
-50
-26
-Rectangle(width=10, height=3)
-**********
-**********
-**********
-
-81
-5.656854249492381
-Square(side=4)
-****
-****
-****
-****
-
-8
 ```
 
 ---
@@ -1176,6 +1054,289 @@ build-a-hash-table/
 
 ---
 
+### 5. Implement the Tower of Hanoi Algorithm
+
+A Python algorithm project that solves the classic **Tower of Hanoi** puzzle
+using recursion.
+
+The project focuses on recursive problem solving, list-based stack behavior,
+state recording, exact output formatting, and automated test validation.
+
+---
+
+#### Objective
+
+Create a function named `hanoi_solver()` that takes one integer argument and
+returns the complete sequence of states required to solve the Tower of Hanoi
+puzzle.
+
+Required function:
+
+```python
+def hanoi_solver(number_of_disks: int) -> str:
+```
+
+The function must:
+
+- Accept a positive number of disks
+- Use three rods
+- Move all disks from the first rod to the third rod
+- Follow the Tower of Hanoi rules
+- Solve the puzzle in `2^n - 1` moves
+- Include the starting arrangement
+- Return all states as a single string
+- Put each state on a new line
+
+---
+
+#### Puzzle Rules
+
+The Tower of Hanoi puzzle has three rods and several disks of different sizes.
+
+The rules are:
+
+1. Only one disk can be moved at a time.
+2. Only the top-most disk can be moved.
+3. A larger disk cannot be placed on top of a smaller disk.
+
+Example starting state for three disks:
+
+```text
+[3, 2, 1] [] []
+```
+
+Example final state:
+
+```text
+[] [] [3, 2, 1]
+```
+
+---
+
+#### Core Algorithm
+
+The solution uses recursion.
+
+To move `n` disks from a source rod to a target rod:
+
+```text
+1. Move n - 1 disks from source to auxiliary.
+2. Move the largest remaining disk from source to target.
+3. Move n - 1 disks from auxiliary to target.
+```
+
+This pattern repeats until the base case is reached.
+
+The base case happens when there is only one disk:
+
+```python
+if disks == 1:
+    move_disk(source, target)
+    return
+```
+
+---
+
+#### Why Recursion Is Used
+
+Recursion is used because the Tower of Hanoi puzzle is naturally made of smaller
+versions of the same problem.
+
+For example, solving the puzzle with three disks means:
+
+```text
+Move 2 smaller disks away.
+Move the largest disk to the target rod.
+Move the 2 smaller disks onto the largest disk.
+```
+
+The instruction “move 2 smaller disks” is itself another Tower of Hanoi problem.
+
+That is why recursion provides a clean and direct solution.
+
+---
+
+#### Why Lists Are Used
+
+Each rod is represented as a Python list:
+
+```python
+rod_1 = [3, 2, 1]
+rod_2 = []
+rod_3 = []
+```
+
+The top-most disk is always the last item in the list.
+
+This makes the list behave like a stack:
+
+```python
+disk = source.pop()
+target.append(disk)
+```
+
+Why this works:
+
+- `pop()` removes the top-most disk.
+- `append()` places a disk on top of another rod.
+- The list order matches the puzzle structure.
+- The built-in list representation matches the required output format.
+
+---
+
+#### State Recording
+
+The project does not only return the final state.
+
+It returns:
+
+- the initial arrangement
+- every intermediate move
+- the final solved arrangement
+
+Each state is recorded with:
+
+```python
+moves.append(f"{rod_1} {rod_2} {rod_3}")
+```
+
+The rod order must always remain fixed:
+
+```text
+rod_1 rod_2 rod_3
+```
+
+This is important because the recursive function changes which rod is acting as
+the source, target, or auxiliary rod. The output, however, must always display
+the physical rods in the same order.
+
+---
+
+#### Example Output
+
+Calling:
+
+```python
+hanoi_solver(3)
+```
+
+returns:
+
+```text
+[3, 2, 1] [] []
+[3, 2] [] [1]
+[3] [2] [1]
+[3] [2, 1] []
+[] [2, 1] [3]
+[1] [2] [3]
+[1] [] [3, 2]
+[] [] [3, 2, 1]
+```
+
+---
+
+#### Move Count
+
+For `n` disks, the minimum number of moves is:
+
+```text
+2^n - 1
+```
+
+Because the output includes the starting arrangement, the total number of output
+lines is:
+
+```text
+2^n
+```
+
+Examples:
+
+| Number of disks | Moves | Output lines |
+| ---: | ---: | ---: |
+| 1 | 1 | 2 |
+| 2 | 3 | 4 |
+| 3 | 7 | 8 |
+| 4 | 15 | 16 |
+| 5 | 31 | 32 |
+
+---
+
+#### Concepts Practiced
+
+- Recursive functions
+- Base cases
+- Helper functions
+- Nested functions
+- Lists as stacks
+- `pop()`
+- `append()`
+- State recording
+- Exact newline formatting
+- Mathematical move counting
+- Algorithmic decomposition
+
+---
+
+#### Why This Project Matters
+
+This project is an important step beyond basic function writing.
+
+It demonstrates how a difficult-looking problem can be solved by identifying a
+repeating structure.
+
+The key insight is:
+
+```text
+A large Tower of Hanoi problem is solved by solving smaller Tower of Hanoi problems.
+```
+
+This is the essence of recursion.
+
+The project also reinforces that passing automated tests requires both:
+
+- correct algorithmic behavior
+- exact output formatting
+
+A solution can be logically correct but still fail if the returned string has the
+wrong spacing, wrong rod order, missing initial state, or missing newline
+structure.
+
+---
+
+#### Debugging Lessons
+
+Important issues encountered during development:
+
+- Returning an empty string passes the return-type test but fails behavior tests.
+- Recording only the initial state is not enough.
+- The `move_disk()` helper must be defined before it is called.
+- Recursive calls must be correctly indented inside the `solve()` function.
+- The final function must return `"\n".join(moves)`.
+- The output must always show `rod_1`, `rod_2`, and `rod_3` in fixed order.
+- The algorithm must move from `rod_1` to `rod_3` using `rod_2` as the auxiliary rod.
+
+---
+
+#### Test Results
+
+```text
+Automated tests: 8/8 passed
+Status: Completed
+```
+
+---
+
+#### Project Structure
+
+```text
+implement_the_tower_of_hanoi_algorithm/
+├── main.py
+└── README.md
+```
+
+---
+
 ## Repository Structure
 
 ```text
@@ -1193,6 +1354,10 @@ certification-projects/
 │   └── README.md
 │
 ├── build-a-hash-table/
+│   ├── main.py
+│   └── README.md
+│
+├── implement_the_tower_of_hanoi_algorithm/
 │   ├── main.py
 │   └── README.md
 │
@@ -1234,6 +1399,7 @@ Each certification project uses a dedicated directory because it contains:
 - Dictionaries
 - Nested dictionaries
 - Lists
+- Lists as stacks
 - Lists of dictionaries
 - Transaction ledgers
 - Key-value configuration data
@@ -1241,6 +1407,7 @@ Each certification project uses a dedicated directory because it contains:
 - Data aggregation
 - Object collections
 - Buckets for collision handling
+- State-history recording
 
 ---
 
@@ -1263,6 +1430,19 @@ Each certification project uses a dedicated directory because it contains:
 
 ---
 
+### Algorithms and Recursion
+
+- Recursive decomposition
+- Base cases
+- Recursive calls
+- Stack-like behavior
+- Minimum-move calculation
+- Algorithmic state tracking
+- Exponential time complexity
+- Exact sequence generation
+
+---
+
 ### Data Structures
 
 - Configuration dictionaries
@@ -1275,6 +1455,7 @@ Each certification project uses a dedicated directory because it contains:
 - Key-based lookup
 - Safe deletion
 - Nested storage models
+- Rods represented as list stacks
 
 ---
 
@@ -1290,6 +1471,7 @@ Each certification project uses a dedicated directory because it contains:
 - Defensive programming
 - Safe lookup of missing keys
 - Safe deletion of missing keys
+- Fixed-order output generation
 
 ---
 
@@ -1304,6 +1486,7 @@ Each certification project uses a dedicated directory because it contains:
 - Newline control
 - Human-readable object output
 - Exact dictionary output
+- Exact multi-line algorithm output
 
 ---
 
@@ -1317,6 +1500,8 @@ Each certification project uses a dedicated directory because it contains:
 - Refactoring after tests pass
 - Documenting implementation decisions
 - Explaining why each method exists
+- Recognizing repeated subproblems
+- Choosing recursion when the problem structure requires it
 
 ---
 
@@ -1368,6 +1553,7 @@ Automated tests are used to verify both behavior and implementation details.
 Typical checks include:
 
 - Required classes exist
+- Required functions exist
 - Required methods exist
 - Method names are exact
 - Objects store the expected state
@@ -1378,6 +1564,8 @@ Typical checks include:
 - Subclass behavior preserves invariants
 - Data structures match expected dictionary shapes
 - Collision cases are handled correctly
+- Recursive algorithms return the full expected sequence
+- Multi-line strings match exactly
 
 Important lessons:
 
@@ -1387,6 +1575,8 @@ Important lessons:
 - A subclass may need to override inherited behavior.
 - Tests often depend on both output and class structure.
 - Hash collisions must preserve all original keys.
+- Recursive calls must be correctly indented.
+- A function that returns a string can still fail if the string is incomplete.
 - Fixing the first actual error is more effective than changing unrelated code.
 
 ---
@@ -1395,16 +1585,17 @@ Important lessons:
 
 | Category | Completed |
 | --- | ---: |
-| Certification Projects | 4 |
+| Certification Projects | 5 |
 | Dictionary-Based Projects | 1 |
 | Object-Oriented Projects | 2 |
 | Data-Structure Projects | 1 |
-| Projects with Automated Test Suites | 4 |
-| Projects with Dedicated Documentation | 4 |
+| Algorithm / Recursion Projects | 1 |
+| Projects with Automated Test Suites | 5 |
+| Projects with Dedicated Documentation | 5 |
 
 ```text
-Certification Projects Completed: 4
-Progress: ████░░░░░░
+Certification Projects Completed: 5
+Progress: █████░░░░░
 Status: In Progress
 ```
 
@@ -1418,11 +1609,13 @@ Budget App
 Polygon Area Calculator
         ↓
 Hash Table
+        ↓
+Tower of Hanoi Algorithm
 ```
 
 The progression moves from dictionary-based state management to class-based
-transaction systems, inheritance-based object design, and finally custom
-data-structure implementation.
+transaction systems, inheritance-based object design, custom data-structure
+implementation, and recursive algorithmic problem solving.
 
 ---
 
@@ -1453,6 +1646,8 @@ Inheritance and Reusable Design
         ↓
 Data Structures
         ↓
+Algorithms and Recursion
+        ↓
 Scientific Data Processing
         ↓
 Numerical Methods
@@ -1481,6 +1676,10 @@ class ComputationalDomain:
 
 class ResultIndex:
     pass
+
+
+class RecursiveSolver:
+    pass
 ```
 
 The same design principles apply:
@@ -1490,6 +1689,8 @@ The same design principles apply:
 - Reuse shared behavior
 - Protect object invariants
 - Handle lookup and deletion safely
+- Break large problems into smaller subproblems
+- Record intermediate states when needed
 - Produce clear technical output
 
 ---
