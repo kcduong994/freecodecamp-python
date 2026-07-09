@@ -4,15 +4,15 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-31-success)
+![Projects](https://img.shields.io/badge/Projects_Completed-32-success)
 ![Workshops](https://img.shields.io/badge/Workshops-15-2563EB)
 ![Labs](https://img.shields.io/badge/Labs-12-16A34A)
-![Certification Projects](https://img.shields.io/badge/Certification_Projects-4-7C3AED)
+![Certification Projects](https://img.shields.io/badge/Certification_Projects-5-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
-This repository documents my progression from Python fundamentals to functions, validation, debugging, object-oriented programming, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, custom data structures, search algorithms, divide-and-conquer sorting, in-place sorting, recursive partitioning, checksum validation, numerical root finding, formatted reporting, and larger certification projects.
+This repository documents my progression from Python fundamentals to functions, validation, debugging, object-oriented programming, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, custom data structures, search algorithms, divide-and-conquer sorting, in-place sorting, recursive algorithms, checksum validation, numerical root finding, formatted reporting, exact multi-line output generation, and larger certification projects.
 
-The immediate goal is to complete the freeCodeCamp Python Certification with correct, readable, tested, and well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data validation, numerical methods, tolerance-based approximation, scientific visualization, search/indexing utilities, sorting workflows, checksum-style validation, and research automation.
+The immediate goal is to complete the freeCodeCamp Python Certification with correct, readable, tested, and well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data validation, numerical methods, tolerance-based approximation, scientific visualization, search/indexing utilities, sorting workflows, checksum-style validation, recursive workflow processing, and research automation.
 
 ---
 
@@ -44,14 +44,14 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 | --- | --- | ---: |
 | Workshops | Guided projects introducing new Python concepts incrementally | 15 |
 | Labs | Independent implementations based on user stories and automated tests | 12 |
-| Certification Projects | Larger projects combining multiple programming concepts | 4 |
-| **Total** | **Documented Python projects** | **31** |
+| Certification Projects | Larger projects combining multiple programming concepts | 5 |
+| **Total** | **Documented Python projects** | **32** |
 
 ```text
 Workshops              ███████████████  15 completed
 Labs                   ████████████░░  12 completed
-Certification Projects ████░░░░░░░░░░  4 completed
-Overall                ███████████████████████████████  31 completed
+Certification Projects █████░░░░░░░░░  5 completed
+Overall                ████████████████████████████████  32 completed
 ```
 
 ### Current Learning Stage
@@ -106,6 +106,8 @@ Luhn Algorithm and Checksum Validation
 Bisection Method and Numerical Root Finding
         ↓
 Formatted Reports and Visualizations
+        ↓
+Tower of Hanoi and Recursive State Generation
 ```
 
 ---
@@ -157,6 +159,7 @@ Formatted Reports and Visualizations
 | 2 | Build a Budget App | Classes, ledgers, transfers, validation, reports, charts | 24/24 | ✅ |
 | 3 | Build a Polygon Area Calculator | Inheritance, method overriding, geometry, object invariants | 22/22 | ✅ |
 | 4 | Build a Hash Table | Hashing, nested dictionaries, collision handling, lookup and deletion | 22/22 | ✅ |
+| 5 | Implement the Tower of Hanoi Algorithm | Recursion, list stacks, state recording, exact multi-line output | 8/8 | ✅ |
 
 ---
 
@@ -211,6 +214,10 @@ freecodecamp-python/
 │   │   └── README.md
 │   │
 │   ├── build-a-hash-table/
+│   │   ├── main.py
+│   │   └── README.md
+│   │
+│   ├── implement_the_tower_of_hanoi_algorithm/
 │   │   ├── main.py
 │   │   └── README.md
 │   │
@@ -273,7 +280,7 @@ Detailed lab documentation is maintained in [`labs/README.md`](labs/README.md).
 
 Certification projects combine multiple Python concepts into larger implementations.
 
-The latest completed certification project, **Build a Hash Table**, introduced manual key-value storage, hashing with `ord()`, nested dictionary buckets, collision-safe insertion, safe deletion, and lookup behavior.
+The latest completed certification project, **Implement the Tower of Hanoi Algorithm**, introduced recursive problem solving, list-based stack behavior, state recording, exact multi-line output generation, and minimum-move algorithm design.
 
 Detailed certification-project documentation is maintained in [`certification-projects/README.md`](certification-projects/README.md).
 
@@ -287,6 +294,8 @@ Budget App
 Polygon Area Calculator
         ↓
 Hash Table
+        ↓
+Tower of Hanoi Algorithm
 ```
 
 ### Build a User Configuration Manager
@@ -317,6 +326,45 @@ The storage model is:
 
 This project made the internal mechanics of dictionary-style key-value lookup more explicit. It also clarified why a hash value alone is not enough: different original keys can produce the same hash, so the original key must still be stored and checked inside the bucket.
 
+### Implement the Tower of Hanoi Algorithm
+
+A recursive algorithm project that solves the classic Tower of Hanoi puzzle.
+
+The project implements a function named `hanoi_solver()` that returns the complete sequence of puzzle states required to move all disks from the first rod to the third rod.
+
+The project strengthened:
+
+- Recursive decomposition
+- Base-case design
+- Helper functions
+- Lists as stacks
+- State-history recording
+- Exact multi-line string formatting
+- Minimum-move reasoning with `2^n - 1`
+- Debugging indentation and execution-order errors
+
+The core recursive idea is:
+
+```text
+Move n - 1 disks from source to auxiliary.
+Move the largest remaining disk from source to target.
+Move n - 1 disks from auxiliary to target.
+```
+
+Example starting state:
+
+```text
+[3, 2, 1] [] []
+```
+
+Example final state:
+
+```text
+[] [] [3, 2, 1]
+```
+
+This project made recursion more concrete by showing how a large problem can be solved by repeatedly solving smaller versions of the same problem.
+
 ---
 
 ## Technical Competencies
@@ -334,7 +382,7 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Docstrings
 - Code comments
 - Main execution guards
-- Built-in functions such as `sum()`, `ord()`, `min()`, `len()`, and `isinstance()`
+- Built-in functions such as `sum()`, `ord()`, `min()`, `len()`, `range()`, and `isinstance()`
 
 ### Functions and Program Design
 
@@ -349,7 +397,8 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Small, testable units of logic
 - Constructor-based dependency injection
 - Strategy orchestration through dedicated engine classes
-- Method-level responsibilities for add, remove, lookup, validation, and search behavior
+- Nested helper functions
+- Method-level responsibilities for add, remove, lookup, validation, search behavior, and state recording
 
 ### Programming Logic
 
@@ -365,6 +414,7 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Complete-fit calculations with floor division
 - Safe mutation after existence checks
 - Search-space reduction through boundary updates
+- Recursive control flow through base cases and repeated subproblems
 
 ### Collections and Structured Data
 
@@ -398,6 +448,8 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Storing colliding hash keys in nested buckets
 - Searching sorted collections efficiently
 - Recording checked values during algorithm execution
+- Recording recursive algorithm states after each operation
+- Joining recorded states into exact multi-line output
 
 ### Data Structures
 
@@ -421,6 +473,8 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Key-value lookup
 - Safe deletion
 - Comparing custom data structures with built-in Python containers
+- Rods represented as list stacks
+- Stack-like operations with `pop()` and `append()`
 
 ### Algorithms
 
@@ -430,8 +484,11 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Selection sort
 - Bisection method
 - Luhn algorithm
+- Tower of Hanoi
 - Divide-and-conquer algorithms
 - Recursive partitioning
+- Recursive state generation
+- Minimum-move recursive algorithms
 - In-place sorting
 - Checksum validation
 - Numerical root finding
@@ -447,6 +504,7 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Search-path tracing
 - Algorithmic reasoning about efficiency
 - Recursive decomposition of lists
+- Recursive decomposition of puzzle states
 - Pivot selection and partitioning
 - Partitioning values into less-than, equal-to, and greater-than groups
 - Preserving duplicate values during sorting
@@ -458,6 +516,8 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Maximum-iteration safeguards
 - Modulo-based validity checks
 - Right-to-left checksum processing
+- List-based stack operations with `pop()` and `append()`
+- Exact sequence generation for algorithmic puzzles
 
 ### Loops and Iteration
 
@@ -483,6 +543,8 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Nested-loop minimum search for selection sort
 - Iterating through reversed strings with `enumerate()`
 - Processing alternating digits for checksum algorithms
+- Recording recursive algorithm states after each operation
+- Joining recorded states into exact multi-line output
 
 ### Text Processing
 
@@ -501,6 +563,7 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Removing dashes and spaces from structured identifiers
 - Reversing strings with slicing
 - Converting digit characters to integers for arithmetic validation
+- Joining multiple recorded states with `"\n".join(...)`
 
 ### Regular Expressions
 
@@ -530,6 +593,7 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Boundary validation for index-based algorithms
 - Checksum validation for identification numbers
 - Normalizing formatted numeric strings before validation
+- Fixed-order output validation for recursive algorithm states
 
 ### Error and Exception Handling
 
@@ -610,6 +674,8 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Shape dimensions represented through formatted strings
 - Exact dictionary output expected by tests
 - Structured tuple output for algorithm results
+- Exact multi-line algorithm output
+- Fixed-order rod-state formatting
 
 ### Debugging and Testing
 
@@ -645,6 +711,9 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Confirming whether a function return value is actually printed
 - Debugging slice boundaries when splitting lists
 - Debugging recursive base cases
+- Debugging recursive helper functions
+- Debugging indentation errors inside recursive functions
+- Ensuring helper functions are defined before they are called
 - Debugging merge indexes for left, right, and sorted positions
 - Matching exact numerical-output messages in automated tests
 - Distinguishing return values from printed output in numerical labs
@@ -655,10 +724,83 @@ This project made the internal mechanics of dictionary-style key-value lookup mo
 - Handling duplicate values in partition-based sorting
 - Debugging odd/even index logic in the Luhn algorithm
 - Verifying exact string returns such as `VALID!` and `INVALID!`
+- Distinguishing an empty string return from a complete formatted result
+- Verifying fixed-order output when recursive parameter roles change
 
 ---
 
 ## Selected Project Highlights
+
+### Implement the Tower of Hanoi Algorithm
+
+Implemented a recursive solver for the classic Tower of Hanoi puzzle.
+
+The completed certification project includes:
+
+- A `hanoi_solver()` function
+- Three rods represented as Python lists
+- Initial rod generation with `range()`
+- A helper function for recording rod states
+- A helper function for moving one disk
+- A recursive `solve()` function
+- Base-case handling for one disk
+- Minimum-move solution using `2^n - 1` moves
+- Exact multi-line string output required by automated tests
+
+Core implementation pattern:
+
+```python
+def hanoi_solver(number_of_disks):
+    rod_1 = list(range(number_of_disks, 0, -1))
+    rod_2 = []
+    rod_3 = []
+
+    moves = []
+
+    def record_state():
+        moves.append(f"{rod_1} {rod_2} {rod_3}")
+
+    def move_disk(source, target):
+        disk = source.pop()
+        target.append(disk)
+        record_state()
+```
+
+Recursive flow:
+
+```text
+Move n - 1 disks to the auxiliary rod
+        ↓
+Move the largest disk to the target rod
+        ↓
+Move n - 1 disks from the auxiliary rod to the target rod
+```
+
+Example:
+
+```text
+[3, 2, 1] [] []
+[3, 2] [] [1]
+[3] [2] [1]
+[3] [2, 1] []
+[] [2, 1] [3]
+[1] [2] [3]
+[1] [] [3, 2]
+[] [] [3, 2, 1]
+```
+
+This project strengthened:
+
+- Recursion
+- Base-case design
+- Function nesting
+- List stack behavior
+- State recording
+- Exact formatted output
+- Mathematical reasoning about move counts
+- Debugging recursive execution order
+
+---
 
 ### Implement the Merge Sort Algorithm
 
@@ -1189,6 +1331,10 @@ Reusable geometry, method overriding, and subclass invariants
 Category
         ↓
 Ledgers, transfers, reporting, and visualization
+        ↓
+Tower of Hanoi Algorithm
+        ↓
+Recursive decomposition, list stacks, state recording, and exact sequence generation
 ```
 
 ### Concepts Added at Each Stage
@@ -1213,8 +1359,9 @@ Ledgers, transfers, reporting, and visualization
 | Bisection Method | Interval halving, numerical approximation, convergence, and tolerance-based stopping |
 | Polygon Area Calculator | Reusable geometry, method overriding, object invariants, and containment logic |
 | Budget App | Transaction systems, cross-object transfers, reporting |
+| Tower of Hanoi Algorithm | Recursive decomposition, list stacks, state recording, exact multi-line output, and minimum-move reasoning |
 
-This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, and the bisection method introduces numerical approximation through interval halving.
+This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, the bisection method introduces numerical approximation through interval halving, and the Tower of Hanoi project makes recursive state generation more concrete.
 
 ---
 
@@ -1274,6 +1421,9 @@ Regression check
 - Maintain algorithm boundaries carefully when working with index-based search.
 - Respect whether a specification requires mutating the original list or returning a new list.
 - Avoid built-in shortcuts when an exercise is designed to teach the underlying algorithm.
+- Keep recursive base cases explicit.
+- Record algorithm states only after meaningful state changes.
+- Preserve fixed output order even when helper-function roles change.
 
 ---
 
@@ -1282,14 +1432,14 @@ Regression check
 | Error | Typical Cause | Practical Lesson |
 | --- | --- | --- |
 | `SyntaxError` | Invalid syntax or copied instruction text | Check whether the failing line is executable Python |
-| `IndentationError` | Incorrect block alignment | Verify class, method, and branch indentation |
-| `NameError` | Undefined variable or function | Check scope and spelling |
+| `IndentationError` | Incorrect block alignment | Verify class, method, branch, and recursive-helper indentation |
+| `NameError` | Undefined variable or function | Check scope, spelling, and whether helper functions are defined before use |
 | `TypeError` | Wrong argument count or data type | Compare the call with the function signature |
 | `AttributeError` | Attribute or method does not exist | Review constructor, method spelling, and initialization |
 | `ValueError` | Valid type but invalid content | Separate type validation from value validation |
 | `IndexError` | Invalid sequence position | Review zero-based indexing and boundaries |
 | `KeyError` | Missing dictionary key | Validate keys before access or deletion |
-| Test mismatch | Exact output differs | Inspect whitespace, punctuation, newlines, and dictionary structure |
+| Test mismatch | Exact output differs | Inspect whitespace, punctuation, newlines, dictionary structure, and output order |
 | Logic failure | Conditions overlap or execute incorrectly | Use focused condition checks and test one behavior at a time |
 
 ### Important Lessons Reinforced
@@ -1339,6 +1489,11 @@ Regression check
 - Some labs require returning a new list instead of modifying the input list.
 - The Luhn algorithm starts from the right and excludes the rightmost check digit from doubling.
 - Removing spaces and dashes before checksum validation prevents formatted card numbers from failing incorrectly.
+- A function that returns an empty string can pass a return-type test while still failing all behavior tests.
+- Recursive calls must be indented inside the recursive helper function.
+- Helper functions such as `move_disk()` must exist before they are called.
+- The Tower of Hanoi output must always display physical rods in fixed order, even when recursive parameters change roles.
+- Recording only the initial state is not enough; every move must be recorded after it happens.
 
 ---
 
@@ -1359,6 +1514,7 @@ This repository is the programming foundation for future coastal and environment
 - Sorting and indexing engineering records
 - Checksum-style validation for structured identifiers
 - Numerical root finding for engineering calculations
+- Recursive workflow processing
 - Research reproducibility
 - AI-assisted technical workflows
 
@@ -1404,6 +1560,10 @@ class HydrodynamicModel:
 
 
 class ResultIndex:
+    pass
+
+
+class RecursiveWorkflow:
     pass
 ```
 
@@ -1605,6 +1765,30 @@ def find_parameter_root(function, lower_bound, upper_bound, tolerance):
     pass
 ```
 
+### Recursive Algorithms for Engineering Workflows
+
+The Tower of Hanoi project strengthens recursive decomposition, which is useful when a large technical problem can be divided into smaller problems of the same type.
+
+Possible engineering-related uses include:
+
+- Recursive processing of nested model folders
+- Recursive traversal of file trees
+- Recursive subdivision of computational domains
+- Recursive refinement of search intervals
+- Recursive state tracking in algorithm demonstrations
+- Recording intermediate states during numerical procedures
+
+Conceptual example:
+
+```python
+def process_model_directory(directory):
+    # Future implementation could recursively process
+    # nested folders containing model inputs, outputs, and reports.
+    pass
+```
+
+The key lesson is that recursion is appropriate when the problem structure repeats at smaller scales.
+
 ---
 
 ## Current Roadmap
@@ -1626,6 +1810,7 @@ def find_parameter_root(function, lower_bound, upper_bound, tolerance):
 - Practice hash-table lookup, deletion, and collision handling
 - Practice binary search and search-boundary management
 - Practice recursive divide-and-conquer sorting
+- Practice recursive algorithms and state tracking
 - Practice in-place sorting and controlled mutation
 - Practice checksum validation and formatted-identifier normalization
 - Practice numerical root finding and convergence checks
@@ -1647,6 +1832,7 @@ def find_parameter_root(function, lower_bound, upper_bound, tolerance):
 | Sorting Algorithms | Preparing ordered data for search, reporting, and analysis |
 | Checksum Validation | Detecting simple errors in structured identifiers |
 | Numerical Methods | Root finding, convergence checks, and tolerance-based calculations |
+| Recursive Algorithms | File traversal, domain subdivision, nested workflows, and state tracking |
 | Algorithmic Complexity | Choosing appropriate algorithms for data size |
 
 ### Long-Term Progression
@@ -1682,6 +1868,8 @@ Checksum Validation and Data Integrity Checks
         ↓
 Numerical Root Finding and Tolerance-Based Approximation
         ↓
+Recursive Algorithms and State Tracking
+        ↓
 Geometric Models and Object Invariants
         ↓
 Testing and Documentation
@@ -1708,8 +1896,8 @@ This repository is actively maintained as part of an ongoing learning process.
 ```text
 Workshops:               15
 Labs:                    12
-Certification Projects:   4
-Total Projects:          31
+Certification Projects:   5
+Total Projects:          32
 ```
 
 Latest completed workshop:
@@ -1727,8 +1915,8 @@ Implement the Luhn Algorithm
 Latest completed certification project:
 
 ```text
-Build a Hash Table
-Automated tests: 22/22 passed
+Implement the Tower of Hanoi Algorithm
+Automated tests: 8/8 passed
 ```
 
 ---
