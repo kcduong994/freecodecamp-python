@@ -4,9 +4,9 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-33-success)
+![Projects](https://img.shields.io/badge/Projects_Completed-34-success)
 ![Workshops](https://img.shields.io/badge/Workshops-16-2563EB)
-![Labs](https://img.shields.io/badge/Labs-12-16A34A)
+![Labs](https://img.shields.io/badge/Labs-13-16A34A)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-5-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
@@ -43,15 +43,15 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 | Area | Purpose | Completed |
 | --- | --- | ---: |
 | Workshops | Guided projects introducing new Python concepts incrementally | 16 |
-| Labs | Independent implementations based on user stories and automated tests | 12 |
+| Labs | Independent implementations based on user stories and automated tests | 13 |
 | Certification Projects | Larger projects combining multiple programming concepts | 5 |
-| **Total** | **Documented Python projects** | **33** |
+| **Total** | **Documented Python projects** | **34** |
 
 ```text
 Workshops              ████████████████  16 completed
-Labs                   ████████████░░  12 completed
+Labs                   █████████████░  13 completed
 Certification Projects █████░░░░░░░░░  5 completed
-Overall                █████████████████████████████████  33 completed
+Overall                ██████████████████████████████████  34 completed
 ```
 
 ### Current Learning Stage
@@ -105,6 +105,8 @@ Selection Sort and In-Place Mutation
         ↓
 Luhn Algorithm and Checksum Validation
         ↓
+Adjacency List to Matrix Conversion
+        ↓
 Bisection Method and Numerical Root Finding
         ↓
 Formatted Reports and Visualizations
@@ -153,6 +155,7 @@ Tower of Hanoi and Recursive State Generation
 | 10 | Implement the Quicksort Algorithm | Recursion, pivot partitioning, new-list sorting, duplicate handling | ✅ |
 | 11 | Implement the Selection Sort Algorithm | In-place sorting, minimum search, nested loops, controlled swaps | ✅ |
 | 12 | Implement the Luhn Algorithm | Checksum validation, string cleaning, digit processing, modulo checks | ✅ |
+| 13 | Build an Adjacency List to Matrix Converter | Graph representations, dictionaries, nested lists, matrix construction | ✅ |
 
 ### Certification Projects
 
@@ -202,6 +205,7 @@ freecodecamp-python/
 │   ├── implement-the-quicksort-algorithm.py
 │   ├── implement-the-selection-sort-algorithm.py
 │   ├── implement-the-luhn-algorithm.py
+│   ├── build-an-adjacency-list-to-matrix-converter.py
 │   └── README.md
 │
 ├── certification-projects/
@@ -274,7 +278,7 @@ They are used to practice:
 - Matching exact output formats
 - Refactoring final solutions for clarity
 
-The latest completed lab, **Implement the Luhn Algorithm**, introduced checksum validation, card-number normalization, right-to-left digit processing, modulo checks, exact return values, and failure handling for invalid identification numbers. Recent sorting labs also added quicksort and selection sort, strengthening recursive partitioning, in-place mutation, duplicate handling, and controlled swap logic.
+The latest completed lab, **Build an Adjacency List to Matrix Converter**, introduced adjacency lists, adjacency matrices, graph-size detection, square matrix construction, nested iteration, matrix indexing, directed-edge preservation, and the distinction between printing required output and returning reusable data. Recent sorting and checksum labs also strengthened recursive partitioning, in-place mutation, duplicate handling, controlled swaps, and exact validation logic.
 
 Detailed lab documentation is maintained in [`labs/README.md`](labs/README.md).
 
@@ -454,6 +458,10 @@ This project made recursion more concrete by showing how a large problem can be 
 - Recording checked values during algorithm execution
 - Recording recursive algorithm states after each operation
 - Joining recorded states into exact multi-line output
+- Creating square two-dimensional lists with nested comprehensions
+- Converting adjacency-list dictionaries into adjacency matrices
+- Mapping graph edges with row-column indexing
+- Preserving directed and undirected connectivity information
 
 ### Data Structures
 
@@ -479,6 +487,10 @@ This project made recursion more concrete by showing how a large problem can be 
 - Comparing custom data structures with built-in Python containers
 - Rods represented as list stacks
 - Stack-like operations with `pop()` and `append()`
+- Adjacency lists represented with dictionaries of neighbor lists
+- Adjacency matrices represented with square nested lists
+- Binary edge encoding with `0` and `1`
+- Sparse-to-dense graph representation conversion
 
 ### Algorithms
 
@@ -532,6 +544,9 @@ This project made recursion more concrete by showing how a large problem can be 
 - Reconstructing shortest paths with nested lists
 - Handling unreachable nodes with positive infinity
 - Selecting one target node or all reachable nodes
+- Determining graph size from adjacency-list keys
+- Converting unweighted graph edges into matrix entries
+- Printing matrix rows separately while returning the complete matrix
 
 ### Loops and Iteration
 
@@ -560,6 +575,10 @@ This project made recursion more concrete by showing how a large problem can be 
 - Processing alternating digits for checksum algorithms
 - Recording recursive algorithm states after each operation
 - Joining recorded states into exact multi-line output
+- Creating square two-dimensional lists with nested comprehensions
+- Converting adjacency-list dictionaries into adjacency matrices
+- Mapping graph edges with row-column indexing
+- Preserving directed and undirected connectivity information
 
 ### Text Processing
 
@@ -741,10 +760,90 @@ This project made recursion more concrete by showing how a large problem can be 
 - Verifying exact string returns such as `VALID!` and `INVALID!`
 - Distinguishing an empty string return from a complete formatted result
 - Verifying fixed-order output when recursive parameter roles change
+- Debugging incorrect function signatures and missing parameters
+- Distinguishing an intermediate node count from the final matrix result
+- Verifying row and column positions in nested lists
+- Ensuring each adjacency-matrix row is printed separately
+- Returning the completed matrix rather than a helper value
 
 ---
 
 ## Selected Project Highlights
+
+### Build an Adjacency List to Matrix Converter
+
+Implemented a converter that transforms an unweighted graph from an adjacency-list representation into an adjacency matrix.
+
+The completed lab includes:
+
+- A function named `adjacency_list_to_matrix()`
+- Automatic node-count detection with `len()`
+- Square matrix construction using nested list comprehensions
+- Edge conversion through dictionary and neighbor iteration
+- Separate printing of every matrix row
+- Returning the completed matrix
+- Support for both directed and undirected graph descriptions
+
+Core implementation:
+
+```python
+def adjacency_list_to_matrix(adj_list):
+    number_of_nodes = len(adj_list)
+
+    matrix = [
+        [0 for _ in range(number_of_nodes)]
+        for _ in range(number_of_nodes)
+    ]
+
+    for node, neighbors in adj_list.items():
+        for neighbor in neighbors:
+            matrix[node][neighbor] = 1
+
+    for row in matrix:
+        print(row)
+
+    return matrix
+```
+
+Conversion flow:
+
+```text
+Read adjacency-list dictionary
+        ↓
+Determine the number of nodes
+        ↓
+Create an n × n zero matrix
+        ↓
+Visit every node and neighbor
+        ↓
+Set matrix[node][neighbor] to 1
+        ↓
+Print each row
+        ↓
+Return the completed matrix
+```
+
+Example output:
+
+```text
+[0, 1, 1, 0]
+[0, 0, 1, 0]
+[1, 0, 0, 1]
+[0, 0, 1, 0]
+```
+
+This lab strengthened:
+
+- Graph representations
+- Dictionaries and `.items()`
+- Nested lists and comprehensions
+- Nested iteration
+- Matrix indexing
+- Directed versus undirected edges
+- Printing required output while returning reusable data
+- Translating user stories into a complete implementation
+
+---
 
 ### Implement the Shortest Path Algorithm
 
@@ -1429,6 +1528,10 @@ Luhn Algorithm
         ↓
 Checksum validation, formatted-number normalization, and modulo checks
         ↓
+Adjacency List to Matrix Converter
+        ↓
+Graph representation conversion, nested lists, and matrix indexing
+        ↓
 Bisection Method
         ↓
 Interval halving, tolerance-based approximation, and convergence checks
@@ -1466,12 +1569,13 @@ Recursive decomposition, list stacks, state recording, and exact sequence genera
 | Quicksort | Pivot partitioning, recursive sorting, duplicate handling, and new-list construction |
 | Selection Sort | In-place minimum selection, nested-loop scanning, and controlled swaps |
 | Luhn Algorithm | Checksum validation, formatted-number cleaning, alternating-digit processing, and modulo checks |
+| Adjacency List to Matrix Converter | Graph representation conversion, nested lists, matrix construction, and edge mapping |
 | Bisection Method | Interval halving, numerical approximation, convergence, and tolerance-based stopping |
 | Polygon Area Calculator | Reusable geometry, method overriding, object invariants, and containment logic |
 | Budget App | Transaction systems, cross-object transfers, reporting |
 | Tower of Hanoi Algorithm | Recursive decomposition, list stacks, state recording, exact multi-line output, and minimum-move reasoning |
 
-This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, the shortest-path workshop adds weighted graph processing and route optimization, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, the bisection method introduces numerical approximation through interval halving, and the Tower of Hanoi project makes recursive state generation more concrete.
+This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, the shortest-path workshop adds weighted graph processing and route optimization, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, the adjacency converter adds graph-representation transformation and matrix construction, the bisection method introduces numerical approximation through interval halving, and the Tower of Hanoi project makes recursive state generation more concrete.
 
 ---
 
@@ -1613,6 +1717,11 @@ Regression check
 - Values inside f-strings require braces, such as `{distances[node_no]}` and `{path}`.
 - Dijkstra's algorithm requires non-negative edge weights.
 - `INF` is a sentinel for an unavailable edge or unreachable node, not an ordinary large weight.
+- A graph-conversion function must return the complete matrix, not only the number of nodes.
+- Matrix rows represent source nodes and columns represent destination nodes.
+- Nested list comprehensions should create independent rows.
+- Directed edges must be preserved exactly as written in the adjacency list.
+- Printing each matrix row is distinct from printing the whole matrix on one line.
 
 ---
 
@@ -1637,6 +1746,8 @@ This repository is the programming foundation for future coastal and environment
 - Research reproducibility
 - Graph-based route and network analysis
 - Minimum-cost path computation through connected systems
+- Graph representation conversion for engineering networks
+- Connectivity-matrix construction
 - AI-assisted technical workflows
 
 ### Planned Engineering Project Structure
@@ -1797,6 +1908,34 @@ Possible uses include:
 - Supporting efficient time-series processing
 
 The key engineering lesson is that algorithm choice matters. When data is sorted, binary search can avoid checking every element one by one. When data is unsorted, sorting algorithms such as merge sort can prepare records for efficient search, comparison, reporting, or time-series analysis.
+
+### Graph Representation Conversion for Engineering Networks
+
+Adjacency lists and adjacency matrices are both useful for representing engineering connectivity.
+
+Possible uses include:
+
+- Representing links between monitoring stations
+- Describing river, estuary, or drainage-network topology
+- Building computational-mesh connectivity maps
+- Converting sparse connection definitions into dense matrix form
+- Preparing graph inputs for shortest-path and network-analysis algorithms
+- Supporting connectivity diagnostics in preprocessing workflows
+
+Conceptual example:
+
+```python
+station_connections = {
+    0: [1, 2],
+    1: [2],
+    2: [0, 3],
+    3: [2],
+}
+
+connection_matrix = adjacency_list_to_matrix(station_connections)
+```
+
+The adjacency list is compact for sparse networks, while the adjacency matrix provides direct row-column lookup and can support later matrix-based analysis.
 
 ### Shortest-Path Algorithms for Engineering Networks
 
@@ -1962,6 +2101,9 @@ The key lesson is that recursion is appropriate when the problem structure repea
 - Practice weighted graph representation with adjacency matrices
 - Practice shortest-path computation with Dijkstra's algorithm
 - Practice edge relaxation and path reconstruction
+- Practice adjacency-list and adjacency-matrix representations
+- Practice graph conversion with nested list comprehensions
+- Practice row-column indexing for connectivity data
 - Practice recursive algorithms and state tracking
 - Practice in-place sorting and controlled mutation
 - Practice checksum validation and formatted-identifier normalization
@@ -1981,7 +2123,7 @@ The key lesson is that recursion is appropriate when the problem structure repea
 | openpyxl | Automated Excel processing |
 | Git | Version control and project management |
 | Search Algorithms | Efficient retrieval from sorted data |
-| Graph Algorithms | Weighted networks, route optimization, and shortest paths |
+| Graph Algorithms | Weighted networks, route optimization, shortest paths, and graph representation conversion |
 | Sorting Algorithms | Preparing ordered data for search, reporting, and analysis |
 | Checksum Validation | Detecting simple errors in structured identifiers |
 | Numerical Methods | Root finding, convergence checks, and tolerance-based calculations |
@@ -2017,6 +2159,8 @@ Search Algorithms and Algorithmic Efficiency
         ↓
 Graph Algorithms and Shortest-Path Computation
         ↓
+Graph Representation Conversion and Connectivity Matrices
+        ↓
 Sorting Algorithms, Partitioning, and In-Place Mutation
         ↓
 Checksum Validation and Data Integrity Checks
@@ -2050,9 +2194,9 @@ This repository is actively maintained as part of an ongoing learning process.
 
 ```text
 Workshops:               16
-Labs:                    12
+Labs:                    13
 Certification Projects:   5
-Total Projects:          33
+Total Projects:          34
 ```
 
 Latest completed workshop:
@@ -2064,7 +2208,7 @@ Implement the Shortest Path Algorithm
 Latest completed lab:
 
 ```text
-Implement the Luhn Algorithm
+Build an Adjacency List to Matrix Converter
 ```
 
 Latest completed certification project:
