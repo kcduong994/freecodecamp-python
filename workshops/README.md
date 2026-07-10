@@ -6,11 +6,11 @@ A collection of guided Python workshop projects completed while studying the
 These workshops document my progress from Python fundamentals to text processing,
 structured data validation, regular expressions, object-oriented programming,
 object composition, encapsulation, properties, setters, inheritance, polymorphism,
-custom exceptions, abstract base classes, polymorphic strategies, interactions between multiple objects, reference-based data structures, algorithmic search, recursion, divide-and-conquer sorting, weighted graphs, adjacency matrices, and shortest-path algorithms.
+custom exceptions, abstract base classes, polymorphic strategies, interactions between multiple objects, reference-based data structures, algorithmic search, recursion, divide-and-conquer sorting, weighted graphs, adjacency matrices, shortest-path algorithms, breadth-first search, FIFO queues, state-space exploration, and combinatorial generation.
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Workshops](https://img.shields.io/badge/Workshops_Completed-16-success)
+![Workshops](https://img.shields.io/badge/Workshops_Completed-17-success)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -19,12 +19,12 @@ custom exceptions, abstract base classes, polymorphic strategies, interactions b
 
 | Category               |   Completed |
 | ---------------------- | ----------: |
-| Workshops              |          16 |
-| Guided Python Projects |          16 |
+| Workshops              |          17 |
+| Guided Python Projects |          17 |
 | Current Status         | In Progress |
 
 ```text
-Progress: ████████████████  16 workshops completed
+Progress: █████████████████  17 workshops completed
 ```
 
 ---
@@ -49,6 +49,7 @@ Progress: ████████████████  16 workshops complet
 | 14 | Build a Binary Search                | Sorted data, midpoint comparison, search boundaries, algorithm tracing |   ✅   |
 | 15 | Implement the Merge Sort Algorithm   | Recursion, divide and conquer, slice syntax, sorted merging, in-place updates |   ✅   |
 | 16 | Implement the Shortest Path Algorithm | Weighted graphs, adjacency matrices, Dijkstra's algorithm, path reconstruction |   ✅   |
+| 17 | Implement the Breadth-First Search Algorithm | BFS, FIFO queues, state-space exploration, balanced-parentheses generation |   ✅   |
 
 ---
 
@@ -72,6 +73,7 @@ workshops/
 ├── build-a-binary-search/
 ├── implement-the-merge-sort-algorithm/
 ├── implement-the-shortest-path-algorithm/
+├── implement-the-breadth-first-search-algorithm/
 └── README.md
 ```
 
@@ -249,6 +251,11 @@ workshop-name/
 - Reconstructing complete paths with nested lists
 - Converting path nodes with generator expressions
 - Formatting readable routes with `str.join()`
+- Representing BFS states as tuples
+- Using a list as a FIFO queue
+- Removing the oldest state with `pop(0)`
+- Expanding valid successor states
+- Generating balanced-parentheses combinations
 
 ### Data Structures
 
@@ -269,6 +276,20 @@ workshop-name/
 - Maintaining a manual `length` counter
 - Understanding reference assignment direction
 - Comparing linked lists with built-in Python lists
+
+### Breadth-First Search and State-Space Exploration
+
+- Breadth-first search (BFS)
+- FIFO queue behavior
+- Queue initialization
+- Level-by-level state processing
+- Tuple-based state representation
+- Tuple unpacking
+- Valid successor-state generation
+- Constraint-based pruning
+- Completion detection by target length
+- Balanced-parentheses generation
+- Distinguishing graph traversal from general state-space search
 
 ### Search Algorithms
 
@@ -411,6 +432,99 @@ workshop-name/
 ---
 
 ## Workshop Highlights
+
+### Breadth-First Search Algorithm
+
+Implemented a breadth-first search solution that generates every valid combination of balanced parentheses for a specified number of pairs.
+
+The completed workshop contains:
+
+- A `gen_parentheses()` function
+- Type and range validation
+- A FIFO queue initialized with one empty state
+- Tuple-based BFS states
+- Queue processing with `pop(0)`
+- Valid opening- and closing-parenthesis expansion
+- Completion detection using the target string length
+- A result list containing all valid combinations
+
+Core implementation:
+
+```python
+def gen_parentheses(pairs):
+    if not isinstance(pairs, int):
+        return 'The number of pairs should be an integer'
+
+    if pairs < 1:
+        return 'The number of pairs should be at least 1'
+
+    queue = [('', 0, 0)]
+    result = []
+
+    while queue:
+        current, opens_used, closes_used = queue.pop(0)
+
+        if len(current) == 2 * pairs:
+            result.append(current)
+        else:
+            if opens_used < pairs:
+                queue.append(
+                    (current + '(', opens_used + 1, closes_used)
+                )
+
+            if closes_used < opens_used:
+                queue.append(
+                    (current + ')', opens_used, closes_used + 1)
+                )
+
+    return result
+```
+
+Each BFS state has the form:
+
+```text
+(current_string, opening_count, closing_count)
+```
+
+Traversal flow:
+
+```text
+Start with an empty state
+        ↓
+Remove the oldest queued state
+        ↓
+Check whether it is complete
+        ↓
+Store complete states
+        ↓
+Generate valid successor states
+        ↓
+Append successors to the back of the queue
+        ↓
+Continue until the queue is empty
+```
+
+Example results:
+
+```text
+gen_parentheses(2)
+→ ['(())', '()()']
+
+gen_parentheses(3)
+→ ['((()))', '(()())', '(())()', '()(())', '()()()']
+```
+
+This workshop strengthened:
+
+- Breadth-first search
+- FIFO queue behavior
+- State-space exploration
+- Tuple unpacking
+- Constraint-based branching
+- Balanced-parentheses generation
+- Validation before algorithm execution
+
+---
 
 ### Report Card Printer
 
@@ -1600,6 +1714,10 @@ Recursive divide-and-conquer sorting and ordered merging
 Shortest Path Algorithm
         ↓
 Weighted graphs, adjacency matrices, edge relaxation, and path reconstruction
+        ↓
+Breadth-First Search Algorithm
+        ↓
+FIFO queues, state-space exploration, and valid-combination generation
 ```
 
 The Salary Tracker extended the progression from basic classes and object composition
@@ -1620,6 +1738,8 @@ The Linked List workshop then introduced a lower-level data-structure perspectiv
 The Merge Sort workshop extended the algorithmic progression from searching sorted data to sorting unsorted data. It reinforced recursion, base cases, divide-and-conquer design, list slicing, and careful index management during the merge phase.
 
 The Shortest Path Algorithm workshop then introduced weighted graph processing. It reinforced adjacency-matrix representation, minimum-distance node selection, visited-state tracking, edge relaxation, path reconstruction, generator expressions, and optional target-based output.
+
+The Breadth-First Search workshop extended algorithmic thinking from path optimization to systematic state-space exploration. It reinforced FIFO queue behavior, tuple-based state tracking, constrained branching, and generation of all valid balanced-parentheses combinations.
 
 ---
 
@@ -1693,6 +1813,17 @@ The Merge Sort workshop also reinforced these debugging lessons:
 - The `if __name__ == "__main__":` guard requires `==`, not `is`, when comparing `__name__` with `"__main__"`.
 - Exact `print()` output matters in guided workshop steps.
 
+The Breadth-First Search workshop also reinforced these debugging lessons:
+
+- Use `while queue:` to continue while a queue is non-empty.
+- `queue is not []` is incorrect because `is` checks identity, not list contents.
+- `queue.pop(0)` removes and returns the oldest state.
+- The popped tuple should be unpacked directly into the state variables.
+- `append()` accepts one object, so a complete state must be appended as a tuple.
+- Add an opening parenthesis only while `opens_used < pairs`.
+- Add a closing parenthesis only while `closes_used < opens_used`.
+- Return the completed result list separately from demonstration printing.
+
 The Shortest Path Algorithm workshop also reinforced these debugging lessons:
 
 - A two-dimensional list must use outer square brackets rather than a tuple when the workshop explicitly requires a list.
@@ -1731,7 +1862,7 @@ The Discount Calculator workshop also reinforced these debugging lessons:
 ## Current Progress
 
 ```text
-Completed:  ████████████████  16
+Completed:  █████████████████  17
 Continuing: ░░░░░░░░░░  More workshops will be added
 ```
 
@@ -1781,6 +1912,8 @@ Binary Search and Algorithmic Thinking
 Merge Sort, Recursion, and Divide-and-Conquer Sorting
         ↓
 Weighted Graphs, Dijkstra's Algorithm, and Shortest Paths
+        ↓
+Breadth-First Search, FIFO Queues, and State-Space Exploration
 ```
 
 ---
@@ -1836,6 +1969,11 @@ Current priorities include:
 - Reconstructing complete shortest paths
 - Handling unreachable nodes safely
 - Formatting algorithm results with generator expressions and `join()`
+- Understanding breadth-first search
+- Using FIFO queues to process states level by level
+- Representing search states with tuples
+- Generating valid successor states under explicit constraints
+- Returning all valid balanced-parentheses combinations
 
 ---
 
@@ -1991,6 +2129,37 @@ Possible engineering applications include:
 - Comparing alternative routes through estuarine or river networks
 - Modeling travel time, cost, or resistance as edge weights
 
+Breadth-first search can later support engineering workflows involving unweighted connectivity, layered exploration, or discrete state transitions.
+
+Possible applications include:
+
+- Finding the minimum number of links between monitoring stations
+- Traversing computational cells by connectivity level
+- Exploring river or drainage networks one layer at a time
+- Detecting all nodes reachable from a starting station
+- Building unweighted shortest-path utilities
+- Validating network connectivity before numerical analysis
+
+Conceptual example:
+
+```python
+def reachable_stations(network, start_station):
+    queue = [start_station]
+    visited = {start_station}
+
+    while queue:
+        current = queue.pop(0)
+
+        for neighbor in network[current]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+
+    return visited
+```
+
+BFS explores every state at one depth before moving to the next depth, which makes it useful for connectivity checks, level-by-level traversal, and shortest paths in unweighted networks.
+
 Merge sort can later support engineering workflows where unsorted records must be ordered reliably before analysis.
 
 For example, observation records can be sorted by timestamp:
@@ -2073,6 +2242,9 @@ These workshops provide the foundation for more advanced Python topics, includin
 - Algorithmic complexity
 - Graph algorithms
 - Shortest-path algorithms
+- Breadth-first search
+- Queue-based traversal
+- State-space exploration
 - Scientific computing
 - Engineering-oriented Python applications
 
@@ -2104,6 +2276,7 @@ Future workshops and projects will gradually introduce:
 | Search Algorithms     | Finding values efficiently in ordered data       |
 | Sorting Algorithms     | Ordering records before analysis and reporting   |
 | Graph Algorithms       | Finding minimum-cost routes through connected systems |
+| Breadth-First Search   | Layered traversal, state exploration, and shortest unweighted paths |
 | NumPy                 | Numerical arrays and scientific calculations |
 | pandas                | Tabular and time-series data processing      |
 | Matplotlib            | Scientific visualization                     |
