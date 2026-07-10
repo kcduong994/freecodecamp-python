@@ -4,8 +4,8 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-34-success)
-![Workshops](https://img.shields.io/badge/Workshops-16-2563EB)
+![Projects](https://img.shields.io/badge/Projects_Completed-35-success)
+![Workshops](https://img.shields.io/badge/Workshops-17-2563EB)
 ![Labs](https://img.shields.io/badge/Labs-13-16A34A)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-5-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
@@ -42,16 +42,16 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 
 | Area | Purpose | Completed |
 | --- | --- | ---: |
-| Workshops | Guided projects introducing new Python concepts incrementally | 16 |
+| Workshops | Guided projects introducing new Python concepts incrementally | 17 |
 | Labs | Independent implementations based on user stories and automated tests | 13 |
 | Certification Projects | Larger projects combining multiple programming concepts | 5 |
-| **Total** | **Documented Python projects** | **34** |
+| **Total** | **Documented Python projects** | **35** |
 
 ```text
-Workshops              ████████████████  16 completed
+Workshops              █████████████████  17 completed
 Labs                   █████████████░  13 completed
 Certification Projects █████░░░░░░░░░  5 completed
-Overall                ██████████████████████████████████  34 completed
+Overall                ███████████████████████████████████  35 completed
 ```
 
 ### Current Learning Stage
@@ -138,6 +138,7 @@ Tower of Hanoi and Recursive State Generation
 | 14 | Build a Binary Search | Sorted data, midpoint comparison, boundary updates, algorithm tracing | ✅ |
 | 15 | Implement the Merge Sort Algorithm | Recursion, divide and conquer, slicing, merging sorted halves | ✅ |
 | 16 | Implement the Shortest Path Algorithm | Weighted graphs, adjacency matrices, Dijkstra's algorithm, edge relaxation, path reconstruction | ✅ |
+| 17 | Implement the Breadth-First Search Algorithm | BFS, FIFO queues, state-space exploration, balanced-parentheses generation | ✅ |
 
 ### Labs
 
@@ -190,6 +191,7 @@ freecodecamp-python/
 │   ├── build-a-binary-search/
 │   ├── implement-the-merge-sort-algorithm/
 │   ├── implement-the-shortest-path-algorithm/
+│   ├── implement-the-breadth-first-search-algorithm/
 │   └── README.md
 │
 ├── labs/
@@ -256,9 +258,9 @@ They are used to:
 - Develop reusable programming habits
 - Connect syntax with algorithmic reasoning
 
-The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based software design, reference-based data structures, algorithmic search, divide-and-conquer sorting, weighted graph representation, and shortest-path computation.
+The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based software design, reference-based data structures, algorithmic search, divide-and-conquer sorting, weighted graph representation, shortest-path computation, breadth-first search, FIFO queues, and state-space exploration.
 
-The latest completed workshop, **Implement the Shortest Path Algorithm**, introduced weighted graphs, adjacency matrices, Dijkstra's algorithm, minimum-distance node selection, edge relaxation, visited-state tracking, path reconstruction, generator expressions, and optional target-node output.
+The latest completed workshop, **Implement the Breadth-First Search Algorithm**, introduced FIFO queue behavior, tuple-based state representation, level-by-level exploration, constrained successor generation, balanced-parentheses generation, and the distinction between complete and expandable states.
 
 Detailed workshop documentation is maintained in [`workshops/README.md`](workshops/README.md).
 
@@ -462,6 +464,10 @@ This project made recursion more concrete by showing how a large problem can be 
 - Converting adjacency-list dictionaries into adjacency matrices
 - Mapping graph edges with row-column indexing
 - Preserving directed and undirected connectivity information
+- Using a list as a FIFO queue
+- Removing the oldest state with `pop(0)`
+- Appending valid successor states
+- Unpacking queue states into synchronized variables
 
 ### Data Structures
 
@@ -547,6 +553,11 @@ This project made recursion more concrete by showing how a large problem can be 
 - Determining graph size from adjacency-list keys
 - Converting unweighted graph edges into matrix entries
 - Printing matrix rows separately while returning the complete matrix
+- Breadth-first search with FIFO queue behavior
+- Tuple-based state-space representation
+- Level-by-level state expansion
+- Constraint-based pruning of invalid states
+- Balanced-parentheses generation
 
 ### Loops and Iteration
 
@@ -579,6 +590,10 @@ This project made recursion more concrete by showing how a large problem can be 
 - Converting adjacency-list dictionaries into adjacency matrices
 - Mapping graph edges with row-column indexing
 - Preserving directed and undirected connectivity information
+- Using a list as a FIFO queue
+- Removing the oldest state with `pop(0)`
+- Appending valid successor states
+- Unpacking queue states into synchronized variables
 
 ### Text Processing
 
@@ -765,10 +780,102 @@ This project made recursion more concrete by showing how a large problem can be 
 - Verifying row and column positions in nested lists
 - Ensuring each adjacency-matrix row is printed separately
 - Returning the completed matrix rather than a helper value
+- Debugging incorrect queue conditions
+- Distinguishing object identity from list truthiness
+- Understanding that `append()` accepts one object
+- Preventing invalid BFS branches through explicit constraints
+- Separating returned results from demonstration output
 
 ---
 
 ## Selected Project Highlights
+
+### Implement the Breadth-First Search Algorithm
+
+Implemented a breadth-first search solution that generates every valid combination of balanced parentheses for a requested number of pairs.
+
+The completed workshop includes:
+
+- A `gen_parentheses()` function
+- Type and lower-bound validation
+- A FIFO queue initialized with one empty state
+- Tuple-based BFS state tracking
+- Front-of-queue processing with `pop(0)`
+- Opening- and closing-parenthesis constraints
+- Completion detection through target string length
+- A result list containing every valid combination
+
+Core implementation:
+
+```python
+def gen_parentheses(pairs):
+    if not isinstance(pairs, int):
+        return 'The number of pairs should be an integer'
+
+    if pairs < 1:
+        return 'The number of pairs should be at least 1'
+
+    queue = [('', 0, 0)]
+    result = []
+
+    while queue:
+        current, opens_used, closes_used = queue.pop(0)
+
+        if len(current) == 2 * pairs:
+            result.append(current)
+        else:
+            if opens_used < pairs:
+                queue.append(
+                    (current + '(', opens_used + 1, closes_used)
+                )
+
+            if closes_used < opens_used:
+                queue.append(
+                    (current + ')', opens_used, closes_used + 1)
+                )
+
+    return result
+```
+
+Traversal flow:
+
+```text
+Initialize the queue with an empty state
+        ↓
+Remove the oldest queued state
+        ↓
+Check whether the state is complete
+        ↓
+Store complete states
+        ↓
+Generate valid successor states
+        ↓
+Append successors to the back of the queue
+        ↓
+Continue until the queue is empty
+```
+
+Example results:
+
+```text
+gen_parentheses(2)
+→ ['(())', '()()']
+
+gen_parentheses(3)
+→ ['((()))', '(()())', '(())()', '()(())', '()()()']
+```
+
+This workshop strengthened:
+
+- Breadth-first search
+- FIFO queue behavior
+- State-space exploration
+- Tuple unpacking
+- Constraint-based branching
+- Balanced-parentheses generation
+- Validation before algorithm execution
+
+---
 
 ### Build an Adjacency List to Matrix Converter
 
@@ -1516,6 +1623,10 @@ Shortest Path Algorithm
         ↓
 Weighted graphs, Dijkstra's algorithm, edge relaxation, and path reconstruction
         ↓
+Breadth-First Search Algorithm
+        ↓
+FIFO queues, state-space exploration, and valid-combination generation
+        ↓
 Quick Sort
         ↓
 Pivot partitioning, recursive sorting, and new-list construction
@@ -1566,6 +1677,7 @@ Recursive decomposition, list stacks, state recording, and exact sequence genera
 | Binary Search | Sorted data, midpoint comparison, boundary updates, and logarithmic search thinking |
 | Merge Sort | Recursive splitting, sorted merging, divide-and-conquer reasoning, and in-place mutation |
 | Shortest Path Algorithm | Weighted graphs, adjacency matrices, Dijkstra's algorithm, relaxation, and route reconstruction |
+| Breadth-First Search Algorithm | FIFO queues, state-space exploration, constrained branching, and combination generation |
 | Quicksort | Pivot partitioning, recursive sorting, duplicate handling, and new-list construction |
 | Selection Sort | In-place minimum selection, nested-loop scanning, and controlled swaps |
 | Luhn Algorithm | Checksum validation, formatted-number cleaning, alternating-digit processing, and modulo checks |
@@ -1575,7 +1687,7 @@ Recursive decomposition, list stacks, state recording, and exact sequence genera
 | Budget App | Transaction systems, cross-object transfers, reporting |
 | Tower of Hanoi Algorithm | Recursive decomposition, list stacks, state recording, exact multi-line output, and minimum-move reasoning |
 
-This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, the shortest-path workshop adds weighted graph processing and route optimization, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, the adjacency converter adds graph-representation transformation and matrix construction, the bisection method introduces numerical approximation through interval halving, and the Tower of Hanoi project makes recursive state generation more concrete.
+This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, the shortest-path workshop adds weighted graph processing and route optimization, the breadth-first search workshop adds FIFO traversal and constrained state-space exploration, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, the adjacency converter adds graph-representation transformation and matrix construction, the bisection method introduces numerical approximation through interval halving, and the Tower of Hanoi project makes recursive state generation more concrete.
 
 ---
 
@@ -1722,6 +1834,12 @@ Regression check
 - Nested list comprehensions should create independent rows.
 - Directed edges must be preserved exactly as written in the adjacency list.
 - Printing each matrix row is distinct from printing the whole matrix on one line.
+- `while queue:` is the correct condition for processing a non-empty queue.
+- `queue is not []` is incorrect because `is` checks object identity.
+- `queue.pop(0)` removes and returns the oldest queued state.
+- A BFS state should be appended as one tuple because `append()` accepts one object.
+- Opening-parenthesis states are valid only while `opens_used < pairs`.
+- Closing-parenthesis states are valid only while `closes_used < opens_used`.
 
 ---
 
@@ -1748,6 +1866,8 @@ This repository is the programming foundation for future coastal and environment
 - Minimum-cost path computation through connected systems
 - Graph representation conversion for engineering networks
 - Connectivity-matrix construction
+- Breadth-first traversal of unweighted networks
+- Reachability and connectivity analysis
 - AI-assisted technical workflows
 
 ### Planned Engineering Project Structure
@@ -1965,6 +2085,39 @@ def find_station_route(network_matrix, start_station, target_station):
 
 The core engineering lesson is that a network can be represented explicitly as nodes, links, and weights. Dijkstra's algorithm then identifies the route with the minimum accumulated cost when all weights are non-negative.
 
+### Breadth-First Search for Engineering Networks
+
+Breadth-first search is useful for unweighted engineering networks, layered connectivity checks, and discrete state exploration.
+
+Possible uses include:
+
+- Finding the minimum number of links between monitoring stations
+- Traversing computational cells by connectivity level
+- Exploring river or drainage networks one layer at a time
+- Detecting all nodes reachable from a starting station
+- Building unweighted shortest-path utilities
+- Validating network connectivity before numerical analysis
+
+Conceptual example:
+
+```python
+def reachable_stations(network, start_station):
+    queue = [start_station]
+    visited = {start_station}
+
+    while queue:
+        current = queue.pop(0)
+
+        for neighbor in network[current]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+
+    return visited
+```
+
+BFS explores all nodes at one depth before moving to the next, which makes it suitable for unweighted shortest paths, reachability checks, and level-by-level processing.
+
 ### Merge Sort for Engineering Records
 
 Merge sort is useful when engineering records need to be ordered before later analysis.
@@ -2104,6 +2257,10 @@ The key lesson is that recursion is appropriate when the problem structure repea
 - Practice adjacency-list and adjacency-matrix representations
 - Practice graph conversion with nested list comprehensions
 - Practice row-column indexing for connectivity data
+- Practice breadth-first search
+- Practice FIFO queue behavior
+- Practice tuple-based state representation
+- Practice constrained successor generation
 - Practice recursive algorithms and state tracking
 - Practice in-place sorting and controlled mutation
 - Practice checksum validation and formatted-identifier normalization
@@ -2123,7 +2280,7 @@ The key lesson is that recursion is appropriate when the problem structure repea
 | openpyxl | Automated Excel processing |
 | Git | Version control and project management |
 | Search Algorithms | Efficient retrieval from sorted data |
-| Graph Algorithms | Weighted networks, route optimization, shortest paths, and graph representation conversion |
+| Graph Algorithms | Weighted networks, route optimization, shortest paths, graph representation conversion, and breadth-first traversal |
 | Sorting Algorithms | Preparing ordered data for search, reporting, and analysis |
 | Checksum Validation | Detecting simple errors in structured identifiers |
 | Numerical Methods | Root finding, convergence checks, and tolerance-based calculations |
@@ -2161,6 +2318,8 @@ Graph Algorithms and Shortest-Path Computation
         ↓
 Graph Representation Conversion and Connectivity Matrices
         ↓
+Breadth-First Search and Unweighted Network Traversal
+        ↓
 Sorting Algorithms, Partitioning, and In-Place Mutation
         ↓
 Checksum Validation and Data Integrity Checks
@@ -2193,16 +2352,16 @@ AI-Assisted Engineering Workflows
 This repository is actively maintained as part of an ongoing learning process.
 
 ```text
-Workshops:               16
+Workshops:               17
 Labs:                    13
 Certification Projects:   5
-Total Projects:          34
+Total Projects:          35
 ```
 
 Latest completed workshop:
 
 ```text
-Implement the Shortest Path Algorithm
+Implement the Breadth-First Search Algorithm
 ```
 
 Latest completed lab:
