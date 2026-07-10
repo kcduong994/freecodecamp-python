@@ -6,11 +6,11 @@ A collection of guided Python workshop projects completed while studying the
 These workshops document my progress from Python fundamentals to text processing,
 structured data validation, regular expressions, object-oriented programming,
 object composition, encapsulation, properties, setters, inheritance, polymorphism,
-custom exceptions, abstract base classes, polymorphic strategies, interactions between multiple objects, reference-based data structures, algorithmic search, recursion, and divide-and-conquer sorting.
+custom exceptions, abstract base classes, polymorphic strategies, interactions between multiple objects, reference-based data structures, algorithmic search, recursion, divide-and-conquer sorting, weighted graphs, adjacency matrices, and shortest-path algorithms.
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Workshops](https://img.shields.io/badge/Workshops_Completed-15-success)
+![Workshops](https://img.shields.io/badge/Workshops_Completed-16-success)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -19,12 +19,12 @@ custom exceptions, abstract base classes, polymorphic strategies, interactions b
 
 | Category               |   Completed |
 | ---------------------- | ----------: |
-| Workshops              |          15 |
-| Guided Python Projects |          15 |
+| Workshops              |          16 |
+| Guided Python Projects |          16 |
 | Current Status         | In Progress |
 
 ```text
-Progress: ███████████████  15 workshops completed
+Progress: ████████████████  16 workshops completed
 ```
 
 ---
@@ -48,6 +48,7 @@ Progress: ███████████████  15 workshops completed
 | 13 | Build a Linked List                  | Nodes, references, traversal, insertion, removal, custom data structures |   ✅   |
 | 14 | Build a Binary Search                | Sorted data, midpoint comparison, search boundaries, algorithm tracing |   ✅   |
 | 15 | Implement the Merge Sort Algorithm   | Recursion, divide and conquer, slice syntax, sorted merging, in-place updates |   ✅   |
+| 16 | Implement the Shortest Path Algorithm | Weighted graphs, adjacency matrices, Dijkstra's algorithm, path reconstruction |   ✅   |
 
 ---
 
@@ -70,6 +71,7 @@ workshops/
 ├── build-a-linked-list/
 ├── build-a-binary-search/
 ├── implement-the-merge-sort-algorithm/
+├── implement-the-shortest-path-algorithm/
 └── README.md
 ```
 
@@ -240,6 +242,13 @@ workshop-name/
 - Merging sorted sublists into the original list
 - Updating sorted positions with multiple indexes
 - Performing in-place sorting through recursive function calls
+- Representing weighted graphs with adjacency matrices
+- Storing unavailable edges with positive infinity
+- Tracking shortest known distances in a list
+- Tracking visited and unvisited graph nodes
+- Reconstructing complete paths with nested lists
+- Converting path nodes with generator expressions
+- Formatting readable routes with `str.join()`
 
 ### Data Structures
 
@@ -274,6 +283,22 @@ workshop-name/
 - Returning a not-found result when the range is exhausted
 - Tracing checked values during the search
 - Understanding algorithmic efficiency
+
+### Graph Algorithms
+
+- Weighted graphs
+- Adjacency matrices
+- Nodes, edges, and edge weights
+- Positive infinity as an unreachable-distance sentinel
+- Dijkstra's shortest-path algorithm
+- Selecting the unvisited node with the smallest known distance
+- Edge relaxation
+- Updating shortest known distances
+- Reconstructing paths by extending the current path
+- Skipping unreachable nodes
+- Optional target-node selection
+- Formatting complete paths for console output
+- Understanding why negative edge weights are incompatible with Dijkstra's algorithm
 
 ### Sorting Algorithms
 
@@ -378,6 +403,10 @@ workshop-name/
 - Separating divide, sort, and merge phases in an algorithm
 - Protecting base cases to prevent infinite recursion
 - Using a main execution guard for algorithm demonstrations
+- Separating graph representation from shortest-path processing
+- Using optional parameters to support one-target or all-target output
+- Maintaining synchronized distance, path, and visited-state collections
+- Stopping early when no reachable unvisited node remains
 
 ---
 
@@ -1098,6 +1127,118 @@ Key concepts reinforced:
 
 ---
 
+### Shortest Path Algorithm
+
+Implemented Dijkstra's shortest-path algorithm for a weighted graph represented by an adjacency matrix.
+
+The completed workshop contains:
+
+- An `INF` constant representing missing direct connections
+- A weighted adjacency matrix
+- A `shortest_path()` function
+- Distance initialization with positive infinity
+- A `visited` list for finalized nodes
+- A `paths` list for complete route reconstruction
+- Selection of the nearest unvisited node
+- Edge relaxation for neighboring nodes
+- Optional output for one target node or all reachable nodes
+- Generator expressions for converting node numbers to strings
+- Readable route formatting with `" -> ".join(...)`
+- A `main()` function and execution guard
+
+The graph is represented by a two-dimensional list:
+
+```python
+INF = float("inf")
+
+adj_matrix = [
+    [0, 5, 3, INF, 11, INF],
+    [5, 0, 1, INF, INF, 2],
+    [3, 1, 0, 1, 5, INF],
+    [INF, INF, 1, 0, 9, 3],
+    [11, INF, 5, 9, 0, INF],
+    [INF, 2, INF, 3, INF, 0],
+]
+```
+
+Each matrix position stores the edge weight from one node to another:
+
+```text
+matrix[current][neighbor]
+        ↓
+Direct edge weight
+```
+
+The algorithm begins by assigning infinity to every distance except the starting node:
+
+```python
+distances = [INF] * n
+distances[start_node] = 0
+```
+
+On each iteration, the nearest unvisited node is selected:
+
+```python
+for node_no in range(n):
+    if not visited[node_no] and distances[node_no] < min_distance:
+        min_distance = distances[node_no]
+        current = node_no
+```
+
+Neighboring routes are improved through the relaxation step:
+
+```python
+new_distance = distances[current] + distance
+
+if new_distance < distances[node_no]:
+    distances[node_no] = new_distance
+    paths[node_no] = paths[current] + [node_no]
+```
+
+Shortest-path flow:
+
+```text
+Initialize distances and paths
+        ↓
+Select the nearest unvisited node
+        ↓
+Mark it as visited
+        ↓
+Inspect each reachable neighbor
+        ↓
+Calculate a candidate distance
+        ↓
+Update the distance and path if shorter
+        ↓
+Repeat until no reachable node remains
+```
+
+Example output:
+
+```text
+0-5 distance: 6
+Path: 0 -> 2 -> 1 -> 5
+```
+
+Key concepts reinforced:
+
+- Weighted graphs
+- Adjacency matrices
+- Dijkstra's algorithm
+- Positive infinity
+- Boolean visited-state tracking
+- Minimum-distance node selection
+- Edge relaxation
+- Path reconstruction
+- Nested lists
+- Generator expressions
+- Conditional expressions
+- Optional function parameters
+- Readable formatted output
+- Algorithm tracing and debugging
+
+---
+
 ### Linked List
 
 Built a custom linked list implementation using nested node objects and reference-based traversal.
@@ -1455,6 +1596,10 @@ Sorted data, midpoint comparison, and logarithmic search
 Merge Sort
         ↓
 Recursive divide-and-conquer sorting and ordered merging
+        ↓
+Shortest Path Algorithm
+        ↓
+Weighted graphs, adjacency matrices, edge relaxation, and path reconstruction
 ```
 
 The Salary Tracker extended the progression from basic classes and object composition
@@ -1473,6 +1618,8 @@ The Discount Calculator extended this progression with abstract base classes and
 The Linked List workshop then introduced a lower-level data-structure perspective. Instead of storing values directly in a built-in Python list, values are stored in `Node` objects connected through `.next` references. This reinforces how objects can form chains and how program state can be managed through references.
 
 The Merge Sort workshop extended the algorithmic progression from searching sorted data to sorting unsorted data. It reinforced recursion, base cases, divide-and-conquer design, list slicing, and careful index management during the merge phase.
+
+The Shortest Path Algorithm workshop then introduced weighted graph processing. It reinforced adjacency-matrix representation, minimum-distance node selection, visited-state tracking, edge relaxation, path reconstruction, generator expressions, and optional target-based output.
 
 ---
 
@@ -1546,6 +1693,19 @@ The Merge Sort workshop also reinforced these debugging lessons:
 - The `if __name__ == "__main__":` guard requires `==`, not `is`, when comparing `__name__` with `"__main__"`.
 - Exact `print()` output matters in guided workshop steps.
 
+The Shortest Path Algorithm workshop also reinforced these debugging lessons:
+
+- A two-dimensional list must use outer square brackets rather than a tuple when the workshop explicitly requires a list.
+- An unvisited-state check uses `not visited[node_no]`.
+- A conditional expression requires the complete form `value_if_true if condition else value_if_false`.
+- `target_node is not None` is the correct identity comparison for an optional value.
+- A path must be updated with `paths[current] + [node_no]`, not by adding two integer node indexes.
+- A generator expression that converts node numbers uses `(str(n) for n in paths[node_no])`.
+- Values inside an f-string require braces such as `{distances[node_no]}` and `{path}`.
+- The algorithm must stop when no reachable unvisited node remains, represented by `current == -1`.
+- `INF` represents an unavailable edge or an unreachable node, not a large ordinary distance.
+- Dijkstra's algorithm assumes non-negative edge weights.
+
 The Linked List workshop also reinforced these debugging lessons:
 
 - Assignment direction matters: `self.head = node` and `node = self.head` mean completely different things.
@@ -1571,7 +1731,7 @@ The Discount Calculator workshop also reinforced these debugging lessons:
 ## Current Progress
 
 ```text
-Completed:  ███████████████  15
+Completed:  ████████████████  16
 Continuing: ░░░░░░░░░░  More workshops will be added
 ```
 
@@ -1619,6 +1779,8 @@ Linked Lists, Nodes, and References
 Binary Search and Algorithmic Thinking
         ↓
 Merge Sort, Recursion, and Divide-and-Conquer Sorting
+        ↓
+Weighted Graphs, Dijkstra's Algorithm, and Shortest Paths
 ```
 
 ---
@@ -1666,6 +1828,14 @@ Current priorities include:
 - Merging sorted sublists through index management
 - Updating arrays in place during sorting
 - Tracing divide-and-conquer algorithms
+- Representing weighted graphs with adjacency matrices
+- Understanding nodes, edges, and edge weights
+- Implementing Dijkstra's shortest-path algorithm
+- Selecting the nearest unvisited node
+- Relaxing edges to improve known distances
+- Reconstructing complete shortest paths
+- Handling unreachable nodes safely
+- Formatting algorithm results with generator expressions and `join()`
 
 ---
 
@@ -1797,6 +1967,30 @@ Possible engineering applications include:
 - Looking up ordered scenario results
 - Supporting efficient data retrieval before interpolation
 
+Shortest-path algorithms can later support engineering workflows involving connected spatial or computational networks.
+
+For example, a weighted network can represent monitoring stations, computational cells, channels, or transport links:
+
+```python
+def shortest_station_route(matrix, start_station, target_station):
+    return shortest_path(
+        matrix,
+        start_station,
+        target_station,
+    )
+```
+
+Possible engineering applications include:
+
+- Finding the lowest-cost route between monitoring stations
+- Tracing minimum-distance paths through an observation network
+- Selecting efficient inspection routes between coastal structures
+- Representing channel or drainage connections as weighted graphs
+- Finding minimum-cost data-transfer paths between computational nodes
+- Supporting graph-based mesh or network preprocessing
+- Comparing alternative routes through estuarine or river networks
+- Modeling travel time, cost, or resistance as edge weights
+
 Merge sort can later support engineering workflows where unsorted records must be ordered reliably before analysis.
 
 For example, observation records can be sorted by timestamp:
@@ -1877,6 +2071,8 @@ These workshops provide the foundation for more advanced Python topics, includin
 - Sorting algorithms
 - Recursion and divide-and-conquer design
 - Algorithmic complexity
+- Graph algorithms
+- Shortest-path algorithms
 - Scientific computing
 - Engineering-oriented Python applications
 
@@ -1907,6 +2103,7 @@ Future workshops and projects will gradually introduce:
 | Data Structures       | Building custom containers and processing chains |
 | Search Algorithms     | Finding values efficiently in ordered data       |
 | Sorting Algorithms     | Ordering records before analysis and reporting   |
+| Graph Algorithms       | Finding minimum-cost routes through connected systems |
 | NumPy                 | Numerical arrays and scientific calculations |
 | pandas                | Tabular and time-series data processing      |
 | Matplotlib            | Scientific visualization                     |
