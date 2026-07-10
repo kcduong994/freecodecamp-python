@@ -4,13 +4,13 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-32-success)
-![Workshops](https://img.shields.io/badge/Workshops-15-2563EB)
+![Projects](https://img.shields.io/badge/Projects_Completed-33-success)
+![Workshops](https://img.shields.io/badge/Workshops-16-2563EB)
 ![Labs](https://img.shields.io/badge/Labs-12-16A34A)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-5-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
-This repository documents my progression from Python fundamentals to functions, validation, debugging, object-oriented programming, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, custom data structures, search algorithms, divide-and-conquer sorting, in-place sorting, recursive algorithms, checksum validation, numerical root finding, formatted reporting, exact multi-line output generation, and larger certification projects.
+This repository documents my progression from Python fundamentals to functions, validation, debugging, object-oriented programming, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based design, custom data structures, search algorithms, graph algorithms, shortest-path algorithms, divide-and-conquer sorting, in-place sorting, recursive algorithms, checksum validation, numerical root finding, formatted reporting, exact multi-line output generation, and larger certification projects.
 
 The immediate goal is to complete the freeCodeCamp Python Certification with correct, readable, tested, and well-documented implementations. The long-term objective is to apply Python to coastal and environmental engineering workflows such as hydrodynamic modeling, salinity intrusion analysis, environmental data validation, numerical methods, tolerance-based approximation, scientific visualization, search/indexing utilities, sorting workflows, checksum-style validation, recursive workflow processing, and research automation.
 
@@ -42,16 +42,16 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 
 | Area | Purpose | Completed |
 | --- | --- | ---: |
-| Workshops | Guided projects introducing new Python concepts incrementally | 15 |
+| Workshops | Guided projects introducing new Python concepts incrementally | 16 |
 | Labs | Independent implementations based on user stories and automated tests | 12 |
 | Certification Projects | Larger projects combining multiple programming concepts | 5 |
-| **Total** | **Documented Python projects** | **32** |
+| **Total** | **Documented Python projects** | **33** |
 
 ```text
-Workshops              ███████████████  15 completed
+Workshops              ████████████████  16 completed
 Labs                   ████████████░░  12 completed
 Certification Projects █████░░░░░░░░░  5 completed
-Overall                ████████████████████████████████  32 completed
+Overall                █████████████████████████████████  33 completed
 ```
 
 ### Current Learning Stage
@@ -97,6 +97,8 @@ Binary Search and Algorithmic Thinking
         ↓
 Merge Sort and Divide-and-Conquer Thinking
         ↓
+Shortest Path Algorithm and Weighted Graph Thinking
+        ↓
 Quicksort and Recursive Partitioning
         ↓
 Selection Sort and In-Place Mutation
@@ -133,6 +135,7 @@ Tower of Hanoi and Recursive State Generation
 | 13 | Build a Linked List | Nodes, references, traversal, insertion, removal, custom data structures | ✅ |
 | 14 | Build a Binary Search | Sorted data, midpoint comparison, boundary updates, algorithm tracing | ✅ |
 | 15 | Implement the Merge Sort Algorithm | Recursion, divide and conquer, slicing, merging sorted halves | ✅ |
+| 16 | Implement the Shortest Path Algorithm | Weighted graphs, adjacency matrices, Dijkstra's algorithm, edge relaxation, path reconstruction | ✅ |
 
 ### Labs
 
@@ -183,6 +186,7 @@ freecodecamp-python/
 │   ├── build-a-linked-list/
 │   ├── build-a-binary-search/
 │   ├── implement-the-merge-sort-algorithm/
+│   ├── implement-the-shortest-path-algorithm/
 │   └── README.md
 │
 ├── labs/
@@ -248,9 +252,9 @@ They are used to:
 - Develop reusable programming habits
 - Connect syntax with algorithmic reasoning
 
-The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based software design, reference-based data structures, algorithmic search, and divide-and-conquer sorting.
+The workshop sequence has progressed from basic formatting and functions to regular expressions, structured validation, object composition, properties, setters, controlled class state, inheritance, polymorphism, custom exceptions, abstract base classes, strategy-based software design, reference-based data structures, algorithmic search, divide-and-conquer sorting, weighted graph representation, and shortest-path computation.
 
-The latest completed workshop, **Implement the Merge Sort Algorithm**, introduced recursion, list slicing, divide-and-conquer design, sorted-half merging, index-based merge control, and in-place list mutation.
+The latest completed workshop, **Implement the Shortest Path Algorithm**, introduced weighted graphs, adjacency matrices, Dijkstra's algorithm, minimum-distance node selection, edge relaxation, visited-state tracking, path reconstruction, generator expressions, and optional target-node output.
 
 Detailed workshop documentation is maintained in [`workshops/README.md`](workshops/README.md).
 
@@ -485,6 +489,11 @@ This project made recursion more concrete by showing how a large problem can be 
 - Bisection method
 - Luhn algorithm
 - Tower of Hanoi
+- Dijkstra's shortest-path algorithm
+- Weighted graph traversal
+- Adjacency-matrix processing
+- Edge relaxation
+- Path reconstruction
 - Divide-and-conquer algorithms
 - Recursive partitioning
 - Recursive state generation
@@ -518,6 +527,11 @@ This project made recursion more concrete by showing how a large problem can be 
 - Right-to-left checksum processing
 - List-based stack operations with `pop()` and `append()`
 - Exact sequence generation for algorithmic puzzles
+- Minimum-distance node selection
+- Tracking visited and unvisited graph nodes
+- Reconstructing shortest paths with nested lists
+- Handling unreachable nodes with positive infinity
+- Selecting one target node or all reachable nodes
 
 ### Loops and Iteration
 
@@ -536,6 +550,7 @@ This project made recursion more concrete by showing how a large problem can be 
 - Traversal until `None`
 - Moving from one node to the next through object references
 - Generator expressions such as `sum(ord(char) for char in string)`
+- Generator expressions for path formatting such as `(str(node) for node in path)`
 - Iterative narrowing of a search interval
 - Recursive sorting of left and right partitions
 - Copying remaining values after merge comparisons
@@ -730,6 +745,96 @@ This project made recursion more concrete by showing how a large problem can be 
 ---
 
 ## Selected Project Highlights
+
+### Implement the Shortest Path Algorithm
+
+Implemented Dijkstra's shortest-path algorithm for a weighted graph represented by an adjacency matrix.
+
+The completed workshop includes:
+
+- An `INF` constant representing unavailable direct connections
+- A two-dimensional adjacency matrix
+- A `shortest_path()` function
+- Distance initialization with positive infinity
+- A `visited` list for finalized nodes
+- A `paths` list for reconstructing complete routes
+- Selection of the nearest unvisited node
+- Edge relaxation for reachable neighbors
+- Optional output for one target node or every reachable node
+- Generator expressions for converting node numbers to strings
+- Readable route output with `" -> ".join(...)`
+
+Core implementation pattern:
+
+```python
+def shortest_path(matrix, start_node, target_node=None):
+    n = len(matrix)
+    distances = [INF] * n
+    distances[start_node] = 0
+    paths = [[node_no] for node_no in range(n)]
+    visited = [False] * n
+```
+
+Minimum-distance node selection:
+
+```python
+for node_no in range(n):
+    if not visited[node_no] and distances[node_no] < min_distance:
+        min_distance = distances[node_no]
+        current = node_no
+```
+
+Relaxation step:
+
+```python
+new_distance = distances[current] + distance
+
+if new_distance < distances[node_no]:
+    distances[node_no] = new_distance
+    paths[node_no] = paths[current] + [node_no]
+```
+
+Algorithm flow:
+
+```text
+Initialize distances and paths
+        ↓
+Select the nearest unvisited node
+        ↓
+Mark it as visited
+        ↓
+Inspect each reachable neighbor
+        ↓
+Calculate a candidate distance
+        ↓
+Update distance and path when shorter
+        ↓
+Repeat until no reachable node remains
+```
+
+Example result:
+
+```text
+0-5 distance: 6
+Path: 0 -> 2 -> 1 -> 5
+```
+
+This workshop strengthened:
+
+- Weighted graph representation
+- Adjacency matrices
+- Dijkstra's algorithm
+- Positive infinity as a sentinel value
+- Boolean visited-state tracking
+- Minimum-distance node selection
+- Edge relaxation
+- Path reconstruction
+- Conditional expressions
+- Generator expressions
+- Optional function parameters
+- Algorithm tracing and debugging
+
+---
 
 ### Implement the Tower of Hanoi Algorithm
 
@@ -1308,6 +1413,10 @@ Merge Sort
         ↓
 Recursive splitting, sorted merging, and divide-and-conquer design
         ↓
+Shortest Path Algorithm
+        ↓
+Weighted graphs, Dijkstra's algorithm, edge relaxation, and path reconstruction
+        ↓
 Quick Sort
         ↓
 Pivot partitioning, recursive sorting, and new-list construction
@@ -1353,6 +1462,7 @@ Recursive decomposition, list stacks, state recording, and exact sequence genera
 | Hash Table | Hashing, nested dictionaries, collision handling, lookup, and deletion |
 | Binary Search | Sorted data, midpoint comparison, boundary updates, and logarithmic search thinking |
 | Merge Sort | Recursive splitting, sorted merging, divide-and-conquer reasoning, and in-place mutation |
+| Shortest Path Algorithm | Weighted graphs, adjacency matrices, Dijkstra's algorithm, relaxation, and route reconstruction |
 | Quicksort | Pivot partitioning, recursive sorting, duplicate handling, and new-list construction |
 | Selection Sort | In-place minimum selection, nested-loop scanning, and controlled swaps |
 | Luhn Algorithm | Checksum validation, formatted-number cleaning, alternating-digit processing, and modulo checks |
@@ -1361,7 +1471,7 @@ Recursive decomposition, list stacks, state recording, and exact sequence genera
 | Budget App | Transaction systems, cross-object transfers, reporting |
 | Tower of Hanoi Algorithm | Recursive decomposition, list stacks, state recording, exact multi-line output, and minimum-move reasoning |
 
-This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, the bisection method introduces numerical approximation through interval halving, and the Tower of Hanoi project makes recursive state generation more concrete.
+This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, the shortest-path workshop adds weighted graph processing and route optimization, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, the bisection method introduces numerical approximation through interval halving, and the Tower of Hanoi project makes recursive state generation more concrete.
 
 ---
 
@@ -1494,6 +1604,15 @@ Regression check
 - Helper functions such as `move_disk()` must exist before they are called.
 - The Tower of Hanoi output must always display physical rods in fixed order, even when recursive parameters change roles.
 - Recording only the initial state is not enough; every move must be recorded after it happens.
+- A two-dimensional list requires outer square brackets when the specification requires a list rather than a tuple.
+- An unvisited-node condition uses `not visited[node_no]`.
+- Optional values should be checked with `is not None`.
+- A conditional expression requires the full `value_if_true if condition else value_if_false` structure.
+- A reconstructed path must extend the current path with `[node_no]`; adding integer node indexes does not create a route.
+- A generator expression converts each node individually: `(str(node) for node in paths[node_no])`.
+- Values inside f-strings require braces, such as `{distances[node_no]}` and `{path}`.
+- Dijkstra's algorithm requires non-negative edge weights.
+- `INF` is a sentinel for an unavailable edge or unreachable node, not an ordinary large weight.
 
 ---
 
@@ -1516,6 +1635,8 @@ This repository is the programming foundation for future coastal and environment
 - Numerical root finding for engineering calculations
 - Recursive workflow processing
 - Research reproducibility
+- Graph-based route and network analysis
+- Minimum-cost path computation through connected systems
 - AI-assisted technical workflows
 
 ### Planned Engineering Project Structure
@@ -1677,6 +1798,34 @@ Possible uses include:
 
 The key engineering lesson is that algorithm choice matters. When data is sorted, binary search can avoid checking every element one by one. When data is unsorted, sorting algorithms such as merge sort can prepare records for efficient search, comparison, reporting, or time-series analysis.
 
+### Shortest-Path Algorithms for Engineering Networks
+
+Shortest-path algorithms map naturally to connected engineering systems in which links carry distance, time, cost, resistance, or another non-negative weight.
+
+Possible uses include:
+
+- Finding the lowest-cost route between monitoring stations
+- Tracing minimum-distance paths through observation networks
+- Selecting efficient inspection routes between coastal structures
+- Representing river, estuary, drainage, or channel connections as weighted graphs
+- Finding minimum-cost data-transfer routes between computational nodes
+- Supporting graph-based mesh or network preprocessing
+- Comparing alternative routes through coastal and environmental systems
+- Modeling travel time or hydraulic resistance as edge weights
+
+Conceptual example:
+
+```python
+def find_station_route(network_matrix, start_station, target_station):
+    return shortest_path(
+        network_matrix,
+        start_station,
+        target_station,
+    )
+```
+
+The core engineering lesson is that a network can be represented explicitly as nodes, links, and weights. Dijkstra's algorithm then identifies the route with the minimum accumulated cost when all weights are non-negative.
+
 ### Merge Sort for Engineering Records
 
 Merge sort is useful when engineering records need to be ordered before later analysis.
@@ -1810,6 +1959,9 @@ The key lesson is that recursion is appropriate when the problem structure repea
 - Practice hash-table lookup, deletion, and collision handling
 - Practice binary search and search-boundary management
 - Practice recursive divide-and-conquer sorting
+- Practice weighted graph representation with adjacency matrices
+- Practice shortest-path computation with Dijkstra's algorithm
+- Practice edge relaxation and path reconstruction
 - Practice recursive algorithms and state tracking
 - Practice in-place sorting and controlled mutation
 - Practice checksum validation and formatted-identifier normalization
@@ -1829,6 +1981,7 @@ The key lesson is that recursion is appropriate when the problem structure repea
 | openpyxl | Automated Excel processing |
 | Git | Version control and project management |
 | Search Algorithms | Efficient retrieval from sorted data |
+| Graph Algorithms | Weighted networks, route optimization, and shortest paths |
 | Sorting Algorithms | Preparing ordered data for search, reporting, and analysis |
 | Checksum Validation | Detecting simple errors in structured identifiers |
 | Numerical Methods | Root finding, convergence checks, and tolerance-based calculations |
@@ -1862,6 +2015,8 @@ Hash-Based Storage and Lookup
         ↓
 Search Algorithms and Algorithmic Efficiency
         ↓
+Graph Algorithms and Shortest-Path Computation
+        ↓
 Sorting Algorithms, Partitioning, and In-Place Mutation
         ↓
 Checksum Validation and Data Integrity Checks
@@ -1894,16 +2049,16 @@ AI-Assisted Engineering Workflows
 This repository is actively maintained as part of an ongoing learning process.
 
 ```text
-Workshops:               15
+Workshops:               16
 Labs:                    12
 Certification Projects:   5
-Total Projects:          32
+Total Projects:          33
 ```
 
 Latest completed workshop:
 
 ```text
-Implement the Merge Sort Algorithm
+Implement the Shortest Path Algorithm
 ```
 
 Latest completed lab:
