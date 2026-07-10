@@ -7,11 +7,12 @@ These labs focus on translating user stories into working software, designing pr
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Labs](https://img.shields.io/badge/Labs_Completed-12-success)
+![Labs](https://img.shields.io/badge/Labs_Completed-13-success)
 ![OOP Labs](https://img.shields.io/badge/OOP_Labs-3-6f42c1)
 ![Numerical Labs](https://img.shields.io/badge/Numerical_Labs-1-0A66C2)
 ![Sorting Labs](https://img.shields.io/badge/Sorting_Labs-2-8B5CF6)
 ![Checksum Labs](https://img.shields.io/badge/Checksum_Labs-2-DC2626)
+![Graph Labs](https://img.shields.io/badge/Graph_Labs-1-0F766E)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -48,7 +49,7 @@ Each exercise requires some combination of:
 - Refactoring code for clarity
 - Documenting the final implementation
 
-The current learning path has progressed from fundamental control flow and functions to structured data, debugging, classes, properties, controlled state updates, abstract base classes, inheritance, object-oriented design, numerical root-finding with tolerance-based convergence, sorting algorithms, recursion, in-place mutation, and checksum validation.
+The current learning path has progressed from fundamental control flow and functions to structured data, debugging, classes, properties, controlled state updates, abstract base classes, inheritance, object-oriented design, numerical root-finding with tolerance-based convergence, sorting algorithms, recursion, in-place mutation, checksum validation, and graph-representation conversion.
 
 ---
 
@@ -68,6 +69,7 @@ The current learning path has progressed from fundamental control flow and funct
 | 10 | Implement the Quicksort Algorithm | Divide-and-conquer sorting, recursion, pivot partitioning | ✅ |
 | 11 | Implement the Selection Sort Algorithm | In-place sorting, minimum search, swaps, quadratic complexity | ✅ |
 | 12 | Implement the Luhn Algorithm | Checksum validation, string cleaning, modulo arithmetic | ✅ |
+| 13 | Build an Adjacency List to Matrix Converter | Graph representations, dictionaries, nested lists, matrix construction | ✅ |
 
 ---
 
@@ -75,19 +77,20 @@ The current learning path has progressed from fundamental control flow and funct
 
 | Category | Completed |
 | --- | ---: |
-| Total Labs | 12 |
+| Total Labs | 13 |
 | Debugging-Focused Labs | 1 |
 | Object-Oriented Labs | 3 |
 | Labs Using Validation Rules | 7 |
 | Numerical Method Labs | 1 |
 | Sorting Algorithm Labs | 2 |
 | Checksum Algorithm Labs | 2 |
+| Graph Representation Labs | 1 |
 | Current Status | In Progress |
 
 ```text
-Labs Completed: 12
-Progress:       ████████████ 12 completed
-Current Focus:  Sorting algorithms, checksum validation, recursion, and in-place mutation
+Labs Completed: 13
+Progress:       █████████████ 13 completed
+Current Focus:  Graph representations, nested data structures, algorithmic conversion, and matrix construction
 ```
 
 ### Concept Progression
@@ -118,6 +121,8 @@ Recursive Quicksort and Pivot Partitioning
 In-Place Selection Sort and Swap Control
         ↓
 Checksum Validation with the Luhn Algorithm
+        ↓
+Adjacency Lists, Adjacency Matrices, and Graph Representation Conversion
 ```
 
 ---
@@ -138,6 +143,7 @@ labs/
 ├── implement-the-quicksort-algorithm.py
 ├── implement-the-selection-sort-algorithm.py
 ├── implement-the-luhn-algorithm.py
+├── build-an-adjacency-list-to-matrix-converter.py
 └── README.md
 ```
 
@@ -207,6 +213,21 @@ The shared `README.md` records:
 - State-dependent behavior
 - Stopping conditions for iterative algorithms
 - Failure branches when convergence is not reached
+
+### Graph Representations and Conversion
+
+- Graphs represented as dictionaries
+- Adjacency lists
+- Adjacency matrices
+- Directed and undirected graph representations
+- Unweighted graph conversion
+- Determining graph size from dictionary keys
+- Creating square matrices with nested list comprehensions
+- Mapping edges with `matrix[node][neighbor] = 1`
+- Printing one matrix row at a time
+- Returning reusable two-dimensional results
+- Understanding the space trade-off between adjacency lists and matrices
+- Recognizing that symmetric matrices represent undirected edges when both directions are listed
 
 ### Numerical Methods and Approximation
 
@@ -332,6 +353,10 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Creating partition lists for recursive sorting
 - In-place element swapping
 - Preserving duplicate values during partitioning
+- Creating square two-dimensional lists
+- Converting dictionary-based graph data into matrix form
+- Iterating through node-neighbor relationships
+- Storing edge existence with binary matrix entries
 
 ### Loops and Iteration
 
@@ -387,6 +412,11 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Avoiding prohibited built-in sorting methods
 - Debugging recursive base cases and partition logic
 - Matching exact `VALID!` and `INVALID!` return values
+- Debugging incorrect function signatures
+- Distinguishing the number of nodes from the final matrix result
+- Verifying row and column positions in a two-dimensional list
+- Ensuring each matrix row is printed separately
+- Returning the matrix rather than an intermediate value
 
 ### Problem Solving
 
@@ -406,11 +436,104 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Designing clear stopping criteria for iterative methods
 - Translating sorting algorithms into loop and recursion logic
 - Choosing when to mutate input data and when to return new data
-- Implementing checksum validation without external libraries
+- Implementing checksum validation
+- Implementing graph-representation conversion
+- Working with adjacency lists and adjacency matrices without external libraries
+- Translating graph data between adjacency-list and adjacency-matrix forms
+- Reasoning about rows as source nodes and columns as destination nodes
+- Preserving directed-edge information during conversion
 
 ---
 
 ## Lab Highlights
+
+### 13. Build an Adjacency List to Matrix Converter
+
+Built a converter that transforms an unweighted graph from an adjacency-list representation into an adjacency matrix.
+
+The completed lab includes:
+
+- A function named `adjacency_list_to_matrix()`
+- One adjacency-list dictionary parameter
+- Automatic node-count detection with `len()`
+- Square matrix construction with nested list comprehensions
+- Edge mapping through nested loops
+- Separate printing of every matrix row
+- Returning the completed matrix
+- Support for both directed and undirected graphs, depending on the supplied connections
+
+Core implementation:
+
+```python
+def adjacency_list_to_matrix(adj_list):
+    number_of_nodes = len(adj_list)
+
+    matrix = [
+        [0 for _ in range(number_of_nodes)]
+        for _ in range(number_of_nodes)
+    ]
+
+    for node, neighbors in adj_list.items():
+        for neighbor in neighbors:
+            matrix[node][neighbor] = 1
+
+    for row in matrix:
+        print(row)
+
+    return matrix
+```
+
+Conversion flow:
+
+```text
+Read adjacency-list dictionary
+        ↓
+Count the nodes
+        ↓
+Create an n × n zero matrix
+        ↓
+Visit each node and neighbor
+        ↓
+Set matrix[node][neighbor] to 1
+        ↓
+Print each row
+        ↓
+Return the completed matrix
+```
+
+Example input:
+
+```python
+{
+    0: [1, 2],
+    1: [2],
+    2: [0, 3],
+    3: [2],
+}
+```
+
+Example output:
+
+```text
+[0, 1, 1, 0]
+[0, 0, 1, 0]
+[1, 0, 0, 1]
+[0, 0, 1, 0]
+```
+
+This lab reinforced:
+
+- Graph representations
+- Dictionaries and `.items()`
+- Nested lists
+- Nested loops
+- List comprehensions
+- Matrix indexing
+- Directed versus undirected graph structure
+- Returning data versus printing required output
+- Translating user stories into a complete implementation
+
+---
 
 ### 1. Travel Weather Planner
 
@@ -1008,7 +1131,7 @@ Each lab follows an independent problem-solving workflow:
 6. Run the provided automated tests.
 7. Inspect failures one test at a time.
 8. Diagnose syntax, runtime, and logic errors.
-9. Test boundary values, invalid inputs, sorting behavior, checksum behavior, and convergence behavior.
+9. Test boundary values, invalid inputs, sorting behavior, checksum behavior, convergence behavior, and graph-conversion output.
 10. Refactor the final solution for readability.
 11. Add comments and documentation.
 12. Record the completed work in the repository.
@@ -1055,6 +1178,9 @@ The completed labs aim to follow these principles:
 - Add comments that explain intent rather than restating syntax.
 - Keep shared behavior in parent classes and specialized behavior in subclasses.
 - Use abstract methods when concrete subclasses must provide specific behavior.
+- Use rows for source nodes and columns for destination nodes in adjacency matrices.
+- Build nested lists independently to avoid accidental shared-row references.
+- Return the final data structure rather than an intermediate count or helper value.
 
 ---
 
@@ -1101,6 +1227,9 @@ Current priorities include:
 - Developing clean and readable code
 - Preparing for larger certification projects
 - Building engineering-oriented programming habits
+- Understanding graph representations
+- Converting adjacency lists into adjacency matrices
+- Working confidently with nested lists and matrix indexes
 
 ---
 
@@ -1127,12 +1256,16 @@ Potential applications include:
 - Defining shared interfaces for multiple model types
 - Tracking movement, trajectories, or station paths
 - Extending specialized engineering classes from common parent classes
+- Representing station, channel, or mesh connectivity as graphs
+- Converting sparse connection lists into matrix-based forms
 
 The bisection method is also relevant to engineering workflows where a target value must be found iteratively, such as solving simplified rating-curve problems, calibrating a parameter until a residual approaches zero, or finding a threshold value in a model response.
 
 Sorting algorithms are relevant when environmental observations, station records, timestamps, or scenario results need to be ordered before searching, interpolation, reporting, or validation. Quicksort reinforces recursive partitioning, while selection sort reinforces in-place mutation and explicit swap control.
 
 The Luhn algorithm strengthens checksum-style validation thinking. Although credit-card validation is not an engineering task, the pattern of cleaning identifiers, processing digits, and returning exact validity results is useful for validating structured IDs, station codes, sample labels, or other formatted records.
+
+The adjacency-list converter is directly relevant to engineering systems that can be modeled as networks. Monitoring stations, computational cells, drainage links, river branches, transport routes, and mesh connectivity can all be represented as nodes and edges. Adjacency lists provide a compact sparse representation, while adjacency matrices are useful for matrix-based analysis, connectivity checks, and numerical workflows.
 
 Object-oriented programming can later support structures such as:
 
@@ -1211,6 +1344,26 @@ class Particle:
 These patterns provide a foundation for reusable simulation components and
 consistent interfaces across related model types.
 
+A graph-based connectivity model could be represented as:
+
+```python
+station_connections = {
+    0: [1, 2],
+    1: [2],
+    2: [0, 3],
+    3: [2],
+}
+```
+
+Possible engineering uses include:
+
+- Representing connections between monitoring stations
+- Describing river or channel network topology
+- Building computational-mesh connectivity maps
+- Preparing graph data for shortest-path algorithms
+- Converting sparse network definitions into matrix form
+- Supporting network-based pre-processing and diagnostics
+
 ---
 
 ## Future Learning Areas
@@ -1232,6 +1385,9 @@ Future labs will gradually support development in:
 - Scientific visualization
 - Engineering automation
 - Research-oriented programming
+- Graph algorithms
+- Network representations
+- Sparse and dense connectivity structures
 
 Planned Python tools include:
 
@@ -1265,6 +1421,8 @@ Object-Oriented Programming
 Abstract Interfaces and Inheritance
         ↓
 Scientific Data Processing
+        ↓
+Graph Representations and Network Conversion
         ↓
 Numerical Methods
         ↓
@@ -1311,6 +1469,8 @@ Each completed lab documents progress in:
 - Implementing basic numerical methods
 - Implementing sorting algorithms
 - Implementing checksum validation
+- Implementing graph-representation conversion
+- Working with adjacency lists and adjacency matrices
 - Improving technical documentation
 
 Additional labs will be added as progress continues through the freeCodeCamp Python Certification.
