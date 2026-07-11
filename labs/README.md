@@ -7,13 +7,14 @@ These labs focus on translating user stories into working software, designing pr
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Labs](https://img.shields.io/badge/Labs_Completed-15-success)
+![Labs](https://img.shields.io/badge/Labs_Completed-16-success)
 ![OOP Labs](https://img.shields.io/badge/OOP_Labs-3-6f42c1)
 ![Numerical Labs](https://img.shields.io/badge/Numerical_Labs-1-0A66C2)
 ![Sorting Labs](https://img.shields.io/badge/Sorting_Labs-2-8B5CF6)
 ![Checksum Labs](https://img.shields.io/badge/Checksum_Labs-2-DC2626)
 ![Graph Labs](https://img.shields.io/badge/Graph_Labs-2-0F766E)
 ![Backtracking Labs](https://img.shields.io/badge/Backtracking_Labs-1-7C3AED)
+![Dynamic Programming Labs](https://img.shields.io/badge/Dynamic_Programming_Labs-1-9333EA)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -50,7 +51,7 @@ Each exercise requires some combination of:
 - Refactoring code for clarity
 - Documenting the final implementation
 
-The current learning path has progressed from fundamental control flow and functions to structured data, debugging, classes, properties, controlled state updates, abstract base classes, inheritance, object-oriented design, numerical root-finding with tolerance-based convergence, sorting algorithms, recursion, in-place mutation, checksum validation, graph-representation conversion, depth-first graph traversal, and backtracking-based constraint solving.
+The current learning path has progressed from fundamental control flow and functions to structured data, debugging, classes, properties, controlled state updates, abstract base classes, inheritance, object-oriented design, numerical root-finding with tolerance-based convergence, sorting algorithms, recursion, in-place mutation, checksum validation, graph-representation conversion, depth-first graph traversal, backtracking-based constraint solving, and bottom-up dynamic programming.
 
 ---
 
@@ -73,6 +74,7 @@ The current learning path has progressed from fundamental control flow and funct
 | 13 | Build an Adjacency List to Matrix Converter | Graph representations, dictionaries, nested lists, matrix construction | ✅ |
 | 14 | Implement the Depth-First Search Algorithm | Graph traversal, stacks, LIFO processing, reachability | ✅ |
 | 15 | Implement the N-Queens Algorithm | Depth-first search, backtracking, recursion, constraint tracking | ✅ |
+| 16 | Build an Nth Fibonacci Number Calculator | Dynamic programming, iterative sequence construction, state reuse | ✅ |
 
 ---
 
@@ -80,7 +82,7 @@ The current learning path has progressed from fundamental control flow and funct
 
 | Category | Completed |
 | --- | ---: |
-| Total Labs | 15 |
+| Total Labs | 16 |
 | Debugging-Focused Labs | 1 |
 | Object-Oriented Labs | 3 |
 | Labs Using Validation Rules | 7 |
@@ -90,12 +92,13 @@ The current learning path has progressed from fundamental control flow and funct
 | Graph Representation Labs | 1 |
 | Graph Traversal Labs | 1 |
 | Backtracking Labs | 1 |
+| Dynamic Programming Labs | 1 |
 | Current Status | In Progress |
 
 ```text
-Labs Completed: 15
-Progress:       ███████████████ 15 completed
-Current Focus:  Depth-first traversal, recursion, backtracking, and constraint-state management
+Labs Completed: 16
+Progress:       ████████████████ 16 completed
+Current Focus:  Bottom-up dynamic programming, iterative state construction, and sequence reuse
 ```
 
 ### Concept Progression
@@ -132,6 +135,8 @@ Adjacency Lists, Adjacency Matrices, and Graph Representation Conversion
 Depth-First Search, Stacks, and Reachability
         ↓
 N-Queens, Backtracking, and Constraint-State Restoration
+        ↓
+Nth Fibonacci, Bottom-Up Dynamic Programming, and Sequence Reuse
 ```
 
 ---
@@ -155,6 +160,7 @@ labs/
 ├── build-an-adjacency-list-to-matrix-converter.py
 ├── implement-the-depth-first-search-algorithm.py
 ├── implement-the-n-queens-algorithm.py
+├── build-an-nth-fibonacci-number-calculator.py
 └── README.md
 ```
 
@@ -224,6 +230,18 @@ The shared `README.md` records:
 - State-dependent behavior
 - Stopping conditions for iterative algorithms
 - Failure branches when convergence is not reached
+
+### Dynamic Programming
+
+- Bottom-up dynamic programming
+- Explicit base cases
+- Iterative state construction
+- Reusing previously computed values
+- Appending each computed state to a sequence
+- Avoiding recursive recomputation
+- Translating recurrence relations into loops
+- Linear-time sequence generation
+- Space-time trade-offs in stored intermediate results
 
 ### Graph Traversal and Search
 
@@ -453,6 +471,10 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Verifying row and column positions in a two-dimensional list
 - Ensuring each matrix row is printed separately
 - Returning the matrix rather than an intermediate value
+- Debugging missing return paths above the base cases
+- Detecting off-by-one errors in `range(2, n + 1)`
+- Distinguishing a sequence index from a sequence value
+- Verifying that each Fibonacci value is appended exactly once
 
 ### Problem Solving
 
@@ -477,14 +499,89 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Implementing depth-first graph traversal
 - Implementing recursive backtracking
 - Solving constraint-satisfaction problems
+- Implementing bottom-up dynamic programming
+- Translating recurrence relations into iterative algorithms
 - Working with adjacency lists and adjacency matrices without external libraries
 - Translating graph data between adjacency-list and adjacency-matrix forms
 - Reasoning about rows as source nodes and columns as destination nodes
 - Preserving directed-edge information during conversion
+- Implementing bottom-up dynamic programming
+- Reusing previously computed sequence values
+- Translating recurrence relations into iterative code
+- Avoiding recursion when explicitly prohibited
 
 ---
 
 ## Lab Highlights
+
+### 16. Build an Nth Fibonacci Number Calculator
+
+Implemented an iterative Fibonacci calculator using bottom-up dynamic programming.
+
+The completed lab includes:
+
+- A function named `fibonacci()`
+- One non-negative integer parameter
+- A `sequence` list initialized to `[0, 1]`
+- Explicit handling for `F(0)` and `F(1)`
+- Iterative computation from `F(2)` through `F(n)`
+- Reuse of previously computed values
+- Appending each new Fibonacci number
+- No recursion
+- Correct tested results through `F(15) = 610`
+
+Core implementation:
+
+```python
+def fibonacci(n):
+    sequence = [0, 1]
+
+    if n < 2:
+        return sequence[n]
+
+    for _ in range(2, n + 1):
+        sequence.append(sequence[-1] + sequence[-2])
+
+    return sequence[n]
+```
+
+Dynamic-programming flow:
+
+```text
+Initialize F(0) and F(1)
+        ↓
+Handle the base cases
+        ↓
+Compute the next value from the previous two
+        ↓
+Append the value to sequence
+        ↓
+Repeat until F(n) exists
+        ↓
+Return sequence[n]
+```
+
+Example results:
+
+```text
+F(0)  = 0
+F(1)  = 1
+F(2)  = 1
+F(5)  = 5
+F(10) = 55
+F(15) = 610
+```
+
+This lab reinforced bottom-up dynamic programming, recurrence relations, base-case design, iterative state construction, state reuse, and linear-time computation.
+
+Complexity:
+
+```text
+Time:  O(n)
+Space: O(n)
+```
+
+---
 
 ### 15. Implement the N-Queens Algorithm
 
@@ -1411,6 +1508,9 @@ Current priorities include:
 - Implementing recursive backtracking
 - Tracking column and diagonal constraints
 - Restoring mutable state after recursive exploration
+- Implementing bottom-up dynamic programming
+- Building and reusing a computed sequence
+- Managing base cases and indexed returns
 
 ---
 
@@ -1447,6 +1547,17 @@ Sorting algorithms are relevant when environmental observations, station records
 The Luhn algorithm strengthens checksum-style validation thinking. Although credit-card validation is not an engineering task, the pattern of cleaning identifiers, processing digits, and returning exact validity results is useful for validating structured IDs, station codes, sample labels, or other formatted records.
 
 The adjacency-list converter is directly relevant to engineering systems that can be modeled as networks. Monitoring stations, computational cells, drainage links, river branches, transport routes, and mesh connectivity can all be represented as nodes and edges. Adjacency lists provide a compact sparse representation, while adjacency matrices are useful for matrix-based analysis, connectivity checks, and numerical workflows.
+
+Dynamic programming is relevant to engineering workflows in which later states depend on previously computed states. Storing intermediate results can reduce repeated calculations in time-stepping, cumulative-response, staged optimization, routing, and calibration workflows.
+
+Possible applications include:
+
+- Time-stepping algorithms
+- Cumulative cost or response calculations
+- Dynamic path and routing problems
+- Sequence-based model states
+- Reusing intermediate calibration results
+- Optimization over staged decisions
 
 Object-oriented programming can later support structures such as:
 
@@ -1569,6 +1680,8 @@ Future labs will gradually support development in:
 - Graph algorithms
 - Network representations
 - Sparse and dense connectivity structures
+- Dynamic programming
+- Recurrence relations and iterative sequence construction
 
 Planned Python tools include:
 
@@ -1608,6 +1721,8 @@ Graph Representations and Network Conversion
 Depth-First Search and Reachability
         ↓
 Backtracking and Constraint Solving
+        ↓
+Dynamic Programming and Sequence Construction
         ↓
 Numerical Methods
         ↓
@@ -1658,6 +1773,8 @@ Each completed lab documents progress in:
 - Implementing depth-first graph traversal
 - Implementing recursive backtracking
 - Solving constraint-satisfaction problems
+- Implementing bottom-up dynamic programming
+- Translating recurrence relations into iterative algorithms
 - Working with adjacency lists and adjacency matrices
 - Improving technical documentation
 
