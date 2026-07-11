@@ -4,9 +4,9 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-38-success)
+![Projects](https://img.shields.io/badge/Projects_Completed-37-success)
 ![Workshops](https://img.shields.io/badge/Workshops-17-2563EB)
-![Labs](https://img.shields.io/badge/Labs-16-16A34A)
+![Labs](https://img.shields.io/badge/Labs-15-16A34A)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-5-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
@@ -32,6 +32,7 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 - [Engineering-Oriented Direction](#engineering-oriented-direction)
 - [Current Roadmap](#current-roadmap)
 - [Project Status](#project-status)
+- [Python Certification Review](#python-certification-review)
 - [Resources](#resources)
 - [Acknowledgements](#acknowledgements)
 - [Author](#author)
@@ -43,15 +44,15 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 | Area | Purpose | Completed |
 | --- | --- | ---: |
 | Workshops | Guided projects introducing new Python concepts incrementally | 17 |
-| Labs | Independent implementations based on user stories and automated tests | 16 |
+| Labs | Independent implementations based on user stories and automated tests | 15 |
 | Certification Projects | Larger projects combining multiple programming concepts | 5 |
-| **Total** | **Documented Python projects** | **38** |
+| **Total** | **Documented Python projects** | **37** |
 
 ```text
 Workshops              █████████████████  17 completed
-Labs                   ████████████████  16 completed
+Labs                   ███████████████  15 completed
 Certification Projects █████░░░░░░░░░  5 completed
-Overall                ██████████████████████████████████████  38 completed
+Overall                █████████████████████████████████████  37 completed
 ```
 
 ### Current Learning Stage
@@ -111,8 +112,6 @@ Depth-First Search and Graph Reachability
         ↓
 N-Queens, Backtracking, and Constraint Solving
         ↓
-Nth Fibonacci and Bottom-Up Dynamic Programming
-        ↓
 Bisection Method and Numerical Root Finding
         ↓
 Formatted Reports and Visualizations
@@ -165,7 +164,6 @@ Tower of Hanoi and Recursive State Generation
 | 13 | Build an Adjacency List to Matrix Converter | Graph representations, dictionaries, nested lists, matrix construction | ✅ |
 | 14 | Implement the Depth-First Search Algorithm | DFS, stacks, LIFO traversal, reachability, cycle prevention | ✅ |
 | 15 | Implement the N-Queens Algorithm | DFS, recursion, backtracking, constraint tracking, state restoration | ✅ |
-| 16 | Build an Nth Fibonacci Number Calculator | Dynamic programming, recurrence relations, iterative sequence construction, state reuse | ✅ |
 
 ### Certification Projects
 
@@ -219,7 +217,6 @@ freecodecamp-python/
 │   ├── build-an-adjacency-list-to-matrix-converter.py
 │   ├── implement-the-depth-first-search-algorithm.py
 │   ├── implement-the-n-queens-algorithm.py
-│   ├── build-an-nth-fibonacci-number-calculator.py
 │   └── README.md
 │
 ├── certification-projects/
@@ -245,6 +242,7 @@ freecodecamp-python/
 │   │
 │   └── README.md
 │
+├── PYTHON_REVIEW.md
 └── README.md
 ```
 
@@ -292,7 +290,7 @@ They are used to practice:
 - Matching exact output formats
 - Refactoring final solutions for clarity
 
-The latest completed lab, **Build an Nth Fibonacci Number Calculator**, introduced bottom-up dynamic programming, explicit base cases, recurrence relations, iterative sequence construction, reuse of previously computed values, linear-time computation, and indexed result retrieval. The preceding **N-Queens Algorithm** lab introduced recursive depth-first search, backtracking, constraint pruning, mutable-state snapshots, deterministic traversal order, and exact state restoration.
+The latest completed lab, **Implement the N-Queens Algorithm**, introduced recursive depth-first search, backtracking, row-by-row state construction, column and diagonal conflict tracking, branch pruning, mutable-state snapshots, deterministic traversal order, and exact state restoration. The preceding **Depth-First Search Algorithm** lab introduced explicit stacks, LIFO traversal, graph reachability, adjacency-matrix traversal, visited-state tracking, and cycle prevention.
 
 Detailed lab documentation is maintained in [`labs/README.md`](labs/README.md).
 
@@ -514,9 +512,6 @@ This project made recursion more concrete by showing how a large problem can be 
 - Recursive state construction for backtracking
 - Set-based column and diagonal occupancy tracking
 - Exact choose-explore-undo state restoration
-- Dynamic-programming tables represented as lists
-- Stored intermediate results for state reuse
-- Iterative sequence construction from explicit base cases
 
 ### Algorithms
 
@@ -583,10 +578,6 @@ This project made recursion more concrete by showing how a large problem can be 
 - Recursive backtracking for constraint-satisfaction problems
 - N-Queens branch pruning with column and diagonal sets
 - Mutable-state snapshots with `list.copy()`
-- Bottom-up dynamic programming
-- Fibonacci recurrence evaluation
-- Reuse of previously computed values
-- Linear-time iterative sequence generation
 
 ### Loops and Iteration
 
@@ -819,10 +810,6 @@ This project made recursion more concrete by showing how a large problem can be 
 - Debugging recursive base cases and missing recursive calls
 - Preserving symmetry between state reservation and cleanup
 - Copying mutable recursive state before storing completed solutions
-- Debugging missing return paths above base cases
-- Detecting off-by-one errors in `range(2, n + 1)`
-- Distinguishing a sequence index from a sequence value
-- Avoiding recursive recomputation when iteration is required
 
 ---
 
@@ -916,80 +903,7 @@ This workshop strengthened:
 - Recursive backtracking for constraint-satisfaction problems
 - N-Queens branch pruning with column and diagonal sets
 - Mutable-state snapshots with `list.copy()`
-- Bottom-up dynamic programming
-- Fibonacci recurrence evaluation
-- Reuse of previously computed values
-- Linear-time iterative sequence generation
 - Validation before algorithm execution
-
----
-
-### Build an Nth Fibonacci Number Calculator
-
-Implemented an iterative Fibonacci calculator using bottom-up dynamic programming.
-
-The completed lab includes:
-
-- A `fibonacci()` function
-- One non-negative integer parameter
-- A `sequence` list initialized to `[0, 1]`
-- Explicit handling for `F(0)` and `F(1)`
-- Iterative computation from `F(2)` through `F(n)`
-- Reuse of previously computed values
-- Appending each new Fibonacci number to the stored sequence
-- No recursion
-- Correct tested results through `F(15) = 610`
-
-Core implementation:
-
-```python
-def fibonacci(n):
-    sequence = [0, 1]
-
-    if n < 2:
-        return sequence[n]
-
-    for _ in range(2, n + 1):
-        sequence.append(sequence[-1] + sequence[-2])
-
-    return sequence[n]
-```
-
-Dynamic-programming flow:
-
-```text
-Initialize F(0) and F(1)
-        ↓
-Handle the base cases
-        ↓
-Compute the next value from the previous two
-        ↓
-Append the value to sequence
-        ↓
-Repeat until F(n) exists
-        ↓
-Return sequence[n]
-```
-
-Example results:
-
-```text
-F(0)  = 0
-F(1)  = 1
-F(2)  = 1
-F(5)  = 5
-F(10) = 55
-F(15) = 610
-```
-
-This lab strengthened bottom-up dynamic programming, recurrence relations, base-case design, iterative state construction, state reuse, indexed result retrieval, and complexity analysis.
-
-Complexity:
-
-```text
-Time:  O(n)
-Space: O(n)
-```
 
 ---
 
@@ -1903,10 +1817,6 @@ N-Queens Algorithm
         ↓
 Recursive DFS, backtracking, constraint pruning, and state restoration
         ↓
-Nth Fibonacci Number Calculator
-        ↓
-Bottom-up dynamic programming, recurrence relations, and sequence reuse
-        ↓
 Bisection Method
         ↓
 Interval halving, tolerance-based approximation, and convergence checks
@@ -1948,13 +1858,12 @@ Recursive decomposition, list stacks, state recording, and exact sequence genera
 | Adjacency List to Matrix Converter | Graph representation conversion, nested lists, matrix construction, and edge mapping |
 | Depth-First Search Algorithm | Explicit stacks, LIFO traversal, graph reachability, and cycle prevention |
 | N-Queens Algorithm | Recursive DFS, backtracking, constraint pruning, and exact state restoration |
-| Nth Fibonacci Number Calculator | Bottom-up dynamic programming, recurrence relations, iterative state construction, and state reuse |
 | Bisection Method | Interval halving, numerical approximation, convergence, and tolerance-based stopping |
 | Polygon Area Calculator | Reusable geometry, method overriding, object invariants, and containment logic |
 | Budget App | Transaction systems, cross-object transfers, reporting |
 | Tower of Hanoi Algorithm | Recursive decomposition, list stacks, state recording, exact multi-line output, and minimum-move reasoning |
 
-This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, the shortest-path workshop adds weighted graph processing and route optimization, the breadth-first search workshop adds FIFO traversal and constrained state-space exploration, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, the adjacency converter adds graph-representation transformation and matrix construction, the depth-first search lab adds explicit LIFO graph traversal and reachability analysis, the N-Queens lab adds recursive backtracking and constraint-state management, the Fibonacci lab adds bottom-up dynamic programming and stored intermediate-state reuse, the bisection method introduces numerical approximation through interval halving, and the Tower of Hanoi project makes recursive state generation more concrete.
+This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, the shortest-path workshop adds weighted graph processing and route optimization, the breadth-first search workshop adds FIFO traversal and constrained state-space exploration, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, the adjacency converter adds graph-representation transformation and matrix construction, the depth-first search lab adds explicit LIFO graph traversal and reachability analysis, the N-Queens lab adds recursive backtracking and constraint-state management, the bisection method introduces numerical approximation through interval halving, and the Tower of Hanoi project makes recursive state generation more concrete.
 
 ---
 
@@ -2112,10 +2021,6 @@ Regression check
 - In backtracking, every state change made before recursion must be undone afterward.
 - Completed recursive solutions must store `placement.copy()`, not the mutable working list.
 - N-Queens diagonal conflicts are identified by `row - column` and `row + column`.
-- Fibonacci base cases are stored explicitly as `[0, 1]`.
-- `range(2, n + 1)` is required to compute through index `n`.
-- Each new Fibonacci value reuses the two previously stored values.
-- Dynamic programming avoids repeated evaluation of overlapping subproblems.
 
 ---
 
@@ -2147,8 +2052,6 @@ This repository is the programming foundation for future coastal and environment
 - Reachability and connectivity analysis
 - Constraint-based arrangement and scheduling search
 - Backtracking for discrete engineering design spaces
-- Dynamic programming for staged engineering calculations
-- Reuse of intermediate states in iterative model workflows
 - AI-assisted technical workflows
 
 ### Planned Engineering Project Structure
@@ -2399,34 +2302,6 @@ def reachable_stations(network, start_station):
 
 BFS explores all nodes at one depth before moving to the next, which makes it suitable for unweighted shortest paths, reachability checks, and level-by-level processing.
 
-### Dynamic Programming for Engineering State Sequences
-
-Dynamic programming is useful when later engineering states depend on previously computed states and repeated recalculation would be wasteful.
-
-Possible uses include:
-
-- Time-stepping algorithms
-- Cumulative cost or response calculations
-- Staged optimization
-- Dynamic routing and path-cost problems
-- Reusing intermediate calibration results
-- Sequence-based model states
-- Reducing repeated calculations in scientific workflows
-
-Conceptual example:
-
-```python
-def cumulative_response(inputs):
-    states = [0]
-
-    for value in inputs:
-        states.append(states[-1] + value)
-
-    return states
-```
-
-The key design principle is to store intermediate results when future calculations depend on them.
-
 ### Merge Sort for Engineering Records
 
 Merge sort is useful when engineering records need to be ordered before later analysis.
@@ -2576,9 +2451,6 @@ The key lesson is that recursion is appropriate when the problem structure repea
 - Practice recursive backtracking
 - Practice constraint pruning and exact state restoration
 - Practice recursive algorithms and state tracking
-- Practice bottom-up dynamic programming
-- Practice recurrence relations and iterative sequence construction
-- Practice stored-state reuse and complexity reasoning
 - Practice in-place sorting and controlled mutation
 - Practice checksum validation and formatted-identifier normalization
 - Practice numerical root finding and convergence checks
@@ -2599,7 +2471,6 @@ The key lesson is that recursion is appropriate when the problem structure repea
 | Search Algorithms | Efficient retrieval from sorted data |
 | Graph Algorithms | Weighted networks, route optimization, shortest paths, representation conversion, breadth-first traversal, and depth-first reachability |
 | Backtracking Algorithms | Constraint solving, recursive search, branch pruning, and reversible state transitions |
-| Dynamic Programming | Stored intermediate results, iterative state construction, recurrence relations, and overlapping subproblems |
 | Sorting Algorithms | Preparing ordered data for search, reporting, and analysis |
 | Checksum Validation | Detecting simple errors in structured identifiers |
 | Numerical Methods | Root finding, convergence checks, and tolerance-based calculations |
@@ -2643,8 +2514,6 @@ Depth-First Search and Graph Reachability
         ↓
 Backtracking and Constraint Solving
         ↓
-Dynamic Programming and Sequence Construction
-        ↓
 Sorting Algorithms, Partitioning, and In-Place Mutation
         ↓
 Checksum Validation and Data Integrity Checks
@@ -2678,9 +2547,9 @@ This repository is actively maintained as part of an ongoing learning process.
 
 ```text
 Workshops:               17
-Labs:                    16
+Labs:                    15
 Certification Projects:   5
-Total Projects:          38
+Total Projects:          37
 ```
 
 Latest completed workshop:
@@ -2692,7 +2561,7 @@ Implement the Breadth-First Search Algorithm
 Latest completed lab:
 
 ```text
-Build an Nth Fibonacci Number Calculator
+Implement the N-Queens Algorithm
 ```
 
 Latest completed certification project:
@@ -2701,6 +2570,28 @@ Latest completed certification project:
 Implement the Tower of Hanoi Algorithm
 Automated tests: 8/8 passed
 ```
+
+---
+
+
+## Python Certification Review
+
+A dedicated theory and exam-preparation guide is available in
+[`PYTHON_REVIEW.md`](PYTHON_REVIEW.md).
+
+The guide consolidates the concepts covered across the certification and this
+repository, including:
+
+- Python syntax, types, mutability, strings, collections, and control flow
+- Functions, scope, modules, exceptions, and file handling
+- Object-oriented programming, inheritance, abstraction, and polymorphism
+- Linked lists, hash tables, stacks, queues, graphs, trees, and heaps
+- Searching, sorting, BFS, DFS, Dijkstra, recursion, and backtracking
+- Dynamic programming, numerical methods, algorithmic complexity, and exam traps
+- A direct project-to-concept map based on the completed portfolio
+
+The guide is independently written and does not reproduce the freeCodeCamp review
+page verbatim.
 
 ---
 
