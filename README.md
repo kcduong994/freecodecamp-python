@@ -4,9 +4,9 @@
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Projects](https://img.shields.io/badge/Projects_Completed-35-success)
+![Projects](https://img.shields.io/badge/Projects_Completed-37-success)
 ![Workshops](https://img.shields.io/badge/Workshops-17-2563EB)
-![Labs](https://img.shields.io/badge/Labs-13-16A34A)
+![Labs](https://img.shields.io/badge/Labs-15-16A34A)
 ![Certification Projects](https://img.shields.io/badge/Certification_Projects-5-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
@@ -43,15 +43,15 @@ The immediate goal is to complete the freeCodeCamp Python Certification with cor
 | Area | Purpose | Completed |
 | --- | --- | ---: |
 | Workshops | Guided projects introducing new Python concepts incrementally | 17 |
-| Labs | Independent implementations based on user stories and automated tests | 13 |
+| Labs | Independent implementations based on user stories and automated tests | 15 |
 | Certification Projects | Larger projects combining multiple programming concepts | 5 |
-| **Total** | **Documented Python projects** | **35** |
+| **Total** | **Documented Python projects** | **37** |
 
 ```text
 Workshops              █████████████████  17 completed
-Labs                   █████████████░  13 completed
+Labs                   ███████████████  15 completed
 Certification Projects █████░░░░░░░░░  5 completed
-Overall                ███████████████████████████████████  35 completed
+Overall                █████████████████████████████████████  37 completed
 ```
 
 ### Current Learning Stage
@@ -107,6 +107,10 @@ Luhn Algorithm and Checksum Validation
         ↓
 Adjacency List to Matrix Conversion
         ↓
+Depth-First Search and Graph Reachability
+        ↓
+N-Queens, Backtracking, and Constraint Solving
+        ↓
 Bisection Method and Numerical Root Finding
         ↓
 Formatted Reports and Visualizations
@@ -157,6 +161,8 @@ Tower of Hanoi and Recursive State Generation
 | 11 | Implement the Selection Sort Algorithm | In-place sorting, minimum search, nested loops, controlled swaps | ✅ |
 | 12 | Implement the Luhn Algorithm | Checksum validation, string cleaning, digit processing, modulo checks | ✅ |
 | 13 | Build an Adjacency List to Matrix Converter | Graph representations, dictionaries, nested lists, matrix construction | ✅ |
+| 14 | Implement the Depth-First Search Algorithm | DFS, stacks, LIFO traversal, reachability, cycle prevention | ✅ |
+| 15 | Implement the N-Queens Algorithm | DFS, recursion, backtracking, constraint tracking, state restoration | ✅ |
 
 ### Certification Projects
 
@@ -208,6 +214,8 @@ freecodecamp-python/
 │   ├── implement-the-selection-sort-algorithm.py
 │   ├── implement-the-luhn-algorithm.py
 │   ├── build-an-adjacency-list-to-matrix-converter.py
+│   ├── implement-the-depth-first-search-algorithm.py
+│   ├── implement-the-n-queens-algorithm.py
 │   └── README.md
 │
 ├── certification-projects/
@@ -280,7 +288,7 @@ They are used to practice:
 - Matching exact output formats
 - Refactoring final solutions for clarity
 
-The latest completed lab, **Build an Adjacency List to Matrix Converter**, introduced adjacency lists, adjacency matrices, graph-size detection, square matrix construction, nested iteration, matrix indexing, directed-edge preservation, and the distinction between printing required output and returning reusable data. Recent sorting and checksum labs also strengthened recursive partitioning, in-place mutation, duplicate handling, controlled swaps, and exact validation logic.
+The latest completed lab, **Implement the N-Queens Algorithm**, introduced recursive depth-first search, backtracking, row-by-row state construction, column and diagonal conflict tracking, branch pruning, mutable-state snapshots, deterministic traversal order, and exact state restoration. The preceding **Depth-First Search Algorithm** lab introduced explicit stacks, LIFO traversal, graph reachability, adjacency-matrix traversal, visited-state tracking, and cycle prevention.
 
 Detailed lab documentation is maintained in [`labs/README.md`](labs/README.md).
 
@@ -497,6 +505,11 @@ This project made recursion more concrete by showing how a large problem can be 
 - Adjacency matrices represented with square nested lists
 - Binary edge encoding with `0` and `1`
 - Sparse-to-dense graph representation conversion
+- Explicit stacks for depth-first traversal
+- Visited-state tracking for cycle prevention
+- Recursive state construction for backtracking
+- Set-based column and diagonal occupancy tracking
+- Exact choose-explore-undo state restoration
 
 ### Algorithms
 
@@ -558,6 +571,11 @@ This project made recursion more concrete by showing how a large problem can be 
 - Level-by-level state expansion
 - Constraint-based pruning of invalid states
 - Balanced-parentheses generation
+- Depth-first search with explicit LIFO stacks
+- Graph reachability from an arbitrary starting node
+- Recursive backtracking for constraint-satisfaction problems
+- N-Queens branch pruning with column and diagonal sets
+- Mutable-state snapshots with `list.copy()`
 
 ### Loops and Iteration
 
@@ -785,6 +803,11 @@ This project made recursion more concrete by showing how a large problem can be 
 - Understanding that `append()` accepts one object
 - Preventing invalid BFS branches through explicit constraints
 - Separating returned results from demonstration output
+- Debugging stack traversal with `pop()` rather than `pop(0)`
+- Preventing repeated DFS processing with visited-state checks
+- Debugging recursive base cases and missing recursive calls
+- Preserving symmetry between state reservation and cleanup
+- Copying mutable recursive state before storing completed solutions
 
 ---
 
@@ -873,7 +896,148 @@ This workshop strengthened:
 - Tuple unpacking
 - Constraint-based branching
 - Balanced-parentheses generation
+- Depth-first search with explicit LIFO stacks
+- Graph reachability from an arbitrary starting node
+- Recursive backtracking for constraint-satisfaction problems
+- N-Queens branch pruning with column and diagonal sets
+- Mutable-state snapshots with `list.copy()`
 - Validation before algorithm execution
+
+---
+
+### Implement the N-Queens Algorithm
+
+Implemented a complete N-Queens solver using recursive depth-first search and backtracking.
+
+The completed lab includes:
+
+- A `dfs_n_queens()` function
+- Guard handling for values below `1`
+- One queen placed per row
+- Column-conflict tracking with a set
+- Main-diagonal tracking with `row - column`
+- Anti-diagonal tracking with `row + column`
+- Branch pruning before recursive descent
+- Exact state restoration after each recursive call
+- Deterministic solution ordering through ascending column iteration
+- Correct solution counts, including `92` solutions for an 8×8 board
+
+Core implementation:
+
+```python
+def dfs_n_queens(n):
+    if n < 1:
+        return []
+
+    solutions = []
+    placement = []
+
+    columns = set()
+    main_diagonals = set()
+    anti_diagonals = set()
+
+    def backtrack(row):
+        if row == n:
+            solutions.append(placement.copy())
+            return
+
+        for column in range(n):
+            main_diagonal = row - column
+            anti_diagonal = row + column
+
+            if (
+                column in columns
+                or main_diagonal in main_diagonals
+                or anti_diagonal in anti_diagonals
+            ):
+                continue
+
+            placement.append(column)
+            columns.add(column)
+            main_diagonals.add(main_diagonal)
+            anti_diagonals.add(anti_diagonal)
+
+            backtrack(row + 1)
+
+            placement.pop()
+            columns.remove(column)
+            main_diagonals.remove(main_diagonal)
+            anti_diagonals.remove(anti_diagonal)
+
+    backtrack(0)
+    return solutions
+```
+
+Search invariant:
+
+```text
+Choose a valid position
+        ↓
+Reserve its column and diagonals
+        ↓
+Explore the next row
+        ↓
+Undo every state change
+        ↓
+Try the next candidate
+```
+
+This lab strengthened recursive DFS, backtracking, constraint pruning, mutable-state snapshots, deterministic traversal, and reversible state transitions.
+
+---
+
+### Implement the Depth-First Search Algorithm
+
+Implemented iterative depth-first search for an undirected graph represented by an adjacency matrix.
+
+The completed lab includes:
+
+- A `dfs()` function
+- An explicit stack initialized with the starting node
+- Last-In-First-Out traversal using `pop()`
+- Visited-node tracking
+- Cycle prevention
+- Adjacency-matrix neighbor discovery
+- Reachability analysis
+- Correct handling of isolated nodes and disconnected graph components
+
+Core implementation:
+
+```python
+def dfs(undirected_adj_matrix, node_label):
+    stack = [node_label]
+    visited = []
+
+    while stack:
+        current = stack.pop()
+
+        if current not in visited:
+            visited.append(current)
+
+            for neighbor, connected in enumerate(
+                undirected_adj_matrix[current]
+            ):
+                if connected == 1 and neighbor not in visited:
+                    stack.append(neighbor)
+
+    return visited
+```
+
+Traversal flow:
+
+```text
+Push the starting node
+        ↓
+Pop the most recently added node
+        ↓
+Record it if unvisited
+        ↓
+Push its unvisited neighbors
+        ↓
+Continue until the stack is empty
+```
+
+This lab strengthened explicit stack management, LIFO traversal, graph reachability, adjacency-matrix traversal, visited-state tracking, and cycle prevention.
 
 ---
 
@@ -1643,6 +1807,14 @@ Adjacency List to Matrix Converter
         ↓
 Graph representation conversion, nested lists, and matrix indexing
         ↓
+Depth-First Search Algorithm
+        ↓
+Explicit stacks, LIFO traversal, reachability, and cycle prevention
+        ↓
+N-Queens Algorithm
+        ↓
+Recursive DFS, backtracking, constraint pruning, and state restoration
+        ↓
 Bisection Method
         ↓
 Interval halving, tolerance-based approximation, and convergence checks
@@ -1682,12 +1854,14 @@ Recursive decomposition, list stacks, state recording, and exact sequence genera
 | Selection Sort | In-place minimum selection, nested-loop scanning, and controlled swaps |
 | Luhn Algorithm | Checksum validation, formatted-number cleaning, alternating-digit processing, and modulo checks |
 | Adjacency List to Matrix Converter | Graph representation conversion, nested lists, matrix construction, and edge mapping |
+| Depth-First Search Algorithm | Explicit stacks, LIFO traversal, graph reachability, and cycle prevention |
+| N-Queens Algorithm | Recursive DFS, backtracking, constraint pruning, and exact state restoration |
 | Bisection Method | Interval halving, numerical approximation, convergence, and tolerance-based stopping |
 | Polygon Area Calculator | Reusable geometry, method overriding, object invariants, and containment logic |
 | Budget App | Transaction systems, cross-object transfers, reporting |
 | Tower of Hanoi Algorithm | Recursive decomposition, list stacks, state recording, exact multi-line output, and minimum-move reasoning |
 
-This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, the shortest-path workshop adds weighted graph processing and route optimization, the breadth-first search workshop adds FIFO traversal and constrained state-space exploration, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, the adjacency converter adds graph-representation transformation and matrix construction, the bisection method introduces numerical approximation through interval halving, and the Tower of Hanoi project makes recursive state generation more concrete.
+This progression establishes a foundation for maintainable engineering software. The linked-list and hash-table projects add lower-level data-structure thinking, binary search introduces algorithmic efficiency and systematic range reduction, the shortest-path workshop adds weighted graph processing and route optimization, the breadth-first search workshop adds FIFO traversal and constrained state-space exploration, merge sort and quicksort add divide-and-conquer sorting, selection sort clarifies in-place quadratic sorting, the Luhn algorithm introduces checksum validation, the adjacency converter adds graph-representation transformation and matrix construction, the depth-first search lab adds explicit LIFO graph traversal and reachability analysis, the N-Queens lab adds recursive backtracking and constraint-state management, the bisection method introduces numerical approximation through interval halving, and the Tower of Hanoi project makes recursive state generation more concrete.
 
 ---
 
@@ -1840,6 +2014,11 @@ Regression check
 - A BFS state should be appended as one tuple because `append()` accepts one object.
 - Opening-parenthesis states are valid only while `opens_used < pairs`.
 - Closing-parenthesis states are valid only while `closes_used < opens_used`.
+- DFS uses `stack.pop()` to process the most recently added node.
+- A visited-state check prevents graph cycles from causing repeated traversal.
+- In backtracking, every state change made before recursion must be undone afterward.
+- Completed recursive solutions must store `placement.copy()`, not the mutable working list.
+- N-Queens diagonal conflicts are identified by `row - column` and `row + column`.
 
 ---
 
@@ -1867,7 +2046,10 @@ This repository is the programming foundation for future coastal and environment
 - Graph representation conversion for engineering networks
 - Connectivity-matrix construction
 - Breadth-first traversal of unweighted networks
+- Depth-first traversal of connected engineering networks
 - Reachability and connectivity analysis
+- Constraint-based arrangement and scheduling search
+- Backtracking for discrete engineering design spaces
 - AI-assisted technical workflows
 
 ### Planned Engineering Project Structure
@@ -2261,6 +2443,11 @@ The key lesson is that recursion is appropriate when the problem structure repea
 - Practice FIFO queue behavior
 - Practice tuple-based state representation
 - Practice constrained successor generation
+- Practice depth-first search
+- Practice explicit stack and LIFO behavior
+- Practice visited-state tracking and cycle prevention
+- Practice recursive backtracking
+- Practice constraint pruning and exact state restoration
 - Practice recursive algorithms and state tracking
 - Practice in-place sorting and controlled mutation
 - Practice checksum validation and formatted-identifier normalization
@@ -2280,7 +2467,8 @@ The key lesson is that recursion is appropriate when the problem structure repea
 | openpyxl | Automated Excel processing |
 | Git | Version control and project management |
 | Search Algorithms | Efficient retrieval from sorted data |
-| Graph Algorithms | Weighted networks, route optimization, shortest paths, graph representation conversion, and breadth-first traversal |
+| Graph Algorithms | Weighted networks, route optimization, shortest paths, representation conversion, breadth-first traversal, and depth-first reachability |
+| Backtracking Algorithms | Constraint solving, recursive search, branch pruning, and reversible state transitions |
 | Sorting Algorithms | Preparing ordered data for search, reporting, and analysis |
 | Checksum Validation | Detecting simple errors in structured identifiers |
 | Numerical Methods | Root finding, convergence checks, and tolerance-based calculations |
@@ -2320,6 +2508,10 @@ Graph Representation Conversion and Connectivity Matrices
         ↓
 Breadth-First Search and Unweighted Network Traversal
         ↓
+Depth-First Search and Graph Reachability
+        ↓
+Backtracking and Constraint Solving
+        ↓
 Sorting Algorithms, Partitioning, and In-Place Mutation
         ↓
 Checksum Validation and Data Integrity Checks
@@ -2353,9 +2545,9 @@ This repository is actively maintained as part of an ongoing learning process.
 
 ```text
 Workshops:               17
-Labs:                    13
+Labs:                    15
 Certification Projects:   5
-Total Projects:          35
+Total Projects:          37
 ```
 
 Latest completed workshop:
@@ -2367,7 +2559,7 @@ Implement the Breadth-First Search Algorithm
 Latest completed lab:
 
 ```text
-Build an Adjacency List to Matrix Converter
+Implement the N-Queens Algorithm
 ```
 
 Latest completed certification project:
