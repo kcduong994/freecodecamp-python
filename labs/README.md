@@ -7,12 +7,13 @@ These labs focus on translating user stories into working software, designing pr
 
 ![Python](https://img.shields.io/badge/Python-Learning-3776AB?logo=python&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Python_Certification-0A0A23?logo=freecodecamp&logoColor=white)
-![Labs](https://img.shields.io/badge/Labs_Completed-13-success)
+![Labs](https://img.shields.io/badge/Labs_Completed-15-success)
 ![OOP Labs](https://img.shields.io/badge/OOP_Labs-3-6f42c1)
 ![Numerical Labs](https://img.shields.io/badge/Numerical_Labs-1-0A66C2)
 ![Sorting Labs](https://img.shields.io/badge/Sorting_Labs-2-8B5CF6)
 ![Checksum Labs](https://img.shields.io/badge/Checksum_Labs-2-DC2626)
-![Graph Labs](https://img.shields.io/badge/Graph_Labs-1-0F766E)
+![Graph Labs](https://img.shields.io/badge/Graph_Labs-2-0F766E)
+![Backtracking Labs](https://img.shields.io/badge/Backtracking_Labs-1-7C3AED)
 ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
 ---
@@ -49,7 +50,7 @@ Each exercise requires some combination of:
 - Refactoring code for clarity
 - Documenting the final implementation
 
-The current learning path has progressed from fundamental control flow and functions to structured data, debugging, classes, properties, controlled state updates, abstract base classes, inheritance, object-oriented design, numerical root-finding with tolerance-based convergence, sorting algorithms, recursion, in-place mutation, checksum validation, and graph-representation conversion.
+The current learning path has progressed from fundamental control flow and functions to structured data, debugging, classes, properties, controlled state updates, abstract base classes, inheritance, object-oriented design, numerical root-finding with tolerance-based convergence, sorting algorithms, recursion, in-place mutation, checksum validation, graph-representation conversion, depth-first graph traversal, and backtracking-based constraint solving.
 
 ---
 
@@ -70,6 +71,8 @@ The current learning path has progressed from fundamental control flow and funct
 | 11 | Implement the Selection Sort Algorithm | In-place sorting, minimum search, swaps, quadratic complexity | ✅ |
 | 12 | Implement the Luhn Algorithm | Checksum validation, string cleaning, modulo arithmetic | ✅ |
 | 13 | Build an Adjacency List to Matrix Converter | Graph representations, dictionaries, nested lists, matrix construction | ✅ |
+| 14 | Implement the Depth-First Search Algorithm | Graph traversal, stacks, LIFO processing, reachability | ✅ |
+| 15 | Implement the N-Queens Algorithm | Depth-first search, backtracking, recursion, constraint tracking | ✅ |
 
 ---
 
@@ -77,7 +80,7 @@ The current learning path has progressed from fundamental control flow and funct
 
 | Category | Completed |
 | --- | ---: |
-| Total Labs | 13 |
+| Total Labs | 15 |
 | Debugging-Focused Labs | 1 |
 | Object-Oriented Labs | 3 |
 | Labs Using Validation Rules | 7 |
@@ -85,12 +88,14 @@ The current learning path has progressed from fundamental control flow and funct
 | Sorting Algorithm Labs | 2 |
 | Checksum Algorithm Labs | 2 |
 | Graph Representation Labs | 1 |
+| Graph Traversal Labs | 1 |
+| Backtracking Labs | 1 |
 | Current Status | In Progress |
 
 ```text
-Labs Completed: 13
-Progress:       █████████████ 13 completed
-Current Focus:  Graph representations, nested data structures, algorithmic conversion, and matrix construction
+Labs Completed: 15
+Progress:       ███████████████ 15 completed
+Current Focus:  Depth-first traversal, recursion, backtracking, and constraint-state management
 ```
 
 ### Concept Progression
@@ -123,6 +128,10 @@ In-Place Selection Sort and Swap Control
 Checksum Validation with the Luhn Algorithm
         ↓
 Adjacency Lists, Adjacency Matrices, and Graph Representation Conversion
+        ↓
+Depth-First Search, Stacks, and Reachability
+        ↓
+N-Queens, Backtracking, and Constraint-State Restoration
 ```
 
 ---
@@ -144,6 +153,8 @@ labs/
 ├── implement-the-selection-sort-algorithm.py
 ├── implement-the-luhn-algorithm.py
 ├── build-an-adjacency-list-to-matrix-converter.py
+├── implement-the-depth-first-search-algorithm.py
+├── implement-the-n-queens-algorithm.py
 └── README.md
 ```
 
@@ -213,6 +224,31 @@ The shared `README.md` records:
 - State-dependent behavior
 - Stopping conditions for iterative algorithms
 - Failure branches when convergence is not reached
+
+### Graph Traversal and Search
+
+- Depth-first search
+- Explicit stacks and Last-In-First-Out traversal
+- Reachability analysis
+- Visited-node tracking
+- Cycle prevention
+- Traversing undirected graphs represented by adjacency matrices
+- Processing one branch deeply before backtracking
+- Distinguishing DFS stack behavior from BFS queue behavior
+- Understanding how neighbor insertion order affects traversal order
+
+### Backtracking and Constraint Solving
+
+- N-Queens search
+- Recursive depth-first exploration
+- Choice, exploration, and undo phases
+- Column-conflict tracking with sets
+- Main-diagonal tracking with `row - column`
+- Anti-diagonal tracking with `row + column`
+- Restoring search state after recursive calls
+- Copying mutable state before storing a completed solution
+- Deterministic solution ordering through ascending column iteration
+- Pruning invalid branches before deeper recursion
 
 ### Graph Representations and Conversion
 
@@ -438,6 +474,9 @@ The getter provides the current value, Python performs the arithmetic operation,
 - Choosing when to mutate input data and when to return new data
 - Implementing checksum validation
 - Implementing graph-representation conversion
+- Implementing depth-first graph traversal
+- Implementing recursive backtracking
+- Solving constraint-satisfaction problems
 - Working with adjacency lists and adjacency matrices without external libraries
 - Translating graph data between adjacency-list and adjacency-matrix forms
 - Reasoning about rows as source nodes and columns as destination nodes
@@ -446,6 +485,143 @@ The getter provides the current value, Python performs the arithmetic operation,
 ---
 
 ## Lab Highlights
+
+### 15. Implement the N-Queens Algorithm
+
+Implemented a complete N-Queens solver using depth-first search and backtracking.
+
+The solver represents each arrangement as a list of column indexes, where the value at index `row` identifies the queen's column in that row.
+
+The completed lab includes:
+
+- A function named `dfs_n_queens()`
+- Guard handling for board sizes below `1`
+- Recursive row-by-row exploration
+- Constant-time conflict checks with sets
+- Main-diagonal identification with `row - column`
+- Anti-diagonal identification with `row + column`
+- Deterministic solution ordering
+- Exact backtracking state restoration
+- Correct solution counts, including `92` solutions for `n = 8`
+
+Core implementation:
+
+```python
+def dfs_n_queens(n):
+    if n < 1:
+        return []
+
+    solutions = []
+    placement = []
+
+    columns = set()
+    main_diagonals = set()
+    anti_diagonals = set()
+
+    def backtrack(row):
+        if row == n:
+            solutions.append(placement.copy())
+            return
+
+        for column in range(n):
+            main_diagonal = row - column
+            anti_diagonal = row + column
+
+            if (
+                column in columns
+                or main_diagonal in main_diagonals
+                or anti_diagonal in anti_diagonals
+            ):
+                continue
+
+            placement.append(column)
+            columns.add(column)
+            main_diagonals.add(main_diagonal)
+            anti_diagonals.add(anti_diagonal)
+
+            backtrack(row + 1)
+
+            placement.pop()
+            columns.remove(column)
+            main_diagonals.remove(main_diagonal)
+            anti_diagonals.remove(anti_diagonal)
+
+    backtrack(0)
+    return solutions
+```
+
+Backtracking invariant:
+
+```text
+Choose a valid column
+        ↓
+Reserve the column and diagonals
+        ↓
+Explore the next row
+        ↓
+Undo every state change
+        ↓
+Try the next column
+```
+
+This lab reinforced recursive DFS, constraint pruning, mutable-state snapshots, set-based conflict detection, and exact state restoration.
+
+---
+
+### 14. Implement the Depth-First Search Algorithm
+
+Implemented iterative depth-first search for an undirected graph represented by an adjacency matrix.
+
+The completed lab includes:
+
+- A function named `dfs()`
+- An explicit stack initialized with the starting node
+- Last-In-First-Out processing with `pop()`
+- Visited-node tracking
+- Cycle prevention
+- Adjacency-matrix neighbor discovery
+- Reachability analysis from an arbitrary starting node
+- Correct handling of isolated nodes and disconnected components
+
+Core implementation:
+
+```python
+def dfs(undirected_adj_matrix, node_label):
+    stack = [node_label]
+    visited = []
+
+    while stack:
+        current = stack.pop()
+
+        if current not in visited:
+            visited.append(current)
+
+            for neighbor, connected in enumerate(
+                undirected_adj_matrix[current]
+            ):
+                if connected == 1 and neighbor not in visited:
+                    stack.append(neighbor)
+
+    return visited
+```
+
+Traversal flow:
+
+```text
+Push the starting node
+        ↓
+Pop the most recently added node
+        ↓
+Record it if unvisited
+        ↓
+Push its unvisited neighbors
+        ↓
+Continue until the stack is empty
+```
+
+This lab reinforced DFS, explicit stack management, LIFO traversal, graph reachability, adjacency-matrix traversal, and cycle prevention.
+
+---
 
 ### 13. Build an Adjacency List to Matrix Converter
 
@@ -1230,6 +1406,11 @@ Current priorities include:
 - Understanding graph representations
 - Converting adjacency lists into adjacency matrices
 - Working confidently with nested lists and matrix indexes
+- Implementing depth-first graph traversal
+- Managing explicit stacks and LIFO behavior
+- Implementing recursive backtracking
+- Tracking column and diagonal constraints
+- Restoring mutable state after recursive exploration
 
 ---
 
@@ -1424,6 +1605,10 @@ Scientific Data Processing
         ↓
 Graph Representations and Network Conversion
         ↓
+Depth-First Search and Reachability
+        ↓
+Backtracking and Constraint Solving
+        ↓
 Numerical Methods
         ↓
 Algorithms for Sorting, Search, and Data Integrity
@@ -1470,6 +1655,9 @@ Each completed lab documents progress in:
 - Implementing sorting algorithms
 - Implementing checksum validation
 - Implementing graph-representation conversion
+- Implementing depth-first graph traversal
+- Implementing recursive backtracking
+- Solving constraint-satisfaction problems
 - Working with adjacency lists and adjacency matrices
 - Improving technical documentation
 
